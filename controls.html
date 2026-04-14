@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Yixian Overlay Controls</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="window-controls">
+  <div class="controls-root">
+    <div class="controls-bar">
+      <button id="delete-button" class="control-button" type="button">Del</button>
+      <button id="list-button" class="control-button" type="button">List</button>
+      <button id="board-button" class="control-button" type="button">Board</button>
+      <button id="settings-button" class="control-button" type="button">Set</button>
+    </div>
+    <div id="settings-panel" class="settings-panel hidden">
+      <div class="settings-label">Damage</div>
+      <button id="roll-average" class="roll-option" type="button" data-roll-mode="average">Average</button>
+      <button id="roll-high" class="roll-option" type="button" data-roll-mode="high">High Roll</button>
+      <button id="roll-low" class="roll-option" type="button" data-roll-mode="low">Low Roll</button>
+      <div class="settings-label">Cards</div>
+      <button id="language-zh" class="language-option" type="button" data-card-language="zh">Chinese</button>
+      <button id="language-en" class="language-option" type="button" data-card-language="en">English</button>
+      <div class="settings-label">Debug</div>
+      <button id="debug-mode-button" class="toggle-option" type="button">Debug</button>
+    </div>
+  </div>
+  <script src="controls_renderer.js"></script>
+</body>
+</html>

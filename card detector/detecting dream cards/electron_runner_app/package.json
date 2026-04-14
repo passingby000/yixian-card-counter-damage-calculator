@@ -1,0 +1,5 @@
+{
+  "name": "card-detector-electron-runner",
+  "private": true,
+  "main": "main.js"
+}

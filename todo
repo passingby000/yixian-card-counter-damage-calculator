@@ -1,0 +1,4 @@
+- add fate selection
+  yi-sim sources:
+  - general talents: yisim-master/lanke/talents.json
+  - immortal-fate and talent runtime stacks: yisim-master/gamestate_full_nolog.js

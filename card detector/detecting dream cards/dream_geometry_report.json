@@ -1,0 +1,1017 @@
+{
+  "generatedAt": "2026-04-10T16:05:15.517Z",
+  "screenshotPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/detecting dream cards/dream position recalibrate.png",
+  "truthPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/detecting dream cards/dreamrecalibratecards.txt",
+  "seasonalImagesDir": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/images/seasonal",
+  "aliasMap": {
+    "梦•星轨推演": "梦•星轨推衍"
+  },
+  "searchSettings": {
+    "pass1": {
+      "xOffsetMin": -40,
+      "xOffsetMax": 40,
+      "xOffsetStep": 8,
+      "yOffsetMin": -40,
+      "yOffsetMax": 40,
+      "yOffsetStep": 8,
+      "widthDeltaMin": -24,
+      "widthDeltaMax": 24,
+      "widthDeltaStep": 8,
+      "heightDeltaMin": -32,
+      "heightDeltaMax": 32,
+      "heightDeltaStep": 8
+    },
+    "scaleRefinement": {
+      "min": 0.94,
+      "max": 1.06,
+      "step": 0.002
+    },
+    "pass2XRefinement": {
+      "min": -18,
+      "max": 18,
+      "step": 1
+    }
+  },
+  "truthEntries": [
+    {
+      "slotIndex": 0,
+      "originalLine": "梦•落花有意5",
+      "normalizedName": "梦•落花有意",
+      "expectedPhase": 5,
+      "templateFile": "梦•落花有意5.png",
+      "adjacentTemplates": [
+        {
+          "phase": 4,
+          "templateFile": "梦•落花有意4.png"
+        }
+      ]
+    },
+    {
+      "slotIndex": 1,
+      "originalLine": "梦•蜻蜓点水4",
+      "normalizedName": "梦•蜻蜓点水",
+      "expectedPhase": 4,
+      "templateFile": "梦•蜻蜓点水4.png",
+      "adjacentTemplates": [
+        {
+          "phase": 3,
+          "templateFile": "梦•蜻蜓点水3.png"
+        },
+        {
+          "phase": 5,
+          "templateFile": "梦•蜻蜓点水5.png"
+        }
+      ]
+    },
+    {
+      "slotIndex": 2,
+      "originalLine": "梦•星轨推演5",
+      "normalizedName": "梦•星轨推衍",
+      "expectedPhase": 5,
+      "templateFile": "梦•星轨推衍5.png",
+      "adjacentTemplates": [
+        {
+          "phase": 4,
+          "templateFile": "梦•星轨推衍4.png"
+        }
+      ]
+    },
+    {
+      "slotIndex": 3,
+      "originalLine": "梦•星弈挡5",
+      "normalizedName": "梦•星弈挡",
+      "expectedPhase": 5,
+      "templateFile": "梦•星弈挡5.png",
+      "adjacentTemplates": [
+        {
+          "phase": 4,
+          "templateFile": "梦•星弈挡4.png"
+        }
+      ]
+    },
+    {
+      "slotIndex": 4,
+      "originalLine": "梦•两仪阵5",
+      "normalizedName": "梦•两仪阵",
+      "expectedPhase": 5,
+      "templateFile": "梦•两仪阵5.png",
+      "adjacentTemplates": [
+        {
+          "phase": 4,
+          "templateFile": "梦•两仪阵4.png"
+        }
+      ]
+    },
+    {
+      "slotIndex": 5,
+      "originalLine": "梦•轰雷掣电5",
+      "normalizedName": "梦•轰雷掣电",
+      "expectedPhase": 5,
+      "templateFile": "梦•轰雷掣电5.png",
+      "adjacentTemplates": [
+        {
+          "phase": 4,
+          "templateFile": "梦•轰雷掣电4.png"
+        }
+      ]
+    },
+    {
+      "slotIndex": 6,
+      "originalLine": "梦•离卦5",
+      "normalizedName": "梦•离卦",
+      "expectedPhase": 5,
+      "templateFile": "梦•离卦5.png",
+      "adjacentTemplates": [
+        {
+          "phase": 4,
+          "templateFile": "梦•离卦4.png"
+        }
+      ]
+    },
+    {
+      "slotIndex": 7,
+      "originalLine": "梦•落雷术5",
+      "normalizedName": "梦•落雷术",
+      "expectedPhase": 5,
+      "templateFile": "梦•落雷术5.png",
+      "adjacentTemplates": [
+        {
+          "phase": 4,
+          "templateFile": "梦•落雷术4.png"
+        }
+      ]
+    }
+  ],
+  "baselineEvaluation": {
+    "geometry": {
+      "slotXPositions": [
+        45,
+        276,
+        507,
+        738,
+        969,
+        1200,
+        1430,
+        1661
+      ],
+      "slotY": 333,
+      "slotWidth": 212,
+      "slotHeight": 343,
+      "xOffset": 0,
+      "yOffset": 0,
+      "widthDelta": 0,
+      "heightDelta": 0,
+      "scale": 1
+    },
+    "totalExactScore": 42259.2348,
+    "totalPhaseSeparation": 4142.3214,
+    "averageExactScore": 5282.4044,
+    "perSlot": [
+      {
+        "slotIndex": 0,
+        "expectedName": "梦•落花有意",
+        "expectedPhase": 5,
+        "templateFile": "梦•落花有意5.png",
+        "rect": {
+          "x": 68,
+          "y": 500,
+          "width": 318,
+          "height": 515
+        },
+        "exactScore": 5272.0929,
+        "phaseSeparation": 518.2222,
+        "adjacentPhaseComparisons": [
+          {
+            "phase": 4,
+            "templateFile": "梦•落花有意4.png",
+            "rgbMse": 5790.3151,
+            "differenceFromExact": 518.2222
+          }
+        ],
+        "cropPath": null
+      },
+      {
+        "slotIndex": 1,
+        "expectedName": "梦•蜻蜓点水",
+        "expectedPhase": 4,
+        "templateFile": "梦•蜻蜓点水4.png",
+        "rect": {
+          "x": 414,
+          "y": 500,
+          "width": 318,
+          "height": 515
+        },
+        "exactScore": 4618.0563,
+        "phaseSeparation": -178.7472,
+        "adjacentPhaseComparisons": [
+          {
+            "phase": 3,
+            "templateFile": "梦•蜻蜓点水3.png",
+            "rgbMse": 4439.3092,
+            "differenceFromExact": -178.7472
+          },
+          {
+            "phase": 5,
+            "templateFile": "梦•蜻蜓点水5.png",
+            "rgbMse": 5373.8547,
+            "differenceFromExact": 755.7983
+          }
+        ],
+        "cropPath": null
+      },
+      {
+        "slotIndex": 2,
+        "expectedName": "梦•星轨推衍",
+        "expectedPhase": 5,
+        "templateFile": "梦•星轨推衍5.png",
+        "rect": {
+          "x": 761,
+          "y": 500,
+          "width": 318,
+          "height": 515
+        },
+        "exactScore": 6865.6633,
+        "phaseSeparation": 723.7854,
+        "adjacentPhaseComparisons": [
+          {
+            "phase": 4,
+            "templateFile": "梦•星轨推衍4.png",
+            "rgbMse": 7589.4487,
+            "differenceFromExact": 723.7854
+          }
+        ],
+        "cropPath": null
+      },
+      {
+        "slotIndex": 3,
+        "expectedName": "梦•星弈挡",
+        "expectedPhase": 5,
+        "templateFile": "梦•星弈挡5.png",
+        "rect": {
+          "x": 1107,
+          "y": 500,
+          "width": 318,
+          "height": 515
+        },
+        "exactScore": 5088.1163,
+        "phaseSeparation": 672.9601,
+        "adjacentPhaseComparisons": [
+          {
+            "phase": 4,
+            "templateFile": "梦•星弈挡4.png",
+            "rgbMse": 5761.0764,
+            "differenceFromExact": 672.9601
+          }
+        ],
+        "cropPath": null
+      },
+      {
+        "slotIndex": 4,
+        "expectedName": "梦•两仪阵",
+        "expectedPhase": 5,
+        "templateFile": "梦•两仪阵5.png",
+        "rect": {
+          "x": 1454,
+          "y": 500,
+          "width": 318,
+          "height": 515
+        },
+        "exactScore": 5326.2007,
+        "phaseSeparation": 514.8823,
+        "adjacentPhaseComparisons": [
+          {
+            "phase": 4,
+            "templateFile": "梦•两仪阵4.png",
+            "rgbMse": 5841.083,
+            "differenceFromExact": 514.8823
+          }
+        ],
+        "cropPath": null
+      },
+      {
+        "slotIndex": 5,
+        "expectedName": "梦•轰雷掣电",
+        "expectedPhase": 5,
+        "templateFile": "梦•轰雷掣电5.png",
+        "rect": {
+          "x": 1800,
+          "y": 500,
+          "width": 318,
+          "height": 515
+        },
+        "exactScore": 5648.2565,
+        "phaseSeparation": 531.0625,
+        "adjacentPhaseComparisons": [
+          {
+            "phase": 4,
+            "templateFile": "梦•轰雷掣电4.png",
+            "rgbMse": 6179.319,
+            "differenceFromExact": 531.0625
+          }
+        ],
+        "cropPath": null
+      },
+      {
+        "slotIndex": 6,
+        "expectedName": "梦•离卦",
+        "expectedPhase": 5,
+        "templateFile": "梦•离卦5.png",
+        "rect": {
+          "x": 2145,
+          "y": 500,
+          "width": 318,
+          "height": 515
+        },
+        "exactScore": 4574.1182,
+        "phaseSeparation": 689.9974,
+        "adjacentPhaseComparisons": [
+          {
+            "phase": 4,
+            "templateFile": "梦•离卦4.png",
+            "rgbMse": 5264.1156,
+            "differenceFromExact": 689.9974
+          }
+        ],
+        "cropPath": null
+      },
+      {
+        "slotIndex": 7,
+        "expectedName": "梦•落雷术",
+        "expectedPhase": 5,
+        "templateFile": "梦•落雷术5.png",
+        "rect": {
+          "x": 2492,
+          "y": 500,
+          "width": 318,
+          "height": 515
+        },
+        "exactScore": 4866.7305,
+        "phaseSeparation": 670.1586,
+        "adjacentPhaseComparisons": [
+          {
+            "phase": 4,
+            "templateFile": "梦•落雷术4.png",
+            "rgbMse": 5536.8891,
+            "differenceFromExact": 670.1586
+          }
+        ],
+        "cropPath": null
+      }
+    ]
+  },
+  "coarseBestEvaluation": {
+    "geometry": {
+      "slotXPositions": [
+        53,
+        284,
+        515,
+        746,
+        977,
+        1208,
+        1438,
+        1669
+      ],
+      "slotY": 333,
+      "slotWidth": 196,
+      "slotHeight": 335,
+      "xOffset": 8,
+      "yOffset": 0,
+      "widthDelta": -16,
+      "heightDelta": -8,
+      "scale": 1
+    },
+    "totalExactScore": 19534.5399,
+    "totalPhaseSeparation": 7623.0397,
+    "averageExactScore": 2441.8175,
+    "perSlot": [
+      {
+        "slotIndex": 0,
+        "expectedName": "梦•落花有意",
+        "expectedPhase": 5,
+        "templateFile": "梦•落花有意5.png",
+        "rect": {
+          "x": 80,
+          "y": 500,
+          "width": 294,
+          "height": 503
+        },
+        "exactScore": 2694.7536,
+        "phaseSeparation": 839.9939,
+        "adjacentPhaseComparisons": [
+          {
+            "phase": 4,
+            "templateFile": "梦•落花有意4.png",
+            "rgbMse": 3534.7475,
+            "differenceFromExact": 839.9939
+          }
+        ],
+        "cropPath": null
+      },
+      {
+        "slotIndex": 1,
+        "expectedName": "梦•蜻蜓点水",
+        "expectedPhase": 4,
+        "templateFile": "梦•蜻蜓点水4.png",
+        "rect": {
+          "x": 426,
+          "y": 500,
+          "width": 294,
+          "height": 503
+        },
+        "exactScore": 1896.6992,
+        "phaseSeparation": 363.1673,
+        "adjacentPhaseComparisons": [
+          {
+            "phase": 3,
+            "templateFile": "梦•蜻蜓点水3.png",
+            "rgbMse": 2259.8665,
+            "differenceFromExact": 363.1673
+          },
+          {
+            "phase": 5,
+            "templateFile": "梦•蜻蜓点水5.png",
+            "rgbMse": 2745.1312,
+            "differenceFromExact": 848.4319
+          }
+        ],
+        "cropPath": null
+      },
+      {
+        "slotIndex": 2,
+        "expectedName": "梦•星轨推衍",
+        "expectedPhase": 5,
+        "templateFile": "梦•星轨推衍5.png",
+        "rect": {
+          "x": 773,
+          "y": 500,
+          "width": 294,
+          "height": 503
+        },
+        "exactScore": 3448.398,
+        "phaseSeparation": 1286.0476,
+        "adjacentPhaseComparisons": [
+          {
+            "phase": 4,
+            "templateFile": "梦•星轨推衍4.png",
+            "rgbMse": 4734.4456,
+            "differenceFromExact": 1286.0476
+          }
+        ],
+        "cropPath": null
+      },
+      {
+        "slotIndex": 3,
+        "expectedName": "梦•星弈挡",
+        "expectedPhase": 5,
+        "templateFile": "梦•星弈挡5.png",
+        "rect": {
+          "x": 1119,
+          "y": 500,
+          "width": 294,
+          "height": 503
+        },
+        "exactScore": 1961.8342,
+        "phaseSeparation": 998.4177,
+        "adjacentPhaseComparisons": [
+          {
+            "phase": 4,
+            "templateFile": "梦•星弈挡4.png",
+            "rgbMse": 2960.2519,
+            "differenceFromExact": 998.4177
+          }
+        ],
+        "cropPath": null
+      },
+      {
+        "slotIndex": 4,
+        "expectedName": "梦•两仪阵",
+        "expectedPhase": 5,
+        "templateFile": "梦•两仪阵5.png",
+        "rect": {
+          "x": 1466,
+          "y": 500,
+          "width": 294,
+          "height": 503
+        },
+        "exactScore": 2436.1804,
+        "phaseSeparation": 1254.6808,
+        "adjacentPhaseComparisons": [
+          {
+            "phase": 4,
+            "templateFile": "梦•两仪阵4.png",
+            "rgbMse": 3690.8612,
+            "differenceFromExact": 1254.6808
+          }
+        ],
+        "cropPath": null
+      },
+      {
+        "slotIndex": 5,
+        "expectedName": "梦•轰雷掣电",
+        "expectedPhase": 5,
+        "templateFile": "梦•轰雷掣电5.png",
+        "rect": {
+          "x": 1812,
+          "y": 500,
+          "width": 294,
+          "height": 503
+        },
+        "exactScore": 2249.1733,
+        "phaseSeparation": 883.0545,
+        "adjacentPhaseComparisons": [
+          {
+            "phase": 4,
+            "templateFile": "梦•轰雷掣电4.png",
+            "rgbMse": 3132.2278,
+            "differenceFromExact": 883.0545
+          }
+        ],
+        "cropPath": null
+      },
+      {
+        "slotIndex": 6,
+        "expectedName": "梦•离卦",
+        "expectedPhase": 5,
+        "templateFile": "梦•离卦5.png",
+        "rect": {
+          "x": 2157,
+          "y": 500,
+          "width": 294,
+          "height": 503
+        },
+        "exactScore": 2253.26,
+        "phaseSeparation": 1000.4223,
+        "adjacentPhaseComparisons": [
+          {
+            "phase": 4,
+            "templateFile": "梦•离卦4.png",
+            "rgbMse": 3253.6823,
+            "differenceFromExact": 1000.4223
+          }
+        ],
+        "cropPath": null
+      },
+      {
+        "slotIndex": 7,
+        "expectedName": "梦•落雷术",
+        "expectedPhase": 5,
+        "templateFile": "梦•落雷术5.png",
+        "rect": {
+          "x": 2504,
+          "y": 500,
+          "width": 294,
+          "height": 503
+        },
+        "exactScore": 2594.2411,
+        "phaseSeparation": 997.2556,
+        "adjacentPhaseComparisons": [
+          {
+            "phase": 4,
+            "templateFile": "梦•落雷术4.png",
+            "rgbMse": 3591.4967,
+            "differenceFromExact": 997.2556
+          }
+        ],
+        "cropPath": null
+      }
+    ]
+  },
+  "scaledBestEvaluation": {
+    "geometry": {
+      "slotXPositions": [
+        53,
+        284,
+        515,
+        746,
+        977,
+        1208,
+        1438,
+        1669
+      ],
+      "slotY": 333,
+      "slotWidth": 196,
+      "slotHeight": 336,
+      "xOffset": 8,
+      "yOffset": 0,
+      "widthDelta": -16,
+      "heightDelta": -8,
+      "scale": 1.002
+    },
+    "totalExactScore": 19419.5044,
+    "totalPhaseSeparation": 7638.0304,
+    "averageExactScore": 2427.438,
+    "perSlot": [
+      {
+        "slotIndex": 0,
+        "expectedName": "梦•落花有意",
+        "expectedPhase": 5,
+        "templateFile": "梦•落花有意5.png",
+        "rect": {
+          "x": 80,
+          "y": 500,
+          "width": 294,
+          "height": 504
+        },
+        "exactScore": 2674.711,
+        "phaseSeparation": 842.2331,
+        "adjacentPhaseComparisons": [
+          {
+            "phase": 4,
+            "templateFile": "梦•落花有意4.png",
+            "rgbMse": 3516.9441,
+            "differenceFromExact": 842.2331
+          }
+        ],
+        "cropPath": null
+      },
+      {
+        "slotIndex": 1,
+        "expectedName": "梦•蜻蜓点水",
+        "expectedPhase": 4,
+        "templateFile": "梦•蜻蜓点水4.png",
+        "rect": {
+          "x": 426,
+          "y": 500,
+          "width": 294,
+          "height": 504
+        },
+        "exactScore": 1881.3749,
+        "phaseSeparation": 360.6808,
+        "adjacentPhaseComparisons": [
+          {
+            "phase": 3,
+            "templateFile": "梦•蜻蜓点水3.png",
+            "rgbMse": 2242.0557,
+            "differenceFromExact": 360.6808
+          },
+          {
+            "phase": 5,
+            "templateFile": "梦•蜻蜓点水5.png",
+            "rgbMse": 2732.0425,
+            "differenceFromExact": 850.6676
+          }
+        ],
+        "cropPath": null
+      },
+      {
+        "slotIndex": 2,
+        "expectedName": "梦•星轨推衍",
+        "expectedPhase": 5,
+        "templateFile": "梦•星轨推衍5.png",
+        "rect": {
+          "x": 773,
+          "y": 500,
+          "width": 294,
+          "height": 504
+        },
+        "exactScore": 3418.2661,
+        "phaseSeparation": 1323.4104,
+        "adjacentPhaseComparisons": [
+          {
+            "phase": 4,
+            "templateFile": "梦•星轨推衍4.png",
+            "rgbMse": 4741.6765,
+            "differenceFromExact": 1323.4104
+          }
+        ],
+        "cropPath": null
+      },
+      {
+        "slotIndex": 3,
+        "expectedName": "梦•星弈挡",
+        "expectedPhase": 5,
+        "templateFile": "梦•星弈挡5.png",
+        "rect": {
+          "x": 1119,
+          "y": 500,
+          "width": 294,
+          "height": 504
+        },
+        "exactScore": 1947.1371,
+        "phaseSeparation": 999.5924,
+        "adjacentPhaseComparisons": [
+          {
+            "phase": 4,
+            "templateFile": "梦•星弈挡4.png",
+            "rgbMse": 2946.7295,
+            "differenceFromExact": 999.5924
+          }
+        ],
+        "cropPath": null
+      },
+      {
+        "slotIndex": 4,
+        "expectedName": "梦•两仪阵",
+        "expectedPhase": 5,
+        "templateFile": "梦•两仪阵5.png",
+        "rect": {
+          "x": 1466,
+          "y": 500,
+          "width": 294,
+          "height": 504
+        },
+        "exactScore": 2413.1444,
+        "phaseSeparation": 1229.1985,
+        "adjacentPhaseComparisons": [
+          {
+            "phase": 4,
+            "templateFile": "梦•两仪阵4.png",
+            "rgbMse": 3642.3429,
+            "differenceFromExact": 1229.1985
+          }
+        ],
+        "cropPath": null
+      },
+      {
+        "slotIndex": 5,
+        "expectedName": "梦•轰雷掣电",
+        "expectedPhase": 5,
+        "templateFile": "梦•轰雷掣电5.png",
+        "rect": {
+          "x": 1812,
+          "y": 500,
+          "width": 294,
+          "height": 504
+        },
+        "exactScore": 2245.7046,
+        "phaseSeparation": 883.569,
+        "adjacentPhaseComparisons": [
+          {
+            "phase": 4,
+            "templateFile": "梦•轰雷掣电4.png",
+            "rgbMse": 3129.2735,
+            "differenceFromExact": 883.569
+          }
+        ],
+        "cropPath": null
+      },
+      {
+        "slotIndex": 6,
+        "expectedName": "梦•离卦",
+        "expectedPhase": 5,
+        "templateFile": "梦•离卦5.png",
+        "rect": {
+          "x": 2157,
+          "y": 500,
+          "width": 294,
+          "height": 504
+        },
+        "exactScore": 2210.3737,
+        "phaseSeparation": 1000.53,
+        "adjacentPhaseComparisons": [
+          {
+            "phase": 4,
+            "templateFile": "梦•离卦4.png",
+            "rgbMse": 3210.9037,
+            "differenceFromExact": 1000.53
+          }
+        ],
+        "cropPath": null
+      },
+      {
+        "slotIndex": 7,
+        "expectedName": "梦•落雷术",
+        "expectedPhase": 5,
+        "templateFile": "梦•落雷术5.png",
+        "rect": {
+          "x": 2504,
+          "y": 500,
+          "width": 294,
+          "height": 504
+        },
+        "exactScore": 2628.7926,
+        "phaseSeparation": 998.8162,
+        "adjacentPhaseComparisons": [
+          {
+            "phase": 4,
+            "templateFile": "梦•落雷术4.png",
+            "rgbMse": 3627.6087,
+            "differenceFromExact": 998.8162
+          }
+        ],
+        "cropPath": null
+      }
+    ]
+  },
+  "winningEvaluation": {
+    "geometry": {
+      "slotXPositions": [
+        53,
+        284,
+        515,
+        746,
+        977,
+        1208,
+        1439,
+        1670
+      ],
+      "slotY": 333,
+      "slotWidth": 196,
+      "slotHeight": 336,
+      "xOffset": 8,
+      "yOffset": 0,
+      "widthDelta": -16,
+      "heightDelta": -8,
+      "scale": 1.002
+    },
+    "totalExactScore": 18718.2445,
+    "totalPhaseSeparation": 7657.1721,
+    "averageExactScore": 2339.7806,
+    "perSlot": [
+      {
+        "slotIndex": 0,
+        "expectedName": "梦•落花有意",
+        "expectedPhase": 5,
+        "templateFile": "梦•落花有意5.png",
+        "rect": {
+          "x": 80,
+          "y": 500,
+          "width": 294,
+          "height": 504
+        },
+        "exactScore": 2674.711,
+        "phaseSeparation": 842.2331,
+        "adjacentPhaseComparisons": [
+          {
+            "phase": 4,
+            "templateFile": "梦•落花有意4.png",
+            "rgbMse": 3516.9441,
+            "differenceFromExact": 842.2331
+          }
+        ],
+        "cropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/detecting dream cards/dream_geometry_debug_slots/slot-1.png"
+      },
+      {
+        "slotIndex": 1,
+        "expectedName": "梦•蜻蜓点水",
+        "expectedPhase": 4,
+        "templateFile": "梦•蜻蜓点水4.png",
+        "rect": {
+          "x": 426,
+          "y": 500,
+          "width": 294,
+          "height": 504
+        },
+        "exactScore": 1881.3749,
+        "phaseSeparation": 360.6808,
+        "adjacentPhaseComparisons": [
+          {
+            "phase": 3,
+            "templateFile": "梦•蜻蜓点水3.png",
+            "rgbMse": 2242.0557,
+            "differenceFromExact": 360.6808
+          },
+          {
+            "phase": 5,
+            "templateFile": "梦•蜻蜓点水5.png",
+            "rgbMse": 2732.0425,
+            "differenceFromExact": 850.6676
+          }
+        ],
+        "cropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/detecting dream cards/dream_geometry_debug_slots/slot-2.png"
+      },
+      {
+        "slotIndex": 2,
+        "expectedName": "梦•星轨推衍",
+        "expectedPhase": 5,
+        "templateFile": "梦•星轨推衍5.png",
+        "rect": {
+          "x": 773,
+          "y": 500,
+          "width": 294,
+          "height": 504
+        },
+        "exactScore": 3418.2661,
+        "phaseSeparation": 1323.4104,
+        "adjacentPhaseComparisons": [
+          {
+            "phase": 4,
+            "templateFile": "梦•星轨推衍4.png",
+            "rgbMse": 4741.6765,
+            "differenceFromExact": 1323.4104
+          }
+        ],
+        "cropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/detecting dream cards/dream_geometry_debug_slots/slot-3.png"
+      },
+      {
+        "slotIndex": 3,
+        "expectedName": "梦•星弈挡",
+        "expectedPhase": 5,
+        "templateFile": "梦•星弈挡5.png",
+        "rect": {
+          "x": 1119,
+          "y": 500,
+          "width": 294,
+          "height": 504
+        },
+        "exactScore": 1947.1371,
+        "phaseSeparation": 999.5924,
+        "adjacentPhaseComparisons": [
+          {
+            "phase": 4,
+            "templateFile": "梦•星弈挡4.png",
+            "rgbMse": 2946.7295,
+            "differenceFromExact": 999.5924
+          }
+        ],
+        "cropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/detecting dream cards/dream_geometry_debug_slots/slot-4.png"
+      },
+      {
+        "slotIndex": 4,
+        "expectedName": "梦•两仪阵",
+        "expectedPhase": 5,
+        "templateFile": "梦•两仪阵5.png",
+        "rect": {
+          "x": 1466,
+          "y": 500,
+          "width": 294,
+          "height": 504
+        },
+        "exactScore": 2413.1444,
+        "phaseSeparation": 1229.1985,
+        "adjacentPhaseComparisons": [
+          {
+            "phase": 4,
+            "templateFile": "梦•两仪阵4.png",
+            "rgbMse": 3642.3429,
+            "differenceFromExact": 1229.1985
+          }
+        ],
+        "cropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/detecting dream cards/dream_geometry_debug_slots/slot-5.png"
+      },
+      {
+        "slotIndex": 5,
+        "expectedName": "梦•轰雷掣电",
+        "expectedPhase": 5,
+        "templateFile": "梦•轰雷掣电5.png",
+        "rect": {
+          "x": 1812,
+          "y": 500,
+          "width": 294,
+          "height": 504
+        },
+        "exactScore": 2245.7046,
+        "phaseSeparation": 883.569,
+        "adjacentPhaseComparisons": [
+          {
+            "phase": 4,
+            "templateFile": "梦•轰雷掣电4.png",
+            "rgbMse": 3129.2735,
+            "differenceFromExact": 883.569
+          }
+        ],
+        "cropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/detecting dream cards/dream_geometry_debug_slots/slot-6.png"
+      },
+      {
+        "slotIndex": 6,
+        "expectedName": "梦•离卦",
+        "expectedPhase": 5,
+        "templateFile": "梦•离卦5.png",
+        "rect": {
+          "x": 2159,
+          "y": 500,
+          "width": 294,
+          "height": 504
+        },
+        "exactScore": 1729.3082,
+        "phaseSeparation": 1012.1955,
+        "adjacentPhaseComparisons": [
+          {
+            "phase": 4,
+            "templateFile": "梦•离卦4.png",
+            "rgbMse": 2741.5037,
+            "differenceFromExact": 1012.1955
+          }
+        ],
+        "cropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/detecting dream cards/dream_geometry_debug_slots/slot-7.png"
+      },
+      {
+        "slotIndex": 7,
+        "expectedName": "梦•落雷术",
+        "expectedPhase": 5,
+        "templateFile": "梦•落雷术5.png",
+        "rect": {
+          "x": 2505,
+          "y": 500,
+          "width": 294,
+          "height": 504
+        },
+        "exactScore": 2408.5981,
+        "phaseSeparation": 1006.2924,
+        "adjacentPhaseComparisons": [
+          {
+            "phase": 4,
+            "templateFile": "梦•落雷术4.png",
+            "rgbMse": 3414.8905,
+            "differenceFromExact": 1006.2924
+          }
+        ],
+        "cropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/detecting dream cards/dream_geometry_debug_slots/slot-8.png"
+      }
+    ]
+  },
+  "improvementVsBaseline": {
+    "totalExactScoreDelta": 23540.9903,
+    "averageExactScoreDelta": 2942.6238
+  }
+}

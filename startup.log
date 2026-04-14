@@ -1,0 +1,10 @@
+[2026-04-14T16:02:59.761Z] uncaughtException
+TypeError: Cannot read properties of undefined (reading 'whenReady')
+    at Object.<anonymous> (/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/main.js:922:5)
+    at Module._compile (node:internal/modules/cjs/loader:1269:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1324:10)
+    at Module.load (node:internal/modules/cjs/loader:1124:32)
+    at Module._load (node:internal/modules/cjs/loader:965:12)
+    at f._load (node:electron/js2c/asar_bundle:2:13377)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:96:12)
+    at node:internal/main/run_main_module:23:47

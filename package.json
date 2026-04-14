@@ -1,0 +1,78 @@
+{
+  "name": "yixian-overlay",
+  "version": "0.1.0",
+  "description": "Minimal overlay card counter for YiXianPai (separate project)",
+  "main": "main.js",
+  "scripts": {
+    "start": "env -u ELECTRON_RUN_AS_NODE electron .",
+    "dist": "electron-builder --publish never",
+    "dist:mac": "electron-builder --mac zip --publish never",
+    "dist:win": "electron-builder --win nsis zip --publish never"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@leeoniya/ufuzzy": "1.0.14",
+    "chokidar": "^3.6.0",
+    "seedrandom": "^3.0.5"
+  },
+  "devDependencies": {
+    "electron": "^25.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.raymondwang.yixian-overlay",
+    "productName": "Yixian Overlay",
+    "asar": true,
+    "files": [
+      "**/*",
+      "!card detector{,/**}",
+      "!yisim{,/**}",
+      "!vendor/yisim-master{,/**}",
+      "!images{,/**}",
+      "!data{,/**}",
+      "!overlay_settings.json",
+      "!ConvertedHandCard.json",
+      "!ConvertedCardOperationLog.json",
+      "!dist{,/**}",
+      "!.github{,/**}"
+    ],
+    "extraResources": [
+      {
+        "from": "images",
+        "to": "images",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": "data",
+        "to": "data",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": "yisim",
+        "to": "vendor/yisim",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "mac": {
+      "identity": null,
+      "category": "public.app-category.utilities",
+      "target": [
+        "zip"
+      ]
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "zip"
+      ]
+    }
+  }
+}

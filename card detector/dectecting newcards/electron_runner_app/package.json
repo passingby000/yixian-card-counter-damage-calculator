@@ -1,0 +1,5 @@
+{
+  "name": "detecting-newcards-electron-runner",
+  "private": true,
+  "main": "main.js"
+}

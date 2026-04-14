@@ -1,0 +1,49 @@
+{
+  "baseScreenWidth": 1920,
+  "baseScreenHeight": 1200,
+  "slotY": 333,
+  "slotWidth": 212,
+  "slotHeight": 343,
+  "slotXPositions": [45, 276, 507, 738, 969, 1200, 1430, 1661],
+  "dreamGeometry": {
+    "slotY": 333,
+    "slotWidth": 196,
+    "slotHeight": 336,
+    "slotXPositions": [53, 284, 515, 746, 977, 1208, 1439, 1670]
+  },
+  "stableRegions": [
+    { "x": 0.14, "y": 0.1, "width": 0.72, "height": 0.5, "weight": 0.22 },
+    { "x": 0.03, "y": 0.03, "width": 0.28, "height": 0.2, "weight": 0.38 },
+    { "x": 0.69, "y": 0.03, "width": 0.23, "height": 0.16, "weight": 0.14 },
+    { "x": 0.08, "y": 0.72, "width": 0.84, "height": 0.18, "weight": 0.16 },
+    { "x": 0.03, "y": 0.2, "width": 0.12, "height": 0.58, "weight": 0.05 },
+    { "x": 0.85, "y": 0.2, "width": 0.12, "height": 0.58, "weight": 0.05 }
+  ],
+  "defaultMetric": "rgbMse",
+  "metrics": {
+    "ssim": {
+      "label": "Weighted SSIM",
+      "higherIsBetter": true,
+      "threshold": 0.84,
+      "margin": 0.03
+    },
+    "ncc": {
+      "label": "Weighted NCC",
+      "higherIsBetter": true,
+      "threshold": 0.9,
+      "margin": 0.015
+    },
+    "grayMse": {
+      "label": "Grayscale MSE",
+      "higherIsBetter": false,
+      "threshold": 900,
+      "margin": 80
+    },
+    "rgbMse": {
+      "label": "RGB MSE",
+      "higherIsBetter": false,
+      "threshold": 2400,
+      "margin": 10
+    }
+  }
+}

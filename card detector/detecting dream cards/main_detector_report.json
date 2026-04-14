@@ -1,0 +1,554 @@
+{
+  "generatedAt": "2026-04-10T16:06:21.147Z",
+  "screenshotPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/detecting dream cards/dream card detection2.png",
+  "handJsonPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/detecting dream cards/dreamcarddetection2.json",
+  "dreamGeometryReportPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/detecting dream cards/dream_geometry_report.json",
+  "imagesDir": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/images",
+  "handCardNames": [
+    "梦•御空剑阵",
+    "剑劈",
+    "护身灵气",
+    "震雷剑",
+    "查体",
+    "飞牙剑"
+  ],
+  "detector": {
+    "metric": "rgbMse",
+    "scoreDirection": "lower-is-better",
+    "threshold": 2400,
+    "marginThreshold": 10,
+    "candidateCount": 17,
+    "normalGeometry": {
+      "slotXPositions": [
+        45,
+        276,
+        507,
+        738,
+        969,
+        1200,
+        1430,
+        1661
+      ],
+      "slotY": 333,
+      "slotWidth": 212,
+      "slotHeight": 343
+    },
+    "dreamGeometry": {
+      "slotXPositions": [
+        53,
+        284,
+        515,
+        746,
+        977,
+        1208,
+        1439,
+        1670
+      ],
+      "slotY": 333,
+      "slotWidth": 196,
+      "slotHeight": 336
+    }
+  },
+  "slots": [
+    {
+      "name": "梦•御空剑阵",
+      "level": 1,
+      "phase": 1,
+      "isDream": true,
+      "templateFile": "梦•御空剑阵1.png",
+      "confidence": 0.8002
+    },
+    {
+      "name": "剑劈",
+      "level": 2,
+      "phase": null,
+      "isDream": false,
+      "templateFile": "剑劈2.png",
+      "confidence": 0.9795
+    },
+    {
+      "name": "护身灵气",
+      "level": 1,
+      "phase": null,
+      "isDream": false,
+      "templateFile": "护身灵气1.png",
+      "confidence": 0.9699
+    },
+    {
+      "name": "震雷剑",
+      "level": 1,
+      "phase": null,
+      "isDream": false,
+      "templateFile": "震雷剑1.png",
+      "confidence": 0.9685
+    },
+    null,
+    null,
+    null,
+    null
+  ],
+  "slotResults": [
+    {
+      "slotIndex": 0,
+      "rect": {
+        "x": 80,
+        "y": 500,
+        "width": 294,
+        "height": 504
+      },
+      "metric": "rgbMse",
+      "accepted": true,
+      "bestScore": 2332.2619,
+      "margin": 15.0209,
+      "displayConfidence": 0.8002,
+      "bestCandidate": {
+        "name": "梦•御空剑阵",
+        "level": 1,
+        "phase": 1,
+        "isDream": true,
+        "templateFile": "梦•御空剑阵1.png",
+        "primaryScore": 2332.2619,
+        "metrics": {
+          "ssim": 0.6924,
+          "ncc": 0.9555,
+          "grayMse": 2349.1094,
+          "rgbMse": 2332.2619
+        }
+      },
+      "secondCandidate": {
+        "name": "梦•御空剑阵",
+        "level": 1,
+        "phase": 2,
+        "isDream": true,
+        "templateFile": "梦•御空剑阵2.png",
+        "primaryScore": 2347.2829,
+        "metrics": {
+          "ssim": 0.691,
+          "ncc": 0.9549,
+          "grayMse": 2354.2988,
+          "rgbMse": 2347.2829
+        }
+      },
+      "card": {
+        "name": "梦•御空剑阵",
+        "level": 1,
+        "phase": 1,
+        "isDream": true,
+        "templateFile": "梦•御空剑阵1.png",
+        "confidence": 0.8002
+      }
+    },
+    {
+      "slotIndex": 1,
+      "rect": {
+        "x": 414,
+        "y": 500,
+        "width": 318,
+        "height": 515
+      },
+      "metric": "rgbMse",
+      "accepted": true,
+      "bestScore": 653.902,
+      "margin": 233.7706,
+      "displayConfidence": 0.9795,
+      "bestCandidate": {
+        "name": "剑劈",
+        "level": 2,
+        "phase": null,
+        "isDream": false,
+        "templateFile": "剑劈2.png",
+        "primaryScore": 653.902,
+        "metrics": {
+          "ssim": 0.8822,
+          "ncc": 0.9806,
+          "grayMse": 652.3239,
+          "rgbMse": 653.902
+        }
+      },
+      "secondCandidate": {
+        "name": "剑劈",
+        "level": 1,
+        "phase": null,
+        "isDream": false,
+        "templateFile": "剑劈1.png",
+        "primaryScore": 887.6727,
+        "metrics": {
+          "ssim": 0.8752,
+          "ncc": 0.9762,
+          "grayMse": 804.1893,
+          "rgbMse": 887.6727
+        }
+      },
+      "card": {
+        "name": "剑劈",
+        "level": 2,
+        "phase": null,
+        "isDream": false,
+        "templateFile": "剑劈2.png",
+        "confidence": 0.9795
+      }
+    },
+    {
+      "slotIndex": 2,
+      "rect": {
+        "x": 761,
+        "y": 500,
+        "width": 318,
+        "height": 515
+      },
+      "metric": "rgbMse",
+      "accepted": true,
+      "bestScore": 532.9886,
+      "margin": 155.9868,
+      "displayConfidence": 0.9699,
+      "bestCandidate": {
+        "name": "护身灵气",
+        "level": 1,
+        "phase": null,
+        "isDream": false,
+        "templateFile": "护身灵气1.png",
+        "primaryScore": 532.9886,
+        "metrics": {
+          "ssim": 0.9348,
+          "ncc": 0.9846,
+          "grayMse": 532.0861,
+          "rgbMse": 532.9886
+        }
+      },
+      "secondCandidate": {
+        "name": "护身灵气",
+        "level": 2,
+        "phase": null,
+        "isDream": false,
+        "templateFile": "护身灵气2.png",
+        "primaryScore": 688.9754,
+        "metrics": {
+          "ssim": 0.916,
+          "ncc": 0.9826,
+          "grayMse": 612.6033,
+          "rgbMse": 688.9754
+        }
+      },
+      "card": {
+        "name": "护身灵气",
+        "level": 1,
+        "phase": null,
+        "isDream": false,
+        "templateFile": "护身灵气1.png",
+        "confidence": 0.9699
+      }
+    },
+    {
+      "slotIndex": 3,
+      "rect": {
+        "x": 1107,
+        "y": 500,
+        "width": 318,
+        "height": 515
+      },
+      "metric": "rgbMse",
+      "accepted": true,
+      "bestScore": 720.0403,
+      "margin": 148.8999,
+      "displayConfidence": 0.9685,
+      "bestCandidate": {
+        "name": "震雷剑",
+        "level": 1,
+        "phase": null,
+        "isDream": false,
+        "templateFile": "震雷剑1.png",
+        "primaryScore": 720.0403,
+        "metrics": {
+          "ssim": 0.9077,
+          "ncc": 0.9812,
+          "grayMse": 721.4406,
+          "rgbMse": 720.0403
+        }
+      },
+      "secondCandidate": {
+        "name": "震雷剑",
+        "level": 2,
+        "phase": null,
+        "isDream": false,
+        "templateFile": "震雷剑2.png",
+        "primaryScore": 868.9403,
+        "metrics": {
+          "ssim": 0.8885,
+          "ncc": 0.9793,
+          "grayMse": 803.3977,
+          "rgbMse": 868.9403
+        }
+      },
+      "card": {
+        "name": "震雷剑",
+        "level": 1,
+        "phase": null,
+        "isDream": false,
+        "templateFile": "震雷剑1.png",
+        "confidence": 0.9685
+      }
+    },
+    {
+      "slotIndex": 4,
+      "rect": {
+        "x": 1454,
+        "y": 500,
+        "width": 318,
+        "height": 515
+      },
+      "metric": "rgbMse",
+      "accepted": false,
+      "bestScore": 8959.268,
+      "margin": 3.1498,
+      "displayConfidence": 0.2537,
+      "bestCandidate": {
+        "name": "飞牙剑",
+        "level": 1,
+        "phase": null,
+        "isDream": false,
+        "templateFile": "飞牙剑1.png",
+        "primaryScore": 8959.268,
+        "metrics": {
+          "ssim": -0.0448,
+          "ncc": 0.8313,
+          "grayMse": 9140.0211,
+          "rgbMse": 8959.268
+        }
+      },
+      "secondCandidate": {
+        "name": "飞牙剑",
+        "level": 2,
+        "phase": null,
+        "isDream": false,
+        "templateFile": "飞牙剑2.png",
+        "primaryScore": 8962.4178,
+        "metrics": {
+          "ssim": -0.0408,
+          "ncc": 0.8478,
+          "grayMse": 9023.015,
+          "rgbMse": 8962.4178
+        }
+      },
+      "card": null
+    },
+    {
+      "slotIndex": 5,
+      "rect": {
+        "x": 1800,
+        "y": 500,
+        "width": 318,
+        "height": 515
+      },
+      "metric": "rgbMse",
+      "accepted": false,
+      "bestScore": 9021.202,
+      "margin": 0.5356,
+      "displayConfidence": 0.1584,
+      "bestCandidate": {
+        "name": "飞牙剑",
+        "level": 1,
+        "phase": null,
+        "isDream": false,
+        "templateFile": "飞牙剑1.png",
+        "primaryScore": 9021.202,
+        "metrics": {
+          "ssim": -0.0497,
+          "ncc": 0.8302,
+          "grayMse": 9200.9597,
+          "rgbMse": 9021.202
+        }
+      },
+      "secondCandidate": {
+        "name": "飞牙剑",
+        "level": 2,
+        "phase": null,
+        "isDream": false,
+        "templateFile": "飞牙剑2.png",
+        "primaryScore": 9021.7376,
+        "metrics": {
+          "ssim": -0.0464,
+          "ncc": 0.8467,
+          "grayMse": 9082.5466,
+          "rgbMse": 9021.7376
+        }
+      },
+      "card": null
+    },
+    {
+      "slotIndex": 6,
+      "rect": {
+        "x": 2145,
+        "y": 500,
+        "width": 318,
+        "height": 515
+      },
+      "metric": "rgbMse",
+      "accepted": false,
+      "bestScore": 8959.1262,
+      "margin": 8.7805,
+      "displayConfidence": 0.3677,
+      "bestCandidate": {
+        "name": "飞牙剑",
+        "level": 2,
+        "phase": null,
+        "isDream": false,
+        "templateFile": "飞牙剑2.png",
+        "primaryScore": 8959.1262,
+        "metrics": {
+          "ssim": -0.0562,
+          "ncc": 0.8435,
+          "grayMse": 9012.3994,
+          "rgbMse": 8959.1262
+        }
+      },
+      "secondCandidate": {
+        "name": "飞牙剑",
+        "level": 1,
+        "phase": null,
+        "isDream": false,
+        "templateFile": "飞牙剑1.png",
+        "primaryScore": 8967.9067,
+        "metrics": {
+          "ssim": -0.0589,
+          "ncc": 0.827,
+          "grayMse": 9142.5282,
+          "rgbMse": 8967.9067
+        }
+      },
+      "card": null
+    },
+    {
+      "slotIndex": 7,
+      "rect": {
+        "x": 2492,
+        "y": 500,
+        "width": 318,
+        "height": 515
+      },
+      "metric": "rgbMse",
+      "accepted": false,
+      "bestScore": 8964.5961,
+      "margin": 4.4797,
+      "displayConfidence": 0.2885,
+      "bestCandidate": {
+        "name": "飞牙剑",
+        "level": 2,
+        "phase": null,
+        "isDream": false,
+        "templateFile": "飞牙剑2.png",
+        "primaryScore": 8964.5961,
+        "metrics": {
+          "ssim": -0.0536,
+          "ncc": 0.8436,
+          "grayMse": 9020.0621,
+          "rgbMse": 8964.5961
+        }
+      },
+      "secondCandidate": {
+        "name": "飞牙剑",
+        "level": 1,
+        "phase": null,
+        "isDream": false,
+        "templateFile": "飞牙剑1.png",
+        "primaryScore": 8969.0758,
+        "metrics": {
+          "ssim": -0.0563,
+          "ncc": 0.8271,
+          "grayMse": 9146.2957,
+          "rgbMse": 8969.0758
+        }
+      },
+      "card": null
+    }
+  ],
+  "slotCrops": [
+    {
+      "slotIndex": 0,
+      "rect": {
+        "x": 80,
+        "y": 500,
+        "width": 294,
+        "height": 504
+      },
+      "cropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/detecting dream cards/main_detector_debug_slots/slot-1.png",
+      "geometryType": "dream"
+    },
+    {
+      "slotIndex": 1,
+      "rect": {
+        "x": 414,
+        "y": 500,
+        "width": 318,
+        "height": 515
+      },
+      "cropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/detecting dream cards/main_detector_debug_slots/slot-2.png",
+      "geometryType": "normal"
+    },
+    {
+      "slotIndex": 2,
+      "rect": {
+        "x": 761,
+        "y": 500,
+        "width": 318,
+        "height": 515
+      },
+      "cropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/detecting dream cards/main_detector_debug_slots/slot-3.png",
+      "geometryType": "normal"
+    },
+    {
+      "slotIndex": 3,
+      "rect": {
+        "x": 1107,
+        "y": 500,
+        "width": 318,
+        "height": 515
+      },
+      "cropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/detecting dream cards/main_detector_debug_slots/slot-4.png",
+      "geometryType": "normal"
+    },
+    {
+      "slotIndex": 4,
+      "rect": {
+        "x": 1454,
+        "y": 500,
+        "width": 318,
+        "height": 515
+      },
+      "cropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/detecting dream cards/main_detector_debug_slots/slot-5.png",
+      "geometryType": "normal"
+    },
+    {
+      "slotIndex": 5,
+      "rect": {
+        "x": 1800,
+        "y": 500,
+        "width": 318,
+        "height": 515
+      },
+      "cropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/detecting dream cards/main_detector_debug_slots/slot-6.png",
+      "geometryType": "normal"
+    },
+    {
+      "slotIndex": 6,
+      "rect": {
+        "x": 2145,
+        "y": 500,
+        "width": 318,
+        "height": 515
+      },
+      "cropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/detecting dream cards/main_detector_debug_slots/slot-7.png",
+      "geometryType": "normal"
+    },
+    {
+      "slotIndex": 7,
+      "rect": {
+        "x": 2492,
+        "y": 500,
+        "width": 318,
+        "height": 515
+      },
+      "cropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/detecting dream cards/main_detector_debug_slots/slot-8.png",
+      "geometryType": "normal"
+    }
+  ]
+}

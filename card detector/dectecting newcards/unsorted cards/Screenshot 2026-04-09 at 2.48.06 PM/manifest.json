@@ -1,0 +1,89 @@
+{
+  "sourceImage": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/dectecting newcards/images to detect/Screenshot 2026-04-09 at 2.48.06 PM.png",
+  "imageSize": {
+    "width": 2880,
+    "height": 1800
+  },
+  "baseGeometry": {
+    "xPositions": [
+      131,
+      686,
+      1241,
+      1796,
+      2351
+    ],
+    "y": 155,
+    "width": 395,
+    "height": 663
+  },
+  "appliedGeometry": {
+    "xPositions": [
+      131,
+      686,
+      1241,
+      1796,
+      2351
+    ],
+    "y": 155,
+    "width": 395,
+    "height": 663
+  },
+  "cards": [
+    {
+      "slot": 1,
+      "rect": {
+        "x": 131,
+        "y": 155,
+        "width": 395,
+        "height": 663
+      },
+      "cropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.06 PM/梦·朝气蓬勃1.png",
+      "phase": 1
+    },
+    {
+      "slot": 2,
+      "rect": {
+        "x": 686,
+        "y": 155,
+        "width": 395,
+        "height": 663
+      },
+      "cropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.06 PM/梦·朝气蓬勃2.png",
+      "phase": 2
+    },
+    {
+      "slot": 3,
+      "rect": {
+        "x": 1241,
+        "y": 155,
+        "width": 395,
+        "height": 663
+      },
+      "cropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.06 PM/梦·朝气蓬勃3.png",
+      "phase": 3
+    },
+    {
+      "slot": 4,
+      "rect": {
+        "x": 1796,
+        "y": 155,
+        "width": 395,
+        "height": 663
+      },
+      "cropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.06 PM/梦·朝气蓬勃4.png",
+      "phase": 4
+    },
+    {
+      "slot": 5,
+      "rect": {
+        "x": 2351,
+        "y": 155,
+        "width": 395,
+        "height": 663
+      },
+      "cropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.06 PM/梦·朝气蓬勃5.png",
+      "phase": 5
+    }
+  ],
+  "matchedFamily": "梦·朝气蓬勃"
+}

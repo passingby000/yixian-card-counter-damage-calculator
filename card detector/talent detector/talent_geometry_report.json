@@ -1,0 +1,582 @@
+{
+  "generatedAt": "2026-04-13T23:46:13.132Z",
+  "screenshotPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/talent detector/Screenshot 2026-04-13 at 11.22.51 AM.png",
+  "expectedTalents": [
+    {
+      "slot": 1,
+      "name": "Surge of Qi",
+      "templatePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/vendor/yisim/lanke/talent_templates/position_1/Surge of Qi.png"
+    },
+    {
+      "slot": 2,
+      "name": "Counter Move",
+      "templatePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/vendor/yisim/lanke/talent_templates/position_2/Counter Move.png"
+    },
+    {
+      "slot": 3,
+      "name": "Indomitable Will",
+      "templatePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/vendor/yisim/lanke/talent_templates/position_3/Indomitable Will.png"
+    },
+    {
+      "slot": 4,
+      "name": "Shift Stance",
+      "templatePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/vendor/yisim/lanke/talent_templates/position_4/Shift Stance.png"
+    },
+    {
+      "slot": 5,
+      "name": "Attain Qi",
+      "templatePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/vendor/yisim/lanke/talent_templates/position_5/Attain Qi.png"
+    }
+  ],
+  "searchSettings": {
+    "sharedLayoutCoarse": {
+      "dxMin": -56,
+      "dxMax": 56,
+      "dxStep": 4,
+      "dyMin": -56,
+      "dyMax": 56,
+      "dyStep": 4,
+      "layoutScaleMin": 0.88,
+      "layoutScaleMax": 1.18,
+      "layoutScaleStep": 0.04,
+      "iconScaleMin": 0.65,
+      "iconScaleMax": 1.25,
+      "iconScaleStep": 0.05
+    },
+    "sharedLayoutRefine": {
+      "dxMin": -8,
+      "dxMax": 8,
+      "dxStep": 1,
+      "dyMin": -8,
+      "dyMax": 8,
+      "dyStep": 1,
+      "layoutScaleDeltaMin": -0.08,
+      "layoutScaleDeltaMax": 0.08,
+      "layoutScaleDeltaStep": 0.01,
+      "iconScaleDeltaMin": -0.12,
+      "iconScaleDeltaMax": 0.12,
+      "iconScaleDeltaStep": 0.02
+    },
+    "localRefinement": {
+      "dxMin": -6,
+      "dxMax": 6,
+      "dxStep": 1,
+      "dyMin": -6,
+      "dyMax": 6,
+      "dyStep": 1,
+      "widthDeltaMin": -6,
+      "widthDeltaMax": 6,
+      "widthDeltaStep": 1,
+      "heightDeltaMin": -6,
+      "heightDeltaMax": 6,
+      "heightDeltaStep": 1,
+      "keepTopN": 18
+    },
+    "thresholdReference": 0.693,
+    "scoringMode": "center50-circle-mask"
+  },
+  "baselineEvaluation": {
+    "params": null,
+    "totalScore": -0.8092,
+    "averageScore": -0.1618,
+    "minScore": -0.4296,
+    "positions": [
+      {
+        "slot": 1,
+        "name": "Surge of Qi",
+        "rect": {
+          "x": 318,
+          "y": 1560,
+          "width": 83,
+          "height": 83
+        },
+        "scaledRect": {
+          "x": 318,
+          "y": 1560,
+          "width": 83,
+          "height": 83
+        },
+        "score": -0.2149
+      },
+      {
+        "slot": 2,
+        "name": "Counter Move",
+        "rect": {
+          "x": 173,
+          "y": 1533,
+          "width": 91,
+          "height": 91
+        },
+        "scaledRect": {
+          "x": 173,
+          "y": 1533,
+          "width": 91,
+          "height": 91
+        },
+        "score": -0.4296
+      },
+      {
+        "slot": 3,
+        "name": "Indomitable Will",
+        "rect": {
+          "x": 56,
+          "y": 1440,
+          "width": 98,
+          "height": 98
+        },
+        "scaledRect": {
+          "x": 56,
+          "y": 1440,
+          "width": 98,
+          "height": 98
+        },
+        "score": 0.1663
+      },
+      {
+        "slot": 4,
+        "name": "Shift Stance",
+        "rect": {
+          "x": 44,
+          "y": 1300,
+          "width": 106,
+          "height": 106
+        },
+        "scaledRect": {
+          "x": 44,
+          "y": 1300,
+          "width": 106,
+          "height": 106
+        },
+        "score": -0.4043
+      },
+      {
+        "slot": 5,
+        "name": "Attain Qi",
+        "rect": {
+          "x": 105,
+          "y": 1168,
+          "width": 114,
+          "height": 111
+        },
+        "scaledRect": {
+          "x": 105,
+          "y": 1168,
+          "width": 114,
+          "height": 111
+        },
+        "score": 0.0734
+      }
+    ]
+  },
+  "sharedLayoutResult": {
+    "params": {
+      "dx": -56,
+      "dy": 36,
+      "layoutScale": 1.08,
+      "iconScale": 0.55
+    },
+    "totalScore": 1.8915,
+    "averageScore": 0.3783,
+    "minScore": 0.0322,
+    "positions": [
+      {
+        "slot": 1,
+        "name": "Surge of Qi",
+        "rect": {
+          "x": 294,
+          "y": 1627,
+          "width": 46,
+          "height": 46
+        },
+        "scaledRect": {
+          "x": 294,
+          "y": 1627,
+          "width": 46,
+          "height": 46
+        },
+        "score": 0.4057
+      },
+      {
+        "slot": 2,
+        "name": "Counter Move",
+        "rect": {
+          "x": 140,
+          "y": 1600,
+          "width": 50,
+          "height": 50
+        },
+        "scaledRect": {
+          "x": 140,
+          "y": 1600,
+          "width": 50,
+          "height": 50
+        },
+        "score": 0.4841
+      },
+      {
+        "slot": 3,
+        "name": "Indomitable Will",
+        "rect": {
+          "x": 15,
+          "y": 1501,
+          "width": 54,
+          "height": 54
+        },
+        "scaledRect": {
+          "x": 15,
+          "y": 1501,
+          "width": 54,
+          "height": 54
+        },
+        "score": 0.0322
+      },
+      {
+        "slot": 4,
+        "name": "Shift Stance",
+        "rect": {
+          "x": 5,
+          "y": 1352,
+          "width": 58,
+          "height": 58
+        },
+        "scaledRect": {
+          "x": 5,
+          "y": 1352,
+          "width": 58,
+          "height": 58
+        },
+        "score": 0.8344
+      },
+      {
+        "slot": 5,
+        "name": "Attain Qi",
+        "rect": {
+          "x": 72,
+          "y": 1211,
+          "width": 63,
+          "height": 61
+        },
+        "scaledRect": {
+          "x": 72,
+          "y": 1211,
+          "width": 63,
+          "height": 61
+        },
+        "score": 0.135
+      }
+    ]
+  },
+  "finalRefinedResult": {
+    "totalScore": 2.424,
+    "averageScore": 0.4848,
+    "minScore": 0.2709,
+    "totalAdjustment": 70,
+    "positions": [
+      {
+        "slot": 1,
+        "name": "Surge of Qi",
+        "rect": {
+          "x": 295,
+          "y": 1630,
+          "width": 41,
+          "height": 40
+        },
+        "score": 0.4499,
+        "scoreDelta": 0.6648
+      },
+      {
+        "slot": 2,
+        "name": "Counter Move",
+        "rect": {
+          "x": 143,
+          "y": 1599,
+          "width": 47,
+          "height": 47
+        },
+        "score": 0.5384,
+        "scoreDelta": 0.968
+      },
+      {
+        "slot": 3,
+        "name": "Indomitable Will",
+        "rect": {
+          "x": 21,
+          "y": 1501,
+          "width": 48,
+          "height": 60
+        },
+        "score": 0.2709,
+        "scoreDelta": 0.1047
+      },
+      {
+        "slot": 4,
+        "name": "Shift Stance",
+        "rect": {
+          "x": 1,
+          "y": 1356,
+          "width": 58,
+          "height": 60
+        },
+        "score": 0.8693,
+        "scoreDelta": 1.2736
+      },
+      {
+        "slot": 5,
+        "name": "Attain Qi",
+        "rect": {
+          "x": 66,
+          "y": 1212,
+          "width": 67,
+          "height": 67
+        },
+        "score": 0.2955,
+        "scoreDelta": 0.2221
+      }
+    ]
+  },
+  "positions": [
+    {
+      "slot": 1,
+      "name": "Surge of Qi",
+      "baselineRect": {
+        "x": 318,
+        "y": 1560,
+        "width": 83,
+        "height": 83
+      },
+      "rect": {
+        "x": 295,
+        "y": 1630,
+        "width": 41,
+        "height": 40
+      },
+      "baselineScaledRect": {
+        "x": 318,
+        "y": 1560,
+        "width": 83,
+        "height": 83
+      },
+      "scaledRect": {
+        "x": 295,
+        "y": 1630,
+        "width": 41,
+        "height": 40
+      },
+      "baselineScore": -0.2149,
+      "sharedLayoutRect": {
+        "x": 294,
+        "y": 1627,
+        "width": 46,
+        "height": 46
+      },
+      "sharedLayoutScore": 0.4057,
+      "score": 0.4499,
+      "scoreDelta": 0.6648,
+      "sharedScoreDelta": 0.6206,
+      "baselineCropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/talent detector/talent_geometry_debug_slots/slot-1-baseline.png",
+      "calibratedCropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/talent detector/talent_geometry_debug_slots/slot-1-calibrated.png"
+    },
+    {
+      "slot": 2,
+      "name": "Counter Move",
+      "baselineRect": {
+        "x": 173,
+        "y": 1533,
+        "width": 91,
+        "height": 91
+      },
+      "rect": {
+        "x": 143,
+        "y": 1599,
+        "width": 47,
+        "height": 47
+      },
+      "baselineScaledRect": {
+        "x": 173,
+        "y": 1533,
+        "width": 91,
+        "height": 91
+      },
+      "scaledRect": {
+        "x": 143,
+        "y": 1599,
+        "width": 47,
+        "height": 47
+      },
+      "baselineScore": -0.4296,
+      "sharedLayoutRect": {
+        "x": 140,
+        "y": 1600,
+        "width": 50,
+        "height": 50
+      },
+      "sharedLayoutScore": 0.4841,
+      "score": 0.5384,
+      "scoreDelta": 0.968,
+      "sharedScoreDelta": 0.9137,
+      "baselineCropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/talent detector/talent_geometry_debug_slots/slot-2-baseline.png",
+      "calibratedCropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/talent detector/talent_geometry_debug_slots/slot-2-calibrated.png"
+    },
+    {
+      "slot": 3,
+      "name": "Indomitable Will",
+      "baselineRect": {
+        "x": 56,
+        "y": 1440,
+        "width": 98,
+        "height": 98
+      },
+      "rect": {
+        "x": 21,
+        "y": 1501,
+        "width": 48,
+        "height": 60
+      },
+      "baselineScaledRect": {
+        "x": 56,
+        "y": 1440,
+        "width": 98,
+        "height": 98
+      },
+      "scaledRect": {
+        "x": 21,
+        "y": 1501,
+        "width": 48,
+        "height": 60
+      },
+      "baselineScore": 0.1663,
+      "sharedLayoutRect": {
+        "x": 15,
+        "y": 1501,
+        "width": 54,
+        "height": 54
+      },
+      "sharedLayoutScore": 0.0322,
+      "score": 0.2709,
+      "scoreDelta": 0.1047,
+      "sharedScoreDelta": -0.1341,
+      "baselineCropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/talent detector/talent_geometry_debug_slots/slot-3-baseline.png",
+      "calibratedCropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/talent detector/talent_geometry_debug_slots/slot-3-calibrated.png"
+    },
+    {
+      "slot": 4,
+      "name": "Shift Stance",
+      "baselineRect": {
+        "x": 44,
+        "y": 1300,
+        "width": 106,
+        "height": 106
+      },
+      "rect": {
+        "x": 1,
+        "y": 1356,
+        "width": 58,
+        "height": 60
+      },
+      "baselineScaledRect": {
+        "x": 44,
+        "y": 1300,
+        "width": 106,
+        "height": 106
+      },
+      "scaledRect": {
+        "x": 1,
+        "y": 1356,
+        "width": 58,
+        "height": 60
+      },
+      "baselineScore": -0.4043,
+      "sharedLayoutRect": {
+        "x": 5,
+        "y": 1352,
+        "width": 58,
+        "height": 58
+      },
+      "sharedLayoutScore": 0.8344,
+      "score": 0.8693,
+      "scoreDelta": 1.2736,
+      "sharedScoreDelta": 1.2387,
+      "baselineCropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/talent detector/talent_geometry_debug_slots/slot-4-baseline.png",
+      "calibratedCropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/talent detector/talent_geometry_debug_slots/slot-4-calibrated.png"
+    },
+    {
+      "slot": 5,
+      "name": "Attain Qi",
+      "baselineRect": {
+        "x": 105,
+        "y": 1168,
+        "width": 114,
+        "height": 111
+      },
+      "rect": {
+        "x": 66,
+        "y": 1212,
+        "width": 67,
+        "height": 67
+      },
+      "baselineScaledRect": {
+        "x": 105,
+        "y": 1168,
+        "width": 114,
+        "height": 111
+      },
+      "scaledRect": {
+        "x": 66,
+        "y": 1212,
+        "width": 67,
+        "height": 67
+      },
+      "baselineScore": 0.0734,
+      "sharedLayoutRect": {
+        "x": 72,
+        "y": 1211,
+        "width": 63,
+        "height": 61
+      },
+      "sharedLayoutScore": 0.135,
+      "score": 0.2955,
+      "scoreDelta": 0.2221,
+      "sharedScoreDelta": 0.0617,
+      "baselineCropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/talent detector/talent_geometry_debug_slots/slot-5-baseline.png",
+      "calibratedCropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/talent detector/talent_geometry_debug_slots/slot-5-calibrated.png"
+    }
+  ],
+  "recommendedDetectorConfig": {
+    "baseScreenWidth": 2880,
+    "baseScreenHeight": 1800,
+    "scoringMode": "center50-circle-mask",
+    "talentThreshold": 0.693,
+    "baseTalentRects": [
+      {
+        "x": 295,
+        "y": 1630,
+        "width": 41,
+        "height": 40
+      },
+      {
+        "x": 143,
+        "y": 1599,
+        "width": 47,
+        "height": 47
+      },
+      {
+        "x": 21,
+        "y": 1501,
+        "width": 48,
+        "height": 60
+      },
+      {
+        "x": 1,
+        "y": 1356,
+        "width": 58,
+        "height": 60
+      },
+      {
+        "x": 66,
+        "y": 1212,
+        "width": 67,
+        "height": 67
+      }
+    ]
+  }
+}

@@ -1,0 +1,346 @@
+{
+  "generatedAt": "2026-04-14T01:01:52.854Z",
+  "positionKey": "position1",
+  "talentName": "Surge of Qi",
+  "screenshotPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/talent detector/Screenshot 2026-04-13 at 11.22.51 AM.png",
+  "templatePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/vendor/yisim/lanke/talent_templates/position_1/Surge of Qi.png",
+  "searchRegion": {
+    "xMin": 0,
+    "xMaxExclusive": 720,
+    "yMin": 900,
+    "yMaxExclusive": 1800
+  },
+  "sizeRange": {
+    "min": 50,
+    "max": 200
+  },
+  "evaluatedCandidates": 70123796,
+  "baseline": {
+    "rect": {
+      "x": 318,
+      "y": 1560,
+      "width": 83,
+      "height": 83
+    },
+    "rgbMse": 8442.3206,
+    "cropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/talent detector/talent_position1_debug/baseline.png"
+  },
+  "winner": {
+    "rect": {
+      "x": 357,
+      "y": 1693,
+      "width": 95,
+      "height": 95
+    },
+    "rgbMse": 415.8363,
+    "cropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/talent detector/talent_position1_debug/winner.png"
+  },
+  "topCandidates": [
+    {
+      "rank": 1,
+      "rect": {
+        "x": 357,
+        "y": 1693,
+        "width": 95,
+        "height": 95
+      },
+      "rgbMse": 415.8363,
+      "distanceToBaseline": 21346,
+      "cropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/talent detector/talent_position1_debug/top-01-size-95-x-357-y-1693.png"
+    },
+    {
+      "rank": 2,
+      "rect": {
+        "x": 198,
+        "y": 1031,
+        "width": 115,
+        "height": 115
+      },
+      "rgbMse": 4144.4038,
+      "distanceToBaseline": 273985,
+      "cropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/talent detector/talent_position1_debug/top-02-size-115-x-198-y-1031.png"
+    },
+    {
+      "rank": 3,
+      "rect": {
+        "x": 494,
+        "y": 1001,
+        "width": 185,
+        "height": 185
+      },
+      "rgbMse": 4260.6188,
+      "distanceToBaseline": 309593,
+      "cropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/talent detector/talent_position1_debug/top-03-size-185-x-494-y-1001.png"
+    },
+    {
+      "rank": 4,
+      "rect": {
+        "x": 362,
+        "y": 1070,
+        "width": 113,
+        "height": 113
+      },
+      "rgbMse": 4722.0692,
+      "distanceToBaseline": 229106,
+      "cropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/talent detector/talent_position1_debug/top-04-size-113-x-362-y-1070.png"
+    },
+    {
+      "rank": 5,
+      "rect": {
+        "x": 289,
+        "y": 1022,
+        "width": 185,
+        "height": 185
+      },
+      "rgbMse": 5040.9484,
+      "distanceToBaseline": 237653,
+      "cropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/talent detector/talent_position1_debug/top-05-size-185-x-289-y-1022.png"
+    },
+    {
+      "rank": 6,
+      "rect": {
+        "x": 510,
+        "y": 977,
+        "width": 115,
+        "height": 115
+      },
+      "rgbMse": 5383.3435,
+      "distanceToBaseline": 364753,
+      "cropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/talent detector/talent_position1_debug/top-06-size-115-x-510-y-977.png"
+    },
+    {
+      "rank": 7,
+      "rect": {
+        "x": 132,
+        "y": 1076,
+        "width": 115,
+        "height": 115
+      },
+      "rgbMse": 5580.3242,
+      "distanceToBaseline": 247924,
+      "cropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/talent detector/talent_position1_debug/top-07-size-115-x-132-y-1076.png"
+    },
+    {
+      "rank": 8,
+      "rect": {
+        "x": 276,
+        "y": 1092,
+        "width": 185,
+        "height": 185
+      },
+      "rgbMse": 6989.5746,
+      "distanceToBaseline": 173970,
+      "cropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/talent detector/talent_position1_debug/top-08-size-185-x-276-y-1092.png"
+    },
+    {
+      "rank": 9,
+      "rect": {
+        "x": 184,
+        "y": 1648,
+        "width": 113,
+        "height": 113
+      },
+      "rgbMse": 7009.0174,
+      "distanceToBaseline": 24770,
+      "cropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/talent detector/talent_position1_debug/top-09-size-113-x-184-y-1648.png"
+    },
+    {
+      "rank": 10,
+      "rect": {
+        "x": 286,
+        "y": 923,
+        "width": 115,
+        "height": 115
+      },
+      "rgbMse": 7118.0613,
+      "distanceToBaseline": 385897,
+      "cropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/talent detector/talent_position1_debug/top-10-size-115-x-286-y-923.png"
+    },
+    {
+      "rank": 11,
+      "rect": {
+        "x": 448,
+        "y": 1109,
+        "width": 185,
+        "height": 185
+      },
+      "rgbMse": 7174.2198,
+      "distanceToBaseline": 192761,
+      "cropPath": null
+    },
+    {
+      "rank": 12,
+      "rect": {
+        "x": 152,
+        "y": 1609,
+        "width": 113,
+        "height": 113
+      },
+      "rgbMse": 7541.881,
+      "distanceToBaseline": 26897,
+      "cropPath": null
+    },
+    {
+      "rank": 13,
+      "rect": {
+        "x": 439,
+        "y": 1227,
+        "width": 113,
+        "height": 113
+      },
+      "rgbMse": 7556.6157,
+      "distanceToBaseline": 119620,
+      "cropPath": null
+    },
+    {
+      "rank": 14,
+      "rect": {
+        "x": 307,
+        "y": 1421,
+        "width": 185,
+        "height": 185
+      },
+      "rgbMse": 7652.2894,
+      "distanceToBaseline": 9344,
+      "cropPath": null
+    },
+    {
+      "rank": 15,
+      "rect": {
+        "x": 153,
+        "y": 947,
+        "width": 115,
+        "height": 115
+      },
+      "rgbMse": 7757.1799,
+      "distanceToBaseline": 378610,
+      "cropPath": null
+    },
+    {
+      "rank": 16,
+      "rect": {
+        "x": 548,
+        "y": 1272,
+        "width": 113,
+        "height": 113
+      },
+      "rgbMse": 7929.8068,
+      "distanceToBaseline": 134554,
+      "cropPath": null
+    },
+    {
+      "rank": 17,
+      "rect": {
+        "x": 516,
+        "y": 1657,
+        "width": 115,
+        "height": 115
+      },
+      "rgbMse": 8174.9034,
+      "distanceToBaseline": 58565,
+      "cropPath": null
+    },
+    {
+      "rank": 18,
+      "rect": {
+        "x": 318,
+        "y": 1560,
+        "width": 83,
+        "height": 83
+      },
+      "rgbMse": 8442.3206,
+      "distanceToBaseline": 0,
+      "cropPath": null
+    },
+    {
+      "rank": 19,
+      "rect": {
+        "x": 211,
+        "y": 1330,
+        "width": 185,
+        "height": 185
+      },
+      "rgbMse": 8525.2915,
+      "distanceToBaseline": 35177,
+      "cropPath": null
+    },
+    {
+      "rank": 20,
+      "rect": {
+        "x": 403,
+        "y": 1418,
+        "width": 185,
+        "height": 185
+      },
+      "rgbMse": 8633.7507,
+      "distanceToBaseline": 26777,
+      "cropPath": null
+    },
+    {
+      "rank": 21,
+      "rect": {
+        "x": 287,
+        "y": 1376,
+        "width": 185,
+        "height": 185
+      },
+      "rgbMse": 8737.2452,
+      "distanceToBaseline": 18089,
+      "cropPath": null
+    },
+    {
+      "rank": 22,
+      "rect": {
+        "x": 508,
+        "y": 1680,
+        "width": 113,
+        "height": 113
+      },
+      "rgbMse": 9150.4352,
+      "distanceToBaseline": 60250,
+      "cropPath": null
+    },
+    {
+      "rank": 23,
+      "rect": {
+        "x": 241,
+        "y": 1582,
+        "width": 113,
+        "height": 113
+      },
+      "rgbMse": 9182.0632,
+      "distanceToBaseline": 5213,
+      "cropPath": null
+    },
+    {
+      "rank": 24,
+      "rect": {
+        "x": 356,
+        "y": 1414,
+        "width": 113,
+        "height": 113
+      },
+      "rgbMse": 9197.6951,
+      "distanceToBaseline": 19970,
+      "cropPath": null
+    },
+    {
+      "rank": 25,
+      "rect": {
+        "x": 110,
+        "y": 1142,
+        "width": 113,
+        "height": 113
+      },
+      "rgbMse": 9289.4479,
+      "distanceToBaseline": 199658,
+      "cropPath": null
+    }
+  ],
+  "recommendedRect": {
+    "x": 357,
+    "y": 1693,
+    "width": 95,
+    "height": 95
+  }
+}

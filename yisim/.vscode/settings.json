@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+      "*.jscpp": "javascript"
+    },
+    "editor.formatOnSave": false
+}

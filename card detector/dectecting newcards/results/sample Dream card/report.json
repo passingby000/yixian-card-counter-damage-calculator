@@ -1,0 +1,400 @@
+{
+  "generatedAt": "2026-04-09T20:46:05.017Z",
+  "sourceImage": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/dectecting newcards/images to detect/sample Dream card.png",
+  "annotatedImage": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/dectecting newcards/results/sample Dream card/annotated.png",
+  "templates": [
+    {
+      "name": "梦·灵气灌注",
+      "phase": 1,
+      "templatePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/images/seasonal/cloud-spirit/梦•灵气灌注1.png",
+      "templateFile": "梦•灵气灌注1.png",
+      "originalWidth": 395,
+      "originalHeight": 663
+    },
+    {
+      "name": "梦·灵气灌注",
+      "phase": 2,
+      "templatePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/images/seasonal/cloud-spirit/梦•灵气灌注2.png",
+      "templateFile": "梦•灵气灌注2.png",
+      "originalWidth": 395,
+      "originalHeight": 663
+    },
+    {
+      "name": "梦·灵气灌注",
+      "phase": 3,
+      "templatePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/images/seasonal/cloud-spirit/梦•灵气灌注3.png",
+      "templateFile": "梦•灵气灌注3.png",
+      "originalWidth": 395,
+      "originalHeight": 663
+    },
+    {
+      "name": "梦·灵气灌注",
+      "phase": 4,
+      "templatePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/images/seasonal/cloud-spirit/梦•灵气灌注4.png",
+      "templateFile": "梦•灵气灌注4.png",
+      "originalWidth": 400,
+      "originalHeight": 675
+    },
+    {
+      "name": "梦·灵气灌注",
+      "phase": 5,
+      "templatePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/images/seasonal/cloud-spirit/梦•灵气灌注5.png",
+      "templateFile": "梦•灵气灌注5.png",
+      "originalWidth": 400,
+      "originalHeight": 675
+    }
+  ],
+  "matches": [
+    {
+      "name": "梦·灵气灌注",
+      "phase": 1,
+      "score": 486.9401,
+      "rect": {
+        "x": 131,
+        "y": 156,
+        "width": 393,
+        "height": 660
+      },
+      "cropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/dectecting newcards/results/sample Dream card/crops/梦·灵气灌注1.png",
+      "templateFile": "梦•灵气灌注1.png"
+    },
+    {
+      "name": "梦·灵气灌注",
+      "phase": 2,
+      "score": 155.6454,
+      "rect": {
+        "x": 686,
+        "y": 155,
+        "width": 395,
+        "height": 663
+      },
+      "cropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/dectecting newcards/results/sample Dream card/crops/梦·灵气灌注2.png",
+      "templateFile": "梦•灵气灌注2.png"
+    },
+    {
+      "name": "梦·灵气灌注",
+      "phase": 3,
+      "score": 478.3612,
+      "rect": {
+        "x": 1240,
+        "y": 154,
+        "width": 397,
+        "height": 666
+      },
+      "cropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/dectecting newcards/results/sample Dream card/crops/梦·灵气灌注3.png",
+      "templateFile": "梦•灵气灌注3.png"
+    }
+  ],
+  "missingPhases": [
+    4,
+    5
+  ],
+  "candidateBoxCount": 3,
+  "topCandidatesByPhase": [
+    {
+      "name": "梦·灵气灌注",
+      "phase": 1,
+      "candidates": [
+        {
+          "score": 223.8604,
+          "rect": {
+            "x": 686,
+            "y": 155,
+            "width": 395,
+            "height": 663
+          },
+          "scale": 1,
+          "templateFile": "梦•灵气灌注1.png"
+        },
+        {
+          "score": 486.9401,
+          "rect": {
+            "x": 131,
+            "y": 156,
+            "width": 393,
+            "height": 660
+          },
+          "scale": 0.995,
+          "templateFile": "梦•灵气灌注1.png"
+        },
+        {
+          "score": 1788.5463,
+          "rect": {
+            "x": 1241,
+            "y": 156,
+            "width": 393,
+            "height": 660
+          },
+          "scale": 0.995,
+          "templateFile": "梦•灵气灌注1.png"
+        },
+        {
+          "score": 5924.3539,
+          "rect": {
+            "x": 2333,
+            "y": 157,
+            "width": 415,
+            "height": 696
+          },
+          "scale": 1.05,
+          "templateFile": "梦•灵气灌注1.png"
+        },
+        {
+          "score": 6045.623,
+          "rect": {
+            "x": 1777,
+            "y": 152,
+            "width": 415,
+            "height": 696
+          },
+          "scale": 1.05,
+          "templateFile": "梦•灵气灌注1.png"
+        }
+      ]
+    },
+    {
+      "name": "梦·灵气灌注",
+      "phase": 2,
+      "candidates": [
+        {
+          "score": 155.6454,
+          "rect": {
+            "x": 686,
+            "y": 155,
+            "width": 395,
+            "height": 663
+          },
+          "scale": 1,
+          "templateFile": "梦•灵气灌注2.png"
+        },
+        {
+          "score": 558.2082,
+          "rect": {
+            "x": 131,
+            "y": 156,
+            "width": 393,
+            "height": 660
+          },
+          "scale": 0.995,
+          "templateFile": "梦•灵气灌注2.png"
+        },
+        {
+          "score": 1683.6518,
+          "rect": {
+            "x": 1241,
+            "y": 156,
+            "width": 393,
+            "height": 660
+          },
+          "scale": 0.995,
+          "templateFile": "梦•灵气灌注2.png"
+        },
+        {
+          "score": 5948.9326,
+          "rect": {
+            "x": 1777,
+            "y": 152,
+            "width": 415,
+            "height": 696
+          },
+          "scale": 1.05,
+          "templateFile": "梦•灵气灌注2.png"
+        },
+        {
+          "score": 7091.5107,
+          "rect": {
+            "x": 2323,
+            "y": 161,
+            "width": 415,
+            "height": 696
+          },
+          "scale": 1.05,
+          "templateFile": "梦•灵气灌注2.png"
+        }
+      ]
+    },
+    {
+      "name": "梦·灵气灌注",
+      "phase": 3,
+      "candidates": [
+        {
+          "score": 478.3612,
+          "rect": {
+            "x": 1240,
+            "y": 154,
+            "width": 397,
+            "height": 666
+          },
+          "scale": 1.005,
+          "templateFile": "梦•灵气灌注3.png"
+        },
+        {
+          "score": 1611.1912,
+          "rect": {
+            "x": 686,
+            "y": 154,
+            "width": 397,
+            "height": 666
+          },
+          "scale": 1.005,
+          "templateFile": "梦•灵气灌注3.png"
+        },
+        {
+          "score": 1725.8675,
+          "rect": {
+            "x": 131,
+            "y": 154,
+            "width": 397,
+            "height": 666
+          },
+          "scale": 1.005,
+          "templateFile": "梦•灵气灌注3.png"
+        },
+        {
+          "score": 6421.4392,
+          "rect": {
+            "x": 1777,
+            "y": 153,
+            "width": 411,
+            "height": 690
+          },
+          "scale": 1.04,
+          "templateFile": "梦•灵气灌注3.png"
+        },
+        {
+          "score": 6498.0457,
+          "rect": {
+            "x": 2333,
+            "y": 157,
+            "width": 415,
+            "height": 696
+          },
+          "scale": 1.05,
+          "templateFile": "梦•灵气灌注3.png"
+        }
+      ]
+    },
+    {
+      "name": "梦·灵气灌注",
+      "phase": 4,
+      "candidates": [
+        {
+          "score": 1724.2114,
+          "rect": {
+            "x": 685,
+            "y": 154,
+            "width": 400,
+            "height": 675
+          },
+          "scale": 1,
+          "templateFile": "梦•灵气灌注4.png"
+        },
+        {
+          "score": 1796.7103,
+          "rect": {
+            "x": 130,
+            "y": 154,
+            "width": 400,
+            "height": 675
+          },
+          "scale": 1,
+          "templateFile": "梦•灵气灌注4.png"
+        },
+        {
+          "score": 1994.7391,
+          "rect": {
+            "x": 1241,
+            "y": 154,
+            "width": 398,
+            "height": 672
+          },
+          "scale": 0.995,
+          "templateFile": "梦•灵气灌注4.png"
+        },
+        {
+          "score": 6907.2364,
+          "rect": {
+            "x": 2333,
+            "y": 153,
+            "width": 402,
+            "height": 678
+          },
+          "scale": 1.005,
+          "templateFile": "梦•灵气灌注4.png"
+        },
+        {
+          "score": 7853.0137,
+          "rect": {
+            "x": 1767,
+            "y": 150,
+            "width": 418,
+            "height": 705
+          },
+          "scale": 1.045,
+          "templateFile": "梦•灵气灌注4.png"
+        }
+      ]
+    },
+    {
+      "name": "梦·灵气灌注",
+      "phase": 5,
+      "candidates": [
+        {
+          "score": 1838.3818,
+          "rect": {
+            "x": 130,
+            "y": 154,
+            "width": 400,
+            "height": 675
+          },
+          "scale": 1,
+          "templateFile": "梦•灵气灌注5.png"
+        },
+        {
+          "score": 1865.7679,
+          "rect": {
+            "x": 685,
+            "y": 154,
+            "width": 400,
+            "height": 675
+          },
+          "scale": 1,
+          "templateFile": "梦•灵气灌注5.png"
+        },
+        {
+          "score": 2597.1463,
+          "rect": {
+            "x": 1241,
+            "y": 154,
+            "width": 398,
+            "height": 672
+          },
+          "scale": 0.995,
+          "templateFile": "梦•灵气灌注5.png"
+        },
+        {
+          "score": 7872.5991,
+          "rect": {
+            "x": 2323,
+            "y": 153,
+            "width": 402,
+            "height": 678
+          },
+          "scale": 1.005,
+          "templateFile": "梦•灵气灌注5.png"
+        },
+        {
+          "score": 8684.7838,
+          "rect": {
+            "x": 1767,
+            "y": 152,
+            "width": 402,
+            "height": 678
+          },
+          "scale": 1.005,
+          "templateFile": "梦•灵气灌注5.png"
+        }
+      ]
+    }
+  ]
+}

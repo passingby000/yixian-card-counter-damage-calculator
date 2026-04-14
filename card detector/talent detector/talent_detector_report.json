@@ -1,0 +1,226 @@
+{
+  "generatedAt": "2026-04-14T06:41:37.987Z",
+  "screenshotPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/talent detector/fengxu special talent.png",
+  "talents": [
+    {
+      "position": 1,
+      "name": "Wind in Sky",
+      "nameCn": "风行天上",
+      "confidence": 1,
+      "matchedTemplate": "Wind in Sky.png",
+      "rect": {
+        "x": 357,
+        "y": 1693,
+        "width": 95,
+        "height": 95
+      },
+      "detected": true,
+      "simulationKind": "non-combat-or-unsupported",
+      "runtimeKey": null,
+      "grantedCardBaseIds": null,
+      "bestCandidate": {
+        "name": "Wind in Sky",
+        "templateFile": "Wind in Sky.png",
+        "score": 1
+      },
+      "secondCandidate": {
+        "name": "Strategize",
+        "templateFile": "Strategize.png",
+        "score": 0.2206
+      }
+    },
+    {
+      "position": 2,
+      "name": "Jade Scroll of Yin Symbol",
+      "nameCn": "阴符玉简",
+      "confidence": 1,
+      "matchedTemplate": "Jade Scroll of Yin Symbol.png",
+      "rect": {
+        "x": 196,
+        "y": 1663,
+        "width": 102,
+        "height": 102
+      },
+      "detected": true,
+      "simulationKind": "non-combat-or-unsupported",
+      "runtimeKey": null,
+      "grantedCardBaseIds": null,
+      "bestCandidate": {
+        "name": "Jade Scroll of Yin Symbol",
+        "templateFile": "Jade Scroll of Yin Symbol.png",
+        "score": 1
+      },
+      "secondCandidate": {
+        "name": "Firmness Body",
+        "templateFile": "Firmness Body.png",
+        "score": 0.306
+      }
+    },
+    {
+      "position": 3,
+      "name": "Spirit Hexagram Evolves",
+      "nameCn": "灵卦自衍",
+      "confidence": 1,
+      "matchedTemplate": "Spirit Hexagram Evolves.png",
+      "rect": {
+        "x": 64,
+        "y": 1558,
+        "width": 110,
+        "height": 110
+      },
+      "detected": true,
+      "simulationKind": "non-combat-or-unsupported",
+      "runtimeKey": null,
+      "grantedCardBaseIds": null,
+      "bestCandidate": {
+        "name": "Spirit Hexagram Evolves",
+        "templateFile": "Spirit Hexagram Evolves.png",
+        "score": 1
+      },
+      "secondCandidate": {
+        "name": "Astral Eclipse",
+        "templateFile": "Astral Eclipse.png",
+        "score": 0.3696
+      }
+    },
+    {
+      "position": 4,
+      "name": "Hexagrams Explain",
+      "nameCn": "易卦自解",
+      "confidence": 1,
+      "matchedTemplate": "Hexagrams Explain.png",
+      "rect": {
+        "x": 49,
+        "y": 1402,
+        "width": 118,
+        "height": 118
+      },
+      "detected": true,
+      "simulationKind": "non-combat-or-unsupported",
+      "runtimeKey": null,
+      "grantedCardBaseIds": null,
+      "bestCandidate": {
+        "name": "Hexagrams Explain",
+        "templateFile": "Hexagrams Explain.png",
+        "score": 1
+      },
+      "secondCandidate": {
+        "name": "Meditation of Xuan",
+        "templateFile": "Meditation of Xuan.png",
+        "score": 0.2408
+      }
+    },
+    {
+      "position": 5,
+      "name": "Solitary Void Golden Scroll",
+      "nameCn": "孤虚金书",
+      "confidence": 1,
+      "matchedTemplate": "Solitary Void Golden Scroll.png",
+      "rect": {
+        "x": 122,
+        "y": 1255,
+        "width": 120,
+        "height": 120
+      },
+      "detected": true,
+      "simulationKind": "non-combat-or-unsupported",
+      "runtimeKey": null,
+      "grantedCardBaseIds": null,
+      "bestCandidate": {
+        "name": "Solitary Void Golden Scroll",
+        "templateFile": "Solitary Void Golden Scroll.png",
+        "score": 1
+      },
+      "secondCandidate": {
+        "name": "Thunder Tribulation",
+        "templateFile": "Thunder Tribulation.png",
+        "score": 0.1998
+      }
+    }
+  ],
+  "talentDetection": {
+    "status": "ok",
+    "threshold": 0.693,
+    "screenshotSize": {
+      "width": 2880,
+      "height": 1800
+    },
+    "geometry": {
+      "baseScreenWidth": 2880,
+      "baseScreenHeight": 1800,
+      "baseRects": [
+        {
+          "x": 357,
+          "y": 1693,
+          "width": 95,
+          "height": 95
+        },
+        {
+          "x": 196,
+          "y": 1663,
+          "width": 102,
+          "height": 102
+        },
+        {
+          "x": 64,
+          "y": 1558,
+          "width": 110,
+          "height": 110
+        },
+        {
+          "x": 49,
+          "y": 1402,
+          "width": 118,
+          "height": 118
+        },
+        {
+          "x": 122,
+          "y": 1255,
+          "width": 120,
+          "height": 120
+        }
+      ],
+      "rects": [
+        {
+          "x": 357,
+          "y": 1693,
+          "width": 95,
+          "height": 95
+        },
+        {
+          "x": 196,
+          "y": 1663,
+          "width": 102,
+          "height": 102
+        },
+        {
+          "x": 64,
+          "y": 1558,
+          "width": 110,
+          "height": 110
+        },
+        {
+          "x": 49,
+          "y": 1402,
+          "width": 118,
+          "height": 118
+        },
+        {
+          "x": 122,
+          "y": 1255,
+          "width": 120,
+          "height": 120
+        }
+      ]
+    },
+    "unmatchedPositions": [],
+    "templatesDir": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/vendor/yisim/lanke/talent_templates",
+    "templateCounts": [
+      33,
+      71,
+      73,
+      73,
+      73
+    ]
+  }
+}

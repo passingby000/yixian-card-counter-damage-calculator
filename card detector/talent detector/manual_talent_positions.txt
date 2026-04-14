@@ -1,0 +1,57 @@
+Manual Talent Positions
+These are manual review anchors for later calibration/runtime promotion.
+
+position_1
+talent: Surge of Qi
+template: /Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/vendor/yisim/lanke/talent_templates/position_1/Surge of Qi.png
+x = 357
+y = 1693
+width = 95
+height = 95
+status: manually confirmed
+winner rgbMse = 415.8363
+screenshot: /Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/talent detector/Screenshot 2026-04-13 at 11.22.51 AM.png
+
+position_2
+talent: Counter Move
+template: /Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/vendor/yisim/lanke/talent_templates/position_2/Counter Move.png
+x = 196
+y = 1663
+width = 102
+height = 102
+status: manually confirmed
+winner rgbMse = 320.5371
+screenshot: /Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/talent detector/Screenshot 2026-04-13 at 11.22.51 AM.png
+
+position_3
+talent: Indomitable Will
+template: /Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/vendor/yisim/lanke/talent_templates/position_3/Indomitable Will.png
+x = 64
+y = 1558
+width = 110
+height = 110
+status: manually confirmed
+winner rgbMse = 210.3226
+screenshot: /Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/talent detector/Screenshot 2026-04-13 at 11.22.51 AM.png
+
+position_4
+talent: Shift Stance
+template: /Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/vendor/yisim/lanke/talent_templates/position_4/Shift Stance.png
+x = 49
+y = 1402
+width = 118
+height = 118
+status: manually confirmed
+winner rgbMse = 113.3503
+screenshot: /Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/talent detector/Screenshot 2026-04-13 at 11.22.51 AM.png
+
+position_5
+talent: Attain Qi
+template: /Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/vendor/yisim/lanke/talent_templates/position_5/Attain Qi.png
+x = 122
+y = 1255
+width = 120
+height = 120
+status: manually confirmed
+winner rgbMse = 2114.4978
+screenshot: /Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/card detector/talent detector/Screenshot 2026-04-13 at 11.22.51 AM.png
