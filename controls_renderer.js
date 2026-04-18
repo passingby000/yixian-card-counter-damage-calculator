@@ -6,6 +6,10 @@ const settingsPanel = document.getElementById('settings-panel');
 const rollModeButtons = Array.from(document.querySelectorAll('.roll-option'));
 const languageButtons = Array.from(document.querySelectorAll('.language-option'));
 const debugModeButton = document.getElementById('debug-mode-button');
+const calibrateButton = document.getElementById('calibrate-button');
+const calibrationStatusEl = document.getElementById('calibration-status');
+const calibrationProgressEl = document.getElementById('calibration-progress');
+const calibrationFillEl = document.getElementById('calibration-progress-fill');
 
 let uiState = {
   deleteMode: false,
@@ -13,9 +17,12 @@ let uiState = {
   showCardList: true,
   showBoardPanel: true,
   cardLanguage: 'zh',
-  damageRollMode: 'average'
+  damageRollMode: 'average',
+  calibrated: false,
+  calibratedAt: null
 };
 let settingsOpen = false;
+let calibrating = false;
 
 function renderControls() {
   deleteButton.classList.toggle('active', !!uiState.deleteMode);
@@ -33,6 +40,23 @@ function renderControls() {
   });
   if (debugModeButton) {
     debugModeButton.classList.toggle('active', !!uiState.debugMode);
+  }
+  if (calibrateButton) {
+    calibrateButton.disabled = calibrating;
+    calibrateButton.textContent = calibrating ? 'Calibrating...' : 'Calibrate';
+  }
+  if (calibrationProgressEl) {
+    calibrationProgressEl.classList.toggle('running', calibrating);
+  }
+  if (calibrationStatusEl && !calibrating) {
+    if (uiState.calibrated && uiState.calibratedAt) {
+      const date = new Date(uiState.calibratedAt).toLocaleDateString();
+      calibrationStatusEl.textContent = `Calibrated ${date}`;
+      calibrationStatusEl.className = 'calibration-status ok';
+    } else {
+      calibrationStatusEl.textContent = 'Not calibrated';
+      calibrationStatusEl.className = 'calibration-status';
+    }
   }
 
   deleteButton.title = uiState.deleteMode ? 'Delete mode enabled' : 'Enable delete mode';
@@ -93,9 +117,39 @@ if (debugModeButton) {
   });
 }
 
+if (calibrateButton) {
+  calibrateButton.addEventListener('click', async () => {
+    if (calibrating) return;
+    calibrating = true;
+    if (calibrationFillEl) calibrationFillEl.style.width = '0%';
+    if (calibrationStatusEl) {
+      calibrationStatusEl.textContent = '';
+      calibrationStatusEl.className = 'calibration-status';
+    }
+    renderControls();
+    try {
+      await window.api.performCalibration();
+    } catch (error) {
+      if (calibrationStatusEl) {
+        calibrationStatusEl.textContent = error?.message || 'Calibration failed';
+        calibrationStatusEl.className = 'calibration-status error';
+      }
+    } finally {
+      calibrating = false;
+      renderControls();
+    }
+  });
+}
+
 window.api.onUiStateUpdated((nextUiState) => {
   uiState = nextUiState || uiState;
   renderControls();
+});
+
+window.api.onCalibrationProgress(({ step, total }) => {
+  if (calibrationFillEl) {
+    calibrationFillEl.style.width = `${Math.round((step / total) * 100)}%`;
+  }
 });
 
 window.api.getUiState().then((nextUiState) => {

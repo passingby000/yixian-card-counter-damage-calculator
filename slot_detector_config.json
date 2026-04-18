@@ -1,16 +1,4 @@
 {
-  "baseScreenWidth": 1920,
-  "baseScreenHeight": 1200,
-  "slotY": 333,
-  "slotWidth": 212,
-  "slotHeight": 343,
-  "slotXPositions": [45, 276, 507, 738, 969, 1200, 1430, 1661],
-  "dreamGeometry": {
-    "slotY": 333,
-    "slotWidth": 196,
-    "slotHeight": 336,
-    "slotXPositions": [53, 284, 515, 746, 977, 1208, 1439, 1670]
-  },
   "stableRegions": [
     { "x": 0.14, "y": 0.1, "width": 0.72, "height": 0.5, "weight": 0.22 },
     { "x": 0.03, "y": 0.03, "width": 0.28, "height": 0.2, "weight": 0.38 },

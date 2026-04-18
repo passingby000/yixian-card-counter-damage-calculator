@@ -13,7 +13,13 @@ contextBridge.exposeInMainWorld('api', {
   setDamageRollMode: (mode) => ipcRenderer.invoke('set-damage-roll-mode', mode),
   setDebugMode: (enabled) => ipcRenderer.invoke('set-debug-mode', enabled),
   setControlsExpanded: (expanded) => ipcRenderer.invoke('set-controls-expanded', expanded),
+  performCalibration: () => ipcRenderer.invoke('perform-calibration'),
   readDerivedFile: (fileName) => ipcRenderer.invoke('read-derived-file', fileName),
+  onCalibrationProgress: (cb) => {
+    const wrapped = (_, payload) => cb(payload);
+    ipcRenderer.on('calibration-progress', wrapped);
+    return () => ipcRenderer.removeListener('calibration-progress', wrapped);
+  },
   onUiStateUpdated: (cb) => {
     const wrapped = (_, state) => cb(state);
     ipcRenderer.on('ui-state-updated', wrapped);

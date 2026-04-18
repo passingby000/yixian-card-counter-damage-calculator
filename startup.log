@@ -8,3 +8,5 @@ TypeError: Cannot read properties of undefined (reading 'whenReady')
     at f._load (node:electron/js2c/asar_bundle:2:13377)
     at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:96:12)
     at node:internal/main/run_main_module:23:47
+[2026-04-14T22:48:53.802Z] Electron main process started without a valid app object
+ELECTRON_RUN_AS_NODE is set. Start the app with that variable unset.

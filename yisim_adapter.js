@@ -12,6 +12,7 @@ let lastSimulationKey = null;
 let lastSimulationResult = null;
 let cardNameTranslationsCache = null;
 let exactDetectedCardIdsCache = null;
+let swogiKeySetCache = null;
 
 const DREAM_NAME_ALIASES = {
   '梦·凝意决': '梦·凝意诀'
@@ -83,6 +84,212 @@ function loadExactDetectedCardIds() {
 
   exactDetectedCardIdsCache = exactIds;
   return exactDetectedCardIdsCache;
+}
+
+function loadSwogiKeySet() {
+  if (swogiKeySetCache) return swogiKeySetCache;
+  try {
+    const swogi = JSON.parse(fs.readFileSync(path.join(YISIM_DIR, 'swogi.json'), 'utf8'));
+    swogiKeySetCache = new Set(Object.keys(swogi || {}));
+  } catch (error) {
+    console.error('Failed to load swogi key set', error);
+    swogiKeySetCache = new Set();
+  }
+  return swogiKeySetCache;
+}
+
+function swogiIdExists(id) {
+  if (id == null) return false;
+  return loadSwogiKeySet().has(String(id));
+}
+
+function findSwogiIdForPrefixLevel(prefix, level) {
+  const candidate = `${prefix}${level}`;
+  return swogiIdExists(candidate) ? candidate : null;
+}
+
+function getMaxLevelForPrefix(prefix) {
+  const keys = loadSwogiKeySet();
+  let maxLevel = 0;
+  for (const key of keys) {
+    if (key.length === prefix.length + 1 && key.startsWith(prefix)) {
+      const level = Number.parseInt(key.slice(-1), 10);
+      if (Number.isFinite(level) && level > maxLevel) maxLevel = level;
+    }
+  }
+  return maxLevel;
+}
+
+const RUNTIME_KEY_PLACEHOLDER = /\{n\}/g;
+
+function resolveRuntimeKey(runtimeKey, position) {
+  if (!runtimeKey || typeof runtimeKey !== 'string') return null;
+  if (!runtimeKey.includes('{n}')) return runtimeKey;
+  if (!Number.isFinite(Number(position))) return null;
+  return runtimeKey.replace(RUNTIME_KEY_PLACEHOLDER, String(Number(position)));
+}
+
+function normalizeTalents(rawTalents) {
+  if (!Array.isArray(rawTalents)) return [];
+  return rawTalents
+    .filter((talent) => talent && talent.detected)
+    .map((talent) => ({
+      position: Number(talent.position) || null,
+      name: typeof talent.name === 'string' ? talent.name : '',
+      simulationKind: talent.simulationKind || 'non-combat-or-unsupported',
+      runtimeKey: resolveRuntimeKey(talent.runtimeKey, talent.position),
+      grantedCardBaseIds: Array.isArray(talent.grantedCardBaseIds)
+        ? talent.grantedCardBaseIds.map(Number).filter(Number.isFinite)
+        : []
+    }))
+    .filter((talent) => talent.name);
+}
+
+function buildEmptyTalentIntegration() {
+  return {
+    appliedRuntimeTalents: [],
+    representedByCards: [],
+    unsupportedDirectTalents: [],
+    ignoredNonCombatTalents: [],
+    partial: false
+  };
+}
+
+function finalizeTalentIntegration(integration) {
+  return {
+    ...integration,
+    partial: integration.unsupportedDirectTalents.length > 0
+  };
+}
+
+const SOLITARY_VOID_BASE_PREFIX = '21501';
+const SOLITARY_VOID_LEFT_PREFIX = '21601';
+const SOLITARY_VOID_RIGHT_PREFIX = '21701';
+
+function applySolitaryVoidTransform(playerCards, normalizedSlots) {
+  const indexOfAnchor = playerCards.findIndex((id) => String(id || '').startsWith(SOLITARY_VOID_BASE_PREFIX));
+  if (indexOfAnchor < 0) {
+    return { applied: false };
+  }
+
+  const anchorId = String(playerCards[indexOfAnchor]);
+  const anchorLevel = Number.parseInt(anchorId.slice(-1), 10) || 1;
+  const anchorMaxLevel = getMaxLevelForPrefix(SOLITARY_VOID_BASE_PREFIX) || anchorLevel;
+
+  const isSlotEmpty = (index) => {
+    if (index < 0 || index >= playerCards.length) return false;
+    return !normalizedSlots[index];
+  };
+  const isSideAvailable = (index) => {
+    if (index < 0 || index >= playerCards.length) return false;
+    return isSlotEmpty(index);
+  };
+
+  let pendingLevel = anchorLevel;
+
+  const leftIndex = indexOfAnchor - 1;
+  if (isSideAvailable(leftIndex)) {
+    const leftId = findSwogiIdForPrefixLevel(SOLITARY_VOID_LEFT_PREFIX, 1);
+    if (leftId) {
+      playerCards[leftIndex] = leftId;
+    } else {
+      pendingLevel = Math.min(anchorMaxLevel, pendingLevel + 1);
+    }
+  } else {
+    pendingLevel = Math.min(anchorMaxLevel, pendingLevel + 1);
+  }
+
+  const rightIndex = indexOfAnchor + 1;
+  if (isSideAvailable(rightIndex)) {
+    const rightId = findSwogiIdForPrefixLevel(SOLITARY_VOID_RIGHT_PREFIX, 1);
+    if (rightId) {
+      playerCards[rightIndex] = rightId;
+    } else {
+      pendingLevel = Math.min(anchorMaxLevel, pendingLevel + 1);
+    }
+  } else {
+    pendingLevel = Math.min(anchorMaxLevel, pendingLevel + 1);
+  }
+
+  if (pendingLevel !== anchorLevel) {
+    const upgradedId = findSwogiIdForPrefixLevel(SOLITARY_VOID_BASE_PREFIX, pendingLevel);
+    if (upgradedId) {
+      playerCards[indexOfAnchor] = upgradedId;
+    }
+  }
+
+  return { applied: true };
+}
+
+function prepareTalentIntegration(normalized, probePlayer, playerCards, normalizedSlots) {
+  const integration = buildEmptyTalentIntegration();
+  const runtimeWrites = [];
+  const suppressedRuntimeKeys = new Set();
+  const suppressedNames = new Set();
+
+  const hasAttainQi = normalized.some((talent) => talent.name === 'Attain Qi');
+  if (hasAttainQi) {
+    const mortalBody = normalized.find((talent) => talent.name === 'Mortal Body');
+    if (mortalBody) {
+      suppressedNames.add('Mortal Body');
+      if (mortalBody.runtimeKey) suppressedRuntimeKeys.add(mortalBody.runtimeKey);
+    }
+  }
+
+  for (const talent of normalized) {
+    if (suppressedNames.has(talent.name)) continue;
+
+    if (talent.simulationKind === 'non-combat-or-unsupported') {
+      integration.ignoredNonCombatTalents.push(talent.name);
+      continue;
+    }
+
+    if (talent.simulationKind === 'card-grant') {
+      integration.representedByCards.push(talent.name);
+      continue;
+    }
+
+    if (talent.simulationKind === 'runtime-stack') {
+      const key = talent.runtimeKey;
+      if (key && !suppressedRuntimeKeys.has(key) && Object.prototype.hasOwnProperty.call(probePlayer, key)) {
+        runtimeWrites.push({ key, value: 1 });
+        integration.appliedRuntimeTalents.push(talent.name);
+      } else {
+        integration.unsupportedDirectTalents.push(talent.name);
+      }
+      continue;
+    }
+
+    if (talent.simulationKind === 'transform') {
+      if (talent.name === 'Attain Qi') {
+        const surgeKey = 'surge_of_qi_stacks';
+        if (Object.prototype.hasOwnProperty.call(probePlayer, surgeKey)) {
+          runtimeWrites.push({ key: surgeKey, value: 1 });
+          integration.appliedRuntimeTalents.push(talent.name);
+        } else {
+          integration.unsupportedDirectTalents.push(talent.name);
+        }
+        continue;
+      }
+
+      if (talent.name === 'Solitary Void Golden Scroll') {
+        const result = applySolitaryVoidTransform(playerCards, normalizedSlots);
+        if (result.applied) {
+          integration.appliedRuntimeTalents.push(talent.name);
+        } else {
+          integration.unsupportedDirectTalents.push(talent.name);
+        }
+        continue;
+      }
+
+      integration.unsupportedDirectTalents.push(talent.name);
+      continue;
+    }
+
+    integration.unsupportedDirectTalents.push(talent.name);
+  }
+
+  return { integration: finalizeTalentIntegration(integration), runtimeWrites };
 }
 
 function isDreamSlot(slot) {
@@ -190,6 +397,7 @@ function buildEmptyResult(error = null) {
     cumulativeDamage: [],
     turnsSimulated: 0,
     playerCharacter: null,
+    talentIntegration: buildEmptyTalentIntegration(),
     error
   };
 }
@@ -265,7 +473,7 @@ function applyRollModeOverrides(game, rollMode) {
   };
 }
 
-function runSingleSimulation(GameState, player, opponent, rollMode) {
+function runSingleSimulation(GameState, player, opponent, rollMode, runtimeWrites = []) {
   const game = new GameState();
   Object.assign(game.players[0], {
     ...player,
@@ -275,6 +483,11 @@ function runSingleSimulation(GameState, player, opponent, rollMode) {
     ...opponent,
     cards: [...opponent.cards]
   });
+  for (const write of runtimeWrites) {
+    if (write && write.key) {
+      game.players[0][write.key] = write.value;
+    }
+  }
   applyRollModeOverrides(game, rollMode);
   game.start_of_game_setup();
 
@@ -318,6 +531,8 @@ async function simulateFirstEightTurns(slots, options = {}) {
   const normalizedSlots = (slots || []).slice(0, deckSlots);
   while (normalizedSlots.length < deckSlots) normalizedSlots.push(null);
 
+  const normalizedTalents = normalizeTalents(options.talents);
+
   const cacheKey = JSON.stringify({
     deckSlots,
     rollMode,
@@ -334,7 +549,14 @@ async function simulateFirstEightTurns(slots, options = {}) {
       level: slot.level,
       phase: slot.phase ?? null,
       isDream: !!slot.isDream
-    } : null)
+    } : null),
+    talents: normalizedTalents.map((talent) => ({
+      position: talent.position,
+      name: talent.name,
+      simulationKind: talent.simulationKind,
+      runtimeKey: talent.runtimeKey,
+      grantedCardBaseIds: talent.grantedCardBaseIds
+    }))
   });
   if (cacheKey === lastSimulationKey && lastSimulationResult) {
     return lastSimulationResult;
@@ -353,15 +575,26 @@ async function simulateFirstEightTurns(slots, options = {}) {
     const { player, opponent } = buildPlayers(normalizedSlots, card_name_to_id_fuzzy, guess_character, {
       playerState
     });
+
+    const probeGame = new GameState();
+    const probePlayer = probeGame.players[0];
+    const { integration: talentIntegration, runtimeWrites } = prepareTalentIntegration(
+      normalizedTalents,
+      probePlayer,
+      player.cards,
+      normalizedSlots
+    );
+
     const simulationSummary = rollMode === 'average'
       ? averageSimulationResults(
-          Array.from({ length: AVERAGE_SIM_RUNS }, () => runSingleSimulation(GameState, player, opponent, DEFAULT_ROLL_MODE))
+          Array.from({ length: AVERAGE_SIM_RUNS }, () => runSingleSimulation(GameState, player, opponent, DEFAULT_ROLL_MODE, runtimeWrites))
         )
-      : runSingleSimulation(GameState, player, opponent, rollMode);
+      : runSingleSimulation(GameState, player, opponent, rollMode, runtimeWrites);
 
     const result = {
       ...simulationSummary,
       playerCharacter: playerState.character || player.character,
+      talentIntegration,
       error: null
     };
     lastSimulationKey = cacheKey;

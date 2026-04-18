@@ -73,9 +73,7 @@ function renderBoardPanel() {
   const battlePlayer = boardState.capture?.battle?.player;
   const debugMode = !!boardState.capture?.debugMode;
   const talents = Array.isArray(boardState.capture?.talents) ? boardState.capture.talents : [];
-  const hasIgnoredDirectTalents = talents.some((talent) => (
-    talent?.detected && ['runtime-stack', 'transform'].includes(talent.simulationKind)
-  ));
+  const talentIntegration = preview.talentIntegration || null;
   const parts = [];
   if (battlePlayer?.character || preview.playerCharacter) {
     parts.push(battlePlayer?.character || preview.playerCharacter);
@@ -89,8 +87,14 @@ function renderBoardPanel() {
   if (debugMode) {
     parts.push('Debug');
   }
-  if (hasIgnoredDirectTalents) {
-    parts.push('Talents detected · preview ignores direct talent effects');
+  if (talentIntegration) {
+    const unsupported = Array.isArray(talentIntegration.unsupportedDirectTalents) ? talentIntegration.unsupportedDirectTalents : [];
+    const applied = Array.isArray(talentIntegration.appliedRuntimeTalents) ? talentIntegration.appliedRuntimeTalents : [];
+    if (unsupported.length > 0) {
+      parts.push(`Talents partially applied · ignored: ${unsupported.join(', ')}`);
+    } else if (applied.length > 0) {
+      parts.push('Talents applied');
+    }
   }
   if (boardState.capture?.status !== 'ok') {
     parts.push(boardState.capture?.message || boardState.capture?.status || 'idle');

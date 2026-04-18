@@ -23,6 +23,25 @@ const TALENT_CLASSIFICATION_OVERRIDES = {
   },
   'Attain Qi': {
     simulationKind: 'transform'
+  },
+  'Wind in Sky': {
+    simulationKind: 'non-combat-or-unsupported'
+  },
+  'Jade Scroll of Yin Symbol': {
+    simulationKind: 'card-grant',
+    grantedCardBaseIds: [214]
+  },
+  'Spirit Hexagram Evolves': {
+    simulationKind: 'runtime-stack',
+    runtimeKey: 'spirit_hexagram_evolves_stacks'
+  },
+  'Hexagrams Explain': {
+    simulationKind: 'runtime-stack',
+    runtimeKey: 'hexagrams_explain_stacks'
+  },
+  'Solitary Void Golden Scroll': {
+    simulationKind: 'transform',
+    grantedCardBaseIds: [215]
   }
 };
 

@@ -1,0 +1,19 @@
+# Calibration Reference
+# Image: test position.png
+
+# Board slots (left to right, 8 total)
+slot1: 云剑•闪风1
+slot2: 云剑•飞刺3
+slot3: 运笔如飞1
+slot4: 云剑•汇灵2
+slot5: 破气剑1
+slot6: 巨鹏灵剑2
+slot7: 水月剑阵2
+slot8: 镜花剑阵2
+
+# Talents (positions 1-5)
+talent1: Shift As Cloud
+talent2: Sword In Sheathed
+talent3: Endurance As Cloud Sea
+talent4: Shade Of Cloud
+talent5: Spring Course Tea

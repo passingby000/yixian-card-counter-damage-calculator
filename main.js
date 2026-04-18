@@ -4,16 +4,15 @@ const fs = require('fs');
 const chokidar = require('chokidar');
 const {
   detectSlots,
-  BASE_SCREEN_WIDTH,
-  BASE_SCREEN_HEIGHT,
-  SLOT_X_POSITIONS,
-  SLOT_Y,
-  SLOT_WIDTH,
-  SLOT_HEIGHT
+  NUM_SLOTS,
+  setCalibration: setSlotCalibration,
+  getActiveGeometry: getActiveSlotGeometry
 } = require('./slot_detector');
 const { loadCardNameTranslations: loadYisimCardNameTranslations, simulateFirstEightTurns } = require('./yisim_adapter');
 const { loadCardLibrary } = require('./card_metadata');
-const { detectTalents, buildFallbackTalentResults } = require('./talent_detector');
+const { detectTalents, buildFallbackTalentResults, setCalibration: setTalentCalibration } = require('./talent_detector');
+const { performCalibration } = require('./calibrator');
+const { loadCalibration, saveCalibration } = require('./calibration_store');
 const {
   getAssetPath,
   getCodePath,
@@ -22,7 +21,7 @@ const {
 } = require('./runtime_paths');
 
 const BOARD_CAPTURE_INTERVAL_MS = 1000;
-const GAME_SOURCE_PATTERNS = ['弈仙牌', 'yixianpai', 'yi xian pai'];
+const GAME_SOURCE_PATTERNS = ['弈仙牌', 'yixianpai', 'yi xian pai', 'yi xian: cultivation card game'];
 const SIDE_MARGIN = 20;
 const BOARD_TOP_MARGIN = 8;
 const CONTROLS_TOP_MARGIN = 2;
@@ -31,7 +30,7 @@ const CARD_LIST_WINDOW_WIDTH = 260;
 const BOARD_WINDOW_WIDTH = 280;
 const CONTROLS_WINDOW_WIDTH = 198;
 const CONTROLS_WINDOW_HEIGHT = 34;
-const CONTROLS_WINDOW_EXPANDED_HEIGHT = 252;
+const CONTROLS_WINDOW_EXPANDED_HEIGHT = 300;
 
 let cardListWindow = null;
 let boardWindow = null;
@@ -183,8 +182,8 @@ function getWindowBounds() {
     damage: {
       x: primary.bounds.x,
       y: primary.bounds.y,
-      width: primary.bounds.width,
-      height: primary.bounds.height
+      width: primary.size.width,
+      height: primary.size.height
     }
   };
 }
@@ -233,7 +232,7 @@ function setWindowClickThrough(win, clickThrough) {
   if (!win || win.isDestroyed()) return;
   try {
     if (clickThrough) {
-      win.setIgnoreMouseEvents(true, { forward: true });
+      win.setIgnoreMouseEvents(true);
     } else {
       win.setIgnoreMouseEvents(false);
     }
@@ -262,15 +261,22 @@ function updateControlsWindowBounds() {
 }
 
 function getFallbackSlotRects() {
-  const primary = screen.getPrimaryDisplay();
-  const scaleX = primary.size.width / BASE_SCREEN_WIDTH;
-  const scaleY = primary.size.height / BASE_SCREEN_HEIGHT;
-  return SLOT_X_POSITIONS.map((x) => ({
-    x: Math.round(x * scaleX),
-    y: Math.round(SLOT_Y * scaleY),
-    width: Math.max(1, Math.round(SLOT_WIDTH * scaleX)),
-    height: Math.max(1, Math.round(SLOT_HEIGHT * scaleY))
+  const geo = getActiveSlotGeometry();
+  if (!geo) return [];
+  return geo.slotXPositions.map((x) => ({
+    x: Math.round(x),
+    y: Math.round(geo.slotY),
+    width: Math.max(1, Math.round(geo.slotWidth)),
+    height: Math.max(1, Math.round(geo.slotHeight))
   }));
+}
+
+let calibrationData = null;
+
+function applyCalibration(data) {
+  calibrationData = data || null;
+  setSlotCalibration(calibrationData);
+  setTalentCalibration(calibrationData);
 }
 
 function getUiState() {
@@ -281,7 +287,9 @@ function getUiState() {
     showCardList: settings.showCardList,
     showBoardPanel: settings.showBoardPanel,
     cardLanguage: settings.cardLanguage,
-    damageRollMode: settings.damageRollMode
+    damageRollMode: settings.damageRollMode,
+    calibrated: !!calibrationData,
+    calibratedAt: calibrationData?.calibratedAt || null
   };
 }
 
@@ -505,7 +513,7 @@ function parseBattleLog(logContent) {
 
 function getOpenSlotsForRound(currentRound) {
   const safeRound = Math.max(1, Number(currentRound) || 1);
-  return Math.min(SLOT_X_POSITIONS.length, safeRound + 2);
+  return Math.min(NUM_SLOTS, safeRound + 2);
 }
 
 function loadBattleState(settings) {
@@ -774,18 +782,49 @@ function getCurrentHandCandidates() {
   return Object.keys(loadConvertedHandCards()).filter((name) => !!name);
 }
 
+const MAX_CAPTURE_WIDTH  = 1920;
+const MAX_CAPTURE_HEIGHT = 1080;
+
 async function findGameWindowSource() {
   const primaryDisplay = screen.getPrimaryDisplay();
+  const scale = primaryDisplay.scaleFactor || 1;
   const thumbnailSize = {
-    width: primaryDisplay.size.width,
-    height: primaryDisplay.size.height
+    width:  Math.round(primaryDisplay.size.width  * scale),
+    height: Math.round(primaryDisplay.size.height * scale)
   };
+  if (process.platform === 'win32') {
+    const windowSources = await desktopCapturer.getSources({
+      types: ['window'],
+      thumbnailSize,
+      fetchWindowIcons: false
+    });
+    const windowSource = windowSources.find((source) => {
+      const sourceName = (source.name || '').toLowerCase();
+      return GAME_SOURCE_PATTERNS.some((pattern) => sourceName.includes(pattern.toLowerCase()));
+    });
+    if (windowSource && !windowSource.thumbnail.isEmpty()) {
+      return windowSource;
+    }
+
+    const overlayWindows = [controlsWindow, damageWindow].filter(w => w && !w.isDestroyed());
+    overlayWindows.forEach(w => w.hide());
+    await new Promise(r => setTimeout(r, 80));
+    const screenSources = await desktopCapturer.getSources({
+      types: ['screen'],
+      thumbnailSize,
+      fetchWindowIcons: false
+    });
+    overlayWindows.forEach(w => w.show());
+    return screenSources.find((source) =>
+      source.display_id === String(primaryDisplay.id)
+    ) || screenSources[0] || null;
+  }
+
   const sources = await desktopCapturer.getSources({
     types: ['window'],
     thumbnailSize,
     fetchWindowIcons: false
   });
-
   return sources.find((source) => {
     const sourceName = (source.name || '').toLowerCase();
     return GAME_SOURCE_PATTERNS.some((pattern) => sourceName.includes(pattern.toLowerCase()));
@@ -795,8 +834,8 @@ async function findGameWindowSource() {
 async function performBoardCapture() {
   const settings = loadSettings();
   const battleState = loadBattleState(settings);
-  const realOpenSlots = battleState.openSlots || SLOT_X_POSITIONS.length;
-  const boardOpenSlots = debugMode ? SLOT_X_POSITIONS.length : realOpenSlots;
+  const realOpenSlots = battleState.openSlots || NUM_SLOTS;
+  const boardOpenSlots = debugMode ? NUM_SLOTS : realOpenSlots;
   const fallbackSlotRects = getFallbackSlotRects();
   const fallbackTalentCapture = buildFallbackTalentResults(screen.getPrimaryDisplay().size, 'idle');
   const emptyDamagePreview = (error = null) => ({
@@ -819,6 +858,7 @@ async function performBoardCapture() {
         updatedAt: Date.now(),
         capture: {
           status: 'missing-source',
+          screenshotSize: screen.getPrimaryDisplay().size,
           fallbackSlotRects,
           slotResults: buildFallbackSlotResults(fallbackSlotRects, boardOpenSlots, 'missing-source'),
           talents: fallbackTalentCapture.talents,
@@ -837,28 +877,53 @@ async function performBoardCapture() {
       return;
     }
 
-    const detection = handCandidates.length > 0
-      ? detectSlots(source.thumbnail, handCandidates, getImagesDir())
+    const talentCapture = detectTalents(source.thumbnail);
+
+    // For card-granting talents, add the talent's Chinese name to candidates
+    // so the personal-folder templates (e.g. 拆招1.png) are included in detection.
+    const grantedCardNames = talentCapture.talents
+      .filter((t) => t.detected && t.grantedCardBaseIds?.length > 0 && t.nameCn)
+      .map((t) => t.nameCn);
+    const allHandCandidates = grantedCardNames.length > 0
+      ? [...new Set([...handCandidates, ...grantedCardNames])]
+      : handCandidates;
+
+    const detection = allHandCandidates.length > 0
+      ? detectSlots(source.thumbnail, allHandCandidates, getImagesDir())
       : {
-          slots: Array(SLOT_X_POSITIONS.length).fill(null),
+          slots: Array(NUM_SLOTS).fill(null),
           slotResults: [],
           debug: { reason: 'no-hand-candidates' }
         };
-    const talentCapture = detectTalents(source.thumbnail);
     const slotResults = applyOpenSlotStateToResults(detection.slotResults, fallbackSlotRects, boardOpenSlots);
     const slots = slotResults.map((result) => result.card);
     const activeSlots = slots.slice(0, realOpenSlots);
     const damagePreview = await simulateFirstEightTurns(activeSlots, {
       deckSlots: realOpenSlots,
       playerState: battleState.simulationPlayer,
-      rollMode: settings.damageRollMode
+      rollMode: settings.damageRollMode,
+      talents: talentCapture.talents
     });
+
+    // Resize damage window to match actual game height (game may be taller than primary.bounds reports)
+    if (damageWindow && !damageWindow.isDestroyed()) {
+      const ssSize = source.thumbnail.getSize();
+      const scaleFactor = screen.getPrimaryDisplay().scaleFactor || 1;
+      const logicalH = Math.round(ssSize.height / scaleFactor);
+      const logicalW = Math.round(ssSize.width  / scaleFactor);
+      const [curW, curH] = damageWindow.getContentSize();
+      if (curH !== logicalH || curW !== logicalW) {
+        damageWindow.setContentSize(logicalW, logicalH);
+      }
+    }
+
     emitBoardDetectionUpdated({
       slots,
       damagePreview,
       updatedAt: Date.now(),
       capture: {
         status: 'ok',
+        screenshotSize: source.thumbnail.getSize(),
         sourceName: source.name,
         detector: detection.debug,
         slotResults,
@@ -880,6 +945,7 @@ async function performBoardCapture() {
       updatedAt: Date.now(),
       capture: {
         status: 'error',
+        screenshotSize: screen.getPrimaryDisplay().size,
         message: error.message,
         fallbackSlotRects,
         slotResults: buildFallbackSlotResults(fallbackSlotRects, boardOpenSlots, 'error'),
@@ -932,6 +998,13 @@ function startBoardCapture() {
 app.whenReady().then(() => {
   try {
     appendStartupLog('app.whenReady');
+
+    // Load saved calibration and apply to detectors before first capture
+    const savedCalibration = loadCalibration();
+    if (savedCalibration) {
+      applyCalibration(savedCalibration);
+    }
+
     createOverlayWindows();
 
     app.on('activate', () => {
@@ -1050,6 +1123,26 @@ ipcMain.handle('set-controls-expanded', (_, expanded) => {
   controlsExpanded = !!expanded;
   updateControlsWindowBounds();
   return true;
+});
+
+ipcMain.handle('perform-calibration', async () => {
+  const source = await findGameWindowSource();
+  if (!source || !source.thumbnail || source.thumbnail.isEmpty()) {
+    throw new Error('Game window not found. Open the game before calibrating.');
+  }
+  const onProgress = (step, total, message) => {
+    if (controlsWindow && !controlsWindow.isDestroyed()) {
+      controlsWindow.webContents.send('calibration-progress', { step, total, message });
+    }
+  };
+  const result = await performCalibration(source.thumbnail, onProgress);
+  saveCalibration(result);
+  applyCalibration(result);
+  broadcastUiState();
+  captureBoardState().catch((error) => {
+    console.error('Failed to refresh board capture after calibration', error);
+  });
+  return { success: true, calibratedAt: result.calibratedAt };
 });
 
 function watchPath(p) {

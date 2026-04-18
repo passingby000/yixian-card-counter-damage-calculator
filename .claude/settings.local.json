@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wc -l \"c:/Users/raymo/OneDrive/Documents/testing-godot/yixian-card-counter-damage-calculator\"/*.js)",
+      "Bash(node -e \"const s=JSON.parse\\(require\\('fs'\\).readFileSync\\('c:/Users/raymo/OneDrive/Documents/testing-godot/yixian-card-counter-damage-calculator/yisim/swogi.json','utf8'\\)\\);const keys=Object.keys\\(s\\).filter\\(k=>k.startsWith\\('215'\\)||k.startsWith\\('216'\\)||k.startsWith\\('217'\\)\\);console.log\\(keys.slice\\(0,60\\).join\\('\\\\n'\\)\\);\")",
+      "Bash(node --check yisim_adapter.js)",
+      "Bash(node --check talent_catalog.js)",
+      "Bash(node --check main.js)",
+      "Bash(node --check board_renderer.js)",
+      "Bash(node -e \"const {screen, app} = require\\('electron'\\); app.whenReady\\(\\).then\\(\\(\\) => { const d = screen.getPrimaryDisplay\\(\\); console.log\\(JSON.stringify\\({size: d.size, bounds: d.bounds, scaleFactor: d.scaleFactor, workAreaSize: d.workAreaSize}\\)\\); app.quit\\(\\); }\\);\")",
+      "Bash(cat)",
+      "Bash(node /tmp/test_path.js)",
+      "Bash(node -e ':*)",
+      "Bash(node -e \"const r = require\\('./runtime_paths'\\); console.log\\(r.getYisimPath\\('lanke','talent_templates'\\)\\)\")"
+    ]
+  }
+}

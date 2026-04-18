@@ -7,22 +7,35 @@ const { normalizeTalentName, getTalentMetadata } = require('./talent_catalog');
 const CONFIG_PATH = getCodePath('talent_detector_config.json');
 const detectorConfig = JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf8'));
 
-const BASE_SCREEN_WIDTH = detectorConfig.baseScreenWidth;
-const BASE_SCREEN_HEIGHT = detectorConfig.baseScreenHeight;
 const TALENT_THRESHOLD = Number.isFinite(Number(detectorConfig.threshold))
   ? Number(detectorConfig.threshold)
   : 0.693;
 const TALENT_TEMPLATE_DIR = getYisimPath('lanke', 'talent_templates');
-const BASE_TALENT_RECTS = Array.isArray(detectorConfig.rects)
-  ? detectorConfig.rects.map((rect) => ({
-      x: Number(rect.x),
-      y: Number(rect.y),
-      width: Number(rect.width),
-      height: Number(rect.height)
-    }))
-  : [];
+const NUM_TALENT_POSITIONS = 5;
 
 let templateCache = null;
+
+// Calibration override — set via setCalibration() from main process
+let activeCalibration = null;
+
+function setCalibration(data) {
+  activeCalibration = data || null;
+}
+
+// Compute scaled talent rects from calibration data for a given source size
+function computeTalentRects(sourceSize) {
+  if (!activeCalibration?.talents || !activeCalibration.screenshotSize) return null;
+  const calW = activeCalibration.screenshotSize.width;
+  const calH = activeCalibration.screenshotSize.height;
+  const scaleX = sourceSize.width / calW;
+  const scaleY = sourceSize.height / calH;
+  return activeCalibration.talents.map((rect) => rect ? ({
+    x: Math.round(rect.x * scaleX),
+    y: Math.round(rect.y * scaleY),
+    width: Math.max(1, Math.round(rect.width * scaleX)),
+    height: Math.max(1, Math.round(rect.height * scaleY))
+  }) : null);
+}
 
 function getTemplatePreferenceScore(filePath) {
   const fileName = path.basename(filePath, '.png');
@@ -38,7 +51,7 @@ function loadTalentTemplates(templatesDir = TALENT_TEMPLATE_DIR) {
     return templateCache.positions;
   }
 
-  const positions = BASE_TALENT_RECTS.map((_, index) => {
+  const positions = Array.from({ length: NUM_TALENT_POSITIONS }, (_, index) => {
     const positionDir = path.join(templatesDir, `position_${index + 1}`);
     const templatesByName = new Map();
     if (!fs.existsSync(positionDir)) {
@@ -76,36 +89,13 @@ function loadTalentTemplates(templatesDir = TALENT_TEMPLATE_DIR) {
 }
 
 function getScaledTalentRects(sourceImage) {
-  const { width, height } = sourceImage.getSize();
-  const scaleX = width / BASE_SCREEN_WIDTH;
-  const scaleY = height / BASE_SCREEN_HEIGHT;
-  return BASE_TALENT_RECTS.map((rect) => ({
-    x: Math.round(rect.x * scaleX),
-    y: Math.round(rect.y * scaleY),
-    width: Math.max(1, Math.round(rect.width * scaleX)),
-    height: Math.max(1, Math.round(rect.height * scaleY))
-  }));
+  return computeTalentRects(sourceImage.getSize());
 }
 
-function cropTalentSlot(sourceImage, rect) {
-  return sourceImage.crop(rect);
-}
-
-function getResizedTemplateImage(template, width, height) {
-  const cacheKey = `${width}x${height}`;
-  if (template.resizedImages.has(cacheKey)) {
-    return template.resizedImages.get(cacheKey);
-  }
-
-  const resized = template.image.resize({
-    width,
-    height,
-    quality: 'best'
-  });
-  template.resizedImages.set(cacheKey, resized);
-  return resized;
-}
-
+// Convert a nativeImage to a gray Float32Array using its physical pixel dimensions.
+// For the full source image, getSize() matches toBitmap() dimensions correctly.
+// (Avoid using this on cropped nativeImages — crop returns logical size but bitmap
+//  is physical, causing stride mismatch at DPI > 1.)
 function imageToGrayscaleArray(image) {
   const bitmap = image.toBitmap();
   const { width, height } = image.getSize();
@@ -119,56 +109,61 @@ function imageToGrayscaleArray(image) {
   return { gray, width, height };
 }
 
-function getCenterCropBounds(width, height) {
-  return {
-    x0: Math.max(0, Math.floor(width * 0.15)),
-    y0: Math.max(0, Math.floor(height * 0.15)),
-    x1: Math.min(width, Math.ceil(width * 0.85)),
-    y1: Math.min(height, Math.ceil(height * 0.85))
-  };
+// Cache grayscale array on the template object (computed once per template).
+// Template images are loaded from files — getSize() is reliable for them.
+function getTemplateGray(template) {
+  if (!template.grayData) {
+    template.grayData = imageToGrayscaleArray(template.image);
+  }
+  return template.grayData;
 }
 
-function computeNormalizedCorrelation(imageA, imageB) {
-  const grayA = imageToGrayscaleArray(imageA);
-  const grayB = imageToGrayscaleArray(imageB);
-  const { x0, y0, x1, y1 } = getCenterCropBounds(grayA.width, grayA.height);
-
-  let sumA = 0;
-  let sumB = 0;
-  let count = 0;
-
-  for (let y = y0; y < y1; y += 1) {
-    for (let x = x0; x < x1; x += 1) {
-      const idx = (y * grayA.width) + x;
-      sumA += grayA.gray[idx];
-      sumB += grayB.gray[idx];
-      count += 1;
+function resizeGray(srcGray, srcW, srcH, dstW, dstH) {
+  const out = new Float32Array(dstW * dstH);
+  const rx = srcW / dstW;
+  const ry = srcH / dstH;
+  for (let dy = 0; dy < dstH; dy++) {
+    for (let dx = 0; dx < dstW; dx++) {
+      const fx = dx * rx, fy = dy * ry;
+      const x0 = Math.floor(fx), y0 = Math.floor(fy);
+      const x1 = Math.min(x0 + 1, srcW - 1), y1 = Math.min(y0 + 1, srcH - 1);
+      const wx = fx - x0, wy = fy - y0;
+      out[dy * dstW + dx] =
+        (1 - wx) * (1 - wy) * srcGray[y0 * srcW + x0] +
+        wx       * (1 - wy) * srcGray[y0 * srcW + x1] +
+        (1 - wx) * wy       * srcGray[y1 * srcW + x0] +
+        wx       * wy       * srcGray[y1 * srcW + x1];
     }
   }
+  return out;
+}
 
-  if (count === 0) {
-    return 0;
-  }
-
-  const meanA = sumA / count;
-  const meanB = sumB / count;
-  let numerator = 0;
-  let denomA = 0;
-  let denomB = 0;
-
-  for (let y = y0; y < y1; y += 1) {
-    for (let x = x0; x < x1; x += 1) {
-      const idx = (y * grayA.width) + x;
-      const centeredA = grayA.gray[idx] - meanA;
-      const centeredB = grayB.gray[idx] - meanB;
-      numerator += centeredA * centeredB;
-      denomA += centeredA * centeredA;
-      denomB += centeredB * centeredB;
+// Circular-masked zero-mean NCC — matches calibrator.js and debug_talent1.js exactly.
+function znccCircular(ssGray, ssW, sx, sy, tmplGray, tw, th) {
+  const cx = (tw - 1) / 2, cy = (th - 1) / 2;
+  const r2 = (Math.min(tw, th) / 2) ** 2;
+  let sumI = 0, sumT = 0, n = 0;
+  for (let ty = 0; ty < th; ty++) {
+    for (let tx = 0; tx < tw; tx++) {
+      if ((tx - cx) ** 2 + (ty - cy) ** 2 > r2) continue;
+      sumI += ssGray[(sy + ty) * ssW + (sx + tx)];
+      sumT += tmplGray[ty * tw + tx];
+      n++;
     }
   }
-
-  const denominator = Math.sqrt(denomA * denomB);
-  return denominator === 0 ? 0 : numerator / denominator;
+  if (n === 0) return 0;
+  const mI = sumI / n, mT = sumT / n;
+  let num = 0, denI = 0, denT = 0;
+  for (let ty = 0; ty < th; ty++) {
+    for (let tx = 0; tx < tw; tx++) {
+      if ((tx - cx) ** 2 + (ty - cy) ** 2 > r2) continue;
+      const di = ssGray[(sy + ty) * ssW + (sx + tx)] - mI;
+      const dt = tmplGray[ty * tw + tx] - mT;
+      num += di * dt; denI += di * di; denT += dt * dt;
+    }
+  }
+  const denom = Math.sqrt(denI * denT);
+  return denom < 1 ? 0 : num / denom;
 }
 
 function roundScore(value) {
@@ -235,15 +230,41 @@ function detectTalents(sourceImage, options = {}) {
   const positionTemplates = loadTalentTemplates(templatesDir);
   const rects = getScaledTalentRects(sourceImage);
 
+  if (!rects) return buildFallbackTalentResults(sourceImage.getSize(), 'not-calibrated');
+
+  // Convert the full source image to gray ONCE using its actual dimensions.
+  // This avoids the nativeImage.crop() stride mismatch bug on Windows with DPI scaling,
+  // where crop().getSize() returns logical pixels but toBitmap() returns physical pixels.
+  const { gray: ssGray, width: ssW, height: ssH } = imageToGrayscaleArray(sourceImage);
+
   const talents = rects.map((rect, index) => {
-    const roi = cropTalentSlot(sourceImage, rect);
+    if (!rect) return createEmptyTalentSlot(index + 1, null);
     const templates = positionTemplates[index] || [];
-    const scoredCandidates = templates.map((template) => {
-      const resizedTemplate = getResizedTemplateImage(template, rect.width, rect.height);
-      return {
-        ...template,
-        score: computeNormalizedCorrelation(roi, resizedTemplate)
-      };
+
+    // For position 1, also try slightly shrunk rects (same center) to handle icons that are 1-2px smaller
+    const rectsToTry = [rect];
+    if (index === 0) {
+      for (const d of [1, 2]) {
+        rectsToTry.push({
+          x: rect.x + d,
+          y: rect.y + d,
+          width:  Math.max(1, rect.width  - 2 * d),
+          height: Math.max(1, rect.height - 2 * d)
+        });
+      }
+    }
+
+    const scoredCandidates = templates.flatMap((template) => {
+      const tmplGray = getTemplateGray(template);
+      return rectsToTry.map((r) => {
+        const rx = Math.max(0, Math.min(r.x, ssW - 1));
+        const ry = Math.max(0, Math.min(r.y, ssH - 1));
+        const rw = Math.max(1, Math.min(r.width,  ssW - rx));
+        const rh = Math.max(1, Math.min(r.height, ssH - ry));
+        const scaledTmpl = resizeGray(tmplGray.gray, tmplGray.width, tmplGray.height, rw, rh);
+        const score = znccCircular(ssGray, ssW, rx, ry, scaledTmpl, rw, rh);
+        return { ...template, score };
+      });
     }).sort((a, b) => b.score - a.score);
 
     return buildTalentResult(index + 1, rect, scoredCandidates[0] || null, scoredCandidates[1] || null, threshold);
@@ -257,12 +278,7 @@ function detectTalents(sourceImage, options = {}) {
       status: 'ok',
       threshold,
       screenshotSize: sourceImage.getSize(),
-      geometry: {
-        baseScreenWidth: BASE_SCREEN_WIDTH,
-        baseScreenHeight: BASE_SCREEN_HEIGHT,
-        baseRects: BASE_TALENT_RECTS,
-        rects
-      },
+      geometry: { rects },
       unmatchedPositions,
       templatesDir,
       templateCounts: positionTemplates.map((templates) => templates.length)
@@ -270,29 +286,19 @@ function detectTalents(sourceImage, options = {}) {
   };
 }
 
-function buildFallbackTalentResults(sourceSize = { width: BASE_SCREEN_WIDTH, height: BASE_SCREEN_HEIGHT }, status = 'idle') {
-  const scaleX = (sourceSize.width || BASE_SCREEN_WIDTH) / BASE_SCREEN_WIDTH;
-  const scaleY = (sourceSize.height || BASE_SCREEN_HEIGHT) / BASE_SCREEN_HEIGHT;
-  const rects = BASE_TALENT_RECTS.map((rect) => ({
-    x: Math.round(rect.x * scaleX),
-    y: Math.round(rect.y * scaleY),
-    width: Math.max(1, Math.round(rect.width * scaleX)),
-    height: Math.max(1, Math.round(rect.height * scaleY))
-  }));
+function buildFallbackTalentResults(sourceSize, status = 'idle') {
+  const rects = sourceSize ? computeTalentRects(sourceSize) : null;
+  const emptyRects = Array.from({ length: NUM_TALENT_POSITIONS }, () => null);
+  const effectiveRects = rects || emptyRects;
 
   return {
-    talents: rects.map((rect, index) => createEmptyTalentSlot(index + 1, rect)),
+    talents: effectiveRects.map((rect, index) => createEmptyTalentSlot(index + 1, rect)),
     debug: {
       status,
       threshold: TALENT_THRESHOLD,
-      screenshotSize: sourceSize,
-      geometry: {
-        baseScreenWidth: BASE_SCREEN_WIDTH,
-        baseScreenHeight: BASE_SCREEN_HEIGHT,
-        baseRects: BASE_TALENT_RECTS,
-        rects
-      },
-      unmatchedPositions: rects.map((_, index) => index + 1),
+      screenshotSize: sourceSize || null,
+      geometry: { rects: effectiveRects },
+      unmatchedPositions: effectiveRects.map((_, index) => index + 1),
       templatesDir: TALENT_TEMPLATE_DIR,
       templateCounts: []
     }
@@ -300,11 +306,10 @@ function buildFallbackTalentResults(sourceSize = { width: BASE_SCREEN_WIDTH, hei
 }
 
 module.exports = {
-  BASE_TALENT_RECTS,
-  BASE_SCREEN_WIDTH,
-  BASE_SCREEN_HEIGHT,
+  NUM_TALENT_POSITIONS,
   TALENT_THRESHOLD,
   TALENT_TEMPLATE_DIR,
+  setCalibration,
   loadTalentTemplates,
   detectTalents,
   buildFallbackTalentResults,

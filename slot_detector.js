@@ -6,21 +6,30 @@ const { getCodePath } = require('./runtime_paths');
 const CONFIG_PATH = getCodePath('slot_detector_config.json');
 const config = JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf8'));
 
-const BASE_SCREEN_WIDTH = config.baseScreenWidth;
-const BASE_SCREEN_HEIGHT = config.baseScreenHeight;
-const SLOT_Y = config.slotY;
-const SLOT_WIDTH = config.slotWidth;
-const SLOT_HEIGHT = config.slotHeight;
-const SLOT_X_POSITIONS = config.slotXPositions;
 const STABLE_REGIONS = config.stableRegions;
 const DEFAULT_METRIC = config.defaultMetric;
-const CONFIG_DREAM_GEOMETRY = config.dreamGeometry || null;
-const DEFAULT_GEOMETRY = {
-  slotXPositions: SLOT_X_POSITIONS,
-  slotY: SLOT_Y,
-  slotWidth: SLOT_WIDTH,
-  slotHeight: SLOT_HEIGHT
-};
+const NUM_SLOTS = 8;
+
+// Calibration override — set via setCalibration() from main process
+let activeCalibration = null;
+
+function setCalibration(data) {
+  activeCalibration = data || null;
+}
+
+// Returns the effective geometry from calibration, or null if not yet calibrated
+function getActiveGeometry() {
+  const s = activeCalibration?.slots;
+  if (!s) return null;
+  return {
+    baseScreenWidth:  s.baseScreenWidth,
+    baseScreenHeight: s.baseScreenHeight,
+    slotXPositions:   s.slotXPositions,
+    slotY:            s.slotY,
+    slotWidth:        s.slotWidth,
+    slotHeight:       s.slotHeight
+  };
+}
 
 let templateIndexCache = null;
 
@@ -303,38 +312,42 @@ function buildTemplateIndex(imagesDir) {
 }
 
 function getScaledSlotRect(slotIndex, sourceImage) {
-  return getScaledSlotRectForGeometry(slotIndex, sourceImage, DEFAULT_GEOMETRY);
+  const active = getActiveGeometry();
+  if (!active) return null;
+  return getScaledSlotRectForGeometry(slotIndex, sourceImage, active);
 }
 
 function normalizeGeometry(geometry) {
+  const active = getActiveGeometry();
   if (!geometry) {
+    if (!active) return null;
     return {
-      slotXPositions: [...DEFAULT_GEOMETRY.slotXPositions],
-      slotY: DEFAULT_GEOMETRY.slotY,
-      slotWidth: DEFAULT_GEOMETRY.slotWidth,
-      slotHeight: DEFAULT_GEOMETRY.slotHeight
+      baseScreenWidth:  active.baseScreenWidth,
+      baseScreenHeight: active.baseScreenHeight,
+      slotXPositions: [...active.slotXPositions],
+      slotY:      active.slotY,
+      slotWidth:  active.slotWidth,
+      slotHeight: active.slotHeight
     };
   }
 
-  const slotXPositions = Array.isArray(geometry.slotXPositions) && geometry.slotXPositions.length === SLOT_X_POSITIONS.length
+  const slotXPositions = Array.isArray(geometry.slotXPositions) && geometry.slotXPositions.length === NUM_SLOTS
     ? geometry.slotXPositions.map((value) => Number(value))
-    : [...DEFAULT_GEOMETRY.slotXPositions];
-  const slotY = Number.isFinite(Number(geometry.slotY)) ? Number(geometry.slotY) : DEFAULT_GEOMETRY.slotY;
-  const slotWidth = Number.isFinite(Number(geometry.slotWidth)) ? Number(geometry.slotWidth) : DEFAULT_GEOMETRY.slotWidth;
-  const slotHeight = Number.isFinite(Number(geometry.slotHeight)) ? Number(geometry.slotHeight) : DEFAULT_GEOMETRY.slotHeight;
+    : active ? [...active.slotXPositions] : null;
+  if (!slotXPositions) return null;
+  const slotY      = Number.isFinite(Number(geometry.slotY))      ? Number(geometry.slotY)      : active?.slotY;
+  const slotWidth  = Number.isFinite(Number(geometry.slotWidth))  ? Number(geometry.slotWidth)  : active?.slotWidth;
+  const slotHeight = Number.isFinite(Number(geometry.slotHeight)) ? Number(geometry.slotHeight) : active?.slotHeight;
+  const baseScreenWidth  = Number.isFinite(Number(geometry.baseScreenWidth))  ? Number(geometry.baseScreenWidth)  : active?.baseScreenWidth;
+  const baseScreenHeight = Number.isFinite(Number(geometry.baseScreenHeight)) ? Number(geometry.baseScreenHeight) : active?.baseScreenHeight;
 
-  return {
-    slotXPositions,
-    slotY,
-    slotWidth,
-    slotHeight
-  };
+  return { baseScreenWidth, baseScreenHeight, slotXPositions, slotY, slotWidth, slotHeight };
 }
 
 function getScaledSlotRectForGeometry(slotIndex, sourceImage, geometry) {
   const size = sourceImage.getSize();
-  const scaleX = size.width / BASE_SCREEN_WIDTH;
-  const scaleY = size.height / BASE_SCREEN_HEIGHT;
+  const scaleX = size.width  / geometry.baseScreenWidth;
+  const scaleY = size.height / geometry.baseScreenHeight;
   return {
     x: Math.round(geometry.slotXPositions[slotIndex] * scaleX),
     y: Math.round(geometry.slotY * scaleY),
@@ -344,7 +357,9 @@ function getScaledSlotRectForGeometry(slotIndex, sourceImage, geometry) {
 }
 
 function cropSlot(sourceImage, slotIndex) {
-  return cropSlotWithGeometry(sourceImage, slotIndex, DEFAULT_GEOMETRY);
+  const active = getActiveGeometry();
+  if (!active) return null;
+  return cropSlotWithGeometry(sourceImage, slotIndex, active);
 }
 
 function cropSlotWithGeometry(sourceImage, slotIndex, geometry) {
@@ -438,13 +453,17 @@ function buildDisplayConfidence(bestScore, margin, metric) {
 
 function detectSlots(sourceImage, handCardNames, imagesDir, options = {}) {
   if (!sourceImage || sourceImage.isEmpty()) {
-    return { slots: Array(SLOT_X_POSITIONS.length).fill(null), slotResults: [], debug: { reason: 'empty-source' } };
+    return { slots: Array(NUM_SLOTS).fill(null), slotResults: [], debug: { reason: 'empty-source' } };
+  }
+
+  const active = getActiveGeometry();
+  if (!active) {
+    return { slots: Array(NUM_SLOTS).fill(null), slotResults: [], debug: { reason: 'not-calibrated' } };
   }
 
   const metricName = options.metric || DEFAULT_METRIC;
   const metric = getMetricDefinition(metricName);
   const normalGeometry = normalizeGeometry(options.geometry);
-  const dreamGeometry = normalizeGeometry(options.dreamGeometry || CONFIG_DREAM_GEOMETRY || normalGeometry);
   const templateIndex = buildTemplateIndex(imagesDir);
   const candidateTemplates = [];
   const seenTemplateFiles = new Set();
@@ -452,12 +471,17 @@ function detectSlots(sourceImage, handCardNames, imagesDir, options = {}) {
   for (const cardName of handCardNames || []) {
     const normalizedCardName = normalizeCardName(cardName);
     const isDream = isDreamCardName(normalizedCardName);
-    const variants = (templateIndex.get(normalizedCardName) || []).filter((template) => {
-      if (isDream) {
-        return template.isDream && template.isSeasonal;
-      }
-      return !template.isDream;
-    });
+    const strippedCardName = normalizedCardName.replace(/\d+$/, '');
+    const lookupKeys = normalizedCardName !== strippedCardName
+      ? [normalizedCardName, strippedCardName]
+      : [normalizedCardName];
+    const variants = lookupKeys
+      .flatMap((key) => templateIndex.get(key) || [])
+      .filter((template, idx, arr) => arr.indexOf(template) === idx)
+      .filter((template) => {
+        if (isDream) return template.isDream && template.isSeasonal;
+        return !template.isDream;
+      });
     for (const template of variants) {
       if (seenTemplateFiles.has(template.filePath)) continue;
       seenTemplateFiles.add(template.filePath);
@@ -467,27 +491,24 @@ function detectSlots(sourceImage, handCardNames, imagesDir, options = {}) {
 
   if (candidateTemplates.length === 0) {
     return {
-      slots: Array(SLOT_X_POSITIONS.length).fill(null),
+      slots: Array(NUM_SLOTS).fill(null),
       slotResults: [],
       debug: { reason: 'no-candidates', metric: metricName }
     };
   }
 
-  const normalSlotCrops = SLOT_X_POSITIONS.map((_, slotIndex) => (
+  const normalSlotCrops = Array.from({ length: NUM_SLOTS }, (_, slotIndex) => (
     cropSlotWithGeometry(sourceImage, slotIndex, normalGeometry)
   ));
-  const dreamSlotCrops = SLOT_X_POSITIONS.map((_, slotIndex) => (
-    cropSlotWithGeometry(sourceImage, slotIndex, dreamGeometry)
-  ));
 
-  const slotResults = SLOT_X_POSITIONS.map((_, slotIndex) => {
+  const slotResults = Array.from({ length: NUM_SLOTS }, (_, slotIndex) => {
     const scored = candidateTemplates.map((template) => {
-      const slotCrop = template.isDream ? dreamSlotCrops[slotIndex] : normalSlotCrops[slotIndex];
+      const slotCrop = normalSlotCrops[slotIndex];
       const slotImage = slotCrop.image;
       const templateImage = getPreparedTemplateImage(
         template,
-        template.isDream ? dreamGeometry.slotWidth : normalGeometry.slotWidth,
-        template.isDream ? dreamGeometry.slotHeight : normalGeometry.slotHeight
+        normalGeometry.slotWidth,
+        normalGeometry.slotHeight
       );
 
       return {
@@ -553,21 +574,17 @@ function detectSlots(sourceImage, handCardNames, imagesDir, options = {}) {
       threshold: metric.threshold,
       marginThreshold: metric.margin,
       candidateCount: candidateTemplates.length,
-      normalGeometry,
-      dreamGeometry
+      normalGeometry
     }
   };
 }
 
 module.exports = {
-  BASE_SCREEN_WIDTH,
-  BASE_SCREEN_HEIGHT,
-  SLOT_Y,
-  SLOT_WIDTH,
-  SLOT_HEIGHT,
-  SLOT_X_POSITIONS,
+  NUM_SLOTS,
   STABLE_REGIONS,
   DEFAULT_METRIC,
+  setCalibration,
+  getActiveGeometry,
   buildTemplateIndex,
   detectSlots,
   normalizeCardName

@@ -325,6 +325,41 @@ body {
   color: #111;
 }
 
+.calibration-status {
+  font-size: 9px;
+  color: rgba(200, 200, 200, 0.7);
+  text-align: center;
+  margin-top: 2px;
+  min-height: 12px;
+  line-height: 1.2;
+}
+
+.calibration-status.ok {
+  color: rgba(100, 220, 120, 0.9);
+}
+
+.calibration-status.error {
+  color: rgba(255, 120, 100, 0.9);
+}
+
+.calibration-progress {
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(60, 60, 60, 0.5);
+  overflow: hidden;
+  display: none;
+}
+.calibration-progress.running {
+  display: block;
+}
+.calibration-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: rgba(100, 180, 255, 0.9);
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
 .damage-overlay {
   position: relative;
   width: 100%;

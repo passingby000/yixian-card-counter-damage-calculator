@@ -1,0 +1,15 @@
+{
+  "innerW": 1536,
+  "innerH": 816,
+  "ssW": 1920,
+  "ssH": 1080,
+  "dpr": 1.25,
+  "scaleX": 0.8,
+  "scaleY": 0.8,
+  "rect0": {
+    "x": 45,
+    "y": 273,
+    "width": 212,
+    "height": 343
+  }
+}
