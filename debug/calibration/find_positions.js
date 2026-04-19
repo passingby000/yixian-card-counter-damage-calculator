@@ -9,7 +9,7 @@
  *   - calibration/calibration_capture.png  (saved when you click Calibrate in-game)
  *   - calibration/cards_and_talent.txt     (lists the board cards + talent names)
  *   - images/                              (card art PNGs)
- *   - yisim/lanke/talent_templates/        (talent PNGs per position)
+ *   - vendor/yisim/lanke/talent_templates/        (talent PNGs per position)
  */
 'use strict';
 
@@ -21,7 +21,7 @@ const ROOT_DIR             = path.resolve(__dirname, '..');
 const CAPTURE_PATH         = path.join(__dirname, 'test position.png');
 const CARDS_TXT_PATH       = path.join(__dirname, 'cards_and_talent.txt');
 const IMAGES_DIR           = path.join(ROOT_DIR, 'images');
-const TALENT_TEMPLATES_DIR = path.join(ROOT_DIR, 'yisim', 'lanke', 'talent_templates');
+const TALENT_TEMPLATES_DIR = path.join(ROOT_DIR, 'vendor', 'yisim', 'lanke', 'talent_templates');
 
 // Expected card aspect ratio from config (width / height)
 const CARD_ASPECT = 212 / 343;

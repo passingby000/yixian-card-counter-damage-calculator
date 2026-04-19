@@ -8,7 +8,7 @@ const zlib = require('zlib');
 const ROOT_DIR        = path.resolve(__dirname, '..');
 const SCREENSHOT_PATH = path.join(__dirname, 'fengxu phase1 test.png');
 const CALIBRATION_PATH = path.join(process.env.APPDATA || '', 'yixian-overlay', 'calibration.json');
-const TEMPLATES_DIR   = path.join(ROOT_DIR, 'yisim', 'lanke', 'talent_templates', 'position_1');
+const TEMPLATES_DIR   = path.join(ROOT_DIR, 'vendor', 'yisim', 'lanke', 'talent_templates', 'position_1');
 const OUTPUT_PATH     = path.join(__dirname, 'debug_talent1_result.png');
 
 // ── PNG decoder ──────────────────────────────────────────────────────────────

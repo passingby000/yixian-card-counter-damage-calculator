@@ -37,7 +37,7 @@ if (typeof electronModule === 'string') {
     BASE_SCREEN_WIDTH,
     BASE_SCREEN_HEIGHT,
     TALENT_THRESHOLD
-  } = require('../../talent_detector');
+  } = require('../../../talent_detector');
 
   const ROOT_DIR = path.resolve(__dirname, '..', '..');
   const TEMPLATES_ROOT = path.join(ROOT_DIR, 'vendor', 'yisim', 'lanke', 'talent_templates');

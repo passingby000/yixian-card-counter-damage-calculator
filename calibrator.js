@@ -9,6 +9,13 @@ const SLOT_BASE_W        = 1920;
 const SLOT_BASE_H        = 1080;
 const SLOT_CONFIG_W      = 212;
 const SLOT_CONFIG_H      = 343;
+// Dream cards are slightly narrower/shorter and shifted right vs normal cards.
+// Values from grid-search debug over 8 confirmed dream slots (dream_geometry_report.json):
+//   xOffset +8 px, widthDelta -16 px → ratio 196/212 ≈ 0.925
+//   heightDelta -8 px                → ratio 335/343 ≈ 0.977
+const DREAM_WIDTH_RATIO  = 0.925;
+const DREAM_HEIGHT_RATIO = 0.977;
+const DREAM_X_OFFSET     = 8;
 
 const TALENT_TEMPLATES_DIR     = getYisimPath('lanke', 'talent_templates');
 const IMAGES_DIR               = getAssetPath('images');
@@ -594,7 +601,9 @@ async function performCalibration(screenshot, onProgress = null) {
       slotY,
       slotWidth,
       slotHeight,
-      slotXPositions
+      slotXPositions,
+      dreamSlotRatio: { width: DREAM_WIDTH_RATIO, height: DREAM_HEIGHT_RATIO },
+      dreamXOffset: DREAM_X_OFFSET
     },
     talents: talentRects.map((r) => r ? { x: r.x, y: r.y, width: r.width, height: r.height } : null),
     scores: { talents: talentRects.map((r) => r?.score ?? 0) },

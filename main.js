@@ -207,6 +207,7 @@ function createOverlayWindow(bounds, htmlFile, focusable) {
   });
 
   win.setVisibleOnAllWorkspaces(true, { visibleOnFullScreen: true });
+  win.setContentProtection(true);
   win.webContents.on('did-fail-load', (_event, errorCode, errorDescription, validatedURL, isMainFrame) => {
     if (!isMainFrame) return;
     appendStartupLog(`did-fail-load for ${htmlFile}`, {
@@ -788,9 +789,12 @@ const MAX_CAPTURE_HEIGHT = 1080;
 async function findGameWindowSource() {
   const primaryDisplay = screen.getPrimaryDisplay();
   const scale = primaryDisplay.scaleFactor || 1;
+  // Cap at MAX_CAPTURE dimensions: templates are captured at 1920×1080 scale,
+  // and working at larger sizes only inflates float-array allocation and
+  // comparison cost with no accuracy benefit.
   const thumbnailSize = {
-    width:  Math.round(primaryDisplay.size.width  * scale),
-    height: Math.round(primaryDisplay.size.height * scale)
+    width:  Math.min(Math.round(primaryDisplay.size.width  * scale), MAX_CAPTURE_WIDTH),
+    height: Math.min(Math.round(primaryDisplay.size.height * scale), MAX_CAPTURE_HEIGHT)
   };
   if (process.platform === 'win32') {
     const windowSources = await desktopCapturer.getSources({
@@ -879,13 +883,14 @@ async function performBoardCapture() {
 
     const talentCapture = detectTalents(source.thumbnail);
 
-    // For card-granting talents, add the talent's Chinese name to candidates
-    // so the personal-folder templates (e.g. 拆招1.png) are included in detection.
-    const grantedCardNames = talentCapture.talents
-      .filter((t) => t.detected && t.grantedCardBaseIds?.length > 0 && t.nameCn)
+    // For any detected talent, add its Chinese name to hand candidates.
+    // Personal card templates (e.g. images/personal/FengXu/阴符玉简1.png) share their
+    // name with the talent that grants them, so this lookup finds them automatically.
+    const talentCardNames = talentCapture.talents
+      .filter((t) => t.detected && t.nameCn)
       .map((t) => t.nameCn);
-    const allHandCandidates = grantedCardNames.length > 0
-      ? [...new Set([...handCandidates, ...grantedCardNames])]
+    const allHandCandidates = talentCardNames.length > 0
+      ? [...new Set([...handCandidates, ...talentCardNames])]
       : handCandidates;
 
     const detection = allHandCandidates.length > 0

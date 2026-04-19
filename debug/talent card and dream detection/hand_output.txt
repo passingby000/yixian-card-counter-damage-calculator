@@ -1,0 +1,5 @@
+Loaded calibration from: C:\Users\raymo\AppData\Roaming\yixian-overlay\calibration.json
+Geometry: 8 slots, slotW=212, slotH=343, dreamRatio=null
+
+Screenshot: 1920×1080
+Hand candidates: 阴符玉简, 梦·海底捞月, 掌心雷, 斗转星移, 星弈·立, 落花有意, 震卦

@@ -1,0 +1,209 @@
+{
+  "tested": [
+    {
+      "testName": "Round 2",
+      "top5": [
+        {
+          "xOffset": 0,
+          "widthDelta": 0,
+          "heightDelta": 0,
+          "width": 212,
+          "height": 343,
+          "widthRatio": 1,
+          "heightRatio": 1,
+          "avgMse": 0,
+          "slotScores": [
+            {
+              "slotIndex": 1,
+              "name": "梦·海底捞月",
+              "mse": 0
+            }
+          ]
+        },
+        {
+          "xOffset": 1,
+          "widthDelta": -2,
+          "heightDelta": 0,
+          "width": 210,
+          "height": 343,
+          "widthRatio": 0.9905660377358491,
+          "heightRatio": 1,
+          "avgMse": 377.9602746898761,
+          "slotScores": [
+            {
+              "slotIndex": 1,
+              "name": "梦·海底捞月",
+              "mse": 377.9602746898761
+            }
+          ]
+        },
+        {
+          "xOffset": 0,
+          "widthDelta": -2,
+          "heightDelta": 0,
+          "width": 210,
+          "height": 343,
+          "widthRatio": 0.9905660377358491,
+          "heightRatio": 1,
+          "avgMse": 425.43485761443594,
+          "slotScores": [
+            {
+              "slotIndex": 1,
+              "name": "梦·海底捞月",
+              "mse": 425.43485761443594
+            }
+          ]
+        },
+        {
+          "xOffset": 0,
+          "widthDelta": 0,
+          "heightDelta": -2,
+          "width": 212,
+          "height": 341,
+          "widthRatio": 1,
+          "heightRatio": 0.9941690962099126,
+          "avgMse": 481.87547529697287,
+          "slotScores": [
+            {
+              "slotIndex": 1,
+              "name": "梦·海底捞月",
+              "mse": 481.87547529697287
+            }
+          ]
+        },
+        {
+          "xOffset": 1,
+          "widthDelta": -4,
+          "heightDelta": 0,
+          "width": 208,
+          "height": 343,
+          "widthRatio": 0.9811320754716981,
+          "heightRatio": 1,
+          "avgMse": 650.4409083286816,
+          "slotScores": [
+            {
+              "slotIndex": 1,
+              "name": "梦·海底捞月",
+              "mse": 650.4409083286816
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "testName": "Round 4",
+      "top5": [
+        {
+          "xOffset": 7,
+          "widthDelta": -12,
+          "heightDelta": -2,
+          "width": 200,
+          "height": 341,
+          "widthRatio": 0.9433962264150944,
+          "heightRatio": 0.9941690962099126,
+          "avgMse": 5980.629715608624,
+          "slotScores": [
+            {
+              "slotIndex": 1,
+              "name": "梦·海底捞月",
+              "mse": 6423.248165400233
+            },
+            {
+              "slotIndex": 2,
+              "name": "梦·轰雷掣电",
+              "mse": 5538.011265817015
+            }
+          ]
+        },
+        {
+          "xOffset": 7,
+          "widthDelta": -10,
+          "heightDelta": -2,
+          "width": 202,
+          "height": 341,
+          "widthRatio": 0.9528301886792453,
+          "heightRatio": 0.9941690962099126,
+          "avgMse": 5987.9665284672155,
+          "slotScores": [
+            {
+              "slotIndex": 1,
+              "name": "梦·海底捞月",
+              "mse": 6430.609721172261
+            },
+            {
+              "slotIndex": 2,
+              "name": "梦·轰雷掣电",
+              "mse": 5545.32333576217
+            }
+          ]
+        },
+        {
+          "xOffset": 7,
+          "widthDelta": -12,
+          "heightDelta": 0,
+          "width": 200,
+          "height": 343,
+          "widthRatio": 0.9433962264150944,
+          "heightRatio": 1,
+          "avgMse": 6003.702996887821,
+          "slotScores": [
+            {
+              "slotIndex": 1,
+              "name": "梦·海底捞月",
+              "mse": 6475.139896052536
+            },
+            {
+              "slotIndex": 2,
+              "name": "梦·轰雷掣电",
+              "mse": 5532.266097723108
+            }
+          ]
+        },
+        {
+          "xOffset": 8,
+          "widthDelta": -16,
+          "heightDelta": -2,
+          "width": 196,
+          "height": 341,
+          "widthRatio": 0.9245283018867925,
+          "heightRatio": 0.9941690962099126,
+          "avgMse": 6011.386691352156,
+          "slotScores": [
+            {
+              "slotIndex": 1,
+              "name": "梦·海底捞月",
+              "mse": 6531.803610139727
+            },
+            {
+              "slotIndex": 2,
+              "name": "梦·轰雷掣电",
+              "mse": 5490.969772564584
+            }
+          ]
+        },
+        {
+          "xOffset": 7,
+          "widthDelta": -10,
+          "heightDelta": 0,
+          "width": 202,
+          "height": 343,
+          "widthRatio": 0.9528301886792453,
+          "heightRatio": 1,
+          "avgMse": 6013.984918153012,
+          "slotScores": [
+            {
+              "slotIndex": 1,
+              "name": "梦·海底捞月",
+              "mse": 6483.777811483824
+            },
+            {
+              "slotIndex": 2,
+              "name": "梦·轰雷掣电",
+              "mse": 5544.1920248222
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -11,7 +11,25 @@
       "Bash(cat)",
       "Bash(node /tmp/test_path.js)",
       "Bash(node -e ':*)",
-      "Bash(node -e \"const r = require\\('./runtime_paths'\\); console.log\\(r.getYisimPath\\('lanke','talent_templates'\\)\\)\")"
+      "Bash(node -e \"const r = require\\('./runtime_paths'\\); console.log\\(r.getYisimPath\\('lanke','talent_templates'\\)\\)\")",
+      "Bash(find \"/c/Users/raymo/OneDrive/Documents/testing-godot/yixian-card-counter-damage-calculator\" -name \"*.json\" -exec grep -l \"talents\\\\|card\" {} \\\\;)",
+      "Bash(node \"debug/talent card and dream detection/test_dream_detection.js\")",
+      "Bash(tasklist)",
+      "Bash(findstr \"25716\")",
+      "Bash(taskkill /PID 25716 /F)",
+      "Bash(cmd /c \"taskkill /PID 25716 /F\")",
+      "Bash(cmd /c \"taskkill /F /PID 25716\")",
+      "Bash(powershell -command \"Stop-Process -Id 25716 -Force\")",
+      "Bash(findstr \"30000\")",
+      "Bash(powershell -command \"Stop-Process -Id 30000 -Force\")",
+      "Bash(findstr \"31640\")",
+      "Bash(node -e ' *)",
+      "Bash(findstr \"2916\")",
+      "Bash(node \"debug/talent card and dream detection/find_talent_geometry.js\")",
+      "Bash(powershell -command \"Stop-Process -Id 33476 -Force\")",
+      "Bash(findstr \"5524\")",
+      "Bash(node -e *)",
+      "Bash(node \"debug/talent card and dream detection/save_talent_overlay.js\")"
     ]
   }
 }

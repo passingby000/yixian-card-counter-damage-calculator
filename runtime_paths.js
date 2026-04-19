@@ -58,11 +58,9 @@ function getYisimRoot() {
   const assetRoot = getAssetRoot();
   const candidates = isPackagedApp()
     ? [
-        path.join(assetRoot, 'vendor', 'yisim'),
-        path.join(assetRoot, 'yisim')
+        path.join(assetRoot, 'vendor', 'yisim')
       ]
     : [
-        path.join(REPO_ROOT, 'yisim'),
         path.join(REPO_ROOT, 'vendor', 'yisim'),
         path.join(REPO_ROOT, 'vendor', 'yisim-master')
       ];

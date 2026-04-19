@@ -3,6 +3,26 @@ const path = require('path');
 const { nativeImage } = require('electron');
 const { getCodePath } = require('./runtime_paths');
 
+// Dream cards occupy a slightly smaller region that is shifted right relative to
+// the normal slot anchor.  Values confirmed by grid-search debug across 8 slots:
+//   xOffset ~+8 px (in calibration physical-pixel space)
+//   width  ratio ~0.925  (196 / 212)
+//   height ratio ~0.977  (335 / 343)
+// These defaults are used when calibration was done before dream geometry was stored.
+const DEFAULT_DREAM_RATIO = { width: 0.925, height: 0.977 };
+const DEFAULT_DREAM_X_OFFSET = 8;  // pixels in calibration coordinate space
+
+// Personal (talent-granted) cards appear larger than normal cards and shifted
+// relative to the normal slot anchor.  Values confirmed by grid-search on
+// fengxuround2.png (阴符玉简 in slot 1):
+//   xOffset  ~ -10 px  (left of normal anchor)
+//   yOffset  ~ -16 px  (above normal anchor)
+//   width  ratio ~ 1.104  (234 / 212)
+//   height ratio ~ 1.102  (378 / 343)
+const DEFAULT_PERSONAL_RATIO    = { width: 1.104, height: 1.102 };
+const DEFAULT_PERSONAL_X_OFFSET = -10;  // pixels in calibration coordinate space
+const DEFAULT_PERSONAL_Y_OFFSET = -16;  // pixels in calibration coordinate space
+
 const CONFIG_PATH = getCodePath('slot_detector_config.json');
 const config = JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf8'));
 
@@ -27,7 +47,9 @@ function getActiveGeometry() {
     slotXPositions:   s.slotXPositions,
     slotY:            s.slotY,
     slotWidth:        s.slotWidth,
-    slotHeight:       s.slotHeight
+    slotHeight:       s.slotHeight,
+    dreamSlotRatio:   s.dreamSlotRatio || null,
+    dreamXOffset:     typeof s.dreamXOffset === 'number' ? s.dreamXOffset : null
   };
 }
 
@@ -49,6 +71,11 @@ function isDreamCardName(name) {
 function isSeasonalTemplatePath(filePath) {
   const seasonalSegment = `${path.sep}seasonal${path.sep}`;
   return filePath.includes(seasonalSegment);
+}
+
+function isPersonalTemplatePath(filePath) {
+  const personalSegment = `${path.sep}personal${path.sep}`;
+  return filePath.includes(personalSegment);
 }
 
 function getTemplatePreferenceScore(filePath) {
@@ -88,7 +115,8 @@ function parseTemplateFilename(filePath) {
     level: isDream ? 1 : suffixNumber,
     phase: isDream ? suffixNumber : null,
     isDream,
-    isSeasonal: isSeasonalTemplatePath(filePath)
+    isSeasonal: isSeasonalTemplatePath(filePath),
+    isPersonal: isPersonalTemplatePath(filePath)
   };
 }
 
@@ -115,6 +143,89 @@ function imageToRgb(image) {
     rgb[px + 2] = bitmap[i];
   }
   return { rgb, width, height };
+}
+
+// Extract and bilinear-resize a rectangular sub-region from a full-image gray array.
+// Avoids nativeImage.crop() which returns logical-pixel getSize() but physical toBitmap()
+// at DPI > 1, causing stride mismatch in comparison.
+function extractSubGray(src, cropX, cropY, cropW, cropH, dstW, dstH) {
+  const out = new Float32Array(dstW * dstH);
+  const scaleX = cropW / dstW;
+  const scaleY = cropH / dstH;
+  const SW = src.width, SH = src.height;
+  for (let dy = 0; dy < dstH; dy++) {
+    for (let dx = 0; dx < dstW; dx++) {
+      const sx = cropX + dx * scaleX, sy = cropY + dy * scaleY;
+      const x0 = Math.floor(sx), y0 = Math.floor(sy);
+      const x1 = Math.min(x0 + 1, SW - 1), y1 = Math.min(y0 + 1, SH - 1);
+      const wx = sx - x0, wy = sy - y0;
+      out[dy * dstW + dx] =
+        (1 - wx) * (1 - wy) * src.gray[y0 * SW + x0] +
+        wx       * (1 - wy) * src.gray[y0 * SW + x1] +
+        (1 - wx) * wy       * src.gray[y1 * SW + x0] +
+        wx       * wy       * src.gray[y1 * SW + x1];
+    }
+  }
+  return { gray: out, width: dstW, height: dstH };
+}
+
+function extractSubRgb(src, cropX, cropY, cropW, cropH, dstW, dstH) {
+  const out = new Float32Array(dstW * dstH * 3);
+  const scaleX = cropW / dstW;
+  const scaleY = cropH / dstH;
+  const SW = src.width, SH = src.height;
+  for (let dy = 0; dy < dstH; dy++) {
+    for (let dx = 0; dx < dstW; dx++) {
+      const sx = cropX + dx * scaleX, sy = cropY + dy * scaleY;
+      const x0 = Math.floor(sx), y0 = Math.floor(sy);
+      const x1 = Math.min(x0 + 1, SW - 1), y1 = Math.min(y0 + 1, SH - 1);
+      const wx = sx - x0, wy = sy - y0;
+      const base = (dy * dstW + dx) * 3;
+      for (let c = 0; c < 3; c++) {
+        out[base + c] =
+          (1 - wx) * (1 - wy) * src.rgb[(y0 * SW + x0) * 3 + c] +
+          wx       * (1 - wy) * src.rgb[(y0 * SW + x1) * 3 + c] +
+          (1 - wx) * wy       * src.rgb[(y1 * SW + x0) * 3 + c] +
+          wx       * wy       * src.rgb[(y1 * SW + x1) * 3 + c];
+      }
+    }
+  }
+  return { rgb: out, width: dstW, height: dstH };
+}
+
+// Fast RGB MSE between a source sub-region and a same-size template.
+// Used for dream-card jitter search; avoids the resize and regional weighting
+// of compareImages so the sweep stays cheap.
+function fastRgbMseDirect(srcRgbData, ox, oy, tw, th, tmplRgb) {
+  const SW  = srcRgbData.width;
+  const src = srcRgbData.rgb;
+  const tpl = tmplRgb.rgb;
+  let sum = 0;
+  for (let ty = 0; ty < th; ty++) {
+    const sRow = ((oy + ty) * SW + ox) * 3;
+    const tRow = ty * tw * 3;
+    for (let tx = 0; tx < tw; tx++) {
+      const sp = sRow + tx * 3;
+      const tp = tRow + tx * 3;
+      const dr = src[sp]     - tpl[tp];
+      const dg = src[sp + 1] - tpl[tp + 1];
+      const db = src[sp + 2] - tpl[tp + 2];
+      sum += dr * dr + dg * dg + db * db;
+    }
+  }
+  return sum / (tw * th * 3);
+}
+
+// Cache template raw data (gray + rgb) at a given size. File-loaded images don't
+// have DPI scaling so imageToGray/imageToRgb are reliable on them.
+function getTemplateRawData(template, width, height) {
+  const key = `${width}x${height}`;
+  if (!template.rawDataCache) template.rawDataCache = new Map();
+  if (template.rawDataCache.has(key)) return template.rawDataCache.get(key);
+  const img = template.originalImage.resize({ width, height, quality: 'best' });
+  const data = { gray: imageToGray(img), rgb: imageToRgb(img) };
+  template.rawDataCache.set(key, data);
+  return data;
 }
 
 function getRegionBounds(width, height, region) {
@@ -205,19 +316,32 @@ function regionRgbMse(rgbDataA, rgbDataB, region) {
   return total / count;
 }
 
-function compareImages(imageA, imageB) {
-  const grayA = imageToGray(imageA);
-  const grayB = imageToGray(imageB);
-  const rgbA = imageToRgb(imageA);
-  const rgbB = imageToRgb(imageB);
+// Clip all stable regions to exclude a border of `inset` fraction on each side.
+// Used for personal cards whose decorative border differs from the template.
+const PERSONAL_BORDER_INSET = 0.10;
 
+function insetRegions(regions, inset) {
+  const result = [];
+  for (const r of regions) {
+    const x0 = Math.max(r.x, inset);
+    const y0 = Math.max(r.y, inset);
+    const x1 = Math.min(r.x + r.width,  1 - inset);
+    const y1 = Math.min(r.y + r.height, 1 - inset);
+    if (x1 > x0 && y1 > y0) result.push({ ...r, x: x0, y: y0, width: x1 - x0, height: y1 - y0 });
+  }
+  return result;
+}
+
+const PERSONAL_REGIONS = insetRegions(STABLE_REGIONS, PERSONAL_BORDER_INSET);
+
+function compareImages(grayA, rgbA, grayB, rgbB, regions = STABLE_REGIONS) {
   let weightedSSIM = 0;
   let weightedNCC = 0;
   let weightedGrayMse = 0;
   let weightedRgbMse = 0;
   let totalWeight = 0;
 
-  for (const region of STABLE_REGIONS) {
+  for (const region of regions) {
     const { ssim, ncc, grayMse } = regionStats(grayA, grayB, region);
     const rgbMse = regionRgbMse(rgbA, rgbB, region);
     weightedSSIM += ssim * region.weight;
@@ -272,6 +396,7 @@ function buildTemplateIndex(imagesDir) {
       phase: parsed.phase,
       isDream: parsed.isDream,
       isSeasonal: parsed.isSeasonal,
+      isPersonal: parsed.isPersonal,
       filePath,
       fileName: path.basename(filePath),
       originalImage: image,
@@ -356,58 +481,6 @@ function getScaledSlotRectForGeometry(slotIndex, sourceImage, geometry) {
   };
 }
 
-function cropSlot(sourceImage, slotIndex) {
-  const active = getActiveGeometry();
-  if (!active) return null;
-  return cropSlotWithGeometry(sourceImage, slotIndex, active);
-}
-
-function cropSlotWithGeometry(sourceImage, slotIndex, geometry) {
-  const cropRect = getScaledSlotRectForGeometry(slotIndex, sourceImage, geometry);
-  return {
-    rect: cropRect,
-    image: sourceImage.crop(cropRect).resize({
-      width: geometry.slotWidth,
-      height: geometry.slotHeight,
-      quality: 'best'
-    })
-  };
-}
-
-function scoreCandidates(slotImage, candidates, metricName) {
-  const metric = getMetricDefinition(metricName);
-  const scored = candidates.map((template) => ({
-    ...template,
-    metrics: compareImages(slotImage, template.image)
-  }));
-
-  scored.sort((a, b) => {
-    if (a.metrics[metricName] !== b.metrics[metricName]) {
-      return metric.higherIsBetter
-        ? (b.metrics[metricName] - a.metrics[metricName])
-        : (a.metrics[metricName] - b.metrics[metricName]);
-    }
-    return b.metrics.ncc - a.metrics.ncc;
-  });
-
-  return scored;
-}
-
-function getPreparedTemplateImage(template, width, height) {
-  const cacheKey = `${width}x${height}`;
-  if (template.resizedImages.has(cacheKey)) {
-    return template.resizedImages.get(cacheKey);
-  }
-
-  const prepared = template.originalImage.resize({
-    width,
-    height,
-    quality: 'best'
-  });
-  template.resizedImages.set(cacheKey, prepared);
-  return prepared;
-}
-
 function roundMetric(value) {
   return Number.isFinite(value) ? Number(value.toFixed(4)) : value;
 }
@@ -420,6 +493,7 @@ function buildDebugCandidate(candidate, metricName) {
     phase: candidate.phase ?? null,
     isDream: !!candidate.isDream,
     templateFile: candidate.fileName,
+    templatePath: candidate.filePath,
     primaryScore: roundMetric(candidate.metrics[metricName]),
     metrics: {
       ssim: roundMetric(candidate.metrics.ssim),
@@ -431,7 +505,7 @@ function buildDebugCandidate(candidate, metricName) {
 }
 
 function buildDisplayConfidence(bestScore, margin, metric) {
-  if (!Number.isFinite(bestScore) || !Number.isFinite(margin)) return 0;
+  if (!Number.isFinite(bestScore)) return 0;
 
   let scoreComponent = 0;
   if (metric.higherIsBetter) {
@@ -444,7 +518,8 @@ function buildDisplayConfidence(bestScore, margin, metric) {
     }
   }
 
-  const marginComponent = metric.margin <= 0
+  // Infinite margin means there is no second candidate — treat as maximum margin confidence.
+  const marginComponent = (!Number.isFinite(margin) || metric.margin <= 0)
     ? 1
     : Math.max(0, Math.min(1, margin / (margin + metric.margin)));
 
@@ -467,6 +542,10 @@ function detectSlots(sourceImage, handCardNames, imagesDir, options = {}) {
   const templateIndex = buildTemplateIndex(imagesDir);
   const candidateTemplates = [];
   const seenTemplateFiles = new Set();
+  // Dream card phases differ only in color grading — grayscale structure is identical
+  // across phases. Including all phases causes tiny inter-phase margins that prevent
+  // acceptance. Use only the first (highest-preference) template per dream card name.
+  const seenDreamCardNames = new Set();
 
   for (const cardName of handCardNames || []) {
     const normalizedCardName = normalizeCardName(cardName);
@@ -484,9 +563,54 @@ function detectSlots(sourceImage, handCardNames, imagesDir, options = {}) {
       });
     for (const template of variants) {
       if (seenTemplateFiles.has(template.filePath)) continue;
+      // For dream cards, only keep one template per card name — phases are colour
+      // variants of the same art, so extra phases only steal margin from competitors.
+      if (template.isDream) {
+        if (seenDreamCardNames.has(template.baseName)) continue;
+        seenDreamCardNames.add(template.baseName);
+      }
       seenTemplateFiles.add(template.filePath);
       candidateTemplates.push(template);
     }
+  }
+
+  // Compute dream geometry: dream cards are slightly narrower/shorter and their
+  // top-left anchor is shifted right relative to the normal slot x position.
+  // Treat stored ratio of {1,1} as the old placeholder (pre-dream-geometry calibration)
+  // and fall back to the code defaults so existing calibrations get the correct geometry
+  // without needing a re-calibration.
+  const storedRatio = active.dreamSlotRatio;
+  const ratio = (storedRatio && (storedRatio.width !== 1 || storedRatio.height !== 1))
+    ? storedRatio
+    : DEFAULT_DREAM_RATIO;
+  const xOffset = typeof active.dreamXOffset === 'number'
+    ? active.dreamXOffset
+    : DEFAULT_DREAM_X_OFFSET;
+  let dreamGeometry = normalGeometry;
+  if (normalGeometry) {
+    const dw = Math.max(1, Math.round(normalGeometry.slotWidth  * ratio.width));
+    const dh = Math.max(1, Math.round(normalGeometry.slotHeight * ratio.height));
+    dreamGeometry = {
+      ...normalGeometry,
+      slotXPositions: normalGeometry.slotXPositions.map((x) => x + xOffset),
+      slotWidth:  dw,
+      slotHeight: dh
+    };
+  }
+
+  // Personal (talent-granted) cards appear larger than normal cards and are shifted
+  // relative to the normal slot anchor (xOffset=-10, yOffset=-16, ratio ~1.10×).
+  let personalGeometry = normalGeometry;
+  if (normalGeometry) {
+    const pw = Math.max(1, Math.round(normalGeometry.slotWidth  * DEFAULT_PERSONAL_RATIO.width));
+    const ph = Math.max(1, Math.round(normalGeometry.slotHeight * DEFAULT_PERSONAL_RATIO.height));
+    personalGeometry = {
+      ...normalGeometry,
+      slotXPositions: normalGeometry.slotXPositions.map((x) => x + DEFAULT_PERSONAL_X_OFFSET),
+      slotY:      normalGeometry.slotY + DEFAULT_PERSONAL_Y_OFFSET,
+      slotWidth:  pw,
+      slotHeight: ph
+    };
   }
 
   if (candidateTemplates.length === 0) {
@@ -497,24 +621,41 @@ function detectSlots(sourceImage, handCardNames, imagesDir, options = {}) {
     };
   }
 
-  const normalSlotCrops = Array.from({ length: NUM_SLOTS }, (_, slotIndex) => (
-    cropSlotWithGeometry(sourceImage, slotIndex, normalGeometry)
-  ));
+  // Convert full source image to raw arrays ONCE — bypasses nativeImage.crop() DPI stride mismatch
+  // (crop().getSize() returns logical pixels but toBitmap() returns physical on Windows DPI > 1).
+  const srcGrayData = imageToGray(sourceImage);
+  const srcRgbData  = imageToRgb(sourceImage);
+
+  const normalSlotRects = Array.from({ length: NUM_SLOTS }, (_, i) =>
+    getScaledSlotRectForGeometry(i, sourceImage, normalGeometry)
+  );
+  const dreamSlotRects = dreamGeometry !== normalGeometry
+    ? Array.from({ length: NUM_SLOTS }, (_, i) =>
+        getScaledSlotRectForGeometry(i, sourceImage, dreamGeometry)
+      )
+    : normalSlotRects;
+  const personalSlotRects = personalGeometry !== normalGeometry
+    ? Array.from({ length: NUM_SLOTS }, (_, i) =>
+        getScaledSlotRectForGeometry(i, sourceImage, personalGeometry)
+      )
+    : normalSlotRects;
 
   const slotResults = Array.from({ length: NUM_SLOTS }, (_, slotIndex) => {
     const scored = candidateTemplates.map((template) => {
-      const slotCrop = normalSlotCrops[slotIndex];
-      const slotImage = slotCrop.image;
-      const templateImage = getPreparedTemplateImage(
-        template,
-        normalGeometry.slotWidth,
-        normalGeometry.slotHeight
-      );
+      const geom = template.isDream ? dreamGeometry : (template.isPersonal ? personalGeometry : normalGeometry);
+      const rect = (template.isDream ? dreamSlotRects : (template.isPersonal ? personalSlotRects : normalSlotRects))[slotIndex];
+      const dstW = geom.slotWidth, dstH = geom.slotHeight;
 
+      const tmpl = getTemplateRawData(template, dstW, dstH);
+
+      const cropGray = extractSubGray(srcGrayData, rect.x, rect.y, rect.width, rect.height, dstW, dstH);
+      const cropRgb  = extractSubRgb(srcRgbData,  rect.x, rect.y, rect.width, rect.height, dstW, dstH);
+
+      const regions = template.isPersonal ? PERSONAL_REGIONS : STABLE_REGIONS;
       return {
         ...template,
-        metrics: compareImages(slotImage, templateImage),
-        slotRect: slotCrop.rect
+        metrics: compareImages(cropGray, cropRgb, tmpl.gray, tmpl.rgb, regions),
+        slotRect: { ...rect }
       };
     });
 
@@ -528,14 +669,21 @@ function detectSlots(sourceImage, handCardNames, imagesDir, options = {}) {
     });
 
     const best = scored[0] || null;
-    const second = scored[1] || null;
     const bestScore = best ? best.metrics[metricName] : Number.NaN;
-    const secondScore = second ? second.metrics[metricName] : Number.NaN;
-    const margin = !Number.isFinite(secondScore)
+
+    // Margin is computed against the best competitor from a *different* card.
+    // Using scored[1] (same card, different level/phase) produces a near-zero
+    // margin that kills acceptance even when the correct card is obvious.
+    const bestCardName = best?.baseName ?? null;
+    const rival = scored.find((t) => t.baseName !== bestCardName) || null;
+    const rivalScore = rival ? rival.metrics[metricName] : Number.NaN;
+    const margin = !Number.isFinite(rivalScore)
       ? Number.POSITIVE_INFINITY
       : metric.higherIsBetter
-        ? (bestScore - secondScore)
-        : (secondScore - bestScore);
+        ? (bestScore - rivalScore)
+        : (rivalScore - bestScore);
+    // Keep second for debug display (still the overall runner-up, regardless of card name).
+    const second = scored[1] || null;
 
     const accepted = !!best &&
       ((metric.higherIsBetter && bestScore >= metric.threshold) ||
@@ -544,7 +692,7 @@ function detectSlots(sourceImage, handCardNames, imagesDir, options = {}) {
 
     const slotResult = {
       slotIndex,
-      rect: best?.slotRect || normalSlotCrops[slotIndex].rect,
+      rect: best?.slotRect || normalSlotRects[slotIndex],
       metric: metricName,
       accepted,
       bestScore: roundMetric(bestScore),
@@ -552,6 +700,7 @@ function detectSlots(sourceImage, handCardNames, imagesDir, options = {}) {
       displayConfidence: best ? buildDisplayConfidence(bestScore, margin, metric) : 0,
       bestCandidate: buildDebugCandidate(best, metricName),
       secondCandidate: buildDebugCandidate(second, metricName),
+      allCandidates: options.verboseDebug ? scored.map((c) => buildDebugCandidate(c, metricName)) : undefined,
       card: accepted ? {
         name: best.baseName,
         level: best.level,
@@ -574,7 +723,9 @@ function detectSlots(sourceImage, handCardNames, imagesDir, options = {}) {
       threshold: metric.threshold,
       marginThreshold: metric.margin,
       candidateCount: candidateTemplates.length,
-      normalGeometry
+      normalGeometry,
+      dreamGeometry: dreamGeometry !== normalGeometry ? dreamGeometry : null,
+      personalGeometry: personalGeometry !== normalGeometry ? personalGeometry : null
     }
   };
 }
