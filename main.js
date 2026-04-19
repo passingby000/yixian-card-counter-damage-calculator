@@ -207,7 +207,6 @@ function createOverlayWindow(bounds, htmlFile, focusable) {
   });
 
   win.setVisibleOnAllWorkspaces(true, { visibleOnFullScreen: true });
-  win.setContentProtection(true);
   win.webContents.on('did-fail-load', (_event, errorCode, errorDescription, validatedURL, isMainFrame) => {
     if (!isMainFrame) return;
     appendStartupLog(`did-fail-load for ${htmlFile}`, {
@@ -796,6 +795,7 @@ async function findGameWindowSource() {
     width:  Math.min(Math.round(primaryDisplay.size.width  * scale), MAX_CAPTURE_WIDTH),
     height: Math.min(Math.round(primaryDisplay.size.height * scale), MAX_CAPTURE_HEIGHT)
   };
+
   if (process.platform === 'win32') {
     const windowSources = await desktopCapturer.getSources({
       types: ['window'],
@@ -806,19 +806,34 @@ async function findGameWindowSource() {
       const sourceName = (source.name || '').toLowerCase();
       return GAME_SOURCE_PATTERNS.some((pattern) => sourceName.includes(pattern.toLowerCase()));
     });
+    // Window-source capture uses DWM per-window pixels — our overlay windows
+    // are separate top-level windows and should not bleed into the game window
+    // thumbnail, so no hiding is needed here.
     if (windowSource && !windowSource.thumbnail.isEmpty()) {
       return windowSource;
     }
 
-    const overlayWindows = [controlsWindow, damageWindow].filter(w => w && !w.isDestroyed());
-    overlayWindows.forEach(w => w.hide());
-    await new Promise(r => setTimeout(r, 80));
+    // Screen-source fallback (fullscreen game): the whole composited desktop is
+    // captured, so the board overlay would appear on top of the card slots.
+    // Rather than hide() (which causes a visible OS-level flash), make the
+    // board window's rendered content transparent via CSS — the window stays in
+    // the compositor stack so no hide/show animation fires, but its pixels
+    // become transparent so the game shows through in the capture.
+    const hasBoardOverlay = boardWindow && !boardWindow.isDestroyed() && boardWindow.isVisible();
+    if (hasBoardOverlay) {
+      // Set opacity:0 and wait for the renderer to paint + DWM to composite.
+      await boardWindow.webContents.executeJavaScript(
+        'new Promise(r=>{document.documentElement.style.opacity="0";requestAnimationFrame(()=>requestAnimationFrame(r))})'
+      );
+    }
     const screenSources = await desktopCapturer.getSources({
       types: ['screen'],
       thumbnailSize,
       fetchWindowIcons: false
     });
-    overlayWindows.forEach(w => w.show());
+    if (hasBoardOverlay) {
+      boardWindow.webContents.executeJavaScript('document.documentElement.style.opacity=""');
+    }
     return screenSources.find((source) =>
       source.display_id === String(primaryDisplay.id)
     ) || screenSources[0] || null;
