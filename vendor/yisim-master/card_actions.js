@@ -14630,8 +14630,8 @@ card_actions["D11073"] = (game) => {
 
 // D11074
 card_actions["D11074"] = (game) => {
-    game.increase_idx_qi(0, 2);
-    game.increase_idx_x_by_c(0, "sword_qi", Math.floor(game.players[0].total_qi_gained * 0.5));
+    game.increase_idx_qi(0, 3);
+    game.increase_idx_x_by_c(0, "sword_qi", Math.floor(game.players[0].total_qi_gained * 0.33333334));
 }
 
 // D11075
@@ -14733,7 +14733,7 @@ card_actions["D11101"] = (game) => {
 
 // D11102
 card_actions["D11102"] = (game) => {
-    game.increase_idx_def(0, 4);
+    game.increase_idx_def(0, 6);
     game.continuous();
     game.increase_idx_x_by_c(0, "dream_consonance_qi_gives_def_stacks", 2);
 }
@@ -14792,7 +14792,7 @@ card_actions["D11113"] = (game) => {
 // D11114
 card_actions["D11114"] = (game) => {
     game.increase_idx_def(0, 9);
-    game.add_c_of_x(2, "cloud_sea");
+    game.add_c_of_x(3, "cloud_sea");
     game.add_c_of_x(1, "moon_water_sword_formation_stacks");
     if (game.if_cloud_hit()) {
         game.for_each_x_add_c_y("cloud_sword_chain_count", 3, "def");
@@ -14802,8 +14802,8 @@ card_actions["D11114"] = (game) => {
 // D11115
 card_actions["D11115"] = (game) => {
     game.increase_idx_def(0, 12);
-    game.add_c_of_x(2, "cloud_sea");
-    game.add_c_of_x(2, "moon_water_sword_formation_stacks");
+    game.add_c_of_x(3, "cloud_sea");
+    game.add_c_of_x(3, "moon_water_sword_formation_stacks");
     game.for_each_x_add_c_y("cloud_sword_used_count", 3, "def");
 }
 
@@ -15238,20 +15238,20 @@ card_actions["D12025"] = (game) => {
 // Dream - Thunder And Lightning
 card_actions["D12031"] = (game) => {
     const bonus = game.players[0].hexagram;
-    game.atk(6 + bonus);
+    game.atk(7 + bonus);
 }
 
 // D12032
 card_actions["D12032"] = (game) => {
     const bonus = game.players[0].hexagram;
-    game.atk(8 + bonus);
+    game.atk(9 + bonus);
 }
 
 // D12033
 card_actions["D12033"] = (game) => {
     const bonus = game.players[0].hexagram;
     for (let i = 0; i < 2; i++) {
-        game.atk(1 + bonus);
+        game.atk(2 + bonus);
     }
 }
 
@@ -15308,37 +15308,45 @@ card_actions["D12045"] = (game) => {
 
 // Dream - Falling Thunder
 card_actions["D12051"] = (game) => {
-    let debuffs = Math.min(game.get_debuff_count(1), 2);
-    game.atk(6 + debuffs * 5);
-    game.reduce_idx_random_debuff_by_c_n_times(1, 1, debuffs);
+    const me = game.players[0];
+    const bonus = me.cards.filter(id => swogi[id].is_thunder || swogi[id].is_explanatory_hexagram).length;
+    game.atk(6 + bonus);
 }
 
 // D12052
 card_actions["D12052"] = (game) => {
-    let debuffs = Math.min(game.get_debuff_count(1), 2);
-    game.atk(8 + debuffs * 5);
-    game.reduce_idx_random_debuff_by_c_n_times(1, 1, debuffs);
+    const me = game.players[0];
+    const bonus = me.cards.filter(id => swogi[id].is_thunder || swogi[id].is_explanatory_hexagram).length;
+    game.atk(8 + bonus);
 }
 
 // D12053
 card_actions["D12053"] = (game) => {
-    let debuffs = Math.min(game.get_debuff_count(1), 2);
-    game.atk(10 + debuffs * 5);
-    game.reduce_idx_random_debuff_by_c_n_times(1, 1, debuffs);
+    const me = game.players[0];
+    const bonus = me.cards.filter(id => swogi[id].is_thunder || swogi[id].is_explanatory_hexagram).length;
+    game.atk(10 + bonus);
 }
 
 // D12054
 card_actions["D12054"] = (game) => {
-    let debuffs = Math.min(game.get_debuff_count(1), 3);
-    game.atk(12 + debuffs * 6);
-    game.reduce_idx_random_debuff_by_c_n_times(1, 1, debuffs);
+    const me = game.players[0];
+    const bonus = me.cards.filter(id => swogi[id].is_thunder || swogi[id].is_explanatory_hexagram).length;
+    game.atk(8 + bonus);
+    game.used_randomness = true;
+    if (game.rng() < 0.1) {
+        game.atk(8 + bonus);
+    }
 }
 
 // D12055
 card_actions["D12055"] = (game) => {
-    let debuffs = Math.min(game.get_debuff_count(1), 4);
-    game.atk(14 + debuffs * 6);
-    game.reduce_idx_random_debuff_by_c_n_times(1, 1, debuffs);
+    const me = game.players[0];
+    const bonus = me.cards.filter(id => swogi[id].is_thunder || swogi[id].is_explanatory_hexagram).length;
+    game.atk(8 + bonus * 2);
+    game.used_randomness = true;
+    if (game.rng() < 0.1) {
+        game.atk(8 + bonus * 2);
+    }
 }
 
 // Dream - Flower Sentient
@@ -15506,22 +15514,22 @@ card_actions["D12085"] = (game) => {
 
 // Dream - Repel Citta-Dharma
 card_actions["D12091"] = (game) => {
-    game.increase_idx_max_hp(0, 3);
-    game.increase_idx_hp(0, 3);
+    game.increase_idx_max_hp(0, 2);
+    game.increase_idx_hp(0, 2);
     game.add_c_of_x(1, "dream_repel_citta_dharma_stacks");
 }
 
 // D12092
 card_actions["D12092"] = (game) => {
-    game.increase_idx_max_hp(0, 5);
-    game.increase_idx_hp(0, 5);
+    game.increase_idx_max_hp(0, 4);
+    game.increase_idx_hp(0, 4);
     game.add_c_of_x(1, "dream_repel_citta_dharma_stacks");
 }
 
 // D12093
 card_actions["D12093"] = (game) => {
-    game.increase_idx_max_hp(0, 7);
-    game.increase_idx_hp(0, 7);
+    game.increase_idx_max_hp(0, 6);
+    game.increase_idx_hp(0, 6);
     game.add_c_of_x(1, "dream_repel_citta_dharma_stacks");
 }
 
@@ -15658,8 +15666,8 @@ card_actions["D12133"] = (game) => {
 
 // D12134
 card_actions["D12134"] = (game) => {
-    game.increase_idx_max_hp(0, 2);
-    game.increase_idx_hp(0, 2);
+    game.increase_idx_max_hp(0, 4);
+    game.increase_idx_hp(0, 4);
     game.add_enemy_c_of_x(1, "snake_shadow");
     if (game.players[0].snake_card_used > 0) {
         game.chase();
@@ -15668,8 +15676,8 @@ card_actions["D12134"] = (game) => {
 
 // D12135
 card_actions["D12135"] = (game) => {
-    game.increase_idx_max_hp(0, 6);
-    game.increase_idx_hp(0, 6);
+    game.increase_idx_max_hp(0, 8);
+    game.increase_idx_hp(0, 8);
     game.add_enemy_c_of_x(1, "snake_shadow");
     if (game.players[0].snake_card_used > 0) {
         game.chase();
@@ -15977,7 +15985,7 @@ card_actions["D12185"] = (game) => {
 // Dream - Metal Spirit Formation
 card_actions["D13011"] = (game) => {
     game.activate_metal_spirit();
-    game.add_c_of_x(6, "penetrate");
+    game.add_c_of_x(7, "penetrate");
 }
 
 // D13012
@@ -16003,7 +16011,7 @@ card_actions["D13014"] = (game) => {
 // D13015
 card_actions["D13015"] = (game) => {
     game.activate_metal_spirit();
-    game.add_c_of_x(4, "penetrate");
+    game.add_c_of_x(6, "penetrate");
     game.continuous();
     game.add_c_of_x(6, "gain_penetrate_on_chase_stacks");
 }
@@ -16011,24 +16019,24 @@ card_actions["D13015"] = (game) => {
 // Dream - Cosmos Seal
 card_actions["D13021"] = (game) => {
     game.increase_idx_qi(0, 1);
-    game.deal_damage(4);
+    game.deal_damage(5);
 }
 
 // D13022
 card_actions["D13022"] = (game) => {
     game.increase_idx_qi(0, 1);
-    game.deal_damage(6);
+    game.deal_damage(7);
 }
 
 // D13023
 card_actions["D13023"] = (game) => {
     game.increase_idx_qi(0, 1);
-    game.deal_damage(8);
+    game.deal_damage(9);
 }
 
 // D13024
 card_actions["D13024"] = (game) => {
-    game.increase_idx_qi(0, 2);
+    game.increase_idx_qi(0, 3);
     game.deal_damage(10);
 }
 
@@ -16082,30 +16090,26 @@ card_actions["D13041"] = (game) => {
 
 // D13042
 card_actions["D13042"] = (game) => {
-    game.atk(5);
+    game.atk(6);
     game.increase_idx_def(0, game.get_n_different_five_elements(0) * 2);
 }
 
 // D13043
 card_actions["D13043"] = (game) => {
-    game.atk(5);
+    game.atk(6);
     game.increase_idx_def(0, game.get_n_different_five_elements(0) * 3);
 }
 
 // D13044
 card_actions["D13044"] = (game) => {
-    game.increase_idx_def(0, game.get_n_different_five_elements(0) * 1);
-    if (game.players[0].def >= 2) {
-        game.chase();
-    }
+    game.increase_idx_def(0, game.players[0].played_five_element_card_count * 1);
+    game.chase();
 }
 
 // D13045
 card_actions["D13045"] = (game) => {
-    game.increase_idx_def(0, game.get_n_different_five_elements(0) * 3);
-    if (game.players[0].def >= 6) {
-        game.chase();
-    }
+    game.increase_idx_def(0, game.players[0].played_five_element_card_count * 3);
+    game.chase();
 }
 
 // Dream - Ultimate World Formation
@@ -16205,7 +16209,7 @@ card_actions["D13064"] = (game) => {
 
 // D13065
 card_actions["D13065"] = (game) => {
-    game.increase_idx_qi(0, 1);
+    game.increase_idx_qi(0, 2);
     const me = game.players[0];
     const add = Math.floor(me.total_amount_injured * 0.20000001);
     game.add_c_of_x(add, "force_of_water");
@@ -16287,6 +16291,7 @@ card_actions["D13085"] = (game) => {
     game.add_c_of_x(1, "wood_thorn");
     game.continuous();
     game.add_c_of_x(3, "convert_increase_atk_to_wood_thorn");
+    game.increase_idx_max_hp(0, 15);
 }
 
 // Dream - Fire Spirit Heart Fire
@@ -16522,8 +16527,8 @@ card_actions["D13155"] = (game) => {
 card_actions["D13161"] = (game) => {
     const me = game.players[0];
     game.increase_idx_qi(0, 1);
-    game.reduce_enemy_hp(4);
-    game.reduce_enemy_max_hp(4);
+    game.reduce_enemy_hp(5);
+    game.reduce_enemy_max_hp(5);
     if (!me.can_post_action[me.currently_playing_card_idx]) {
         game.increase_idx_x_by_c(0, "consume_next_card_played_stacks", 1);
         game.increase_idx_x_by_c(1, "consume_next_card_played_stacks", 1);
@@ -16533,8 +16538,8 @@ card_actions["D13161"] = (game) => {
 card_actions["D13162"] = (game) => {
     const me = game.players[0];
     game.increase_idx_qi(0, 1);
-    game.reduce_enemy_hp(6);
-    game.reduce_enemy_max_hp(6);
+    game.reduce_enemy_hp(7);
+    game.reduce_enemy_max_hp(7);
     if (!me.can_post_action[me.currently_playing_card_idx]) {
         game.increase_idx_x_by_c(0, "consume_next_card_played_stacks", 1);
         game.increase_idx_x_by_c(1, "consume_next_card_played_stacks", 1);
@@ -16544,7 +16549,7 @@ card_actions["D13162"] = (game) => {
 card_actions["D13163"] = (game) => {
     const me = game.players[0];
     game.increase_idx_qi(0, 3);
-    const dmg = me.qi;
+    const dmg = 2 + me.qi;
     game.reduce_enemy_hp(dmg);
     game.reduce_enemy_max_hp(dmg);
     if (!me.can_post_action[me.currently_playing_card_idx]) {
@@ -16556,7 +16561,7 @@ card_actions["D13163"] = (game) => {
 card_actions["D13164"] = (game) => {
     const me = game.players[0];
     game.increase_idx_qi(0, 3);
-    const dmg = 2 * me.qi;
+    const dmg = 2 + 2 * me.qi;
     game.reduce_enemy_hp(dmg);
     game.reduce_enemy_max_hp(dmg);
     if (!me.can_post_action[me.currently_playing_card_idx]) {
@@ -16568,7 +16573,7 @@ card_actions["D13164"] = (game) => {
 card_actions["D13165"] = (game) => {
     const me = game.players[0];
     game.increase_idx_qi(0, 4);
-    const dmg = 2 * me.qi;
+    const dmg = 2 + 2 * me.qi;
     game.reduce_enemy_hp(dmg);
     game.reduce_enemy_max_hp(dmg);
     if (!me.can_post_action[me.currently_playing_card_idx]) {
@@ -16624,7 +16629,7 @@ card_actions["D13175"] = (game) => {
 // Dream - Earth Spirit Cliff
 card_actions["D13181"] = (game) => {
     const me = game.players[0];
-    game.increase_idx_def(0, 7);
+    game.increase_idx_def(0, 8);
     const lose_def = Math.ceil(me.def * 0.5);
     game.reduce_idx_def(0, lose_def);
     game.deal_damage(lose_def);
@@ -16633,7 +16638,7 @@ card_actions["D13181"] = (game) => {
 // D13182
 card_actions["D13182"] = (game) => {
     const me = game.players[0];
-    game.increase_idx_def(0, 9);
+    game.increase_idx_def(0, 10);
     const lose_def = Math.ceil(me.def * 0.5);
     game.reduce_idx_def(0, lose_def);
     game.deal_damage(lose_def);
@@ -16760,21 +16765,21 @@ card_actions["D13205"] = (game) => {
 // Dream - Elusive Footwork
 card_actions["D14011"] = (game) => {
     game.add_c_of_x(1, "qi");
-    game.increase_idx_hp(0, 3);
+    game.increase_idx_hp(0, 2);
     game.continuous();
     game.add_c_of_x(1, "dream_elusive_footwork_stacks");
 }
 
 card_actions["D14012"] = (game) => {
     game.add_c_of_x(1, "qi");
-    game.increase_idx_hp(0, 5);
+    game.increase_idx_hp(0, 4);
     game.continuous();
     game.add_c_of_x(1, "dream_elusive_footwork_stacks");
 }
 
 card_actions["D14013"] = (game) => {
     game.add_c_of_x(1, "qi");
-    game.increase_idx_hp(0, 8);
+    game.increase_idx_hp(0, 6);
     game.continuous();
     game.add_c_of_x(1, "dream_elusive_footwork_stacks");
 }
@@ -17133,7 +17138,7 @@ card_actions["D14115"] = (game) => {
     if (force_gain > 0) {
         game.increase_idx_force(0, force_gain);
     }
-    game.atk(10 + game.players[0].physique_gained);
+    game.atk(7 + game.players[0].physique_gained);
 }
 
 // Dream - Crash Footwork
@@ -17225,11 +17230,13 @@ card_actions["D14143"] = (game) => {
 card_actions["D14144"] = (game) => {
     game.atk(6);
     game.atk(6);
+    game.players[0].dream_crash_fist_continue_bonus_atk += 2;
 }
 
 card_actions["D14145"] = (game) => {
     game.atk(9);
     game.atk(9);
+    game.players[0].dream_crash_fist_continue_bonus_atk += 2;
 }
 
 // Dream - Bearing the Load
@@ -17244,7 +17251,7 @@ card_actions["D14152"] = (game) => {
 }
 
 card_actions["D14153"] = (game) => {
-    const def_amt = 10 + game.get_debuff_count(0);
+    const def_amt = 13 + game.get_debuff_count(0);
     game.increase_idx_def(0, def_amt);
 }
 
@@ -17352,7 +17359,7 @@ card_actions["D14184"] = (game) => {
     if (force > 0) {
         game.reduce_c_of_x(force, "force");
         game.physique(force);
-        game.heal(force * 2);
+        game.heal(force * 3);
     }
 }
 
@@ -17363,7 +17370,7 @@ card_actions["D14185"] = (game) => {
     if (force > 0) {
         game.reduce_c_of_x(force, "force");
         game.physique(force * 2);
-        game.heal(force * 2);
+        game.heal(force * 3);
     }
 }
 

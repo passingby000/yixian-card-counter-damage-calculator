@@ -1,8 +1,7 @@
 const fs   = require('fs');
 const path = require('path');
 const zlib = require('zlib');
-const { nativeImage } = require('electron');
-const { getCodePath, getYisimPath, getAssetPath } = require('./runtime_paths');
+const { getYisimPath, getAssetPath } = require('./runtime_paths');
 
 // Slot geometry ratios (used to estimate expected sizes)
 const SLOT_BASE_W        = 1920;
@@ -17,24 +16,31 @@ const DREAM_WIDTH_RATIO  = 0.925;
 const DREAM_HEIGHT_RATIO = 0.977;
 const DREAM_X_OFFSET     = 8;
 
-const TALENT_TEMPLATES_DIR     = getYisimPath('lanke', 'talent_templates');
-const IMAGES_DIR               = getAssetPath('images');
-const CALIBRATION_INFO_PATH    = getCodePath('calibration', 'cards_and_talent.txt');
-const CALIBRATION_CAPTURE_PATH = getCodePath('calibration', 'calibration_capture.png');
-const CALIBRATION_DEBUG_PATH   = getCodePath('calibration', 'calibration_debug.png');
+const TALENT_TEMPLATES_DIR = getYisimPath('lanke', 'talent_templates');
+const IMAGES_DIR           = getAssetPath('images');
 
-// ── Gray helpers ────────────────────────────────────────────────────────────
-
-// Convert NativeImage to Float32Array grayscale (Electron bitmap is BGRA)
-function imageToGray(image) {
-  const bm = image.toBitmap();
-  const { width, height } = image.getSize();
-  const gray = new Float32Array(width * height);
-  for (let i = 0, px = 0; i < bm.length; i += 4, px++) {
-    gray[px] = 0.114 * bm[i] + 0.587 * bm[i + 1] + 0.299 * bm[i + 2]; // BGRA→gray
-  }
-  return { gray, width, height };
-}
+// Calibration reference deck/talents. The user must have this exact board loaded
+// in-game when clicking Calibrate. These are the cards that will be searched for
+// in the screenshot to establish slot geometry; talents likewise establish the
+// five talent rects. Hardcoded here so calibration doesn't depend on an
+// external cards_and_talent.txt file at runtime.
+const CALIBRATION_SLOT_CARDS = {
+  1: '云剑•闪风1',
+  2: '云剑•飞刺3',
+  3: '运笔如飞1',
+  4: '云剑•汇灵2',
+  5: '破气剑1',
+  6: '巨鹏灵剑2',
+  7: '水月剑阵2',
+  8: '镜花剑阵2'
+};
+const CALIBRATION_TALENTS = {
+  1: 'Shift As Cloud',
+  2: 'Sword In Sheathed',
+  3: 'Endurance As Cloud Sea',
+  4: 'Shade Of Cloud',
+  5: 'Spring Course Tea'
+};
 
 // ── Pure Node.js PNG decoder (no color profile transforms) ──────────────────
 
@@ -52,12 +58,14 @@ function paethPredictor(a, b, c) {
   return c;
 }
 
-function decodePng(filePath) {
-  const buf = fs.readFileSync(filePath);
+function decodePng(source) {
+  // Accepts either a file path (string) or a PNG buffer directly.
+  const buf = Buffer.isBuffer(source) ? source : fs.readFileSync(source);
+  const srcLabel = Buffer.isBuffer(source) ? '<buffer>' : source;
 
   const SIGNATURE = [137, 80, 78, 71, 13, 10, 26, 10];
   for (let i = 0; i < 8; i++) {
-    if (buf[i] !== SIGNATURE[i]) throw new Error(`Not a valid PNG: ${filePath}`);
+    if (buf[i] !== SIGNATURE[i]) throw new Error(`Not a valid PNG: ${srcLabel}`);
   }
 
   let width, height, bitDepth, colorType;
@@ -85,12 +93,12 @@ function decodePng(filePath) {
     }
   }
 
-  if (!width || !height) throw new Error(`Invalid PNG (no IHDR): ${filePath}`);
-  if (bitDepth !== 8)    throw new Error(`Unsupported bit depth ${bitDepth} in ${filePath}`);
+  if (!width || !height) throw new Error(`Invalid PNG (no IHDR): ${srcLabel}`);
+  if (bitDepth !== 8)    throw new Error(`Unsupported bit depth ${bitDepth} in ${srcLabel}`);
 
   const BPP_MAP = { 0: 1, 2: 3, 3: 1, 4: 2, 6: 4 };
   const bpp = BPP_MAP[colorType];
-  if (!bpp) throw new Error(`Unsupported color type ${colorType} in ${filePath}`);
+  if (!bpp) throw new Error(`Unsupported color type ${colorType} in ${srcLabel}`);
 
   const raw     = zlib.inflateSync(Buffer.concat(idatChunks));
   const stride  = width * bpp;
@@ -349,18 +357,6 @@ function buildImageIndex(dir) {
   return idx;
 }
 
-function parseCardNames() {
-  if (!fs.existsSync(CALIBRATION_INFO_PATH)) return {};
-  const names = {};
-  for (const line of fs.readFileSync(CALIBRATION_INFO_PATH, 'utf8').split('\n')) {
-    const trimmed = line.trim();
-    if (trimmed.startsWith('#') || !trimmed) continue;
-    const m = trimmed.match(/^slot(\d+):\s*(.+)$/);
-    if (m) names[parseInt(m[1], 10)] = m[2].trim();
-  }
-  return names;
-}
-
 function findCardImagePath(cardName, idx) {
   const variants = [
     cardName.trim().toLowerCase(),
@@ -379,13 +375,12 @@ async function findCardSlots(ssGray, ssW, ssH) {
   const yMin = Math.floor(ssH * 0.10);
   const yMax = Math.floor(ssH * 0.88);
 
-  const cardNames = parseCardNames();
   const imageIndex = buildImageIndex(IMAGES_DIR);
   const found = [];
 
   for (let slot = 1; slot <= 8; slot++) {
     await yieldToEventLoop();
-    const cardName = cardNames[slot];
+    const cardName = CALIBRATION_SLOT_CARDS[slot];
     if (!cardName) continue;
     const imgPath = findCardImagePath(cardName, imageIndex);
     if (!imgPath) continue;
@@ -399,7 +394,7 @@ async function findCardSlots(ssGray, ssW, ssH) {
   if (found.length < 4) {
     throw new Error(
       `Card slot detection found only ${found.length}/8 slots via template matching. ` +
-      `Make sure cards_and_talent.txt lists the correct card names for all 8 slots.`
+      `Make sure the calibration reference deck is loaded in-game before calibrating.`
     );
   }
 
@@ -428,18 +423,6 @@ async function findCardSlots(ssGray, ssW, ssH) {
 
 // ── Talent detection ─────────────────────────────────────────────────────────
 
-function parseTalentNames() {
-  if (!fs.existsSync(CALIBRATION_INFO_PATH)) return {};
-  const names = {};
-  for (const line of fs.readFileSync(CALIBRATION_INFO_PATH, 'utf8').split('\n')) {
-    const trimmed = line.trim();
-    if (trimmed.startsWith('#') || !trimmed) continue;
-    const match = trimmed.match(/^talent(\d+):\s*(.+)$/);
-    if (match) names[parseInt(match[1], 10)] = match[2].trim();
-  }
-  return names;
-}
-
 function findTalentTemplate(position, talentName) {
   const posDir = path.join(TALENT_TEMPLATES_DIR, `position_${position}`);
   if (!fs.existsSync(posDir)) return null;
@@ -453,15 +436,14 @@ function findTalentTemplate(position, talentName) {
 }
 
 async function findTalentPositions(ssGray, ssW, ssH, onProgress = null) {
-  const talentNames = parseTalentNames();
   const rects = [];
 
   for (let pos = 1; pos <= 5; pos++) {
     onProgress?.(pos + 1, 7, `Finding talent ${pos}`);
     await yieldToEventLoop();
 
-    // Prefer the named template from cards_and_talent.txt if available
-    const talentName = talentNames[pos];
+    // Prefer the hardcoded reference talent if available for this position
+    const talentName = CALIBRATION_TALENTS[pos];
     const namedPath = talentName ? findTalentTemplate(pos, talentName) : null;
 
     let best = null;
@@ -492,76 +474,12 @@ async function findTalentPositions(ssGray, ssW, ssH, onProgress = null) {
   return rects;
 }
 
-// ── PNG encoder ──────────────────────────────────────────────────────────────
-
-function writeU32be(buf, off, v) {
-  buf[off]=(v>>>24)&0xFF; buf[off+1]=(v>>>16)&0xFF; buf[off+2]=(v>>>8)&0xFF; buf[off+3]=v&0xFF;
-}
-
-function crc32(buf) {
-  let c = 0xFFFFFFFF;
-  for (let i = 0; i < buf.length; i++) {
-    c ^= buf[i];
-    for (let k = 0; k < 8; k++) c = (c & 1) ? (0xEDB88320 ^ (c >>> 1)) : (c >>> 1);
-  }
-  return (c ^ 0xFFFFFFFF) >>> 0;
-}
-
-function makePngChunk(type, data) {
-  const tb = Buffer.from(type, 'ascii');
-  const lb = Buffer.alloc(4); writeU32be(lb, 0, data.length);
-  const ci = Buffer.concat([tb, data]);
-  const cb = Buffer.alloc(4); writeU32be(cb, 0, crc32(ci));
-  return Buffer.concat([lb, tb, data, cb]);
-}
-
-function encodePng(rgba, width, height) {
-  const sig = Buffer.from([137,80,78,71,13,10,26,10]);
-  const ihdrData = Buffer.alloc(13);
-  writeU32be(ihdrData, 0, width); writeU32be(ihdrData, 4, height);
-  ihdrData[8]=8; ihdrData[9]=6;
-  const scanline = width * 4;
-  const raw = Buffer.alloc(height * (1 + scanline));
-  for (let y = 0; y < height; y++) {
-    raw[y*(1+scanline)] = 0;
-    for (let x = 0; x < width; x++) {
-      const s=(y*width+x)*4, d=y*(1+scanline)+1+x*4;
-      raw[d]=rgba[s]; raw[d+1]=rgba[s+1]; raw[d+2]=rgba[s+2]; raw[d+3]=rgba[s+3];
-    }
-  }
-  return Buffer.concat([
-    sig,
-    makePngChunk('IHDR', ihdrData),
-    makePngChunk('IDAT', zlib.deflateSync(raw)),
-    makePngChunk('IEND', Buffer.alloc(0))
-  ]);
-}
-
-function drawRect(rgba, imgW, imgH, x, y, w, h, r, g, b, thickness = 3) {
-  for (let t = 0; t < thickness; t++) {
-    for (let i = x; i < x+w; i++) {
-      for (const row of [y+t, y+h-1-t]) {
-        if (row < 0 || row >= imgH || i < 0 || i >= imgW) continue;
-        const d=(row*imgW+i)*4; rgba[d]=r; rgba[d+1]=g; rgba[d+2]=b; rgba[d+3]=255;
-      }
-    }
-    for (let j = y; j < y+h; j++) {
-      for (const col of [x+t, x+w-1-t]) {
-        if (j < 0 || j >= imgH || col < 0 || col >= imgW) continue;
-        const d=(j*imgW+col)*4; rgba[d]=r; rgba[d+1]=g; rgba[d+2]=b; rgba[d+3]=255;
-      }
-    }
-  }
-}
-
 // ── Main calibration entry point ───────────────────────────────────────────
 
 async function performCalibration(screenshot, onProgress = null) {
-  fs.writeFileSync(CALIBRATION_CAPTURE_PATH, screenshot.toPNG());
-
   // Decode screenshot from raw PNG bytes (same path as templates — no color profile transforms)
   // Use ssW/ssH from the decoded PNG (physical pixels), NOT screenshot.getSize() which returns logical pixels
-  const ssImg = decodePng(CALIBRATION_CAPTURE_PATH);
+  const ssImg = decodePng(screenshot.toPNG());
   const { width: ssW, height: ssH } = ssImg;
   const ssGray = (() => {
     const { data, width, height } = ssImg;
@@ -576,19 +494,9 @@ async function performCalibration(screenshot, onProgress = null) {
   const { slotY, slotHeight, slotWidth, slotXPositions } = await findCardSlots(ssGray, ssW, ssH);
   onProgress?.(1, 7, 'Card slots found');
 
-  // Save annotated debug image showing detected slot boxes
-  const debugRgba = new Uint8Array(ssImg.data);
-  const SLOT_COLORS = [[255,80,80],[255,165,0],[255,255,0],[80,255,80],[0,200,255],[80,80,255],[255,80,255],[255,255,255]];
-  for (let i = 0; i < slotXPositions.length; i++) {
-    const [r, g, b] = SLOT_COLORS[i % SLOT_COLORS.length];
-    drawRect(debugRgba, ssW, ssH, slotXPositions[i], slotY, slotWidth, slotHeight, r, g, b, 3);
-  }
-  fs.writeFileSync(CALIBRATION_DEBUG_PATH, encodePng(debugRgba, ssW, ssH));
-
   await yieldToEventLoop();
 
   // Find talent positions via multi-scale circular ZNCC
-  // TODO: re-enable when done debugging card slots
   const talentRects = await findTalentPositions(ssGray, ssW, ssH, onProgress);
   onProgress?.(7, 7, 'Done');
 

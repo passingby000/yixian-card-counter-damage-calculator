@@ -33,7 +33,8 @@
       "Bash(node --check runtime_paths.js)",
       "Bash(node .dream_audit_build_mapping.js)",
       "Bash(node .dream_audit_extract_code.js)",
-      "Bash(node _tmp_inspect.js)"
+      "Bash(node _tmp_inspect.js)",
+      "Bash(node -c \"c:/Users/raymo/OneDrive/Documents/testing-godot/yixian-card-counter-damage-calculator/calibrator.js\")"
     ]
   }
 }
