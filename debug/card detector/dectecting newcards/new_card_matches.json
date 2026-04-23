@@ -1,0 +1,1384 @@
+{
+  "generatedAt": "2026-04-22T20:17:24.820Z",
+  "rootDir": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards",
+  "resizeSize": {
+    "width": 120,
+    "height": 202
+  },
+  "targetFolders": [
+    "Screenshot 2026-04-22 at 1.08.47 PM",
+    "Screenshot 2026-04-22 at 1.09.50 PM",
+    "Screenshot 2026-04-22 at 1.10.15 PM"
+  ],
+  "results": [
+    {
+      "folder": "Screenshot 2026-04-22 at 1.08.47 PM",
+      "slotResults": [
+        {
+          "slot": 1,
+          "slotPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-22 at 1.08.47 PM/slot-1.png",
+          "topMatches": [
+            {
+              "cardName": "梦·落雷术",
+              "phase": 1,
+              "folder": "Screenshot 2026-04-09 at 2.46.47 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.46.47 PM/梦·落雷术1.png",
+              "mse": 0.0944
+            },
+            {
+              "cardName": "梦·木灵芽",
+              "phase": 1,
+              "folder": "Screenshot 2026-04-09 at 2.47.41 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.41 PM/梦·木灵芽1.png",
+              "mse": 2758.1011
+            },
+            {
+              "cardName": "梦·五行刺",
+              "phase": 1,
+              "folder": "Screenshot 2026-04-09 at 2.47.23 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.23 PM/梦·五行刺1.png",
+              "mse": 2885.3699
+            },
+            {
+              "cardName": "梦·劈山掌",
+              "phase": 1,
+              "folder": "Screenshot 2026-04-09 at 2.48.08 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.08 PM/梦·劈山掌1.png",
+              "mse": 2939.9308
+            },
+            {
+              "cardName": "梦·云剑极意",
+              "phase": 1,
+              "folder": "Screenshot 2026-04-09 at 2.04.01 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.04.01 PM/梦·云剑极意1.png",
+              "mse": 2970.3146
+            },
+            {
+              "cardName": "梦·锻筋",
+              "phase": 1,
+              "folder": "Screenshot 2026-04-09 at 2.48.01 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.01 PM/梦·锻筋1.png",
+              "mse": 3046.9247
+            },
+            {
+              "cardName": "梦·朝气蓬勃",
+              "phase": 1,
+              "folder": "Screenshot 2026-04-09 at 2.48.06 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.06 PM/梦·朝气蓬勃1.png",
+              "mse": 3055.2271
+            },
+            {
+              "cardName": "梦·岿然不动",
+              "phase": 1,
+              "folder": "Screenshot 2026-04-09 at 2.48.21 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.21 PM/梦·岿然不动1.png",
+              "mse": 3104.836
+            },
+            {
+              "cardName": "梦·飞牙剑",
+              "phase": 1,
+              "folder": "Screenshot 2026-04-09 at 2.04.06 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.04.06 PM/梦·飞牙剑1.png",
+              "mse": 3142.2665
+            },
+            {
+              "cardName": "梦·水灵波澜",
+              "phase": 1,
+              "folder": "Screenshot 2026-04-09 at 2.47.22 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.22 PM/梦·水灵波澜1.png",
+              "mse": 3215.5844
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "slotPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-22 at 1.08.47 PM/slot-2.png",
+          "topMatches": [
+            {
+              "cardName": "梦·落雷术",
+              "phase": 2,
+              "folder": "Screenshot 2026-04-09 at 2.46.47 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.46.47 PM/梦·落雷术2.png",
+              "mse": 1.8755
+            },
+            {
+              "cardName": "梦·木灵芽",
+              "phase": 2,
+              "folder": "Screenshot 2026-04-09 at 2.47.41 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.41 PM/梦·木灵芽2.png",
+              "mse": 2743.195
+            },
+            {
+              "cardName": "梦·五行刺",
+              "phase": 2,
+              "folder": "Screenshot 2026-04-09 at 2.47.23 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.23 PM/梦·五行刺2.png",
+              "mse": 2820.6763
+            },
+            {
+              "cardName": "梦·劈山掌",
+              "phase": 2,
+              "folder": "Screenshot 2026-04-09 at 2.48.08 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.08 PM/梦·劈山掌2.png",
+              "mse": 2881.7436
+            },
+            {
+              "cardName": "梦·云剑极意",
+              "phase": 2,
+              "folder": "Screenshot 2026-04-09 at 2.04.01 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.04.01 PM/梦·云剑极意2.png",
+              "mse": 2891.7761
+            },
+            {
+              "cardName": "梦·水灵波澜",
+              "phase": 2,
+              "folder": "Screenshot 2026-04-09 at 2.47.22 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.22 PM/梦·水灵波澜2.png",
+              "mse": 2903.9685
+            },
+            {
+              "cardName": "梦·朝气蓬勃",
+              "phase": 2,
+              "folder": "Screenshot 2026-04-09 at 2.48.06 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.06 PM/梦·朝气蓬勃2.png",
+              "mse": 2983.3029
+            },
+            {
+              "cardName": "梦·锻筋",
+              "phase": 2,
+              "folder": "Screenshot 2026-04-09 at 2.48.01 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.01 PM/梦·锻筋2.png",
+              "mse": 2988.8959
+            },
+            {
+              "cardName": "梦·岿然不动",
+              "phase": 2,
+              "folder": "Screenshot 2026-04-09 at 2.48.21 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.21 PM/梦·岿然不动2.png",
+              "mse": 3045.441
+            },
+            {
+              "cardName": "梦·飞牙剑",
+              "phase": 2,
+              "folder": "Screenshot 2026-04-09 at 2.04.06 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.04.06 PM/梦·飞牙剑2.png",
+              "mse": 3081.771
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "slotPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-22 at 1.08.47 PM/slot-3.png",
+          "topMatches": [
+            {
+              "cardName": "梦·落雷术",
+              "phase": 3,
+              "folder": "Screenshot 2026-04-09 at 2.46.47 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.46.47 PM/梦·落雷术3.png",
+              "mse": 1.2924
+            },
+            {
+              "cardName": "梦·崩拳突",
+              "phase": 3,
+              "folder": "Screenshot 2026-04-09 at 2.48.00 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.00 PM/梦·崩拳突3.png",
+              "mse": 2874.4744
+            },
+            {
+              "cardName": "梦·岿然不动",
+              "phase": 3,
+              "folder": "Screenshot 2026-04-09 at 2.48.21 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.21 PM/梦·岿然不动3.png",
+              "mse": 2881.6908
+            },
+            {
+              "cardName": "梦·锻筋",
+              "phase": 3,
+              "folder": "Screenshot 2026-04-09 at 2.48.01 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.01 PM/梦·锻筋3.png",
+              "mse": 2945.0855
+            },
+            {
+              "cardName": "梦·劈山掌",
+              "phase": 3,
+              "folder": "Screenshot 2026-04-09 at 2.48.08 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.08 PM/梦·劈山掌3.png",
+              "mse": 2973.9977
+            },
+            {
+              "cardName": "梦·朝气蓬勃",
+              "phase": 3,
+              "folder": "Screenshot 2026-04-09 at 2.48.06 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.06 PM/梦·朝气蓬勃3.png",
+              "mse": 3037.7876
+            },
+            {
+              "cardName": "梦·金灵阵",
+              "phase": 3,
+              "folder": "Screenshot 2026-04-09 at 2.47.18 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.18 PM/梦·金灵阵3.png",
+              "mse": 3041.6606
+            },
+            {
+              "cardName": "梦·斗转星移",
+              "phase": 3,
+              "folder": "Screenshot 2026-04-09 at 2.46.55 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.46.55 PM/梦·斗转星移3.png",
+              "mse": 3083.4083
+            },
+            {
+              "cardName": "梦·星罗棋布",
+              "phase": 3,
+              "folder": "Screenshot 2026-04-09 at 2.47.05 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.05 PM/梦·星罗棋布3.png",
+              "mse": 3106.7239
+            },
+            {
+              "cardName": "梦·木灵芽",
+              "phase": 3,
+              "folder": "Screenshot 2026-04-09 at 2.47.41 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.41 PM/梦·木灵芽3.png",
+              "mse": 3136.2563
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "slotPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-22 at 1.08.47 PM/slot-4.png",
+          "topMatches": [
+            {
+              "cardName": "梦·落雷术",
+              "phase": 4,
+              "folder": "Screenshot 2026-04-09 at 2.46.47 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.46.47 PM/梦·落雷术4.png",
+              "mse": 1770.3965
+            },
+            {
+              "cardName": "梦·木灵芽",
+              "phase": 4,
+              "folder": "Screenshot 2026-04-09 at 2.47.41 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.41 PM/梦·木灵芽4.png",
+              "mse": 3621.2772
+            },
+            {
+              "cardName": "梦·斗转星移",
+              "phase": 4,
+              "folder": "Screenshot 2026-04-09 at 2.46.55 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.46.55 PM/梦·斗转星移4.png",
+              "mse": 3634.2948
+            },
+            {
+              "cardName": "梦·劈山掌",
+              "phase": 4,
+              "folder": "Screenshot 2026-04-09 at 2.48.08 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.08 PM/梦·劈山掌4.png",
+              "mse": 3683.0048
+            },
+            {
+              "cardName": "梦·锻筋",
+              "phase": 4,
+              "folder": "Screenshot 2026-04-09 at 2.48.01 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.01 PM/梦·锻筋4.png",
+              "mse": 3695.2615
+            },
+            {
+              "cardName": "梦·云剑极意",
+              "phase": 4,
+              "folder": "Screenshot 2026-04-09 at 2.04.01 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.04.01 PM/梦·云剑极意4.png",
+              "mse": 3780.07
+            },
+            {
+              "cardName": "梦·火灵聚炎",
+              "phase": 4,
+              "folder": "Screenshot 2026-04-09 at 2.47.43 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.43 PM/梦·火灵聚炎4.png",
+              "mse": 3846.5172
+            },
+            {
+              "cardName": "梦·朝气蓬勃",
+              "phase": 4,
+              "folder": "Screenshot 2026-04-09 at 2.48.06 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.06 PM/梦·朝气蓬勃4.png",
+              "mse": 3907.6194
+            },
+            {
+              "cardName": "梦·金灵阵",
+              "phase": 4,
+              "folder": "Screenshot 2026-04-09 at 2.47.18 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.18 PM/梦·金灵阵4.png",
+              "mse": 3959.228
+            },
+            {
+              "cardName": "梦·凝意决",
+              "phase": 4,
+              "folder": "Screenshot 2026-04-09 at 2.04.41 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.04.41 PM/梦·凝意决4.png",
+              "mse": 3998.1763
+            }
+          ]
+        },
+        {
+          "slot": 5,
+          "slotPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-22 at 1.08.47 PM/slot-5.png",
+          "topMatches": [
+            {
+              "cardName": "梦·落雷术",
+              "phase": 5,
+              "folder": "Screenshot 2026-04-09 at 2.46.47 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.46.47 PM/梦·落雷术5.png",
+              "mse": 1654.9289
+            },
+            {
+              "cardName": "梦·木灵芽",
+              "phase": 5,
+              "folder": "Screenshot 2026-04-09 at 2.47.41 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.41 PM/梦·木灵芽5.png",
+              "mse": 3446.0926
+            },
+            {
+              "cardName": "梦·劈山掌",
+              "phase": 5,
+              "folder": "Screenshot 2026-04-09 at 2.48.08 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.08 PM/梦·劈山掌5.png",
+              "mse": 3447.1539
+            },
+            {
+              "cardName": "梦·锻筋",
+              "phase": 5,
+              "folder": "Screenshot 2026-04-09 at 2.48.01 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.01 PM/梦·锻筋5.png",
+              "mse": 3525.5212
+            },
+            {
+              "cardName": "梦·火灵聚炎",
+              "phase": 5,
+              "folder": "Screenshot 2026-04-09 at 2.47.43 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.43 PM/梦·火灵聚炎5.png",
+              "mse": 3672.0673
+            },
+            {
+              "cardName": "梦·崩拳突",
+              "phase": 5,
+              "folder": "Screenshot 2026-04-09 at 2.48.00 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.00 PM/梦·崩拳突5.png",
+              "mse": 3748.5464
+            },
+            {
+              "cardName": "梦·金灵阵",
+              "phase": 5,
+              "folder": "Screenshot 2026-04-09 at 2.47.18 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.18 PM/梦·金灵阵5.png",
+              "mse": 3785.775
+            },
+            {
+              "cardName": "梦·朝气蓬勃",
+              "phase": 5,
+              "folder": "Screenshot 2026-04-09 at 2.48.06 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.06 PM/梦·朝气蓬勃5.png",
+              "mse": 3843.7193
+            },
+            {
+              "cardName": "梦·五行刺",
+              "phase": 5,
+              "folder": "Screenshot 2026-04-09 at 2.47.23 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.23 PM/梦·五行刺5.png",
+              "mse": 3872.1004
+            },
+            {
+              "cardName": "梦·云剑极意",
+              "phase": 5,
+              "folder": "Screenshot 2026-04-09 at 2.04.01 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.04.01 PM/梦·云剑极意5.png",
+              "mse": 3877.5206
+            }
+          ]
+        }
+      ],
+      "topCardMatches": [
+        {
+          "cardName": "梦·落雷术",
+          "phaseCount": 5,
+          "totalMse": 3428.5877,
+          "averageMse": 685.7175,
+          "perPhaseMse": [
+            0.0944,
+            1.8755,
+            1.2924,
+            1770.3965,
+            1654.9289
+          ]
+        },
+        {
+          "cardName": "梦·木灵芽",
+          "phaseCount": 5,
+          "totalMse": 15704.9222,
+          "averageMse": 3140.9844,
+          "perPhaseMse": [
+            2758.1011,
+            2743.195,
+            3136.2563,
+            3621.2772,
+            3446.0926
+          ]
+        },
+        {
+          "cardName": "梦·劈山掌",
+          "phaseCount": 5,
+          "totalMse": 15925.8308,
+          "averageMse": 3185.1662,
+          "perPhaseMse": [
+            2939.9308,
+            2881.7436,
+            2973.9977,
+            3683.0048,
+            3447.1539
+          ]
+        },
+        {
+          "cardName": "梦·锻筋",
+          "phaseCount": 5,
+          "totalMse": 16201.6888,
+          "averageMse": 3240.3378,
+          "perPhaseMse": [
+            3046.9247,
+            2988.8959,
+            2945.0855,
+            3695.2615,
+            3525.5212
+          ]
+        },
+        {
+          "cardName": "梦·朝气蓬勃",
+          "phaseCount": 5,
+          "totalMse": 16827.6563,
+          "averageMse": 3365.5313,
+          "perPhaseMse": [
+            3055.2271,
+            2983.3029,
+            3037.7876,
+            3907.6194,
+            3843.7193
+          ]
+        }
+      ]
+    },
+    {
+      "folder": "Screenshot 2026-04-22 at 1.09.50 PM",
+      "slotResults": [
+        {
+          "slot": 1,
+          "slotPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-22 at 1.09.50 PM/slot-1.png",
+          "topMatches": [
+            {
+              "cardName": "梦·锻拳",
+              "phase": 1,
+              "folder": "Screenshot 2026-04-09 at 2.48.20 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.20 PM/梦·锻拳1.png",
+              "mse": 2080.41
+            },
+            {
+              "cardName": "梦·木灵芽",
+              "phase": 1,
+              "folder": "Screenshot 2026-04-09 at 2.47.41 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.41 PM/梦·木灵芽1.png",
+              "mse": 3241.3112
+            },
+            {
+              "cardName": "梦·锻筋",
+              "phase": 1,
+              "folder": "Screenshot 2026-04-09 at 2.48.01 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.01 PM/梦·锻筋1.png",
+              "mse": 3318.1197
+            },
+            {
+              "cardName": "梦·云剑厚土",
+              "phase": 1,
+              "folder": "Screenshot 2026-04-09 at 2.04.28 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.04.28 PM/梦·云剑厚土1.png",
+              "mse": 3322.3263
+            },
+            {
+              "cardName": "梦·飞牙剑",
+              "phase": 1,
+              "folder": "Screenshot 2026-04-09 at 2.04.06 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.04.06 PM/梦·飞牙剑1.png",
+              "mse": 3435.6966
+            },
+            {
+              "cardName": "梦·五行刺",
+              "phase": 1,
+              "folder": "Screenshot 2026-04-09 at 2.47.23 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.23 PM/梦·五行刺1.png",
+              "mse": 3457.9781
+            },
+            {
+              "cardName": "梦·灵犀剑阵",
+              "phase": 1,
+              "folder": "Screenshot 2026-04-09 at 2.04.26 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.04.26 PM/梦·灵犀剑阵1.png",
+              "mse": 3477.1177
+            },
+            {
+              "cardName": "梦·崩拳弹",
+              "phase": 1,
+              "folder": "Screenshot 2026-04-09 at 2.48.03 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.03 PM/梦·崩拳弹1.png",
+              "mse": 3494.0747
+            },
+            {
+              "cardName": "梦·乾卦",
+              "phase": 1,
+              "folder": "Screenshot 2026-04-09 at 2.47.09 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.09 PM/梦·乾卦1.png",
+              "mse": 3499.2691
+            },
+            {
+              "cardName": "梦·斗转星移",
+              "phase": 1,
+              "folder": "Screenshot 2026-04-09 at 2.46.55 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.46.55 PM/梦·斗转星移1.png",
+              "mse": 3506.3596
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "slotPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-22 at 1.09.50 PM/slot-2.png",
+          "topMatches": [
+            {
+              "cardName": "梦·锻拳",
+              "phase": 2,
+              "folder": "Screenshot 2026-04-09 at 2.48.20 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.20 PM/梦·锻拳2.png",
+              "mse": 1927.6692
+            },
+            {
+              "cardName": "梦·木灵芽",
+              "phase": 2,
+              "folder": "Screenshot 2026-04-09 at 2.47.41 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.41 PM/梦·木灵芽2.png",
+              "mse": 3183.9848
+            },
+            {
+              "cardName": "梦·云剑厚土",
+              "phase": 2,
+              "folder": "Screenshot 2026-04-09 at 2.04.28 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.04.28 PM/梦·云剑厚土2.png",
+              "mse": 3250.8646
+            },
+            {
+              "cardName": "梦·锻筋",
+              "phase": 2,
+              "folder": "Screenshot 2026-04-09 at 2.48.01 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.01 PM/梦·锻筋2.png",
+              "mse": 3251.7174
+            },
+            {
+              "cardName": "梦·飞牙剑",
+              "phase": 2,
+              "folder": "Screenshot 2026-04-09 at 2.04.06 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.04.06 PM/梦·飞牙剑2.png",
+              "mse": 3394.243
+            },
+            {
+              "cardName": "梦·乾卦",
+              "phase": 2,
+              "folder": "Screenshot 2026-04-09 at 2.47.09 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.09 PM/梦·乾卦2.png",
+              "mse": 3394.7517
+            },
+            {
+              "cardName": "梦·五行刺",
+              "phase": 2,
+              "folder": "Screenshot 2026-04-09 at 2.47.23 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.23 PM/梦·五行刺2.png",
+              "mse": 3409.2181
+            },
+            {
+              "cardName": "梦·崩拳弹",
+              "phase": 2,
+              "folder": "Screenshot 2026-04-09 at 2.48.03 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.03 PM/梦·崩拳弹2.png",
+              "mse": 3416.7834
+            },
+            {
+              "cardName": "梦·斗转星移",
+              "phase": 2,
+              "folder": "Screenshot 2026-04-09 at 2.46.55 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.46.55 PM/梦·斗转星移2.png",
+              "mse": 3420.4589
+            },
+            {
+              "cardName": "梦·灵犀剑阵",
+              "phase": 2,
+              "folder": "Screenshot 2026-04-09 at 2.04.26 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.04.26 PM/梦·灵犀剑阵2.png",
+              "mse": 3437.908
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "slotPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-22 at 1.09.50 PM/slot-3.png",
+          "topMatches": [
+            {
+              "cardName": "梦·锻拳",
+              "phase": 3,
+              "folder": "Screenshot 2026-04-09 at 2.48.20 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.20 PM/梦·锻拳3.png",
+              "mse": 1996.8611
+            },
+            {
+              "cardName": "梦·木灵芽",
+              "phase": 3,
+              "folder": "Screenshot 2026-04-09 at 2.47.41 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.41 PM/梦·木灵芽3.png",
+              "mse": 3250.1328
+            },
+            {
+              "cardName": "梦·云剑厚土",
+              "phase": 3,
+              "folder": "Screenshot 2026-04-09 at 2.04.28 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.04.28 PM/梦·云剑厚土3.png",
+              "mse": 3268.4507
+            },
+            {
+              "cardName": "梦·云剑极意",
+              "phase": 3,
+              "folder": "Screenshot 2026-04-09 at 2.04.01 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.04.01 PM/梦·云剑极意3.png",
+              "mse": 3315.9152
+            },
+            {
+              "cardName": "梦·锻筋",
+              "phase": 3,
+              "folder": "Screenshot 2026-04-09 at 2.48.01 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.01 PM/梦·锻筋3.png",
+              "mse": 3354.2386
+            },
+            {
+              "cardName": "梦·飞牙剑",
+              "phase": 3,
+              "folder": "Screenshot 2026-04-09 at 2.04.06 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.04.06 PM/梦·飞牙剑3.png",
+              "mse": 3453.9684
+            },
+            {
+              "cardName": "梦·崩拳弹",
+              "phase": 3,
+              "folder": "Screenshot 2026-04-09 at 2.48.03 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.03 PM/梦·崩拳弹3.png",
+              "mse": 3488.9956
+            },
+            {
+              "cardName": "梦·五行刺",
+              "phase": 3,
+              "folder": "Screenshot 2026-04-09 at 2.47.23 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.23 PM/梦·五行刺3.png",
+              "mse": 3493.1404
+            },
+            {
+              "cardName": "梦·斗转星移",
+              "phase": 3,
+              "folder": "Screenshot 2026-04-09 at 2.46.55 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.46.55 PM/梦·斗转星移3.png",
+              "mse": 3503.7621
+            },
+            {
+              "cardName": "梦·乾卦",
+              "phase": 3,
+              "folder": "Screenshot 2026-04-09 at 2.47.09 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.09 PM/梦·乾卦3.png",
+              "mse": 3504.3073
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "slotPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-22 at 1.09.50 PM/slot-4.png",
+          "topMatches": [
+            {
+              "cardName": "梦·锻拳",
+              "phase": 4,
+              "folder": "Screenshot 2026-04-09 at 2.48.20 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.20 PM/梦·锻拳4.png",
+              "mse": 2434.1252
+            },
+            {
+              "cardName": "梦·锻筋",
+              "phase": 4,
+              "folder": "Screenshot 2026-04-09 at 2.48.01 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.01 PM/梦·锻筋4.png",
+              "mse": 3776.9846
+            },
+            {
+              "cardName": "梦·崩拳弹",
+              "phase": 4,
+              "folder": "Screenshot 2026-04-09 at 2.48.03 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.03 PM/梦·崩拳弹4.png",
+              "mse": 3801.0248
+            },
+            {
+              "cardName": "梦·五行刺",
+              "phase": 4,
+              "folder": "Screenshot 2026-04-09 at 2.47.23 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.23 PM/梦·五行刺4.png",
+              "mse": 3805.4507
+            },
+            {
+              "cardName": "梦·乾卦",
+              "phase": 4,
+              "folder": "Screenshot 2026-04-09 at 2.47.09 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.09 PM/梦·乾卦4.png",
+              "mse": 3805.5355
+            },
+            {
+              "cardName": "梦·岿然不动",
+              "phase": 4,
+              "folder": "Screenshot 2026-04-09 at 2.48.21 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.21 PM/梦·岿然不动4.png",
+              "mse": 3822.3529
+            },
+            {
+              "cardName": "梦·云剑厚土",
+              "phase": 4,
+              "folder": "Screenshot 2026-04-09 at 2.04.28 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.04.28 PM/梦·云剑厚土4.png",
+              "mse": 3831.1096
+            },
+            {
+              "cardName": "梦·木灵芽",
+              "phase": 4,
+              "folder": "Screenshot 2026-04-09 at 2.47.41 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.41 PM/梦·木灵芽4.png",
+              "mse": 3839.5635
+            },
+            {
+              "cardName": "梦·斗转星移",
+              "phase": 4,
+              "folder": "Screenshot 2026-04-09 at 2.46.55 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.46.55 PM/梦·斗转星移4.png",
+              "mse": 3914.7282
+            },
+            {
+              "cardName": "梦·云剑极意",
+              "phase": 4,
+              "folder": "Screenshot 2026-04-09 at 2.04.01 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.04.01 PM/梦·云剑极意4.png",
+              "mse": 3918.0832
+            }
+          ]
+        },
+        {
+          "slot": 5,
+          "slotPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-22 at 1.09.50 PM/slot-5.png",
+          "topMatches": [
+            {
+              "cardName": "梦·锻拳",
+              "phase": 5,
+              "folder": "Screenshot 2026-04-09 at 2.48.20 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.20 PM/梦·锻拳5.png",
+              "mse": 2272.1829
+            },
+            {
+              "cardName": "梦·云剑极意",
+              "phase": 5,
+              "folder": "Screenshot 2026-04-09 at 2.04.01 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.04.01 PM/梦·云剑极意5.png",
+              "mse": 3564.8365
+            },
+            {
+              "cardName": "梦·崩拳弹",
+              "phase": 5,
+              "folder": "Screenshot 2026-04-09 at 2.48.03 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.03 PM/梦·崩拳弹5.png",
+              "mse": 3623.7487
+            },
+            {
+              "cardName": "梦·锻筋",
+              "phase": 5,
+              "folder": "Screenshot 2026-04-09 at 2.48.01 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.01 PM/梦·锻筋5.png",
+              "mse": 3671.725
+            },
+            {
+              "cardName": "梦·五行刺",
+              "phase": 5,
+              "folder": "Screenshot 2026-04-09 at 2.47.23 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.23 PM/梦·五行刺5.png",
+              "mse": 3690.5519
+            },
+            {
+              "cardName": "梦·木灵芽",
+              "phase": 5,
+              "folder": "Screenshot 2026-04-09 at 2.47.41 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.41 PM/梦·木灵芽5.png",
+              "mse": 3693.8131
+            },
+            {
+              "cardName": "梦·岿然不动",
+              "phase": 5,
+              "folder": "Screenshot 2026-04-09 at 2.48.21 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.21 PM/梦·岿然不动5.png",
+              "mse": 3705.694
+            },
+            {
+              "cardName": "梦·斗转星移",
+              "phase": 5,
+              "folder": "Screenshot 2026-04-09 at 2.46.55 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.46.55 PM/梦·斗转星移5.png",
+              "mse": 3708.8978
+            },
+            {
+              "cardName": "梦·乾卦",
+              "phase": 5,
+              "folder": "Screenshot 2026-04-09 at 2.47.09 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.09 PM/梦·乾卦5.png",
+              "mse": 3717.6963
+            },
+            {
+              "cardName": "梦·云剑厚土",
+              "phase": 5,
+              "folder": "Screenshot 2026-04-09 at 2.04.28 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.04.28 PM/梦·云剑厚土5.png",
+              "mse": 3737.5434
+            }
+          ]
+        }
+      ],
+      "topCardMatches": [
+        {
+          "cardName": "梦·锻拳",
+          "phaseCount": 5,
+          "totalMse": 10711.2484,
+          "averageMse": 2142.2497,
+          "perPhaseMse": [
+            2080.41,
+            1927.6692,
+            1996.8611,
+            2434.1252,
+            2272.1829
+          ]
+        },
+        {
+          "cardName": "梦·木灵芽",
+          "phaseCount": 5,
+          "totalMse": 17208.8054,
+          "averageMse": 3441.7611,
+          "perPhaseMse": [
+            3241.3112,
+            3183.9848,
+            3250.1328,
+            3839.5635,
+            3693.8131
+          ]
+        },
+        {
+          "cardName": "梦·锻筋",
+          "phaseCount": 5,
+          "totalMse": 17372.7853,
+          "averageMse": 3474.5571,
+          "perPhaseMse": [
+            3318.1197,
+            3251.7174,
+            3354.2386,
+            3776.9846,
+            3671.725
+          ]
+        },
+        {
+          "cardName": "梦·云剑厚土",
+          "phaseCount": 5,
+          "totalMse": 17410.2946,
+          "averageMse": 3482.0589,
+          "perPhaseMse": [
+            3322.3263,
+            3250.8646,
+            3268.4507,
+            3831.1096,
+            3737.5434
+          ]
+        },
+        {
+          "cardName": "梦·崩拳弹",
+          "phaseCount": 5,
+          "totalMse": 17824.6272,
+          "averageMse": 3564.9254,
+          "perPhaseMse": [
+            3494.0747,
+            3416.7834,
+            3488.9956,
+            3801.0248,
+            3623.7487
+          ]
+        },
+        {
+          "cardName": "梦·五行刺",
+          "phaseCount": 5,
+          "totalMse": 17856.3392,
+          "averageMse": 3571.2678,
+          "perPhaseMse": [
+            3457.9781,
+            3409.2181,
+            3493.1404,
+            3805.4507,
+            3690.5519
+          ]
+        },
+        {
+          "cardName": "梦·乾卦",
+          "phaseCount": 5,
+          "totalMse": 17921.5599,
+          "averageMse": 3584.312,
+          "perPhaseMse": [
+            3499.2691,
+            3394.7517,
+            3504.3073,
+            3805.5355,
+            3717.6963
+          ]
+        },
+        {
+          "cardName": "梦·斗转星移",
+          "phaseCount": 5,
+          "totalMse": 18054.2066,
+          "averageMse": 3610.8413,
+          "perPhaseMse": [
+            3506.3596,
+            3420.4589,
+            3503.7621,
+            3914.7282,
+            3708.8978
+          ]
+        }
+      ]
+    },
+    {
+      "folder": "Screenshot 2026-04-22 at 1.10.15 PM",
+      "slotResults": [
+        {
+          "slot": 1,
+          "slotPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-22 at 1.10.15 PM/slot-1.png",
+          "topMatches": [
+            {
+              "cardName": "梦·星轨推衍",
+              "phase": 1,
+              "folder": "Screenshot 2026-04-09 at 2.46.40 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.46.40 PM/梦·星轨推衍1.png",
+              "mse": 0.0944
+            },
+            {
+              "cardName": "梦·枯木逢春",
+              "phase": 1,
+              "folder": "Screenshot 2026-04-09 at 2.47.11 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.11 PM/梦·枯木逢春1.png",
+              "mse": 4647.9312
+            },
+            {
+              "cardName": "梦·云剑点星",
+              "phase": 1,
+              "folder": "Screenshot 2026-04-09 at 2.03.59 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.03.59 PM/梦·云剑点星1.png",
+              "mse": 4823.4877
+            },
+            {
+              "cardName": "梦·蜻蜓点水",
+              "phase": 1,
+              "folder": "Screenshot 2026-04-09 at 2.47.00 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.00 PM/梦·蜻蜓点水1.png",
+              "mse": 4884.8171
+            },
+            {
+              "cardName": "梦·杯弓蛇影",
+              "phase": 1,
+              "folder": "Screenshot 2026-04-09 at 2.47.01 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.01 PM/梦·杯弓蛇影1.png",
+              "mse": 4925.6534
+            },
+            {
+              "cardName": "梦·两仪阵",
+              "phase": 1,
+              "folder": "Screenshot 2026-04-09 at 2.46.45 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.46.45 PM/梦·两仪阵1.png",
+              "mse": 4946.0982
+            },
+            {
+              "cardName": "梦·云剑汇灵",
+              "phase": 1,
+              "folder": "Screenshot 2026-04-09 at 2.04.43 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.04.43 PM/梦·云剑汇灵1.png",
+              "mse": 5052.6077
+            },
+            {
+              "cardName": "梦·离卦",
+              "phase": 1,
+              "folder": "Screenshot 2026-04-09 at 2.46.58 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.46.58 PM/梦·离卦1.png",
+              "mse": 5057.3326
+            },
+            {
+              "cardName": "梦·气疗术",
+              "phase": 1,
+              "folder": "Screenshot 2026-04-09 at 2.47.03 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.03 PM/梦·气疗术1.png",
+              "mse": 5100.6153
+            },
+            {
+              "cardName": "梦·御雷卦诀",
+              "phase": 1,
+              "folder": "Screenshot 2026-04-09 at 2.47.12 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.12 PM/梦·御雷卦诀1.png",
+              "mse": 5115.1567
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "slotPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-22 at 1.10.15 PM/slot-2.png",
+          "topMatches": [
+            {
+              "cardName": "梦·星轨推衍",
+              "phase": 2,
+              "folder": "Screenshot 2026-04-09 at 2.46.40 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.46.40 PM/梦·星轨推衍2.png",
+              "mse": 1.8754
+            },
+            {
+              "cardName": "梦·枯木逢春",
+              "phase": 2,
+              "folder": "Screenshot 2026-04-09 at 2.47.11 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.11 PM/梦·枯木逢春2.png",
+              "mse": 4561.3207
+            },
+            {
+              "cardName": "梦·云剑点星",
+              "phase": 2,
+              "folder": "Screenshot 2026-04-09 at 2.03.59 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.03.59 PM/梦·云剑点星2.png",
+              "mse": 4747.4013
+            },
+            {
+              "cardName": "梦·蜻蜓点水",
+              "phase": 2,
+              "folder": "Screenshot 2026-04-09 at 2.47.00 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.00 PM/梦·蜻蜓点水2.png",
+              "mse": 4814.615
+            },
+            {
+              "cardName": "梦·杯弓蛇影",
+              "phase": 2,
+              "folder": "Screenshot 2026-04-09 at 2.47.01 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.01 PM/梦·杯弓蛇影2.png",
+              "mse": 4873.1614
+            },
+            {
+              "cardName": "梦·离卦",
+              "phase": 2,
+              "folder": "Screenshot 2026-04-09 at 2.46.58 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.46.58 PM/梦·离卦2.png",
+              "mse": 4980.5209
+            },
+            {
+              "cardName": "梦·云剑汇灵",
+              "phase": 2,
+              "folder": "Screenshot 2026-04-09 at 2.04.43 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.04.43 PM/梦·云剑汇灵2.png",
+              "mse": 4999.0298
+            },
+            {
+              "cardName": "梦·气疗术",
+              "phase": 2,
+              "folder": "Screenshot 2026-04-09 at 2.47.03 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.03 PM/梦·气疗术2.png",
+              "mse": 5030.6417
+            },
+            {
+              "cardName": "梦·御雷卦诀",
+              "phase": 2,
+              "folder": "Screenshot 2026-04-09 at 2.47.12 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.12 PM/梦·御雷卦诀2.png",
+              "mse": 5036.8217
+            },
+            {
+              "cardName": "梦·白蛇吐信",
+              "phase": 2,
+              "folder": "Screenshot 2026-04-09 at 2.47.07 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.07 PM/梦·白蛇吐信2.png",
+              "mse": 5121.2392
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "slotPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-22 at 1.10.15 PM/slot-3.png",
+          "topMatches": [
+            {
+              "cardName": "梦·星轨推衍",
+              "phase": 3,
+              "folder": "Screenshot 2026-04-09 at 2.46.40 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.46.40 PM/梦·星轨推衍3.png",
+              "mse": 1.2923
+            },
+            {
+              "cardName": "梦·枯木逢春",
+              "phase": 3,
+              "folder": "Screenshot 2026-04-09 at 2.47.11 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.11 PM/梦·枯木逢春3.png",
+              "mse": 4628.8888
+            },
+            {
+              "cardName": "梦·云剑点星",
+              "phase": 3,
+              "folder": "Screenshot 2026-04-09 at 2.03.59 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.03.59 PM/梦·云剑点星3.png",
+              "mse": 4774.4944
+            },
+            {
+              "cardName": "梦·蜻蜓点水",
+              "phase": 3,
+              "folder": "Screenshot 2026-04-09 at 2.47.00 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.00 PM/梦·蜻蜓点水3.png",
+              "mse": 4889.9023
+            },
+            {
+              "cardName": "梦·离卦",
+              "phase": 3,
+              "folder": "Screenshot 2026-04-09 at 2.46.58 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.46.58 PM/梦·离卦3.png",
+              "mse": 5031.5253
+            },
+            {
+              "cardName": "梦·云剑汇灵",
+              "phase": 3,
+              "folder": "Screenshot 2026-04-09 at 2.04.43 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.04.43 PM/梦·云剑汇灵3.png",
+              "mse": 5044.2486
+            },
+            {
+              "cardName": "梦·气疗术",
+              "phase": 3,
+              "folder": "Screenshot 2026-04-09 at 2.47.03 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.03 PM/梦·气疗术3.png",
+              "mse": 5101.9159
+            },
+            {
+              "cardName": "梦·御雷卦诀",
+              "phase": 3,
+              "folder": "Screenshot 2026-04-09 at 2.47.12 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.12 PM/梦·御雷卦诀3.png",
+              "mse": 5117.0159
+            },
+            {
+              "cardName": "梦·白蛇吐信",
+              "phase": 3,
+              "folder": "Screenshot 2026-04-09 at 2.47.07 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.07 PM/梦·白蛇吐信3.png",
+              "mse": 5212.3742
+            },
+            {
+              "cardName": "梦·冥影身法",
+              "phase": 3,
+              "folder": "Screenshot 2026-04-09 at 2.48.04 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.04 PM/梦·冥影身法3.png",
+              "mse": 5214.8174
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "slotPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-22 at 1.10.15 PM/slot-4.png",
+          "topMatches": [
+            {
+              "cardName": "梦·星轨推衍",
+              "phase": 4,
+              "folder": "Screenshot 2026-04-09 at 2.46.40 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.46.40 PM/梦·星轨推衍4.png",
+              "mse": 2.4208
+            },
+            {
+              "cardName": "梦·云剑点星",
+              "phase": 4,
+              "folder": "Screenshot 2026-04-09 at 2.03.59 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.03.59 PM/梦·云剑点星4.png",
+              "mse": 4958.8384
+            },
+            {
+              "cardName": "梦·崩天步",
+              "phase": 4,
+              "folder": "Screenshot 2026-04-09 at 2.48.09 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.09 PM/梦·崩天步4.png",
+              "mse": 5036.6658
+            },
+            {
+              "cardName": "梦·混元碎击",
+              "phase": 4,
+              "folder": "Screenshot 2026-04-09 at 2.47.47 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.47 PM/梦·混元碎击4.png",
+              "mse": 5036.9655
+            },
+            {
+              "cardName": "梦·离卦",
+              "phase": 4,
+              "folder": "Screenshot 2026-04-09 at 2.46.58 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.46.58 PM/梦·离卦4.png",
+              "mse": 5050.8572
+            },
+            {
+              "cardName": "梦·狂剑一式",
+              "phase": 4,
+              "folder": "Screenshot 2026-04-09 at 2.04.13 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.04.13 PM/梦·狂剑一式4.png",
+              "mse": 5452.8857
+            },
+            {
+              "cardName": "梦·枯木逢春",
+              "phase": 4,
+              "folder": "Screenshot 2026-04-09 at 2.47.11 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.11 PM/梦·枯木逢春4.png",
+              "mse": 5479.1651
+            },
+            {
+              "cardName": "梦·蜻蜓点水",
+              "phase": 4,
+              "folder": "Screenshot 2026-04-09 at 2.47.00 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.00 PM/梦·蜻蜓点水4.png",
+              "mse": 5552.2197
+            },
+            {
+              "cardName": "梦·两仪阵",
+              "phase": 4,
+              "folder": "Screenshot 2026-04-09 at 2.46.45 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.46.45 PM/梦·两仪阵4.png",
+              "mse": 5580.2819
+            },
+            {
+              "cardName": "梦·云剑汇灵",
+              "phase": 4,
+              "folder": "Screenshot 2026-04-09 at 2.04.43 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.04.43 PM/梦·云剑汇灵4.png",
+              "mse": 5593.7715
+            }
+          ]
+        },
+        {
+          "slot": 5,
+          "slotPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-22 at 1.10.15 PM/slot-5.png",
+          "topMatches": [
+            {
+              "cardName": "梦·星轨推衍",
+              "phase": 5,
+              "folder": "Screenshot 2026-04-09 at 2.46.40 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.46.40 PM/梦·星轨推衍5.png",
+              "mse": 4.7572
+            },
+            {
+              "cardName": "梦·崩天步",
+              "phase": 5,
+              "folder": "Screenshot 2026-04-09 at 2.48.09 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.09 PM/梦·崩天步5.png",
+              "mse": 5081.9182
+            },
+            {
+              "cardName": "梦·冥影身法",
+              "phase": 5,
+              "folder": "Screenshot 2026-04-09 at 2.48.04 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.48.04 PM/梦·冥影身法5.png",
+              "mse": 5337.3938
+            },
+            {
+              "cardName": "梦·离卦",
+              "phase": 5,
+              "folder": "Screenshot 2026-04-09 at 2.46.58 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.46.58 PM/梦·离卦5.png",
+              "mse": 5456.4638
+            },
+            {
+              "cardName": "梦·狂剑一式",
+              "phase": 5,
+              "folder": "Screenshot 2026-04-09 at 2.04.13 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.04.13 PM/梦·狂剑一式5.png",
+              "mse": 5501.7946
+            },
+            {
+              "cardName": "梦·蜻蜓点水",
+              "phase": 5,
+              "folder": "Screenshot 2026-04-09 at 2.47.00 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.00 PM/梦·蜻蜓点水5.png",
+              "mse": 5507.1175
+            },
+            {
+              "cardName": "梦·土灵绝壁",
+              "phase": 5,
+              "folder": "Screenshot 2026-04-09 at 2.47.38 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.38 PM/梦·土灵绝壁5.png",
+              "mse": 5514.2601
+            },
+            {
+              "cardName": "梦·混元碎击",
+              "phase": 5,
+              "folder": "Screenshot 2026-04-09 at 2.47.47 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.47 PM/梦·混元碎击5.png",
+              "mse": 5562.7798
+            },
+            {
+              "cardName": "梦·白蛇吐信",
+              "phase": 5,
+              "folder": "Screenshot 2026-04-09 at 2.47.07 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.07 PM/梦·白蛇吐信5.png",
+              "mse": 5573.1881
+            },
+            {
+              "cardName": "梦·木灵阵",
+              "phase": 5,
+              "folder": "Screenshot 2026-04-09 at 2.47.30 PM",
+              "imagePath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-09 at 2.47.30 PM/梦·木灵阵5.png",
+              "mse": 5590.2263
+            }
+          ]
+        }
+      ],
+      "topCardMatches": [
+        {
+          "cardName": "梦·星轨推衍",
+          "phaseCount": 5,
+          "totalMse": 10.4401,
+          "averageMse": 2.088,
+          "perPhaseMse": [
+            0.0944,
+            1.8754,
+            1.2923,
+            2.4208,
+            4.7572
+          ]
+        },
+        {
+          "cardName": "梦·离卦",
+          "phaseCount": 5,
+          "totalMse": 25576.6998,
+          "averageMse": 5115.34,
+          "perPhaseMse": [
+            5057.3326,
+            4980.5209,
+            5031.5253,
+            5050.8572,
+            5456.4638
+          ]
+        },
+        {
+          "cardName": "梦·蜻蜓点水",
+          "phaseCount": 5,
+          "totalMse": 25648.6716,
+          "averageMse": 5129.7343,
+          "perPhaseMse": [
+            4884.8171,
+            4814.615,
+            4889.9023,
+            5552.2197,
+            5507.1175
+          ]
+        }
+      ]
+    }
+  ]
+}

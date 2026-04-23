@@ -1,0 +1,17209 @@
+Generated: 2026-04-22T21:25:26.085912+00:00
+Seasonal Root: /Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/images/seasonal
+Image Count: 477
+Engine: tesseract
+Language: chi_sim+eng
+
+=== images/seasonal/cloud-spirit/梦·灵气灌注.png ===
+Title:
+a, —_
+
+Body:
+'*
+Cs >»
+看 天
+
+Full:
+\
+aqs
+
+Combined:
+a, —_
+'*
+Cs >»
+看 天
+\
+aqs
+
+=== images/seasonal/cloud-spirit/梦·灵气灌注1.png ===
+Title:
+(none)
+
+Body:
+a
+FF Ks 工人 SS =
+Ss
+
+Full:
+木林
+广一
+SS本
+N
+ati
+7
+Ya? 2
+灵气+1
+下一人炊攻击多
+5攻
+
+Combined:
+a
+FF Ks 工人 SS =
+Ss
+木林
+广一
+SS本
+N
+ati
+7
+Ya? 2
+灵气+1
+下一人炊攻击多
+5攻
+
+=== images/seasonal/cloud-spirit/梦·灵气灌注2.png ===
+Title:
+(none)
+
+Body:
+— 一了
+一一一 se Be SS =
+| eo
+
+Full:
+a
+AA
+[局
+q
+/ 一-了
+con
+,
++4
+oN
+六
+pa
+一
+灵气+1
+下一次攻击多
+7攻
+
+Combined:
+— 一了
+一一一 se Be SS =
+| eo
+a
+AA
+[局
+q
+/ 一-了
+con
+,
++4
+oN
+六
+pa
+一
+灵气+1
+下一次攻击多
+7攻
+
+=== images/seasonal/cloud-spirit/梦·灵气灌注3.png ===
+Title:
+(none)
+
+Body:
+一一 了-
+7 eee eS ae =一
+= Be} =~ <4
+| es ae — — oa - 9 人全-
+
+Full:
+木林
+广一
+\
+(fo we
+ite
+ae
+y
+ye
+—>
+e?
+灵气+1
+下一次攻击多
+10攻
+被动: 相邻牌的击
+伤效果必定触发
+
+Combined:
+一一 了-
+7 eee eS ae =一
+= Be} =~ <4
+| es ae — — oa - 9 人全-
+木林
+广一
+\
+(fo we
+ite
+ae
+y
+ye
+—>
+e?
+灵气+1
+下一次攻击多
+10攻
+被动: 相邻牌的击
+伤效果必定触发
+
+=== images/seasonal/cloud-spirit/梦·灵气灌注4.png ===
+Title:
+=
+
+Body:
+a 王-了
+BSE TS 之 FSS WI Es
+FE 二 eee. — Ba 9
+89 2G 9s 22 =e -e
+
+Full:
+二 |
+4
+RAR
+Jy
+\
+上一
+KK
+ite
+oN
+on
+Jas
+ts
+灵气+1
+A=
+侍
+2技
+加攻
+被动
+#8 2B he
+BY
+效果必 局
+ERA
+& a
+Ye
+
+Combined:
+=
+a 王-了
+BSE TS 之 FSS WI Es
+FE 二 eee. — Ba 9
+89 2G 9s 22 =e -e
+二 |
+4
+RAR
+Jy
+\
+上一
+KK
+ite
+oN
+on
+Jas
+ts
+灵气+1
+A=
+侍
+2技
+加攻
+被动
+#8 2B he
+BY
+效果必 局
+ERA
+& a
+Ye
+
+=== images/seasonal/cloud-spirit/梦·灵气灌注5.png ===
+Title:
+(none)
+
+Body:
+eee ee
+— —See, Se
+et a 字 FE 克70DE 二ES一
+-二 ee, ec — Bd
+By = tS; sz =e se
+
+Full:
+N
+AAR
+/一了
+Ri
+ite
+>”
+7 区 La
+——
+受气+2
+获得3层加攻
+| Mizh: 相邻牌
+|
+“的击仿效果必 :
+Y
+ee
+ERB
+Lea
+a -
+
+Combined:
+eee ee
+— —See, Se
+et a 字 FE 克70DE 二ES一
+-二 ee, ec — Bd
+By = tS; sz =e se
+N
+AAR
+/一了
+Ri
+ite
+>”
+7 区 La
+——
+受气+2
+获得3层加攻
+| Mizh: 相邻牌
+|
+“的击仿效果必 :
+Y
+ee
+ERB
+Lea
+a -
+
+=== images/seasonal/cloud-spirit/梦•万法归灵剑.png ===
+（未分阶模板，文本不可靠）
+
+=== images/seasonal/cloud-spirit/梦•万法归灵剑1.png ===
+3攻
+剑气+1
+
+=== images/seasonal/cloud-spirit/梦•万法归灵剑2.png ===
+5攻
+剑气+1
+
+=== images/seasonal/cloud-spirit/梦•万法归灵剑3.png ===
+5攻
+剑气+2
+
+=== images/seasonal/cloud-spirit/梦•万法归灵剑4.png ===
+5攻
+剑气+2
+将全部灵气转为剑气
+
+=== images/seasonal/cloud-spirit/梦•万法归灵剑5.png ===
+10攻
+剑气+2
+将全部灵气转为剑气
+
+=== images/seasonal/cloud-spirit/梦•云剑厚土.png ===
+Title:
+(none)
+
+Body:
+a
+
+Full:
+a Kk i
+Te
+是【本
+
+Combined:
+a
+a Kk i
+Te
+是【本
+
+=== images/seasonal/cloud-spirit/梦•云剑厚土1.png ===
+Title:
+(none)
+
+Body:
+os oe
+== iS +
+> Be 12 255
+. => 2 es SS
+
+Full:
+A
+vil
+IZ
+‘=?
+防+6
+gt
+HE: 每连续
+用过一
+Ra! sai)
+加1
+
+Combined:
+os oe
+== iS +
+> Be 12 255
+. => 2 es SS
+A
+vil
+IZ
+‘=?
+防+6
+gt
+HE: 每连续
+用过一
+Ra! sai)
+加1
+
+=== images/seasonal/cloud-spirit/梦•云剑厚土2.png ===
+Title:
+(none)
+
+Body:
+有一》
+=== aS +
+a = = Ba 312 255
+= — a ee ee
+
+Full:
+A
+7
+vi)
+IZ
+‘si
+防+9
+云海+1
+= 每连续
+一次云: si
+=r
+
+Combined:
+有一》
+=== aS +
+a = = Ba 312 255
+= — a ee ee
+A
+7
+vi)
+IZ
+‘si
+防+9
+云海+1
+= 每连续
+一次云: si
+=r
+
+=== images/seasonal/cloud-spirit/梦•云剑厚土3.png ===
+Title:
+(none)
+
+Body:
+= be +S
+=== Ss + =m
+> ea 12 255
+— SS Boe See? SO
+
+Full:
+CE
+AA
+Zor:
+‘as
+vil
+厚
+‘=
+防+9
+云海+2
+和连云: 每连续
+用过一
+Ras 全
+加2
+
+Combined:
+= be +S
+=== Ss + =m
+> ea 12 255
+— SS Boe See? SO
+CE
+AA
+Zor:
+‘as
+vil
+厚
+‘=
+防+9
+云海+2
+和连云: 每连续
+用过一
+Ras 全
+加2
+
+=== images/seasonal/cloud-spirit/梦•云剑厚土4.png ===
+Title:
+(none)
+
+Body:
+一3
+SS. Ss +s S
+4 —— oe
+- ==: SS = SS BSS SSS CE
+
+Full:
+~~
+A
+NS
+vil
+IZ
+)
+防+9
+云海+3
+水月1
+a.
+每连续用 。
+"
+上
+寸一
+e
+全
+>
+(AG
+sl 3B
+了
+
+Combined:
+一3
+SS. Ss +s S
+4 —— oe
+- ==: SS = SS BSS SSS CE
+~~
+A
+NS
+vil
+IZ
+)
+防+9
+云海+3
+水月1
+a.
+每连续用 。
+"
+上
+寸一
+e
+全
+>
+(AG
+sl 3B
+了
+
+=== images/seasonal/cloud-spirit/梦•云剑厚土5.png ===
+Title:
+(none)
+
+Body:
+eee eee
+3 Es, +31 =>
+Z2< JE =>
+oS BSS SO = >" =
+
+Full:
+AA
+ager RO
+J
+|
+和
+防+12
+云海+3
+每用过一
+AB
+Yyryyryprefsry yy
+
+Combined:
+eee eee
+3 Es, +31 =>
+Z2< JE =>
+oS BSS SO = >" =
+AA
+ager RO
+J
+|
+和
+防+12
+云海+3
+每用过一
+AB
+Yyryyryprefsry yy
+
+=== images/seasonal/cloud-spirit/梦•云剑极意.png ===
+Title:
+<> ss
+
+Body:
+Sy |一
+
+Full:
+x
+|
+| |
+re
+
+Combined:
+<> ss
+Sy |一
+x
+|
+| |
+re
+
+=== images/seasonal/cloud-spirit/梦•云剑极意1.png ===
+Title:
+(none)
+
+Body:
+SG Ea
+-——~ - - oe oe
+a —as oS
+
+Full:
+ot 2S
+=<
+|
+<p 4
+ie
+:
+4)
+J
+V,
+tK
+po
+ve?
+6攻
+云海+]
+deals
+
+Combined:
+SG Ea
+-——~ - - oe oe
+a —as oS
+ot 2S
+=<
+|
+<p 4
+ie
+:
+4)
+J
+V,
+tK
+po
+ve?
+6攻
+云海+]
+deals
+
+=== images/seasonal/cloud-spirit/梦•云剑极意2.png ===
+Title:
+(none)
+
+Body:
+-人一一卫-
+2一
+
+Full:
+<a) 4
+号
+Vw
+J
+Y
+tk
+=f
+os
+Buy
+云海+1
+Sa dels
+. —— |
+
+Combined:
+-人一一卫-
+2一
+<a) 4
+号
+Vw
+J
+Y
+tk
+=f
+os
+Buy
+云海+1
+Sa dels
+. —— |
+
+=== images/seasonal/cloud-spirit/梦•云剑极意3.png ===
+Title:
+(none)
+
+Body:
+=== Ss +
+> > 414 25
+25 3 See? OS OI
+
+Full:
+Pe ee
+[7 7
+| Ys
+EEC
+加
+vi)
+V,
+po
+tK
+‘
+8攻
+云海+1
+y <r
+每连续
++
+WAG
+sul}
+加1剑意
+ee @
+
+Combined:
+=== Ss +
+> > 414 25
+25 3 See? OS OI
+Pe ee
+[7 7
+| Ys
+EEC
+加
+vi)
+V,
+po
+tK
+‘
+8攻
+云海+1
+y <r
+每连续
++
+WAG
+sul}
+加1剑意
+ee @
+
+=== images/seasonal/cloud-spirit/梦•云剑极意4.png ===
+Title:
+(none)
+
+Body:
+i =~ a
+== iS + —m
+SE == C eo 三站-二=
+一全
+
+Full:
+ar
+—
+SD)
+i.
+Sh
+a
+|
+J
+th
+wes
+%@
+4攻
+云海+2
+ED: BIER
+用过一
+ru
+AB
+加
+
+Combined:
+i =~ a
+== iS + —m
+SE == C eo 三站-二=
+一全
+ar
+—
+SD)
+i.
+Sh
+a
+|
+J
+th
+wes
+%@
+4攻
+云海+2
+ED: BIER
+用过一
+ru
+AB
+加
+
+=== images/seasonal/cloud-spirit/梦•云剑极意5.png ===
+Title:
+(none)
+
+Body:
+全
+_ —— od
+= Ss Se -一
+
+Full:
+木林
+S
+~ we
+二
+|
+似
+上
+os
+8攻
+ee,
+| 每用过 过一从云
+剑加2剑意
+eo ee es ®&
+/s
+
+Combined:
+全
+_ —— od
+= Ss Se -一
+木林
+S
+~ we
+二
+|
+似
+上
+os
+8攻
+ee,
+| 每用过 过一从云
+剑加2剑意
+eo ee es ®&
+/s
+
+=== images/seasonal/cloud-spirit/梦•云剑柔心.png ===
+Title:
+2一
+
+Body:
+(none)
+
+Full:
+外
+\ a
+
+Combined:
+2一
+外
+\ a
+
+=== images/seasonal/cloud-spirit/梦•云剑柔心1.png ===
+Title:
+(none)
+
+Body:
+有
+= = —— 3s £3 oe —
+Fe ea — BT Fs 2 CO
+
+Full:
+sax
+AA
+<
+a
+Vw
+J
+局
+rks
+Ils
+防+4
+每
+4
+Fie
+2
+
+Combined:
+有
+= = —— 3s £3 oe —
+Fe ea — BT Fs 2 CO
+sax
+AA
+<
+a
+Vw
+J
+局
+rks
+Ils
+防+4
+每
+4
+Fie
+2
+
+=== images/seasonal/cloud-spirit/梦•云剑柔心2.png ===
+Title:
+基 一 =. = _
+
+Body:
+Ss =
+=) 2S 1 =
+-一天一 站一人
+
+Full:
+SS
+eae
+sf 2a
+i
+防+8
+每回合
+始时加1防
+[_ — |
+
+Combined:
+基 一 =. = _
+Ss =
+=) 2S 1 =
+-一天一 站一人
+SS
+eae
+sf 2a
+i
+防+8
+每回合
+始时加1防
+[_ — |
+
+=== images/seasonal/cloud-spirit/梦•云剑柔心3.png ===
+Title:
+一“一 =
+
+Body:
+= =z e1=
+Sa = Bt Ho SE
+
+Full:
+A
+a.
+AYES
+>
+xt
+Eg
+EAS
+os
+防+
+a
+FRB 2G
+eo es @
+
+Combined:
+一“一 =
+= =z e1=
+Sa = Bt Ho SE
+A
+a.
+AYES
+>
+xt
+Eg
+EAS
+os
+防+
+a
+FRB 2G
+eo es @
+
+=== images/seasonal/cloud-spirit/梦•云剑柔心4.png ===
+Title:
+ee 人 一一 一-一一 =
+
+Body:
+有一
+一 人
+3
+
+Full:
+yy
+i
+防+4
+每回
+开始时加3防，
+每次使用剑阵 。
+py ML zs
+
+Combined:
+ee 人 一一 一-一一 =
+有一
+一 人
+3
+yy
+i
+防+4
+每回
+开始时加3防，
+每次使用剑阵 。
+py ML zs
+
+=== images/seasonal/cloud-spirit/梦•云剑柔心5.png ===
+Title:
+3 OS =
+
+Body:
+>
+| +.
+PP人一 二>
+= = EE) = J+:
+BST Hos Bs. SS eT
+
+Full:
+S
+AA
+Rs
+yy
+AS
+—
+防+4
+月2
+持续 每回合开始
+era
+/9
+
+Combined:
+3 OS =
+>
+| +.
+PP人一 二>
+= = EE) = J+:
+BST Hos Bs. SS eT
+S
+AA
+Rs
+yy
+AS
+—
+防+4
+月2
+持续 每回合开始
+era
+/9
+
+=== images/seasonal/cloud-spirit/梦•云剑汇灵.png ===
+Title:
+Ne ee —=IaEE=—— tO 而
+
+Body:
+=
+
+Full:
+of
+Pax! byt
+At
+é.-
+NSN
+ae
+
+Combined:
+Ne ee —=IaEE=—— tO 而
+=
+of
+Pax! byt
+At
+é.-
+NSN
+ae
+
+=== images/seasonal/cloud-spirit/梦•云剑汇灵1.png ===
+Title:
+二 _ 一 | ea B-
+
+Body:
+ee ams ==
+6. FS —|— O Djs
+ee
+
+Full:
+AA
+Any -可
+a a a
+é
+攻
+灵气>0则追加
+RING
+
+Combined:
+二 _ 一 | ea B-
+ee ams ==
+6. FS —|— O Djs
+ee
+AA
+Any -可
+a a a
+é
+攻
+灵气>0则追加
+RING
+
+=== images/seasonal/cloud-spirit/梦•云剑汇灵2.png ===
+Title:
+SS 二
+
+Body:
+| aaa anecs = Js
+6._ FS —|— O Bij se
+
+Full:
+ER
+AA
+SS
+|
+>
+a.
+=
+“a?
+5攻
+有灵气>0则追加
+re
+二 |
+
+Combined:
+SS 二
+| aaa anecs = Js
+6._ FS —|— O Bij se
+ER
+AA
+SS
+|
+>
+a.
+=
+“a?
+5攻
+有灵气>0则追加
+re
+二 |
+
+=== images/seasonal/cloud-spirit/梦•云剑汇灵3.png ===
+Title:
+= 一 { SS | =
+
+Body:
+上 re = 73
+mb E:
+Bat Son
+
+Full:
+A
+=. &
+gv
+ee |
+a
+vil ~ BG
+=e
+‘ae
+攻
+有灵气>0则追加
+— RG
+eo es @
+
+Combined:
+= 一 { SS | =
+上 re = 73
+mb E:
+Bat Son
+A
+=. &
+gv
+ee |
+a
+vil ~ BG
+=e
+‘ae
+攻
+有灵气>0则追加
+— RG
+eo es @
+
+=== images/seasonal/cloud-spirit/梦•云剑汇灵4.png ===
+Title:
+(none)
+
+Body:
+=~
+oS 3555 3 OS 8S OS SSF
+一 sar Ee SSS
+E es SS 二 B42 S93 Ss SSS -_ =
+—— SS 2 eee, | CS
+
+Full:
+EPO
+A
+_f
+>)
+J
+‘
+¢
+a
+SS
+‘a
+每和 3 点 Fe aon
+2
+Rae
+oe ws ws &
+y,
+
+Combined:
+=~
+oS 3555 3 OS 8S OS SSF
+一 sar Ee SSS
+E es SS 二 B42 S93 Ss SSS -_ =
+—— SS 2 eee, | CS
+EPO
+A
+_f
+>)
+J
+‘
+¢
+a
+SS
+‘a
+每和 3 点 Fe aon
+2
+Rae
+oe ws ws &
+y,
+
+=== images/seasonal/cloud-spirit/梦•云剑汇灵5.png ===
+Title:
+(none)
+
+Body:
+ee =~
+5s a
+一一一Or ES a
+了一 下 一全 一人5 -_ =:
+= a eS — or oe
+
+Full:
+AA
+Ss
+Fy
+8 A3 A RAMIEIM
+点
+灵气就追加一次攻击
+‘
+开局: 云海+2
+
+Combined:
+ee =~
+5s a
+一一一Or ES a
+了一 下 一全 一人5 -_ =:
+= a eS — or oe
+AA
+Ss
+Fy
+8 A3 A RAMIEIM
+点
+灵气就追加一次攻击
+‘
+开局: 云海+2
+
+=== images/seasonal/cloud-spirit/梦•云剑点星.png ===
+Title:
+(none)
+
+Body:
+一一SRS
+SS
+
+Full:
+i
+Se
+NG
+O
+
+Combined:
+一一SRS
+SS
+i
+Se
+NG
+O
+
+=== images/seasonal/cloud-spirit/梦•云剑点星1.png ===
+Title:
+(none)
+
+Body:
+”Eee 一一
+2 二 FoI SB =
+TS FAS 天二 355 Fate 1 =
+
+Full:
+AA
+ee oe NX
+<<
+1
+J
+RN
+SE
+a
+LO
+灵气+2
+被
+A 2B he
+使用后
+成1点
+
+Combined:
+”Eee 一一
+2 二 FoI SB =
+TS FAS 天二 355 Fate 1 =
+AA
+ee oe NX
+<<
+1
+J
+RN
+SE
+a
+LO
+灵气+2
+被
+A 2B he
+使用后
+成1点
+
+=== images/seasonal/cloud-spirit/梦•云剑点星2.png ===
+Title:
+(none)
+
+Body:
+—— ee
+we = SEH
+= FS 755 3 BSS 三
+
+Full:
+AA
+oN
+Se
+bac:
++2
+WEN: 相邻牌
+使用后
+成2品
+
+Combined:
+—— ee
+we = SEH
+= FS 755 3 BSS 三
+AA
+oN
+Se
+bac:
++2
+WEN: 相邻牌
+使用后
+成2品
+
+=== images/seasonal/cloud-spirit/梦•云剑点星3.png ===
+Title:
+(none)
+
+Body:
+二 FoI SB HE
+Tt FAS 天二 35 Fate => =
+
+Full:
+A
+%
+See
+J
+BE
+RT+2
+被和
+#28 he
+使用后
+AX 3 FA
+eo es @
+
+Combined:
+二 FoI SB HE
+Tt FAS 天二 35 Fate => =
+A
+%
+See
+J
+BE
+RT+2
+被和
+#28 he
+使用后
+AX 3 FA
+eo es @
+
+=== images/seasonal/cloud-spirit/梦•云剑点星4.png ===
+Title:
+(none)
+
+Body:
+sae Sr +
+> os eee os — Bg <9
+= —- - = —_ =; —>.. |
+
+Full:
+A
+aye + BY
+四。
+J
+| |
+le Cc >) . NS
+| “灵气+
+rood
+使用后所加]长
+/4
+
+Combined:
+sae Sr +
+> os eee os — Bg <9
+= —- - = —_ =; —>.. |
+A
+aye + BY
+四。
+J
+| |
+le Cc >) . NS
+| “灵气+
+rood
+使用后所加]长
+/4
+
+=== images/seasonal/cloud-spirit/梦•云剑点星5.png ===
+Title:
+(none)
+
+Body:
+em —
+s+ =
+a > 2! ee os — Be 59
+
+Full:
+a
+J
+二
+j=]
+ee
+| RST+
+被动: FASBRY
+使用后追加?2攻
+Cae
+ME
+
+Combined:
+em —
+s+ =
+a > 2! ee os — Be 59
+a
+J
+二
+j=]
+ee
+| RST+
+被动: FASBRY
+使用后追加?2攻
+Cae
+ME
+
+=== images/seasonal/cloud-spirit/梦•云舞诀.png ===
+Title:
+一一= ya、 —
+
+Body:
+<5 . -
+7 WW wg 7 7 baal ed
+iG ST ss
+> sia ~ 本 一
+
+Full:
+(i
+A
+tl
+_
+\
+
+Combined:
+一一= ya、 —
+<5 . -
+7 WW wg 7 7 baal ed
+iG ST ss
+> sia ~ 本 一
+(i
+A
+tl
+_
+\
+
+=== images/seasonal/cloud-spirit/梦•云舞诀1.png ===
+Title:
+(none)
+
+Body:
+E> See Se
+和 SS SS 一2一
+
+Full:
+fo
+AA
+a
+¢)
+iF
+ay
+cs
+pen
+1K
+f
+灵气+1
+剑意+
+
+Combined:
+E> See Se
+和 SS SS 一2一
+fo
+AA
+a
+¢)
+iF
+ay
+cs
+pen
+1K
+f
+灵气+1
+剑意+
+
+=== images/seasonal/cloud-spirit/梦•云舞诀2.png ===
+Title:
+(none)
+
+Body:
+一
+和 SS SS 一:一
+
+Full:
+A
+J zx
+iv
+(v
+人
+a)
+PE
+1K
+4
+Dd
+42
+剑意+2
+
+Combined:
+一
+和 SS SS 一:一
+A
+J zx
+iv
+(v
+人
+a)
+PE
+1K
+4
+Dd
+42
+剑意+2
+
+=== images/seasonal/cloud-spirit/梦•云舞诀3.png ===
+Title:
+(none)
+
+Body:
+eS. Ts S
+和 二 一4一
+
+Full:
+A
+Ky
+y
+六
+/区
+a)
+ik
+Fe T+3
+剑意+2
+
+Combined:
+eS. Ts S
+和 二 一4一
+A
+Ky
+y
+六
+/区
+a)
+ik
+Fe T+3
+剑意+2
+
+=== images/seasonal/cloud-spirit/梦•云舞诀4.png ===
+Title:
+(none)
+
+Body:
+sa +
+ee ese
+. a St
+
+Full:
+Ker
+\
+a. >.
+- (Wy
+xy
+prs
+Zt
+ik
+有
+”爱气+3
+剑意+
+每有4 sR
+用过一次轩 A
+N
+oi
+形
+
+Combined:
+sa +
+ee ese
+. a St
+Ker
+\
+a. >.
+- (Wy
+xy
+prs
+Zt
+ik
+有
+”爱气+3
+剑意+
+每有4 sR
+用过一次轩 A
+N
+oi
+形
+
+=== images/seasonal/cloud-spirit/梦•云舞诀5.png ===
+Title:
+(none)
+
+Body:
+aaa. Ss
+xz —— pe
+= 二 三 i aS 4 Se 3
+aS oS = aa 了3
+
+Full:
+A
+iF
+af)
+，
+x tf
+pen
+oe
+IR 人
+灵气
+剑意+
+算作用过1次持剑
+每有4品剑意融算
+e FA — RIED
+a es. es es &
+ys
+
+Combined:
+aaa. Ss
+xz —— pe
+= 二 三 i aS 4 Se 3
+aS oS = aa 了3
+A
+iF
+af)
+，
+x tf
+pen
+oe
+IR 人
+灵气
+剑意+
+算作用过1次持剑
+每有4品剑意融算
+e FA — RIED
+a es. es es &
+ys
+
+=== images/seasonal/cloud-spirit/梦•凝意诀.png ===
+（未分阶模板，文本不可靠）
+
+=== images/seasonal/cloud-spirit/梦•凝意诀1.png ===
+剑意+3
+
+=== images/seasonal/cloud-spirit/梦•凝意诀2.png ===
+剑意+4
+
+=== images/seasonal/cloud-spirit/梦•凝意诀3.png ===
+剑意+5
+
+=== images/seasonal/cloud-spirit/梦•凝意诀4.png ===
+下1次攻击享受双倍剑意和加攻加成
+剑意或加攻≥3则再次行动
+
+=== images/seasonal/cloud-spirit/梦•凝意诀5.png ===
+剑意+1
+下1次攻击享受双倍剑意和加攻加成
+剑意或加攻≥3则再次行动
+ir ae
+
+=== images/seasonal/cloud-spirit/梦•反身剑.png ===
+Title:
+il aa 和
+
+Body:
+(none)
+
+Full:
+|
+有
+Va
+【AN
+a
+
+Combined:
+il aa 和
+|
+有
+Va
+【AN
+a
+
+=== images/seasonal/cloud-spirit/梦•反身剑1.png ===
+Title:
+人一 一
+
+Body:
+ase
+Ee + G
+
+Full:
+el >
+AA
+Pas
+%
+a
+=e
+4攻
+防+6
+
+Combined:
+人一 一
+ase
+Ee + G
+el >
+AA
+Pas
+%
+a
+=e
+4攻
+防+6
+
+=== images/seasonal/cloud-spirit/梦•反身剑2.png ===
+Title:
+一 一
+
+Body:
+(none)
+
+Full:
+>
+|
+ux
+SN
+4
+2
+f
+6X
+Ba+6
+. —— |
+
+Combined:
+一 一
+>
+|
+ux
+SN
+4
+2
+f
+6X
+Ba+6
+. —— |
+
+=== images/seasonal/cloud-spirit/梦•反身剑3.png ===
+Title:
+办一 一
+
+Body:
+2 GS Ez
+Bs + G
+=> FS a __ 5K a
+
+Full:
+-及
+人 R
+三森森
+~ we
+"
+5
+J
+¥
+ts?
+6X
+Ba+6
+每用过一张剑
+由多1攻和1防
+eo wo @
+
+Combined:
+办一 一
+2 GS Ez
+Bs + G
+=> FS a __ 5K a
+-及
+人 R
+三森森
+~ we
+"
+5
+J
+¥
+ts?
+6X
+Ba+6
+每用过一张剑
+由多1攻和1防
+eo wo @
+
+=== images/seasonal/cloud-spirit/梦•反身剑4.png ===
+Title:
+— aS
+
+Body:
+有一
+
+Full:
+AA
+2
+i
+Li
+Ne
+o
+6X
+Ba+6
+每用过一张剑
+ht S24
+
+Combined:
+— aS
+有一
+AA
+2
+i
+Li
+Ne
+o
+6X
+Ba+6
+每用过一张剑
+ht S24
+
+=== images/seasonal/cloud-spirit/梦•反身剑5.png ===
+Title:
+一| 一
+
+Body:
+GS Ez
+Es +G
+=> FAS aS _ SK
+
+Full:
+\
+A
+!
+6攻
+每用过一张剑
+ft S SLAP )
+
+Combined:
+一| 一
+GS Ez
+Es +G
+=> FAS aS _ SK
+\
+A
+!
+6攻
+每用过一张剑
+ft S SLAP )
+
+=== images/seasonal/cloud-spirit/梦•地煞剑.png ===
+Title:
+wa 也 —_
+
+Body:
+(none)
+
+Full:
+江
+N
+> z=
+
+Combined:
+wa 也 —_
+江
+N
+> z=
+
+=== images/seasonal/cloud-spirit/梦•地煞剑1.png ===
+Title:
+(none)
+
+Body:
+ee a i =~ 2
+SO SSS 9555 1 HEL aS es
+Be 701 SS Poms
+
+Full:
+aie
+区
+，
+Ere
+via
+Os
+1攻
+每击伤1生
+Ap
+TA
+施加1
+Fe
+内伤
+
+Combined:
+ee a i =~ 2
+SO SSS 9555 1 HEL aS es
+Be 701 SS Poms
+aie
+区
+，
+Ere
+via
+Os
+1攻
+每击伤1生
+Ap
+TA
+施加1
+Fe
+内伤
+
+=== images/seasonal/cloud-spirit/梦•地煞剑2.png ===
+Title:
+二
+
+Body:
+a ie =~ 4
+aS SG F555 1 EEO aS SS
+Be 0 1 SS Pot
+
+Full:
+A
+—
+SN
+地
+We
+f
+J}
+vay
+1攻
+每击伤1生
+Ap
+TA
+施加1层
+最多3
+. —— |
+
+Combined:
+二
+a ie =~ 4
+aS SG F555 1 EEO aS SS
+Be 0 1 SS Pot
+A
+—
+SN
+地
+We
+f
+J}
+vay
+1攻
+每击伤1生
+Ap
+TA
+施加1层
+最多3
+. —— |
+
+=== images/seasonal/cloud-spirit/梦•地煞剑3.png ===
+Title:
+一
+
+Body:
+ae > Ez
+BS SSS 15S 38 Ea SS
+Be 0 卫 SS Pat
+
+Full:
+ae
+fe
+x
+ay
+地
+NS
+Ne
+13h
+Vw
+J
+Os
+vay,
+21K
+每击伤1生
+Ap
+PA
+施加1层内伤
+eo wo @
+
+Combined:
+一
+ae > Ez
+BS SSS 15S 38 Ea SS
+Be 0 卫 SS Pat
+ae
+fe
+x
+ay
+地
+NS
+Ne
+13h
+Vw
+J
+Os
+vay,
+21K
+每击伤1生
+Ap
+PA
+施加1层内伤
+eo wo @
+
+=== images/seasonal/cloud-spirit/梦•地煞剑4.png ===
+Title:
+一
+
+Body:
+卫 了4 二<一 也
+全 Se ee =e ee
+] 5B 3 FS PS Ss
+
+Full:
+2
+tt
+-_
+om
+a
+132 X 2
+E | 每击伤1生命 ap 下
+NE
+bol. dbs
+
+Combined:
+一
+卫 了4 二<一 也
+全 Se ee =e ee
+] 5B 3 FS PS Ss
+2
+tt
+-_
+om
+a
+132 X 2
+E | 每击伤1生命 ap 下
+NE
+bol. dbs
+
+=== images/seasonal/cloud-spirit/梦•地煞剑5.png ===
+Title:
+-人
+
+Body:
+CR
+卫 了AZ ee
+和3了
+Ase JI OS oes ts
+
+Full:
+gaan RS
+AK
+地
+NS
+Ne
+= pe
+wp)
+J
+c 了
+rn
+1攻X 2
+每击伤1生命融
+”施加1层内
+ee ee se ®&
+
+Combined:
+-人
+CR
+卫 了AZ ee
+和3了
+Ase JI OS oes ts
+gaan RS
+AK
+地
+NS
+Ne
+= pe
+wp)
+J
+c 了
+rn
+1攻X 2
+每击伤1生命融
+”施加1层内
+ee ee se ®&
+
+=== images/seasonal/cloud-spirit/梦•巨鹏灵剑.png ===
+（未分阶模板，文本不可靠）
+
+=== images/seasonal/cloud-spirit/梦•巨鹏灵剑1.png ===
+5攻
+灵气+1
+
+=== images/seasonal/cloud-spirit/梦•巨鹏灵剑2.png ===
+7攻
+灵气+1
+
+=== images/seasonal/cloud-spirit/梦•巨鹏灵剑3.png ===
+9攻
+灵气+1
+
+=== images/seasonal/cloud-spirit/梦•巨鹏灵剑4.png ===
+2攻
+灵气+1
+灵气>1则再次行动
+
+=== images/seasonal/cloud-spirit/梦•巨鹏灵剑5.png ===
+2攻
+灵气+2
+灵气>2则再次行动
+
+=== images/seasonal/cloud-spirit/梦•引气剑1.png ===
+Title:
+(none)
+
+Body:
+—- 一
+一-卫-
+— =二
+
+Full:
+aie
+XN
+es
+|
+a
+5
+f
+mb,
+| 如
+灵气+2
+剑气+1
+
+Combined:
+—- 一
+一-卫-
+— =二
+aie
+XN
+es
+|
+a
+5
+f
+mb,
+| 如
+灵气+2
+剑气+1
+
+=== images/seasonal/cloud-spirit/梦•引气剑2.png ===
+Title:
+-一一 — — a
+
+Body:
+Be 一
+: =e55 2
+
+Full:
+TY am. 2 en
+XN
+|
+a
+q
+Ss
+f
+mb
+2
+| 如
+灵气+2
+剑气+2
+[_ — |
+
+Combined:
+-一一 — — a
+Be 一
+: =e55 2
+TY am. 2 en
+XN
+|
+a
+q
+Ss
+f
+mb
+2
+| 如
+灵气+2
+剑气+2
+[_ — |
+
+=== images/seasonal/cloud-spirit/梦•引气剑3.png ===
+Title:
+-一一 — — a
+
+Body:
+和 —
+eo) ee Se
+
+Full:
+AD
+Dd
+ah
+广一
+5I
+2
+Ww
+|
+灵气+2
+剑气+3
+AF
+ee @
+
+Combined:
+-一一 — — a
+和 —
+eo) ee Se
+AD
+Dd
+ah
+广一
+5I
+2
+Ww
+|
+灵气+2
+剑气+3
+AF
+ee @
+
+=== images/seasonal/cloud-spirit/梦•引气剑4.png ===
+Title:
+-一一 — — a
+
+Body:
+ae +
+So 生3过 二:全二 二KRY -人所
+FS Si b= Bt 70 1 =
+
+Full:
+人
+N
+二
+eo
+5I
+= |
+1, | Nil)
+oC)
+a
+灵气+1
+用剑脾时加1剑
+
+Combined:
+-一一 — — a
+ae +
+So 生3过 二:全二 二KRY -人所
+FS Si b= Bt 70 1 =
+人
+N
+二
+eo
+5I
+= |
+1, | Nil)
+oC)
+a
+灵气+1
+用剑脾时加1剑
+
+=== images/seasonal/cloud-spirit/梦•引气剑5.png ===
+Title:
+(none)
+
+Body:
+三2 一 一- -三
+8 = = +e 1s
+FS HU b= Bt 04 =
+
+Full:
+A
+|
+上一
+y>
+my.
+INA)
+lle
+wi
+灵气+
+用剑牌时加1剑
+
+Combined:
+三2 一 一- -三
+8 = = +e 1s
+FS HU b= Bt 04 =
+A
+|
+上一
+y>
+my.
+INA)
+lle
+wi
+灵气+
+用剑牌时加1剑
+
+=== images/seasonal/cloud-spirit/梦•御空剑阵.png ===
+Title:
+a « *
+ao
+
+Body:
+(none)
+
+Full:
+ua?
+WT
+¢
+
+Combined:
+a « *
+ao
+ua?
+WT
+¢
+
+=== images/seasonal/cloud-spirit/梦•御空剑阵1.png ===
+Title:
+二
+电
+一
+ie
+= 了 —
+
+Body:
+2355 Bie so == 3; =
+—- HE =SB= as ——__ 5d
+S11) Bae SET Oats Se
+
+Full:
+fil
+a“ ™
+\)
+Be
+造成6点伤害 |
+卡组每有一张
+剑阵多1伤害
+
+Combined:
+二
+电
+一
+ie
+= 了 —
+2355 Bie so == 3; =
+—- HE =SB= as ——__ 5d
+S11) Bae SET Oats Se
+fil
+a“ ™
+\)
+Be
+造成6点伤害 |
+卡组每有一张
+剑阵多1伤害
+
+=== images/seasonal/cloud-spirit/梦•御空剑阵2.png ===
+Title:
+二
+*
+=
+二 一 if
+
+Body:
+二 EES S15 -E
+= 28 全 SS 已
+Sk = > 1 =
+
+Full:
+条
+|
+fil
+A Sy
+. |
+J
+Ye
+fv ~~
+号让 点伤害
+有一张
+‘SIRS Osa
+eo «
+
+Combined:
+二
+*
+=
+二 一 if
+二 EES S15 -E
+= 28 全 SS 已
+Sk = > 1 =
+条
+|
+fil
+A Sy
+. |
+J
+Ye
+fv ~~
+号让 点伤害
+有一张
+‘SIRS Osa
+eo «
+
+=== images/seasonal/cloud-spirit/梦•御空剑阵3.png ===
+Title:
+Te
+ae
+>
+— =
+: =, eS
+
+Body:
+和
+= 28 Se 5 己基
+AS ez SS I> ts: Ss
+
+Full:
+fil
+a“ ™
+TA
+uv
+J
+—_
+Be
+—— regpeeepea
+成6点伤害
+组每有一张
+忒阵多3伤害
+ewe @
+
+Combined:
+Te
+ae
+>
+— =
+: =, eS
+和
+= 28 Se 5 己基
+AS ez SS I> ts: Ss
+fil
+a“ ™
+TA
+uv
+J
+—_
+Be
+—— regpeeepea
+成6点伤害
+组每有一张
+忒阵多3伤害
+ewe @
+
+=== images/seasonal/cloud-spirit/梦•御空剑阵4.png ===
+Title:
+_2 - RE
+
+Body:
+235 天 下2
+ee 二 eee >二>二
+Bae SS 1 SS SS
+
+Full:
+—_
+es
+;
+S
+二上-
+ae
+wil}
+|
+ee
+Me ace
+$s Ai — sks
+阵多1
+=
+卡组剑阵数量 。
+Ne 20S RIT apy
+
+Combined:
+_2 - RE
+235 天 下2
+ee 二 eee >二>二
+Bae SS 1 SS SS
+—_
+es
+;
+S
+二上-
+ae
+wil}
+|
+ee
+Me ace
+$s Ai — sks
+阵多1
+=
+卡组剑阵数量 。
+Ne 20S RIT apy
+
+=== images/seasonal/cloud-spirit/梦•御空剑阵5.png ===
+Title:
+一
+
+Body:
+和 2 Ss SS
+aS FB re See
+了
+
+Full:
+AA
+fil
+a“ ™
+I}
+Be
+ra C5
+每用 SS otk wl
+“F 28 SBS 2h
+> 20S Ris y|
+
+Combined:
+一
+和 2 Ss SS
+aS FB re See
+了
+AA
+fil
+a“ ™
+I}
+Be
+ra C5
+每用 SS otk wl
+“F 28 SBS 2h
+> 20S Ris y|
+
+=== images/seasonal/cloud-spirit/梦•灵气灌注.png ===
+Title:
+a, —_
+
+Body:
+'*
+Cs >»
+看 天
+
+Full:
+\
+aqs
+
+Combined:
+a, —_
+'*
+Cs >»
+看 天
+\
+aqs
+
+=== images/seasonal/cloud-spirit/梦•灵气灌注1.png ===
+Title:
+(none)
+
+Body:
+.32 eee Se 了
+一” ee
+_—~ a =~
+
+Full:
+et
+q
+i —
+)
+as®
+J.
+we
+灵气+1
+下一炊攻击多
+51
+
+Combined:
+.32 eee Se 了
+一” ee
+_—~ a =~
+et
+q
+i —
+)
+as®
+J.
+we
+灵气+1
+下一炊攻击多
+51
+
+=== images/seasonal/cloud-spirit/梦•灵气灌注2.png ===
+Title:
+(none)
+
+Body:
+了
+RF 一二IE SS
+aT
+
+Full:
+/
+K
+I —s
++
+SS
+ite
+各
+cd
+D i
+下一容攻击多
+7攻
+
+Combined:
+了
+RF 一二IE SS
+aT
+/
+K
+I —s
++
+SS
+ite
+各
+cd
+D i
+下一容攻击多
+7攻
+
+=== images/seasonal/cloud-spirit/梦•灵气灌注3.png ===
+Title:
+(none)
+
+Body:
+RP ee Sees
+= mer =~ 4
+wz -lCOC FS SB BS Gs -
+
+Full:
+\
+(A
+A
+下一次攻击
+被动: 相邻牌的击
+伤效果必定触妈
+
+Combined:
+RP ee Sees
+= mer =~ 4
+wz -lCOC FS SB BS Gs -
+\
+(A
+A
+下一次攻击
+被动: 相邻牌的击
+伤效果必定触妈
+
+=== images/seasonal/cloud-spirit/梦•灵气灌注4.png ===
+Title:
+(none)
+
+Body:
+= ee
+: SSE ES. ]-— FEE HD EZ
+es eee — BS 9
+2 - , —>_ _. a a
+
+Full:
+AA
+| S
+广一
+\\
+iE
+\
+as®
+cos
+vars
+BE
+a2
+获得2层加攻
+oN: ABBE
+RY ，
+FE RAZ
+D/5
+
+Combined:
+= ee
+: SSE ES. ]-— FEE HD EZ
+es eee — BS 9
+2 - , —>_ _. a a
+AA
+| S
+广一
+\\
+iE
+\
+as®
+cos
+vars
+BE
+a2
+获得2层加攻
+oN: ABBE
+RY ，
+FE RAZ
+D/5
+
+=== images/seasonal/cloud-spirit/梦•灵气灌注5.png ===
+Title:
+Es SS __
+
+Body:
+一一一
+: se
+S32 43 3 = a
+w= 二 ASE
+ee oe ee Ee 于
+
+Full:
+SS
+AA
+q
+广一
+2
+\)
+a
+J.
+as®
+灵气43
+被动
+aks SRM
+2B he
+效果必
+Fi Az
+
+Combined:
+Es SS __
+一一一
+: se
+S32 43 3 = a
+w= 二 ASE
+ee oe ee Ee 于
+SS
+AA
+q
+广一
+2
+\)
+a
+J.
+as®
+灵气43
+被动
+aks SRM
+2B he
+效果必
+Fi Az
+
+=== images/seasonal/cloud-spirit/梦•灵犀剑阵.png ===
+（未分阶模板，文本不可靠）
+
+=== images/seasonal/cloud-spirit/梦•灵犀剑阵1.png ===
+防+4
+持续: 每加1灵气时加1防
+
+=== images/seasonal/cloud-spirit/梦•灵犀剑阵2.png ===
+防+4
+持续: 每加1灵气时加2防
+
+=== images/seasonal/cloud-spirit/梦•灵犀剑阵3.png ===
+防+4
+持续: 每加1灵气时加2防
+持续: 每加1剑意时加1防
+
+=== images/seasonal/cloud-spirit/梦•灵犀剑阵4.png ===
+防+4
+持续: 每加1灵气时加3防
+持续: 每加1剑意时加2防
+
+=== images/seasonal/cloud-spirit/梦•灵犀剑阵5.png ===
+防+4
+持续: 每加1灵气时加4防
+持续: 每加1剑意时加3防
+
+=== images/seasonal/cloud-spirit/梦•狂剑一式.png ===
+Title:
+ie ee
+
+Body:
+(none)
+
+Full:
+(none)
+
+Combined:
+ie ee
+
+=== images/seasonal/cloud-spirit/梦•狂剑一式1.png ===
+Title:
+人 一 | 盖
+
+Body:
+Z S 1
+=_ an FT BPR+10
+aS FS 3 C—O Se 下
+Sil = OS BV sZt SD
+
+Full:
+于
+&>
+狂
+J
+(
+y
+st
+6X
+生命上限+10
+用过一次狂
+sing “ee
+
+Combined:
+人 一 | 盖
+Z S 1
+=_ an FT BPR+10
+aS FS 3 C—O Se 下
+Sil = OS BV sZt SD
+于
+&>
+狂
+J
+(
+y
+st
+6X
+生命上限+10
+用过一次狂
+sing “ee
+
+=== images/seasonal/cloud-spirit/梦•狂剑一式2.png ===
+Title:
+一 aa a
+
+Body:
+2 Ss az 3
+= an _ F BPR+-131o
+=> 三 三 aa SS <c乓一 下=
+-二天
+
+Full:
+2
+A
+4+
+J
+[
+st
+8攻
+生命上限+10
+用过一次狂
+SunRRA
+. —— |
+
+Combined:
+一 aa a
+2 Ss az 3
+= an _ F BPR+-131o
+=> 三 三 aa SS <c乓一 下=
+-二天
+2
+A
+4+
+J
+[
+st
+8攻
+生命上限+10
+用过一次狂
+SunRRA
+. —— |
+
+=== images/seasonal/cloud-spirit/梦•狂剑一式3.png ===
+Title:
+一| a
+
+Body:
+= 2 @ =一
+二二一)
+三= 三三 长 二 Se 下=
+1
+
+Full:
+过
+A
+TA
+J
+y
+st
+a
+101%
+生命上限+10
+用过一次畦
+warts ey
+ewe @
+
+Combined:
+一| a
+= 2 @ =一
+二二一)
+三= 三三 长 二 Se 下=
+1
+过
+A
+TA
+J
+y
+st
+a
+101%
+生命上限+10
+用过一次畦
+warts ey
+ewe @
+
+=== images/seasonal/cloud-spirit/梦•狂剑一式4.png ===
+Title:
+一 |
+
+Body:
+四
+卫OD =z
+= ER一一也 一
+— == A a Oe
+Sil = OS BV SZ SS
+
+Full:
+A
+J
+|
+xt!
+Ya?
+10攻
+生命上限+15
+用过一多插
+SRT
+fo nm
+
+Combined:
+一 |
+四
+卫OD =z
+= ER一一也 一
+— == A a Oe
+Sil = OS BV SZ SS
+A
+J
+|
+xt!
+Ya?
+10攻
+生命上限+15
+用过一多插
+SRT
+fo nm
+
+=== images/seasonal/cloud-spirit/梦•狂剑一式5.png ===
+Title:
+2 a —— a
+
+Body:
+卫- DA2
+=_— ER一一AD
+Si | = SF os Sv 二二和天
+
+Full:
+一 ae 人mr
+二
+4+
+J
+|
+ab
+10攻
+生命上限+20
+用过一次畦
+剑就吸取对方 ，
+
+Combined:
+2 a —— a
+卫- DA2
+=_— ER一一AD
+Si | = SF os Sv 二二和天
+一 ae 人mr
+二
+4+
+J
+|
+ab
+10攻
+生命上限+20
+用过一次畦
+剑就吸取对方 ，
+
+=== images/seasonal/cloud-spirit/梦•狂剑二式1.png ===
+Title:
+人-一 |
+
+Body:
+区
+— — —-) - oer
+人ES 车和E JE 二二和 卫 二亿= 导
+
+Full:
+条
+' @@
+Sey, |
+4+
+J
+sat
+4攻
++ apt+2
+用过1次狂
+Ww
+
+Combined:
+人-一 |
+区
+— — —-) - oer
+人ES 车和E JE 二二和 卫 二亿= 导
+条
+' @@
+Sey, |
+4+
+J
+sat
+4攻
++ apt+2
+用过1次狂
+Ww
+
+=== images/seasonal/cloud-spirit/梦•狂剑二式2.png ===
+Title:
+|
+
+Body:
+4a es
+— 二让二-
+了ES 1 3 st 卫 oe 3
+
+Full:
+on
+|
+| |
+sae
+4攻
+生命+4
+[_ — |
+
+Combined:
+|
+4a es
+— 二让二-
+了ES 1 3 st 卫 oe 3
+on
+| |
+sae
+4攻
+生命+4
+[_ — |
+
+=== images/seasonal/cloud-spirit/梦•狂剑二式3.png ===
+Title:
+|
+
+Body:
+: “a ae
+— oe — 5 — Se et = 4
+= TA ast 卫 ee 学
+
+Full:
+A
+下
+Py
+4+
+J
+> |
+xl
+lee
+4攻
+Ap
++6
+用过1
+oe @
+以
+人
+
+Combined:
+|
+: “a ae
+— oe — 5 — Se et = 4
+= TA ast 卫 ee 学
+A
+下
+Py
+4+
+J
+> |
+xl
+lee
+4攻
+Ap
++6
+用过1
+oe @
+以
+人
+
+=== images/seasonal/cloud-spirit/梦•狂剑二式4.png ===
+Title:
+人
+
+Body:
+> ease
+; 二-=全二天- (—1 —
+= > —e Ct Ee — ee bs
+—— ee Oe Se SS eI EE = See
+Or sO ee ee te lt
+
+Full:
+2
+4
+J
+x\
+2攻
+每
+合结束
+若回合内加过
+fo mal
+<7 BN
+34 ip 则耗3主
+ap Ap 过1次狂人
+ese fs &
+
+Combined:
+人
+> ease
+; 二-=全二天- (—1 —
+= > —e Ct Ee — ee bs
+—— ee Oe Se SS eI EE = See
+Or sO ee ee te lt
+2
+4
+J
+x\
+2攻
+每
+合结束
+若回合内加过
+fo mal
+<7 BN
+34 ip 则耗3主
+ap Ap 过1次狂人
+ese fs &
+
+=== images/seasonal/cloud-spirit/梦•狂剑二式5.png ===
+Title:
+SS |
+
+Body:
+可 as
+= BS SS] SS AHA:
+ost 二 SS E11 SS Puwo:
+ee Se ee ee = oe
+EN
+
+Full:
+AA
+i )
+J
+ZV
+攻
+aot
+回合内加过
+至水3生命 ap FES
+Ap an {FFB 过1从手
+ryyr»ere#spergsps*y
+
+Combined:
+SS |
+可 as
+= BS SS] SS AHA:
+ost 二 SS E11 SS Puwo:
+ee Se ee ee = oe
+EN
+AA
+i )
+J
+ZV
+攻
+aot
+回合内加过
+至水3生命 ap FES
+Ap an {FFB 过1从手
+ryyr»ere#spergsps*y
+
+=== images/seasonal/cloud-spirit/梦•狂剑零式.png ===
+Title:
+— ——
+~ =
+
+Body:
+< » &
+
+Full:
+> >
+|
+f
+
+Combined:
+— ——
+~ =
+< » &
+> >
+|
+f
+
+=== images/seasonal/cloud-spirit/梦•狂剑零式1.png ===
+Title:
+二一 ere
+
+Body:
+— 一一 二-
+aS FS 二一一二 SE
+1
+
+Full:
+as
+4
+J
+~—
+x
++)
+Ny
+生命+6
+每用过一次插
+剑加1生命
+
+Combined:
+二一 ere
+— 一一 二-
+aS FS 二一一二 SE
+1
+as
+4
+J
+~—
+x
++)
+Ny
+生命+6
+每用过一次插
+剑加1生命
+
+=== images/seasonal/cloud-spirit/梦•狂剑零式2.png ===
+Title:
+四 二二 «_ eee, ee _
+
+Body:
+= ee
+aS 3 6 SC CO SE
+. alesis &.— —.)—7-— 2
+
+Full:
+了
+te
+£
+ve?
+NA
+wn
+Lene
+5
+生命+7
+每用过一次生 F
+剑加2生命 Ff
+
+Combined:
+四 二二 «_ eee, ee _
+= ee
+aS 3 6 SC CO SE
+. alesis &.— —.)—7-— 2
+了
+te
+£
+ve?
+NA
+wn
+Lene
+5
+生命+7
+每用过一次生 F
+剑加2生命 Ff
+
+=== images/seasonal/cloud-spirit/梦•狂剑零式3.png ===
+Title:
+eee Se = Eee一一 —
+ESO eee
+
+Body:
+Ss
+aS Fa 3a — 2 SS
+- ——~~zaleslis ec —.—7-— 2
+
+Full:
+(a=
+ax §
+EN
+9
+-
++ ap
+每用 st eH
+剑加3生命
+|
+
+Combined:
+eee Se = Eee一一 —
+ESO eee
+Ss
+aS Fa 3a — 2 SS
+- ——~~zaleslis ec —.—7-— 2
+(a=
+ax §
+EN
+9
+-
++ ap
+每用 st eH
+剑加3生命
+|
+
+=== images/seasonal/cloud-spirit/梦•狂剑零式4.png ===
+Title:
+一 Eee ww —
+ESO eee
+
+Body:
+宝生一
+- 一 二
+三= AS 3s —_— 422 3S LS J 9
+2 bE Oar FO 1 Ses) SS
+aes ST = Set >} ee Ss
+”一
+
+Full:
+AA
+PR SS
+4th
+中
+J
+=
+TI 2
+a
+ae
+irs pao
+BR
+使用 1级狂剑时 耗、
+QS RHR |
+
+Combined:
+一 Eee ww —
+ESO eee
+宝生一
+- 一 二
+三= AS 3s —_— 422 3S LS J 9
+2 bE Oar FO 1 Ses) SS
+aes ST = Set >} ee Ss
+”一
+AA
+PR SS
+4th
+中
+J
+=
+TI 2
+a
+ae
+irs pao
+BR
+使用 1级狂剑时 耗、
+QS RHR |
+
+=== images/seasonal/cloud-spirit/梦•狂剑零式5.png ===
+Title:
+一 «s See ee _
+
+Body:
+全< at Se Se Saas
+一二
+== FAS 3S 二sp二<人一 全 二人>了
+44 Sar FO 1 SS) SSS
+So ie os > = JS _ ss —
+”一一
+
+Full:
+AA
+mag ~ \
+ae -@
+Ie
+4
+Sok
+ASS
+x
+apts
+每用过一次
+Un
+4生命和1
+~*~
+ru
+{8 FA LZR IE SAT FE
+e 8生 BRIS RA
+ry yry»yfry
+ERY |
+
+Combined:
+一 «s See ee _
+全< at Se Se Saas
+一二
+== FAS 3S 二sp二<人一 全 二人>了
+44 Sar FO 1 SS) SSS
+So ie os > = JS _ ss —
+”一一
+AA
+mag ~ \
+ae -@
+Ie
+4
+Sok
+ASS
+x
+apts
+每用过一次
+Un
+4生命和1
+~*~
+ru
+{8 FA LZR IE SAT FE
+e 8生 BRIS RA
+ry yry»yfry
+ERY |
+
+=== images/seasonal/cloud-spirit/梦•百鸟灵剑诀.png ===
+Title:
+一 — -一
+= —— = = — ct
+
+Body:
+一“Ca 7 FH
+SF oy Aas
+- -_ See “SE -f FP «ee
+
+Full:
+让，
+“* f
+oy
+i *
+|
+i
+4
+le
+x
+NS
+ms-
+
+Combined:
+一 — -一
+= —— = = — ct
+一“Ca 7 FH
+SF oy Aas
+- -_ See “SE -f FP «ee
+让，
+“* f
+oy
+i *
+|
+i
+4
+le
+x
+NS
+ms-
+
+=== images/seasonal/cloud-spirit/梦•百鸟灵剑诀1.png ===
+Title:
+(none)
+
+Body:
+三一-本
+
+Full:
+oe
+=
+Dt A
+i
+ol
+> |
+Vw
+J
+Seow
+S
+1
+FeFT+1
+剑气+2
+
+Combined:
+三一-本
+oe
+=
+Dt A
+i
+ol
+> |
+Vw
+J
+Seow
+S
+1
+FeFT+1
+剑气+2
+
+=== images/seasonal/cloud-spirit/梦•百鸟灵剑诀2.png ===
+Title:
+(none)
+
+Body:
+se SS
+和 Sac + =
+
+Full:
+=
+SH
+Dt A
+[el
+KE
+>» |
+vi)
+Sow
+\*
+Sa
+1
+Fe +2
+剑气+2
+
+Combined:
+se SS
+和 Sac + =
+=
+SH
+Dt A
+[el
+KE
+>» |
+vi)
+Sow
+\*
+Sa
+1
+Fe +2
+剑气+2
+
+=== images/seasonal/cloud-spirit/梦•百鸟灵剑诀3.png ===
+Title:
+ee
+= 一 一 一一
+
+Body:
+eS. Ss SS
+: Sj + =]
+
+Full:
+林木下一二
+Pe
+=
+Dt A
+[=
+>» |
+以
+J
+Saw
+<
+————
+RS
+RT+3
+剑气+2
+
+Combined:
+ee
+= 一 一 一一
+eS. Ss SS
+: Sj + =]
+林木下一二
+Pe
+=
+Dt A
+[=
+>» |
+以
+J
+Saw
+<
+————
+RS
+RT+3
+剑气+2
+
+=== images/seasonal/cloud-spirit/梦•百鸟灵剑诀4.png ===
+Title:
+SSS
+
+Body:
+一 一
+= 2 ee
+= 4S HR = SST
+SS 3 = BS SF HET
+
+Full:
+AX
+| i
+请
+[=
+> |
+vil
+WX
+~~ aa
+<
+—_.
+a
+Ss
+受气+
+战斗每加
+十3点受气咒加
+] 1:
+了
+Ye
+/9
+
+Combined:
+SSS
+一 一
+= 2 ee
+= 4S HR = SST
+SS 3 = BS SF HET
+AX
+| i
+请
+[=
+> |
+vil
+WX
+~~ aa
+<
+—_.
+a
+Ss
+受气+
+战斗每加
+十3点受气咒加
+] 1:
+了
+Ye
+/9
+
+=== images/seasonal/cloud-spirit/梦•百鸟灵剑诀5.png ===
+Title:
+RE ea一
+SS = = = 一
+
+Body:
+一
+三人一一
+a= tsa ES = 1 CSS TI
+a Oa > — es 珊天
+
+Full:
+木木
+<
+天
+Pe >) i
+|
+sa
+[=
+4»
+K
+vi)
+Sew
+=.
+Ss
+本场战斗每加
+过2
+人和
+点
+Fe FADO
+] 1:
+ryyr»pery»fyps yy
+/4
+
+Combined:
+RE ea一
+SS = = = 一
+一
+三人一一
+a= tsa ES = 1 CSS TI
+a Oa > — es 珊天
+木木
+<
+天
+Pe >) i
+|
+sa
+[=
+4»
+K
+vi)
+Sew
+=.
+Ss
+本场战斗每加
+过2
+人和
+点
+Fe FADO
+] 1:
+ryyr»pery»fyps yy
+/4
+
+=== images/seasonal/cloud-spirit/梦•飞牙剑.png ===
+Title:
+Emma一
+
+Body:
+SS
+
+Full:
+(none)
+
+Combined:
+Emma一
+SS
+
+=== images/seasonal/cloud-spirit/梦•飞牙剑1.png ===
+Title:
+(none)
+
+Body:
+GS <a
+上 as eS =
+——
+
+Full:
+[2
+AK,
+“®
+个|
+ELON
+
+Combined:
+GS <a
+上 as eS =
+——
+[2
+AK,
+“®
+个|
+ELON
+
+=== images/seasonal/cloud-spirit/梦•飞牙剑2.png ===
+Title:
+(none)
+
+Body:
+二 ree
+和 JE 天 1时 S =
+二
+
+Full:
+po
+AA.
+a
+~
+SS
+ELLIO |
+1
+
+Combined:
+二 ree
+和 JE 天 1时 S =
+二
+po
+AA.
+a
+~
+SS
+ELLIO |
+1
+
+=== images/seasonal/cloud-spirit/梦•飞牙剑3.png ===
+Title:
+(none)
+
+Body:
+卫 da 工4
+和 天JE之 3 SEL ORS sr 和:=
+- —-= | = — =
+
+Full:
+AKIN,
+-®
+SS
+Pe)
+|
+
+Combined:
+卫 da 工4
+和 天JE之 3 SEL ORS sr 和:=
+- —-= | = — =
+AKIN,
+-®
+SS
+Pe)
+|
+
+=== images/seasonal/cloud-spirit/梦•飞牙剑4.png ===
+Title:
+(none)
+
+Body:
+ges Se >
+JS 3 5 EL OR Er >|
+
+Full:
+NA
+SS
+攻X2
+返还此牌所耗
+
+Combined:
+ges Se >
+JS 3 5 EL OR Er >|
+NA
+SS
+攻X2
+返还此牌所耗
+
+=== images/seasonal/cloud-spirit/梦•飞牙剑5.png ===
+Title:
+(none)
+
+Body:
+ee
+4s es DS
+a= 二一于- 1 ER sr 大=
+al a —— =
+
+Full:
+和 SS
+AA
+“®
+SS
+“4
+sn
+
+Combined:
+ee
+4s es DS
+a= 二一于- 1 ER sr 大=
+al a —— =
+和 SS
+AA
+“®
+SS
+“4
+sn
+
+=== images/seasonal/duan-xuan/梦•修罗吼.png ===
+Title:
+SS Ss Se ee eC CU
+
+Body:
+SS =S *;
+
+Full:
+Wek:
+中
+\_一
+\ @
+A)
+ye
+Y
+}
+it
+|
+
+Combined:
+SS Ss Se ee eC CU
+SS =S *;
+Wek:
+中
+\_一
+\ @
+A)
+ye
+Y
+}
+it
+|
+
+=== images/seasonal/duan-xuan/梦•修罗吼1.png ===
+Title:
+全
+有 SR
+
+Body:
+下2 一
+— 一区一二
+二2
+
+Full:
+(A
+AA
+a
+) | ;
+})
+=
+Dj
+人
+yy)
+oO”
+MF
+全
+体魄+2
+生命+4
+双方加2层内伤
+
+Combined:
+全
+有 SR
+下2 一
+— 一区一二
+二2
+(A
+AA
+a
+) | ;
+})
+=
+Dj
+人
+yy)
+oO”
+MF
+体魄+2
+生命+4
+双方加2层内伤
+
+=== images/seasonal/duan-xuan/梦•修罗吼2.png ===
+Title:
+人
+村 SR
+
+Body:
+人 =e. >
+SES SS + |S
+— AY ae —ee si sk ee MS -— EE ;
+
+Full:
+1 AX
+a
+nae 2
+Ne
+Dj
+)
+\e一~
+12
+oO”
+IF
+Ls
+体魄+2
+生命+6
+双方
+[_ — |
+
+Combined:
+人
+村 SR
+人 =e. >
+SES SS + |S
+— AY ae —ee si sk ee MS -— EE ;
+1 AX
+a
+nae 2
+Ne
+Dj
+)
+\e一~
+12
+oO”
+IF
+Ls
+体魄+2
+生命+6
+双方
+[_ — |
+
+=== images/seasonal/duan-xuan/梦•修罗吼3.png ===
+Title:
+人
+
+Body:
+fa Se. =
+— 一二= ow ee
+— AY Ae —ee sis ee 2 MS -— EF ;
+
+Full:
+ee:
+(A
+RX
+本森
+nae 2
+)
+人
+=
+\e一~
+yy)
+a’)
+rb
+‘ 天
+体魄+3
+生命+7
+双方加2层内伤
+eo es @
+
+Combined:
+人
+fa Se. =
+— 一二= ow ee
+— AY Ae —ee sis ee 2 MS -— EF ;
+ee:
+(A
+RX
+本森
+nae 2
+)
+=
+\e一~
+yy)
+a’)
+rb
+‘ 天
+体魄+3
+生命+7
+双方加2层内伤
+eo es @
+
+=== images/seasonal/duan-xuan/梦•修罗吼4.png ===
+Title:
+人
+_——_ ~ =
+
+Body:
+See fa =e: =>
+E — 一
+et —:-
+2 二RAW oS BS SSH. OS oc
+
+Full:
+le
+. S
+AA
+Tn.
+Ne
+bj
+)
+人
+we
+=
+‘int
+Ly)
+MF
+a)
++3
+生命+4
+B12,
+双方融加1层内 。
+NA
+伤
+yy
+
+Combined:
+人
+_——_ ~ =
+See fa =e: =>
+E — 一
+et —:-
+2 二RAW oS BS SSH. OS oc
+le
+. S
+AA
+Tn.
+Ne
+bj
+)
+we
+=
+‘int
+Ly)
+MF
+a)
++3
+生命+4
+B12,
+双方融加1层内 。
+NA
+伤
+yy
+
+=== images/seasonal/duan-xuan/梦•修罗吼5.png ===
+Title:
+人
+
+Body:
+ft e+ =>
+二和二 lind
+a= 二 了卫-《D eS ->
+~~ 4° 4 SS eS esi ie eS HF -
+
+Full:
+aot
+A
+vam
+Na
+"
+人
+=
+\ Sane
+See
+As
+If
+体魄+3
+10K
+双方就加1层内
+本
+/4
+
+Combined:
+人
+ft e+ =>
+二和二 lind
+a= 二 了卫-《D eS ->
+~~ 4° 4 SS eS esi ie eS HF -
+aot
+A
+vam
+Na
+"
+=
+\ Sane
+See
+As
+If
+体魄+3
+10K
+双方就加1层内
+本
+/4
+
+=== images/seasonal/duan-xuan/梦•冥影身法.png ===
+Title:
+(none)
+
+Body:
+, =
+
+Full:
+(none)
+
+Combined:
+, =
+
+=== images/seasonal/duan-xuan/梦•冥影身法1.png ===
+Title:
+(none)
+
+Body:
+Er se >
+和 — ee ED -和
+一二本 工攻六
+
+Full:
+4
+RA
+— ~
+Tf
+x
+5IN X 2
+este
+
+Combined:
+Er se >
+和 — ee ED -和
+一二本 工攻六
+4
+RA
+— ~
+Tf
+x
+5IN X 2
+este
+
+=== images/seasonal/duan-xuan/梦•冥影身法2.png ===
+Title:
+(none)
+
+Body:
+和 SS £5 一全 Se 下和过一
+一了
+
+Full:
+4
+AA
+1}
+=
+— ~
+=?
+下WA/
+<
+‘
+IN X 2
+Sune 1
+[_ — |
+
+Combined:
+和 SS £5 一全 Se 下和过一
+一了
+4
+AA
+1}
+=
+— ~
+=?
+下WA/
+<
+‘
+IN X 2
+Sune 1
+[_ — |
+
+=== images/seasonal/duan-xuan/梦•冥影身法3.png ===
+Title:
+(none)
+
+Body:
+了T了ESz se >
+eS 5 55: Se es
+——— | = 2
+
+Full:
+7.
+RA
+>
+~<a Se
+— ~~
+=,
+Tf
+x
+p22
+mg!
+iz
+Hy x2
+身有负面状
+RE
+eo es @
+
+Combined:
+了T了ESz se >
+eS 5 55: Se es
+——— | = 2
+7.
+RA
+>
+~<a Se
+— ~~
+=,
+Tf
+x
+p22
+mg!
+iz
+Hy x2
+身有负面状
+RE
+eo es @
+
+=== images/seasonal/duan-xuan/梦•冥影身法4.png ===
+Title:
+—E= |
+
+Body:
+——
+"| = 三二 +10
+=a = EE
+了 Ss ee
+
+Full:
+4
+AA
+— ~~
+=,
+Tf
+1攻X2
+身法+10
+$ID) °
+前一格租
+攻击时，每有2层。
+ABRSRS1N
+eos wae fs &
+
+Combined:
+—E= |
+——
+"| = 三二 +10
+=a = EE
+了 Ss ee
+4
+AA
+— ~~
+=,
+Tf
+1攻X2
+身法+10
+$ID) °
+前一格租
+攻击时，每有2层。
+ABRSRS1N
+eos wae fs &
+
+=== images/seasonal/duan-xuan/梦•冥影身法5.png ===
+Title:
+Et
+
+Body:
+Re
+— =~ a er
+_ 23 se +12
+= as ae 二 Ee
+
+Full:
+(人
+AA
+— ~~
+=A
+Tf
+3攻X2
+身法+12
+被动
+i — She
+攻击时，每有2层
+负面状态就多]1攻
+
+Combined:
+Et
+Re
+— =~ a er
+_ 23 se +12
+= as ae 二 Ee
+(人
+AA
+— ~~
+=A
+Tf
+3攻X2
+身法+12
+被动
+i — She
+攻击时，每有2层
+负面状态就多]1攻
+
+=== images/seasonal/duan-xuan/梦•冲霄破浪.png ===
+Title:
+ll AR SSS mm
+
+Body:
+(none)
+
+Full:
+(Am \
+, &
+i
+SS
+
+Combined:
+ll AR SSS mm
+(Am \
+, &
+i
+SS
+
+=== images/seasonal/duan-xuan/梦•冲霄破浪1.png ===
+Title:
+SS
+
+Body:
+> -es二三-二
+三 es - oe
+= > St 4
+
+Full:
+Ce
+aac
+人破
+)民
+灵气+
+生命+3
+身法+4
+
+Combined:
+SS
+> -es二三-二
+三 es - oe
+= > St 4
+Ce
+aac
+人破
+)民
+灵气+
+生命+3
+身法+4
+
+=== images/seasonal/duan-xuan/梦•冲霄破浪2.png ===
+Title:
+SS
+
+Body:
+= Se, 二三 二
+一
+= 二一
+
+Full:
+A
+了 i
+_
+Ags
+r Pp
+人破
+)民
+SP
+灵气+2
++5
+ap
+去+4
+AF
+
+Combined:
+SS
+= Se, 二三 二
+一
+= 二一
+A
+了 i
+_
+Ags
+r Pp
+人破
+)民
+SP
+灵气+2
++5
+ap
+去+4
+AF
+
+=== images/seasonal/duan-xuan/梦•冲霄破浪3.png ===
+Title:
+2 SS
+
+Body:
+a — 一一
+二二一人
+-Er 三= + 4
+
+Full:
+A as
+A
+4
+a ¢
+&
+9
+- 4 |
+he
+灵气+
++7
+ap
+法+4
+日耗
+
+Combined:
+2 SS
+a — 一一
+二二一人
+-Er 三= + 4
+A as
+A
+4
+a ¢
+&
+9
+- 4 |
+he
+灵气+
++7
+ap
+法+4
+日耗
+
+=== images/seasonal/duan-xuan/梦•冲霄破浪4.png ===
+Title:
+= SS
+
+Body:
+上< =
+FE 三一
+目 二E eee ee ee
+一71 a >
+
+Full:
+A
+=? S
+eS
+站
+NA 本
+V4
+人破
+@
+LZ
+灵气+
+apt2
+身法+4 (每点灵
+1)
+;
+~.
+AFG
+ar /4
+
+Combined:
+= SS
+上< =
+FE 三一
+目 二E eee ee ee
+一71 a >
+A
+=? S
+eS
+站
+NA 本
+V4
+人破
+@
+LZ
+灵气+
+apt2
+身法+4 (每点灵
+1)
+;
+~.
+AFG
+ar /4
+
+=== images/seasonal/duan-xuan/梦•冲霄破浪5.png ===
+Title:
+SS
+
+Body:
+ee Oe ee
+三二 - oo ©
+aS >= + SG 三= = E
+SS S- FiO 3a D>
+
+Full:
+AA
+gy er RO
+Go
+本和二
+冲
+ie
+=n
+生命+4
+身法+6 (
+ead
+ryrsyprs»spry yy
+
+Combined:
+SS
+ee Oe ee
+三二 - oo ©
+aS >= + SG 三= = E
+SS S- FiO 3a D>
+AA
+gy er RO
+Go
+本和二
+冲
+ie
+=n
+生命+4
+身法+6 (
+ead
+ryrsyprs»spry yy
+
+=== images/seasonal/duan-xuan/梦•劈山掌.png ===
+Title:
+AAA
+
+Body:
+(none)
+
+Full:
+RN
+\
+=:
+
+Combined:
+AAA
+RN
+\
+=:
+
+=== images/seasonal/duan-xuan/梦•劈山掌1.png ===
+Title:
+(none)
+
+Body:
+— ——S
+SBE Cee woO a=)
+2 4: 2 Se SS
+= 了《or |
+
+Full:
+2
+N
+AA
+~~
+WF
+=e
+Tc一1
+Os
+8攻 〈每加过
+1攻)
+
+Combined:
+— ——S
+SBE Cee woO a=)
+2 4: 2 Se SS
+= 了《or |
+2
+N
+AA
+~~
+WF
+=e
+Tc一1
+Os
+8攻 〈每加过
+1攻)
+
+=== images/seasonal/duan-xuan/梦•劈山掌2.png ===
+Title:
+(none)
+
+Body:
+ss
+了本 《CD 了4z CS HOS
+See: Se
+. 3 =e >
+
+Full:
+a Xt
+A
+, =
+局六
+SN
+IN
+yp
+10攻(每加过
+21 RTS
+ae
+
+Combined:
+ss
+了本 《CD 了4z CS HOS
+See: Se
+. 3 =e >
+a Xt
+A
+, =
+局六
+SN
+IN
+yp
+10攻(每加过
+21 RTS
+ae
+
+=== images/seasonal/duan-xuan/梦•劈山掌3.png ===
+Title:
+(none)
+
+Body:
+ss
+aoe C0 SOS
+peo: Ss
+: =| <)>
+
+Full:
+一一
+A
+SN
+~All
+Ex
+[—
+o
+121% (每加过
+2
+12%)
+
+Combined:
+ss
+aoe C0 SOS
+peo: Ss
+: =| <)>
+一一
+A
+SN
+~All
+Ex
+[—
+o
+121% (每加过
+2
+12%)
+
+=== images/seasonal/duan-xuan/梦•劈山掌4.png ===
+Title:
+(none)
+
+Body:
+ss
+二了-人 >
+一
+41 oO = C 2a Fun 3s
+
+Full:
+S
+AA
+Sy
+By
+Te
+15S {RRB
+Mis
+10攻(每加过
+21S TS
+13)
+ees es &
+
+Combined:
+ss
+二了-人 >
+一
+41 oO = C 2a Fun 3s
+S
+AA
+Sy
+By
+Te
+15S {RRB
+Mis
+10攻(每加过
+21S TS
+13)
+ees es &
+
+=== images/seasonal/duan-xuan/梦•劈山掌5.png ===
+Title:
+(none)
+
+Body:
+eee ns fee
+= 1 5 4 eS BS
+也0 卫 -<一二 -—-o
+可 =~ 2 C 24a Fo a>
+se r- ~:.> = Ss SS —
+
+Full:
+CT
+A
+=e
+yi
+[—
+= 有15体魄就
+加1气势
+7攻 (NW
+1
+i
+13)
+
+Combined:
+eee ns fee
+= 1 5 4 eS BS
+也0 卫 -<一二 -—-o
+可 =~ 2 C 24a Fo a>
+se r- ~:.> = Ss SS —
+CT
+A
+=e
+yi
+[—
+= 有15体魄就
+加1气势
+7攻 (NW
+1
+i
+13)
+
+=== images/seasonal/duan-xuan/梦•威震四方.png ===
+Title:
+(none)
+
+Body:
+. in 一 ss aa
+WE
+mA > am |
+—— — = ad
+
+Full:
+用
+(X
+1)
+总
+he
+i
+月 和
+
+Combined:
+. in 一 ss aa
+WE
+mA > am |
+—— — = ad
+用
+(X
+1)
+总
+he
+i
+月 和
+
+=== images/seasonal/duan-xuan/梦•威震四方1.png ===
+Title:
+(none)
+
+Body:
+三二 一2
+省 一一 EC -
+aa 二 — 5 sez |
+二用三
+
+Full:
+人
+> e
+we sd
+ie
+B
+四三
+NA
+ant ta
+a
+Za
+生命+2
+”气势+3
+效果
+由每点多10%攻
+为每点多1长
+
+Combined:
+三二 一2
+省 一一 EC -
+aa 二 — 5 sez |
+二用三
+人
+> e
+we sd
+ie
+B
+四三
+NA
+ant ta
+a
+Za
+生命+2
+”气势+3
+效果
+由每点多10%攻
+为每点多1长
+
+=== images/seasonal/duan-xuan/梦•威震四方2.png ===
+Title:
+(none)
+
+Body:
+— —.-1-._ = 5
+ee Oe ee
+ee T= =< Ss sez
+PS = Or 8 he
+
+Full:
+AA
+e
+yy) \
+ey A
+as SS
+SA 2
+ty)
+F
++ ant+4
+气势+3
+WA: 气势效果
+由每点多10%攻
+J 4 ma SB 1Dey
+
+Combined:
+— —.-1-._ = 5
+ee Oe ee
+ee T= =< Ss sez
+PS = Or 8 he
+AA
+e
+yy) \
+ey A
+as SS
+SA 2
+ty)
+F
++ ant+4
+气势+3
+WA: 气势效果
+由每点多10%攻
+J 4 ma SB 1Dey
+
+=== images/seasonal/duan-xuan/梦•威震四方3.png ===
+Title:
+= 国宝~ = 一二光
+
+Body:
+= 二六 二 一一全
+ea SS +=
+RE ws Ee aS 5 sez |
+== — _-_- = —— = Ee eS Se
+
+Full:
+AA
+> oy
+/
+o>
+和
+站
+fey,
+hs
+Ny
+ad
+= My
+m2
+yey)
+= até
+气势+3
+效果
+由每点多10%攻
+L/S AS 1D
+es #
+
+Combined:
+= 国宝~ = 一二光
+= 二六 二 一一全
+ea SS +=
+RE ws Ee aS 5 sez |
+== — _-_- = —— = Ee eS Se
+AA
+> oy
+/
+o>
+和
+站
+fey,
+hs
+Ny
+ad
+= My
+m2
+yey)
+= até
+气势+3
+效果
+由每点多10%攻
+L/S AS 1D
+es #
+
+=== images/seasonal/duan-xuan/梦•威震四方4.png ===
+Title:
+(none)
+
+Body:
+Ss FCB
+= S5+ 5
+Des rr er 2。
+Sa = > > ee oh ee
+
+Full:
+AA
+fey,
+Nae”
+四| =o
+os
+气势上限+4
+气势+5
+| 由每点 ae
+WHA AS 1
+
+Combined:
+Ss FCB
+= S5+ 5
+Des rr er 2。
+Sa = > > ee oh ee
+AA
+fey,
+Nae”
+四| =o
+os
+气势上限+4
+气势+5
+| 由每点 ae
+WHA AS 1
+
+=== images/seasonal/duan-xuan/梦•威震四方5.png ===
+Title:
+(none)
+
+Body:
+全一 一 一一
+SS > I pPRe+ Ss
+SS +S
+> | :- 2s 二 = 25 sez
+= =| 二
+
+Full:
+SR AS
+AA
+Come!
+2
+et a
+ao
+ans. \ SS
+WY
+a)
+气势上限+5
+气势+8
+被动: 气势效果
+由每点多10%攻
+改为每点多1攻
+Yr »yryr#gyperef#psry *y y
+ys
+
+Combined:
+全一 一 一一
+SS > I pPRe+ Ss
+SS +S
+> | :- 2s 二 = 25 sez
+= =| 二
+SR AS
+AA
+Come!
+2
+et a
+ao
+ans. \ SS
+WY
+a)
+气势上限+5
+气势+8
+被动: 气势效果
+由每点多10%攻
+改为每点多1攻
+Yr »yryr#gyperef#psry *y y
+ys
+
+=== images/seasonal/duan-xuan/梦•岿然不动1.png ===
+Title:
+Cr
+
+Body:
+IE
+$328: -) Soe 力)
+> Bt 5s ee = Tt
+
+Full:
+Va
+X
+)>
+:
+yy
+不
+I)
+ols
+防+3
+持续
+每炙加
+防时
+成2点伤
+
+Combined:
+Cr
+IE
+$328: -) Soe 力)
+> Bt 5s ee = Tt
+Va
+X
+)>
+:
+yy
+不
+I)
+ols
+防+3
+持续
+每炙加
+防时
+成2点伤
+
+=== images/seasonal/duan-xuan/梦•岿然不动2.png ===
+Title:
+元
+
+Body:
+By 一
+= => Sz FI!
+| 7 Bt 3s Be Sa == Ff
+
+Full:
+x}
+Wy
+V5
+~~ y
+y)
+%e
+ie
+防+6
+持续 :
+每次加
+防时;
+成2点伤
+. —— |
+
+Combined:
+元
+By 一
+= => Sz FI!
+| 7 Bt 3s Be Sa == Ff
+x}
+Wy
+V5
+~~ y
+y)
+%e
+ie
+防+6
+持续 :
+每次加
+防时;
+成2点伤
+. —— |
+
+=== images/seasonal/duan-xuan/梦•岿然不动3.png ===
+Title:
+— ' <i
+
+Body:
+|
+= B= Sz FI!
+
+Full:
+一
+木林
+fh.
+| 呆
+AR
+I)
+防+9
+续: 每次加
+防时造成2点伤
+ee @
+
+Combined:
+— ' <i
+|
+= B= Sz FI!
+一
+木林
+fh.
+| 呆
+AR
+I)
+防+9
+续: 每次加
+防时造成2点伤
+ee @
+
+=== images/seasonal/duan-xuan/梦•岿然不动4.png ===
+Title:
+(none)
+
+Body:
+二 ps3
+= B= Sz FI
+oo Bs Sk Se See at
+
+Full:
+A
+bell! |)
+)>
+Y
+不
+DI)
+fe
+防+9
+bist: 每次加 |
+) 防或生命时，
+造成40%伤害 y
+es 2 ©&
+« o
+
+Combined:
+二 ps3
+= B= Sz FI
+oo Bs Sk Se See at
+A
+bell! |)
+)>
+Y
+不
+DI)
+fe
+防+9
+bist: 每次加 |
+) 防或生命时，
+造成40%伤害 y
+es 2 ©&
+« o
+
+=== images/seasonal/duan-xuan/梦•岿然不动5.png ===
+Title:
+ESE -
+元
+
+Body:
+有 一
+= => >= F3
+7 = 2 a — Se eee
+
+Full:
+AA
+)>
+不
+BX 多
+防+
+防或生命时，
+造成50%伤
+-一
+/9
+
+Combined:
+ESE -
+元
+有 一
+= => >= F3
+7 = 2 a — Se eee
+AA
+)>
+不
+BX 多
+防+
+防或生命时，
+造成50%伤
+-一
+/9
+
+=== images/seasonal/duan-xuan/梦•崩天步.png ===
+Title:
+<< ee ._ =
+
+Body:
+(none)
+
+Full:
+aS
+_
+
+Combined:
+<< ee ._ =
+aS
+_
+
+=== images/seasonal/duan-xuan/梦•崩天步1.png ===
+Title:
+(none)
+
+Body:
+Ee 一
+> ee
+和 es 二 SEL R22 1
+一一
+
+Full:
+AA
+AB
+区=
+(
+By +
+身法+2
+ED: 此牌和
+后一格的
+
+Combined:
+Ee 一
+> ee
+和 es 二 SEL R22 1
+一一
+AA
+AB
+区=
+(
+By +
+身法+2
+ED: 此牌和
+后一格的
+
+=== images/seasonal/duan-xuan/梦•崩天步2.png ===
+Title:
+(none)
+
+Body:
+ee a 2
+a a 一一22
+和 2 eee sd se
+2 ————_ ss 2
+
+Full:
+局
+A
+AB
+*
+Dy,
+(
+BAt+
+身法+2
+被动:
+此牌和
+后一格的牌算
+“FAR
+二 |
+
+Combined:
+ee a 2
+a a 一一22
+和 2 eee sd se
+2 ————_ ss 2
+局
+A
+AB
+*
+Dy,
+(
+BAt+
+身法+2
+被动:
+此牌和
+后一格的牌算
+“FAR
+二 |
+
+=== images/seasonal/duan-xuan/梦•崩天步3.png ===
+Title:
+(none)
+
+Body:
+和 2 > 二-之
+-二 SEL h2=2 5
+i Fe eee Eee
+
+Full:
+va
+X
+A
+>
+AB
+¥
+大4
+oz.
+防+
+去+2
+WED: 此牌和
+后一格的牌算
+‘FRA
+eo es @
+
+Combined:
+和 2 > 二-之
+-二 SEL h2=2 5
+i Fe eee Eee
+va
+X
+A
+>
+AB
+¥
+大4
+oz.
+防+
+去+2
+WED: 此牌和
+后一格的牌算
+‘FRA
+eo es @
+
+=== images/seasonal/duan-xuan/梦•崩天步4.png ===
+Title:
+人
+
+Body:
+人 人
+Es +S
+5 aS >= + 4
+2. -- ss SEL R=? 5
+> 三 .—— . 4 — -- Bs —— = oe =e = T:
+
+Full:
+Firs "Se
+AA
+ye”
+a |
+2)
+防+8
+身法+4
+aD: 此牌和
+相邻牌算作朋 *。
+oe ws ws &
+
+Combined:
+人
+人 人
+Es +S
+5 aS >= + 4
+2. -- ss SEL R=? 5
+> 三 .—— . 4 — -- Bs —— = oe =e = T:
+Firs "Se
+AA
+ye”
+a |
+2)
+防+8
+身法+4
+aD: 此牌和
+相邻牌算作朋 *。
+oe ws ws &
+
+=== images/seasonal/duan-xuan/梦•崩天步5.png ===
+Title:
+(none)
+
+Body:
+和<
+有FE 一
+Ss >= ST S
+es 二 SEL. he? #5
+> —~ — -—— . 4 — -- Bs —— = oe =e = T:
+
+Full:
+23
+AB
+Fs
+va
+=
+防+8
+法+8
+被动
+此牌和
+相邻脾算作
+
+Combined:
+和<
+有FE 一
+Ss >= ST S
+es 二 SEL. he? #5
+> —~ — -—— . 4 — -- Bs —— = oe =e = T:
+23
+AB
+Fs
+va
+=
+防+8
+法+8
+被动
+此牌和
+相邻脾算作
+
+=== images/seasonal/duan-xuan/梦•崩拳封.png ===
+Title:
+(none)
+
+Body:
+- 可 —_
+一 - ~一了
+= 4
+
+Full:
+(none)
+
+Combined:
+- 可 —_
+一 - ~一了
+= 4
+
+=== images/seasonal/duan-xuan/梦•崩拳封1.png ===
+Title:
+(none)
+
+Body:
+有 +1 =]
+和 FF sx Ass SS => ao
+
+Full:
+oN
+AA
+BAe
+>
+a
+防+
+FE 5K BAS S 2BZ
+
+Combined:
+有 +1 =]
+和 FF sx Ass SS => ao
+oN
+AA
+BAe
+>
+a
+防+
+FE 5K BAS S 2BZ
+
+=== images/seasonal/duan-xuan/梦•崩拳封2.png ===
+Title:
+(none)
+
+Body:
+Ss + -本
+FF skK< Bass => = ss
+
+Full:
+《9)
+aa
+A
+AB ua
+从
+bP
+防+14
+FE 5K BAS S 3B
+
+Combined:
+Ss + -本
+FF skK< Bass => = ss
+《9)
+aa
+A
+AB ua
+从
+bP
+防+14
+FE 5K BAS S 3B
+
+=== images/seasonal/duan-xuan/梦•崩拳封3.png ===
+Title:
+(none)
+
+Body:
+IE 了
+wa Ho sat 7 Bs SF =
+=< pe Le Se
+
+Full:
+人
+每加过7防，下
+防+18
+
+Combined:
+IE 了
+wa Ho sat 7 Bs SF =
+=< pe Le Se
+人
+每加过7防，下
+防+18
+
+=== images/seasonal/duan-xuan/梦•崩拳封4.png ===
+Title:
+(none)
+
+Body:
+i. a a eo
+> FIO a= G BS . =
+
+Full:
+6%
+AA
+AB
+es
+id
+办、
+防+
+每加过6防，
+Hens eh S12
+\a
+ke
+
+Combined:
+i. a a eo
+> FIO a= G BS . =
+6%
+AA
+AB
+es
+id
+办、
+防+
+每加过6防，
+Hens eh S12
+\a
+ke
+
+=== images/seasonal/duan-xuan/梦•崩拳封5.png ===
+Title:
+(none)
+
+Body:
+和二
+| = 一 卫
+Fs SBS >
+—— |). | ee 有 -王
+
+Full:
+2
+BA+18
+每加过5防，下
+SK AB SUSI
+
+Combined:
+和二
+| = 一 卫
+Fs SBS >
+—— |). | ee 有 -王
+2
+BA+18
+每加过5防，下
+SK AB SUSI
+
+=== images/seasonal/duan-xuan/梦•崩拳弹.png ===
+Title:
+Fe =
+
+Body:
+AW
+
+Full:
+HY
+\\
+
+Combined:
+Fe =
+AW
+HY
+\\
+
+=== images/seasonal/duan-xuan/梦•崩拳弹1.png ===
+Title:
+.- — ff 下
+ES 一”了
+
+Body:
+z Es +S
+> a Ts F
+Be HE ar Aas Bs
+一 Hy =F, se
+
+Full:
+|
+AA
+AB
+\\
+5单|
+Bat
+bg Sit a
+2, MPAs
+命
+
+Combined:
+.- — ff 下
+ES 一”了
+z Es +S
+> a Ts F
+Be HE ar Aas Bs
+一 Hy =F, se
+|
+AA
+AB
+\\
+5单|
+Bat
+bg Sit a
+2, MPAs
+命
+
+=== images/seasonal/duan-xuan/梦•崩拳弹2.png ===
+Title:
+ra一 FRR
+
+Body:
+=: Ss +3 >
+了2 二Re 二 Tt F
+Be HE Sar es Bs
+SS 'riilitl—_,; = =— SS -
+
+Full:
+(4)
+AN
+A
+月月
+/六
+ai
+防+12
+持续2次: 使用
+后，
+加所耗生
+ap
+
+Combined:
+ra一 FRR
+=: Ss +3 >
+了2 二Re 二 Tt F
+Be HE Sar es Bs
+SS 'riilitl—_,; = =— SS -
+(4)
+AN
+A
+月月
+/六
+ai
+防+12
+持续2次: 使用
+后，
+加所耗生
+ap
+
+=== images/seasonal/duan-xuan/梦•崩拳弹3.png ===
+Title:
+== ———
+
+Body:
+SEE Ss +
+Sse = TF
+5 = Sas a AS
+—_. Fao er Ss st
+
+Full:
+———
+AK
+AB
+NS
+5单
+\
+‘ne
+防+12
+持续3次: 使用
+后，
+加所耗生
+Ap
+BY he
+ap
+值的防
+
+Combined:
+== ———
+SEE Ss +
+Sse = TF
+5 = Sas a AS
+—_. Fao er Ss st
+———
+AK
+AB
+NS
+5单
+\
+‘ne
+防+12
+持续3次: 使用
+后，
+加所耗生
+Ap
+BY he
+ap
+值的防
+
+=== images/seasonal/duan-xuan/梦•崩拳弹4.png ===
+Title:
+Se
+
+Body:
+ES + 31 一
+; 4 = Ts F
+- = >= =e -1- 8 = sp ,
+ss _F_=— _ Hye EF SL —s
+
+Full:
+AA
+AB
+5单|
+BAt+
+4次: 使用
+eo ee |
+S%命值的防_观
+
+Combined:
+Se
+ES + 31 一
+; 4 = Ts F
+- = >= =e -1- 8 = sp ,
+ss _F_=— _ Hye EF SL —s
+AA
+AB
+5单|
+BAt+
+4次: 使用
+eo ee |
+S%命值的防_观
+
+=== images/seasonal/duan-xuan/梦•崩拳弹5.png ===
+Title:
+er ————__
+
+Body:
+ee
+ES + 卫
+= ==> oz TS
+三 三 医生 >= =s -1- 6 -
+一 riiltl—_, cc = =
+
+Full:
+4 S
+A
+AB
+IN
+5间|
+pat
+用耗生
+Ap
+BY he
+后，
+加所耗生
+
+Combined:
+er ————__
+ee
+ES + 卫
+= ==> oz TS
+三 三 医生 >= =s -1- 6 -
+一 riiltl—_, cc = =
+4 S
+A
+AB
+IN
+5间|
+pat
+用耗生
+Ap
+BY he
+后，
+加所耗生
+
+=== images/seasonal/duan-xuan/梦•崩拳突.png ===
+Title:
+一 一
+
+Body:
+“4 Se
+“ . = 本
+
+Full:
+dive
+
+Combined:
+一 一
+“4 Se
+“ . = 本
+dive
+
+=== images/seasonal/duan-xuan/梦•崩拳突1.png ===
+Title:
+— 4 ee
+
+Body:
+SS Ss = SS =
+ss. ite nS 0
+
+Full:
+.
+“>
+/
+AA
+eK
+BAY
+a
+各有身法或气
+势，此牌和下
+2攻
+10攻
+
+Combined:
+— 4 ee
+SS Ss = SS =
+ss. ite nS 0
+.
+“>
+/
+AA
+eK
+BAY
+a
+各有身法或气
+势，此牌和下
+2攻
+10攻
+
+=== images/seasonal/duan-xuan/梦•崩拳突2.png ===
+Title:
+(none)
+
+Body:
+SS eS _ES 三天 SS =
+ss. ken 0
+
+Full:
+一-一一一
+“A>
+|
+A
+Dix
+EE: Ah;
+若有身法或气
+pee
+3X
+“0区
+
+Combined:
+SS eS _ES 三天 SS =
+ss. ken 0
+一-一一一
+“A>
+|
+A
+Dix
+EE: Ah;
+若有身法或气
+pee
+3X
+“0区
+
+=== images/seasonal/duan-xuan/梦•崩拳突3.png ===
+Title:
+(none)
+
+Body:
+ss. ite 0 一A
+
+Full:
+A
+"4
+月月 奔
+Wx
+a
+é
+ts?
+若有身法或气
+势，此牌和下
+10攻
+eo wo @
+
+Combined:
+ss. ite 0 一A
+A
+"4
+月月 奔
+Wx
+a
+é
+ts?
+若有身法或气
+势，此牌和下
+10攻
+eo wo @
+
+=== images/seasonal/duan-xuan/梦•崩拳突4.png ===
+Title:
+ee —
+
+Body:
+>
+. SSB ' SS_- OSES ESL
+a. pis ogo | 8 ee
+
+Full:
+“|
+站
+N
+AA
+47
+AB
+™
+|
+石有身法或气
+s,
+此牌和下
+Hee eS 5
+，
+13攻
+Me
+有
+
+Combined:
+ee —
+>
+. SSB ' SS_- OSES ESL
+a. pis ogo | 8 ee
+“|
+站
+N
+AA
+47
+AB
+™
+|
+石有身法或气
+s,
+此牌和下
+Hee eS 5
+，
+13攻
+Me
+有
+
+=== images/seasonal/duan-xuan/梦•崩拳突5.png ===
+Title:
+(none)
+
+Body:
+_ —————;————EEE
+i 三= ro
+| SFE RAO FF stk 5
+
+Full:
+4 S
+AK
+月月 辕
+BAAR,
+Itbhe 40 FE SAB
+13攻
+
+Combined:
+_ —————;————EEE
+i 三= ro
+| SFE RAO FF stk 5
+4 S
+AK
+月月 辕
+BAAR,
+Itbhe 40 FE SAB
+13攻
+
+=== images/seasonal/duan-xuan/梦•崩拳连崩.png ===
+Title:
+(none)
+
+Body:
+(none)
+
+Full:
+|
+a
+
+Combined:
+|
+a
+
+=== images/seasonal/duan-xuan/梦•崩拳连崩1.png ===
+Title:
+(none)
+
+Body:
+ze 二一 >
+Ts FAS FF skK« Aas 3
+— 5 Ee Fa Sa xe 人<一 -
+
+Full:
+和
+o>
+一一和一 +
+2
+al
+Ee e
+=a
+AB
+~~
+=
+Ng
+了Ns
+3攻X 2
+oi AAS
+Will oe x2
+=>
+
+Combined:
+ze 二一 >
+Ts FAS FF skK« Aas 3
+— 5 Ee Fa Sa xe 人<一 -
+和
+o>
+一一和一 +
+2
+al
+Ee e
+=a
+AB
+~~
+=
+Ng
+了Ns
+3攻X 2
+oi AAS
+Will oe x2
+=>
+
+=== images/seasonal/duan-xuan/梦•崩拳连崩2.png ===
+Title:
+(none)
+
+Body:
+ama >< >
+Tt FS FF skK« As 3
+—— 5—= OEE Ws OS ee >一-
+
+Full:
+a4
+a
+AB
+ce
+A!
+vd
+4攻X2
+BS AAS
+adie x2
+. —— |
+
+Combined:
+ama >< >
+Tt FS FF skK« As 3
+—— 5—= OEE Ws OS ee >一-
+a4
+a
+AB
+ce
+A!
+vd
+4攻X2
+BS AAS
+adie x2
+. —— |
+
+=== images/seasonal/duan-xuan/梦•崩拳连崩3.png ===
+Title:
+(none)
+
+Body:
+5S Ea 二
+Tt Fs FF skK« Ass =
+— FF COE Ti 2S ee Or s—
+
+Full:
+OY
+AA
+ws
+AB
+_— ™~
+1
+了NA
+ios
+5IN X 2
+{FA PSK ABS
+—_—
+FaiE M2 x :
+
+Combined:
+5S Ea 二
+Tt Fs FF skK« Ass =
+— FF COE Ti 2S ee Or s—
+OY
+AA
+ws
+AB
+_— ™~
+1
+了NA
+ios
+5IN X 2
+{FA PSK ABS
+—_—
+FaiE M2 x :
+
+=== images/seasonal/duan-xuan/梦•崩拳连崩4.png ===
+Title:
+(none)
+
+Body:
+= Go az >< 2am
+TH FS FF s kK Aas = J; :
+wFwoza we oc aS C = =:
+BAw1 skK_ As SSS SS SS LF
+
+Full:
+木木中二
+月月
+any
+ce
+a
+NA，
+6攻X2
+使用下张朋产后妃
+加2攻X2 (Fhe
+上 留1张朋拳多追加
+/4
+
+Combined:
+= Go az >< 2am
+TH FS FF s kK Aas = J; :
+wFwoza we oc aS C = =:
+BAw1 skK_ As SSS SS SS LF
+木木中二
+月月
+any
+ce
+a
+NA，
+6攻X2
+使用下张朋产后妃
+加2攻X2 (Fhe
+上 留1张朋拳多追加
+/4
+
+=== images/seasonal/duan-xuan/梦•崩拳连崩5.png ===
+Title:
+(none)
+
+Body:
+< =~ a ar
+TT 户F FF sk As =} Je :
+We 2a Bes oc CUS Cc SE == -
+——— 2 S| .2_) > | 大
+
+Full:
+ie Tek a
+be
+De
+AB
+—_
+ti
+ce
+%
+9IN X 2
+"PF 5 ABS eB
+加2攻X2 (手牌每
+15K AA
+奶加
+LA，
+Rs 最多2次) y
+a
+
+Combined:
+< =~ a ar
+TT 户F FF sk As =} Je :
+We 2a Bes oc CUS Cc SE == -
+——— 2 S| .2_) > | 大
+ie Tek a
+be
+De
+AB
+—_
+ti
+ce
+%
+9IN X 2
+"PF 5 ABS eB
+加2攻X2 (手牌每
+15K AA
+奶加
+LA，
+Rs 最多2次) y
+a
+
+=== images/seasonal/duan-xuan/梦•朝气蓬勃.png ===
+Title:
+ewe
+
+Body:
+(none)
+
+Full:
+mn
+
+Combined:
+ewe
+mn
+
+=== images/seasonal/duan-xuan/梦•朝气蓬勃1.png ===
+Title:
+a
+— 3 -
+
+Body:
+Gxsz) (4 yn05>
+7S i ss 二
+a >
+
+Full:
+\
+op
+i —
+va
+6攻〈每加过
+Lie
+
+Combined:
+a
+— 3 -
+Gxsz) (4 yn05>
+7S i ss 二
+a >
+\
+op
+i —
+va
+6攻〈每加过
+Lie
+
+=== images/seasonal/duan-xuan/梦•朝气蓬勃2.png ===
+Title:
+CO, EES
+==s = _
+
+Body:
+Same (2S 90555
+7. FE SS SS |S
+
+Full:
+广一
+基地
+8攻 “每加过
+Lie
+
+Combined:
+CO, EES
+==s = _
+Same (2S 90555
+7. FE SS SS |S
+广一
+基地
+8攻 “每加过
+Lie
+
+=== images/seasonal/duan-xuan/梦•朝气蓬勃3.png ===
+Title:
+E 3 i ©...
+
+Body:
+卫 daD 工4z «CS wos
+卫 —P_Ss SSS =
+- Jy az +S
+
+Full:
+a
+广一
+‘o?
+10攻(每加过
+工技
+
+Combined:
+E 3 i ©...
+卫 daD 工4z «CS wos
+卫 —P_Ss SSS =
+- Jy az +S
+a
+广一
+‘o?
+10攻(每加过
+工技
+
+=== images/seasonal/duan-xuan/梦•朝气蓬勃4.png ===
+Title:
+a ee
+
+Body:
+一
+DPilibsise Be 一一
+eee eer «=~ C 24> Fo a=
+
+Full:
+AA
+yom + BO
+广一
+人三
+nimi |
+“wan es
+攻 (每加过
+1层气势多
+1攻)
+yy
+
+Combined:
+a ee
+一
+DPilibsise Be 一一
+eee eer «=~ C 24> Fo a=
+AA
+yom + BO
+广一
+人三
+nimi |
+“wan es
+攻 (每加过
+1层气势多
+1攻)
+yy
+
+=== images/seasonal/duan-xuan/梦•朝气蓬勃5.png ===
+Title:
+OOD
+== Le
+
+Body:
+Se
+= G2 eo Le SS
+Pilibsish Bes
+se =~ ae ee C 2 Jil
+SO eee 三一
+
+Full:
+AA
+1” SS
+广一
+人三
+to
+j加1气势
+1攻X2 (每加
+过1层气势多
+13)
+
+Combined:
+OOD
+== Le
+Se
+= G2 eo Le SS
+Pilibsish Bes
+se =~ ae ee C 2 Jil
+SO eee 三一
+AA
+1” SS
+广一
+人三
+to
+j加1气势
+1攻X2 (每加
+过1层气势多
+13)
+
+=== images/seasonal/duan-xuan/梦•气若悬河.png ===
+Title:
+c= —,
+
+Body:
+a —_
+- < _ : < 一一一-<
+_— | -
+
+Full:
+0
+»
+
+Combined:
+c= —,
+a —_
+- < _ : < 一一一-<
+_— | -
+0
+»
+
+=== images/seasonal/duan-xuan/梦•气若悬河1.png ===
+Title:
+(none)
+
+Body:
+ER 一
+— 卫-
+FS SSS SSE = CES
+
+Full:
+A
+BA lis.
+上一
+和
+72.
+=>»
+—
+地
+灵气+2
+气势+1
+持续2次: 攻击
+时先加1气势
+
+Combined:
+ER 一
+— 卫-
+FS SSS SSE = CES
+A
+BA lis.
+上一
+和
+72.
+=>»
+—
+地
+灵气+2
+气势+1
+持续2次: 攻击
+时先加1气势
+
+=== images/seasonal/duan-xuan/梦•气若悬河2.png ===
+Title:
+(none)
+
+Body:
+> — See, ee
+cae SS — ee ee
+
+Full:
+an
+LAA
+e.»)
+I ——y
+i.
+AS
+Re +2
+气势+]
+3次: 攻击
+时先加 hiss
+
+Combined:
+> — See, ee
+cae SS — ee ee
+an
+LAA
+e.»)
+I ——y
+i.
+AS
+Re +2
+气势+]
+3次: 攻击
+时先加 hiss
+
+=== images/seasonal/duan-xuan/梦•气若悬河3.png ===
+Title:
+一
+
+Body:
+人
+= 卫-
+
+Full:
+va
+A
+eo»,
+上一
+和
+AS
+—_
+有灵气+2
+气势+1
+4次: 攻击
+时先加 ees
+Sar
+
+Combined:
+一
+人
+= 卫-
+va
+A
+eo»,
+上一
+和
+AS
+—_
+有灵气+2
+气势+1
+4次: 攻击
+时先加 ees
+Sar
+
+=== images/seasonal/duan-xuan/梦•气若悬河4.png ===
+Title:
+— ————
+
+Body:
+-= 过关2一卫-
+2 FS Sees Se = OES
+
+Full:
+A
+SA
+a
+<
+gad
+>
+_.*
+= -
+二-
+<e’
+ae
+气势+1
+持续5次: 攻击;
+FIAT y)
+|
+
+Combined:
+— ————
+-= 过关2一卫-
+2 FS Sees Se = OES
+A
+SA
+a
+<
+gad
+>
+_.*
+= -
+二-
+<e’
+ae
+气势+1
+持续5次: 攻击;
+FIAT y)
+|
+
+=== images/seasonal/duan-xuan/梦•气若悬河5.png ===
+Title:
+(none)
+
+Body:
+ER 一二
+—i—
+eS =
+OS Ee ES
+
+Full:
+AA
+S
+Su
+En
+廊下
+和
+yo
+>»
+—
+Os
+RT+3
++1
+) 持续: 每次攻
+abt MIT
+ge ees 2s &
+Wi
+
+Combined:
+ER 一二
+—i—
+eS =
+OS Ee ES
+AA
+S
+Su
+En
+廊下
+和
+yo
+>»
+—
+Os
+RT+3
++1
+) 持续: 每次攻
+abt MIT
+ge ees 2s &
+Wi
+
+=== images/seasonal/duan-xuan/梦•灵玄迷踪步.png ===
+Title:
+ee <<a
+
+Body:
+= mm
+c= > |
+
+Full:
+\y
+
+Combined:
+ee <<a
+= mm
+c= > |
+\y
+
+=== images/seasonal/duan-xuan/梦•灵玄迷踪步1.png ===
+Title:
+SS =e eee
+
+Body:
+Al -
+2 ER 一一 一
+一一二 - es
+ee — -ES IE -二= 6
+三三 Se Sse tS Se es es
+全
+
+Full:
+木木
+ZU
+动
+iter
+A
+灵气+1
+生命+2
+ERR
+侍
+二|
+负面状
+aS HAWKS
+a
+
+Combined:
+SS =e eee
+Al -
+2 ER 一一 一
+一一二 - es
+ee — -ES IE -二= 6
+三三 Se Sse tS Se es es
+全
+木木
+ZU
+动
+iter
+A
+灵气+1
+生命+2
+ERR
+侍
+二|
+负面状
+aS HAWKS
+a
+
+=== images/seasonal/duan-xuan/梦•灵玄迷踪步2.png ===
+Title:
+ESS ES —(—S h /!)————
+
+Body:
+2 | a
+2 ma +
+— —— 1 - ee | :
+ee — oe ee
+SS Se Ss tS Se ee Les
+二
+
+Full:
+木木
+A he
+1
+(
+ap
+(Ww
+灵气+1
+生命+4
+ERR
+侍
+负面状态
+司机全 也获得
+es «
+a
+
+Combined:
+ESS ES —(—S h /!)————
+2 | a
+2 ma +
+— —— 1 - ee | :
+ee — oe ee
+SS Se Ss tS Se ee Les
+二
+木木
+A he
+1
+(
+ap
+(Ww
+灵气+1
+生命+4
+ERR
+侍
+负面状态
+司机全 也获得
+es «
+a
+
+=== images/seasonal/duan-xuan/梦•灵玄迷踪步3.png ===
+Title:
+aa一
+
+Body:
+ER 一 一
+一
+$S SSS 二 || SS 1] SS kk
+SS 22 Se. tT > Se ea es
+全
+
+Full:
+与十、
+ae Ra
+a e4
+TARA
+NS
+Le
+if
+Zz
+Re
+7J\
+i
+BP |
+灵气+1
+Aft
++6
+合内
+首次获得
+负面状态
+对方
+也获得
+后令
+eo es @
+1层
+
+Combined:
+aa一
+ER 一 一
+一
+$S SSS 二 || SS 1] SS kk
+SS 22 Se. tT > Se ea es
+全
+与十、
+ae Ra
+a e4
+TARA
+NS
+Le
+if
+Zz
+Re
+7J\
+i
+BP |
+灵气+1
+Aft
++6
+合内
+首次获得
+负面状态
+对方
+也获得
+后令
+eo es @
+1层
+
+=== images/seasonal/duan-xuan/梦•灵玄迷踪步4.png ===
+Title:
+二aa
+
+Body:
+三 全一2一
+一一
+FS SSS 二 [= FF — wt 2 — as 6
+| Tae 2 2 Se TS Se eee
+—— ee eee ee Oe ee ae
+
+Full:
+AA
+S
+K
+Cd
+~.4
+rw
+=
+> .
+BP
+4
+灵气+1
+.自身回合内
+BY So oRdF iS GIA
+7态后令对方也获得
+lis
+-
+as
+yy
+y,
+
+Combined:
+二aa
+三 全一2一
+一一
+FS SSS 二 [= FF — wt 2 — as 6
+| Tae 2 2 Se TS Se eee
+—— ee eee ee Oe ee ae
+AA
+S
+K
+Cd
+~.4
+rw
+=
+> .
+BP
+4
+灵气+1
+.自身回合内
+BY So oRdF iS GIA
+7态后令对方也获得
+lis
+-
+as
+yy
+y,
+
+=== images/seasonal/duan-xuan/梦•灵玄迷踪步5.png ===
+Title:
+aas、
+
+Body:
+二
+— 一区一二
+= Ss SOLE) SS I
+Be 2 2 SE TS CE ee
+一
+
+Full:
+AA
+S
+rm |
+4
+1
+Te
+<
+2
+爱人气+3
+生命+2
+a
+om
+前2次获得负
+面
+SSH A DRG
+ryr#spers»prfeypsgy?fy
+HZ
+一
+
+Combined:
+aas、
+二
+— 一区一二
+= Ss SOLE) SS I
+Be 2 2 SE TS CE ee
+一
+AA
+S
+rm |
+4
+1
+Te
+<
+2
+爱人气+3
+生命+2
+a
+om
+前2次获得负
+面
+SSH A DRG
+ryr#spers»prfeypsgy?fy
+HZ
+
+=== images/seasonal/duan-xuan/梦•磅礴之势.png ===
+Title:
+“i a a
+
+Body:
+(none)
+
+Full:
+人
+
+Combined:
+“i a a
+人
+
+=== images/seasonal/duan-xuan/梦•磅礴之势1.png ===
+Title:
+2 GN eae
+
+Body:
+= 5 BS 一 三2一
+ta e+ >
+
+Full:
+AA
+a-
+4
+若有有灵气或气
+体魄12
+生命+6
+
+Combined:
+2 GN eae
+= 5 BS 一 三2一
+ta e+ >
+AA
+a-
+4
+若有有灵气或气
+体魄12
+生命+6
+
+=== images/seasonal/duan-xuan/梦•磅礴之势2.png ===
+Title:
+2
+
+Body:
+=二 = BS 一二 SE
+a
+
+Full:
+x |
+ug
+|
+若有灵气或气
+体魄13
+
+Combined:
+2
+=二 = BS 一二 SE
+a
+x |
+ug
+|
+若有灵气或气
+体魄13
+
+=== images/seasonal/duan-xuan/梦•磅礴之势3.png ===
+Title:
+(none)
+
+Body:
+2S 5 Best 三过-一
+as wes
+
+Full:
+—_
+ug
+zi
+若有灵气或气
+体魄14
++ fp
+os
+
+Combined:
+2S 5 Best 三过-一
+as wes
+—_
+ug
+zi
+若有灵气或气
+体魄14
++ fp
+os
+
+=== images/seasonal/duan-xuan/梦•磅礴之势4.png ===
+Title:
+(none)
+
+Body:
+>
+aa s
+| Sa
+Oo se 0
+
+Full:
+AA
+Rg BY
+ug
+身法+5
+耗尽气势，
+| re Ce
+% eo ses 2& &.
+命
+/4
+
+Combined:
+>
+aa s
+| Sa
+Oo se 0
+AA
+Rg BY
+ug
+身法+5
+耗尽气势，
+| re Ce
+% eo ses 2& &.
+命
+/4
+
+=== images/seasonal/duan-xuan/梦•磅礴之势5.png ===
+Title:
+(none)
+
+Body:
+=
+-ES 一:
+>>
+D> 4-6] 0
+
+Full:
+AA
+Rag er RO
+多一
+ug
+Zia
+A
+身法+5
+耗尽气势，每
+点加2体魄和
+命
+
+Combined:
+=
+-ES 一:
+>>
+D> 4-6] 0
+AA
+Rag er RO
+多一
+ug
+Zia
+A
+身法+5
+耗尽气势，每
+点加2体魄和
+命
+
+=== images/seasonal/duan-xuan/梦•荷重前行.png ===
+Title:
+Le
+
+Body:
+<> a
+
+Full:
+a
+
+Combined:
+Le
+<> a
+a
+
+=== images/seasonal/duan-xuan/梦•荷重前行1.png ===
+Title:
+(none)
+
+Body:
+EDP 一一六 C a> = 1 ££
+7G Deo SS SS CS TF
+34s C#}
+
+Full:
+条
+加|
+NF
+»
+BY
+y
+\¢ 所
+防+7 〈每有1层
+负面状态多加
+
+Combined:
+EDP 一一六 C a> = 1 ££
+7G Deo SS SS CS TF
+34s C#}
+条
+加|
+NF
+»
+BY
+y
+\¢ 所
+防+7 〈每有1层
+负面状态多加
+
+=== images/seasonal/duan-xuan/梦•荷重前行2.png ===
+Title:
+一一
+一 ==
+
+Body:
+IE DC
+1 5] ss Pes “DS SS 三
+——— a>
+
+Full:
+条
+加|
+AS
+p
+BY
+外 *
+防+10 (每有
+1层负面状态多
+. —— |
+
+Combined:
+一一
+一 ==
+IE DC
+1 5] ss Pes “DS SS 三
+——— a>
+条
+加|
+AS
+p
+BY
+外 *
+防+10 (每有
+1层负面状态多
+. —— |
+
+=== images/seasonal/duan-xuan/梦•荷重前行3.png ===
+Title:
+Pe |
+
+Body:
+ER了 三=
+1 FE -Ce ES “DS SS 三
+Fo3 es >
+
+Full:
+ae ak
+A
+{AJ
+AS
+We
+BY
+ca
+防+13 (每有
+Bi og
+oe @
+
+Combined:
+Pe |
+ER了 三=
+1 FE -Ce ES “DS SS 三
+Fo3 es >
+ae ak
+A
+{AJ
+AS
+We
+BY
+ca
+防+13 (每有
+Bi og
+oe @
+
+=== images/seasonal/duan-xuan/梦•荷重前行4.png ===
+Title:
+(none)
+
+Body:
+上 a >
+8 > ia Bs 所 == =, — DS
+Me ES |S FBO 41 Bs YD
+— SSeS 1 SS SE BE
+eT . Ss Se sek SE 47!
+
+Full:
+AA
+F
+a
+{Ay
+BY
+全
+防+16 (每有1层负
+面状态 加1
+始
+时， 2 oe OO |
+so a fs a&
+
+Combined:
+上 a >
+8 > ia Bs 所 == =, — DS
+Me ES |S FBO 41 Bs YD
+— SSeS 1 SS SE BE
+eT . Ss Se sek SE 47!
+AA
+F
+a
+{Ay
+BY
+全
+防+16 (每有1层负
+面状态 加1
+始
+时， 2 oe OO |
+so a fs a&
+
+=== images/seasonal/duan-xuan/梦•荷重前行5.png ===
+Title:
+=
+a
+oo =
+
+Body:
+ee —
+Ee +31 S 三三了 |S 1. ORES:
+ee Ee SSS SS WHO > Bs YD
+ee =F = 1 = SFE ae
+mT ~ Ss Se sek SE 47 |
+
+Full:
+xX
+1可 Fy
+= 局=届时
+BY
+Pay
+防+16 (每有1层负
+面状态多加2防)
+始
+时，目然减站的防
+&
+Ap
+
+Combined:
+=
+a
+oo =
+ee —
+Ee +31 S 三三了 |S 1. ORES:
+ee Ee SSS SS WHO > Bs YD
+ee =F = 1 = SFE ae
+mT ~ Ss Se sek SE 47 |
+xX
+1可 Fy
+= 局=届时
+BY
+Pay
+防+16 (每有1层负
+面状态多加2防)
+始
+时，目然减站的防
+&
+Ap
+
+=== images/seasonal/duan-xuan/梦•迎风掌.png ===
+Title:
+ae
+
+Body:
+(none)
+
+Full:
+‘
+| oe
+ey /
+
+Combined:
+ae
+‘
+| oe
+ey /
+
+=== images/seasonal/duan-xuan/梦•迎风掌1.png ===
+Title:
+- — | a 一
+_=> tm S— SS
+
+Body:
+3 =~ 二一 了
+二 DH a= BW BINSE
+hn ae
+
+Full:
+al
+0
+ij
+以
+Tc一31
+MF
+ve’
+3攻X2
+已加过防则扎
+加3
+
+Combined:
+- — | a 一
+_=> tm S— SS
+3 =~ 二一 了
+二 DH a= BW BINSE
+hn ae
+al
+0
+ij
+以
+Tc一31
+MF
+ve’
+3攻X2
+已加过防则扎
+加3
+
+=== images/seasonal/duan-xuan/梦•迎风掌2.png ===
+Title:
+- — | a 一
+———— S— SS
+
+Body:
+[=有EL
+- hn Jase
+
+Full:
+2
+&
+ij
+以
+Tc一31
+TAR
+SS
+4政X2
+已加过防则扎
+加3
+. —— |
+
+Combined:
+- — | a 一
+———— S— SS
+[=有EL
+- hn Jase
+2
+&
+ij
+以
+Tc一31
+TAR
+SS
+4政X2
+已加过防则扎
+加3
+. —— |
+
+=== images/seasonal/duan-xuan/梦•迎风掌3.png ===
+Title:
+——— % a 一
+一 S— SS
+
+Body:
+[=
+- nn ae
+
+Full:
+A
+UL
+WY
+xl
+fc一31
+®
+5IN X 2
+已加过防则扎
+加3
+
+Combined:
+——— % a 一
+一 S— SS
+[=
+- nn ae
+A
+UL
+WY
+xl
+fc一31
+®
+5IN X 2
+已加过防则扎
+加3
+
+=== images/seasonal/duan-xuan/梦•迎风掌4.png ===
+Title:
+人 ee 一
+一= S— SS
+
+Body:
+sme 二一 >
+下 Fo a> BS, BitjsEe
+nS 一一一
+
+Full:
+有
+S
+AA
+lf
+UL
+\
+xl
+Tc一31
+GF
+=
+合
+5攻X2
+已加过防则扎
+加3攻X2
+
+Combined:
+人 ee 一
+一= S— SS
+sme 二一 >
+下 Fo a> BS, BitjsEe
+nS 一一一
+有
+S
+AA
+lf
+UL
+\
+xl
+Tc一31
+GF
+=
+合
+5攻X2
+已加过防则扎
+加3攻X2
+
+=== images/seasonal/duan-xuan/梦•迎风掌5.png ===
+Title:
+人 —
+
+Body:
+> eee
+4a ”二<一 ]
+二 G6. BS S33 SF
+———— 5a? ee 一和一
+
+Full:
+A
+iD |
+xl
+t=}
+每 有 pint 加
+
+Combined:
+人 —
+> eee
+4a ”二<一 ]
+二 G6. BS S33 SF
+———— 5a? ee 一和一
+A
+iD |
+xl
+t=}
+每 有 pint 加
+
+=== images/seasonal/duan-xuan/梦•锻拳1.png ===
+Title:
+=外 J 于-
+SS PP “各 一 ==
+= , i eS
+
+Body:
+二
+下 一了
+Tt FAS F 5K 2? Bt 2
+> a= Se
+
+Full:
+D> ——
+A
+Fil
+TEX
+o
+6攻
++2
+使用下张牌时加
+此牌算作朋拳
+
+Combined:
+=外 J 于-
+SS PP “各 一 ==
+= , i eS
+二
+下 一了
+Tt FAS F 5K 2? Bt 2
+> a= Se
+D> ——
+A
+Fil
+TEX
+o
+6攻
++2
+使用下张牌时加
+此牌算作朋拳
+
+=== images/seasonal/duan-xuan/梦•锻拳2.png ===
+Title:
+(none)
+
+Body:
+Ss zz
+4 se +: =>
+Ts FAS FF 5K _ 2? Bt 2
+: > a= Se
+
+Full:
+(人
+木林
+可了
+TEX
+Os
+8X
++2
+使用下张牌时加
+此牌算作毅拳
+
+Combined:
+Ss zz
+4 se +: =>
+Ts FAS FF 5K _ 2? Bt 2
+: > a= Se
+(人
+木林
+可了
+TEX
+Os
+8X
++2
+使用下张牌时加
+此牌算作毅拳
+
+=== images/seasonal/duan-xuan/梦•锻拳3.png ===
+Title:
+(none)
+
+Body:
+2 swe =~ 4
+4 se: —
+Tt FAS F- 5K 122? St 2
+: 2? <a Se
+
+Full:
+一人
+木林
+个上几
+TEX
+>
+10攻
++2
+使用下张牌时加
+此牌算作衣拳
+
+Combined:
+2 swe =~ 4
+4 se: —
+Tt FAS F- 5K 122? St 2
+: 2? <a Se
+一人
+木林
+个上几
+TEX
+>
+10攻
++2
+使用下张牌时加
+此牌算作衣拳
+
+=== images/seasonal/duan-xuan/梦•锻拳4.png ===
+Title:
+(none)
+
+Body:
+a 了
+EEC GE人7人
+f= b= 4 C_F Stk 3 © B47 |
+
+Full:
+2
+A
+Fil
+TEX
+5IN X 2
+py 击伤值40%的体
+(下张
+UES
+he
+此效果
+)
+OLS
+
+Combined:
+a 了
+EEC GE人7人
+f= b= 4 C_F Stk 3 © B47 |
+2
+A
+Fil
+TEX
+5IN X 2
+py 击伤值40%的体
+(下张
+UES
+he
+此效果
+)
+OLS
+
+=== images/seasonal/duan-xuan/梦•锻拳5.png ===
+Title:
+= eo ——
+
+Body:
+二<二之一 一一
+SB as eC
+230 Ss 1S 1S AO%sc HIF
+se € sk 3 22S)
+
+Full:
+2 | x
+A
+个人几
+TEX
+8 IN X 2
+加击伤值40%的体
+Be CR SKA BAe
+此效果
+eh? FAR
+ys
+
+Combined:
+= eo ——
+二<二之一 一一
+SB as eC
+230 Ss 1S 1S AO%sc HIF
+se € sk 3 22S)
+2 | x
+A
+个人几
+TEX
+8 IN X 2
+加击伤值40%的体
+Be CR SKA BAe
+此效果
+eh? FAR
+ys
+
+=== images/seasonal/duan-xuan/梦•锻神开海.png ===
+Title:
+— ———
+ae SR - ~
+
+Body:
+_ a - 7
+- : - . Si =
+a, LY?
+- 4 “a —
+
+Full:
+站所
+Mu
+
+Combined:
+— ———
+ae SR - ~
+_ a - 7
+- : - . Si =
+a, LY?
+- 4 “a —
+站所
+Mu
+
+=== images/seasonal/duan-xuan/梦•锻神开海1.png ===
+Title:
+(none)
+
+Body:
+上 5 Ez
+Bs, = —
+SS ww: > ee I
+
+Full:
+PX
+Gy Bs
+J 94!
+TEX
+/
+,
+(iow
+伸
+<
+每
+\
+攻
+B+
+魄+2
+
+Combined:
+上 5 Ez
+Bs, = —
+SS ww: > ee I
+PX
+Gy Bs
+J 94!
+TEX
+/
+,
+(iow
+伸
+<
+每
+\
+攻
+B+
+魄+2
+
+=== images/seasonal/duan-xuan/梦•锻神开海2.png ===
+Title:
+(none)
+
+Body:
+和 SG 工4
+2
+: 一
+
+Full:
+人
+条
+ss
+gpa /
+7
+6X
+防+2
+体魄+3
+. —— |
+
+Combined:
+和 SG 工4
+2
+: 一
+人
+条
+ss
+gpa /
+7
+6X
+防+2
+体魄+3
+. —— |
+
+=== images/seasonal/duan-xuan/梦•锻神开海3.png ===
+Title:
+ae Ds SS 一-
+
+Body:
+7 Az
+Bs =a —
+: a Ge ss
+
+Full:
+A
+a |
+(559
+Fil
+TEX
+7
+伸
+een
+4 a
+Yf
+I
+\
+7攻
+防+2
+A+4
+eo es @
+
+Combined:
+ae Ds SS 一-
+7 Az
+Bs =a —
+: a Ge ss
+A
+a |
+(559
+Fil
+TEX
+7
+伸
+een
+4 a
+Yf
+I
+\
+7攻
+防+2
+A+4
+eo es @
+
+=== images/seasonal/duan-xuan/梦•锻神开海4.png ===
+Title:
+一一 年 =O —E———————— 一
+
+Body:
+之 工人2
+Es, +=
+4: e+ 1
+-全 SS 38 oS. SZ OPEL OB -
+
+Full:
+AA
+| S
+> ss
+n J
+,
+伸
+ANNE
+ee
+Yj;
+.
+i
+有
+攻
+Ba+
+Ag+1
+每有1受气此牌多。
+aX. LB #01 0 多
+
+Combined:
+一一 年 =O —E———————— 一
+之 工人2
+Es, +=
+4: e+ 1
+-全 SS 38 oS. SZ OPEL OB -
+AA
+| S
+> ss
+n J
+,
+伸
+ANNE
+ee
+Yj;
+.
+i
+有
+攻
+Ba+
+Ag+1
+每有1受气此牌多。
+aX. LB #01 0 多
+
+=== images/seasonal/duan-xuan/梦•锻神开海5.png ===
+Title:
+(none)
+
+Body:
+eee
+: Bes +S
+: fos: e+: =>
+= oe oe — ee Sel ee
+
+Full:
+S
+AA
+PM
+Gy Bs
+n l/h A
+(iow
+,
+伸
+ek,
+i
+用|
+攻
+Ba+
+体魄+2
+每有1受气此牌多
+中攻、1防和1体
+本
+oe
+
+Combined:
+eee
+: Bes +S
+: fos: e+: =>
+= oe oe — ee Sel ee
+S
+AA
+PM
+Gy Bs
+n l/h A
+(iow
+,
+伸
+ek,
+i
+用|
+攻
+Ba+
+体魄+2
+每有1受气此牌多
+中攻、1防和1体
+本
+oe
+
+=== images/seasonal/duan-xuan/梦•锻筋.png ===
+Title:
+_
+
+Body:
+> “= -
+一
+7
+
+Full:
+(none)
+
+Combined:
+_
+> “= -
+一
+7
+
+=== images/seasonal/duan-xuan/梦•锻筋1.png ===
+Title:
+|一
+
+Body:
+上 4: se +: >
+Es +7
+
+Full:
+“fs
+TEX
+eS
+AD
+ae
+Os
+tte?
+防+7
+
+Combined:
+|一
+上 4: se +: >
+Es +7
+“fs
+TEX
+eS
+AD
+ae
+Os
+tte?
+防+7
+
+=== images/seasonal/duan-xuan/梦•锻筋2.png ===
+Title:
+一
+
+Body:
+全
+: Bs +3 0oO0
+
+Full:
+AA
+$F
+的
+ee
+Oy
+{4 +2
+防+10
+. —— |
+
+Combined:
+一
+全
+: Bs +3 0oO0
+AA
+$F
+的
+ee
+Oy
+{4 +2
+防+10
+. —— |
+
+=== images/seasonal/duan-xuan/梦•锻筋3.png ===
+Title:
+(none)
+
+Body:
+上 tT: 一
+
+Full:
+~
+eS
+“fr
+TEX
+Vas
+f
+ay
+ty
+{4 +3
+防+13
+ee @
+
+Combined:
+上 tT: 一
+~
+eS
+“fr
+TEX
+Vas
+f
+ay
+ty
+{4 +3
+防+13
+ee @
+
+=== images/seasonal/duan-xuan/梦•锻筋4.png ===
+Title:
+(none)
+
+Body:
+<
+下2 =sa+ =>
+wa = Sse 一 BPR
+tv > Seo BS
+
+Full:
+Dare
+oe prone. 5
+“|
+N
+A
+“fr
+i?
+TEX
+AAA-
+—_— i
+AY)
+体魄+3
+加生命上限
+12%的防
+/
+
+Combined:
+<
+下2 =sa+ =>
+wa = Sse 一 BPR
+tv > Seo BS
+Dare
+oe prone. 5
+“|
+N
+A
+“fr
+i?
+TEX
+AAA-
+—_— i
+AY)
+体魄+3
+加生命上限
+12%的防
+/
+
+=== images/seasonal/duan-xuan/梦•锻筋5.png ===
+Title:
+一
+
+Body:
+» en
+4: e+ 4
+e nea le Saas _ ECB
+E Got ee BS
+
+Full:
+NAN
+A
+Ys
+个人几
+Ar
+TEX
+—
+an
+月力
+体魄+4
+DN tp E BR
+16%的防
+Yr »yryr#gyperef#psry *y y
+
+Combined:
+一
+» en
+4: e+ 4
+e nea le Saas _ ECB
+E Got ee BS
+NAN
+A
+Ys
+个人几
+Ar
+TEX
+—
+an
+月力
+体魄+4
+DN tp E BR
+16%的防
+Yr »yryr#gyperef#psry *y y
+
+=== images/seasonal/five-element/梦•五行刺.png ===
+Title:
+ee
+
+Body:
++
+
+Full:
+\
+
+Combined:
+ee
++
+\
+
+=== images/seasonal/five-element/梦•五行刺1.png ===
+Title:
+一一一
+ee
+—— = a
+
+Body:
+上 二
+EF =8B8 oe es 55 34
+— = as ws lite ees so
+
+Full:
+(A
+AA
+1T
+pl
+tachi aed
+五行加1防
+
+Combined:
+一一一
+ee
+—— = a
+上 二
+EF =8B8 oe es 55 34
+— = as ws lite ees so
+(A
+AA
+1T
+pl
+tachi aed
+五行加1防
+
+=== images/seasonal/five-element/梦•五行刺2.png ===
+Title:
+—
+— _— O——
+一一 Se
+
+Body:
+和 GS ze
+一三着二 eS ee Ee lj
+. _— -= . slates: st
+
+Full:
+A
+1T
+Rl
+ON
+6X
+卡组中每有1种
+五行加2防
+
+Combined:
+—
+— _— O——
+一一 Se
+和 GS ze
+一三着二 eS ee Ee lj
+. _— -= . slates: st
+A
+1T
+Rl
+ON
+6X
+卡组中每有1种
+五行加2防
+
+=== images/seasonal/five-element/梦•五行刺3.png ===
+Title:
+一
+= 一 = 一一
+
+Body:
+2 二 工4z
+ee
+
+Full:
+A
+1TJ
+pl
+SS
+6攻
+卡组中每有1种
+五行加3防
+
+Combined:
+一
+= 一 = 一一
+2 二 工4z
+ee
+A
+1TJ
+pl
+SS
+6攻
+卡组中每有1种
+五行加3防
+
+=== images/seasonal/five-element/梦•五行刺4.png ===
+Title:
+一
+= — = 一一
+
+Body:
+Ss 3S =
+- 3 _--— = eS ER :
+4S BD BS? 二大 7 卫 Be
+2 ass - oS TS SVE
+
+Full:
+SN
+ae
+{J
+x
+\
+zl
+|
+.
+“' 再次行动
+每用过1张任意五
+行的牌融加1防
+被动: 五行效果 :
+QUART RR
+3
+-
+Sy
+
+Combined:
+一
+= — = 一一
+Ss 3S =
+- 3 _--— = eS ER :
+4S BD BS? 二大 7 卫 Be
+2 ass - oS TS SVE
+SN
+ae
+{J
+x
+\
+zl
+|
+.
+“' 再次行动
+每用过1张任意五
+行的牌融加1防
+被动: 五行效果 :
+QUART RR
+3
+-
+Sy
+
+=== images/seasonal/five-element/梦•五行刺5.png ===
+Title:
+—
+二一 和
+=== ————
+
+Body:
+ee
+SS 552 TST Sa
+-全天 JE ee eS oS ES -
+7 BY A SA 2 Bs
+es 二 —- —_ — Se
+
+Full:
+NA
+A
+XL
+Rl
+再次行动
+每用过1张任意五
+行的牌融加2防
+被动: 五行效果
+e VAR FRA
+Yr »yryr#gyperef#psry *y y
+ys
+
+Combined:
+—
+二一 和
+=== ————
+ee
+SS 552 TST Sa
+-全天 JE ee eS oS ES -
+7 BY A SA 2 Bs
+es 二 —- —_ — Se
+NA
+A
+XL
+Rl
+再次行动
+每用过1张任意五
+行的牌融加2防
+被动: 五行效果
+e VAR FRA
+Yr »yryr#gyperef#psry *y y
+ys
+
+=== images/seasonal/five-element/梦•五行天髓诀1.png ===
+Title:
+~~ :
+
+Body:
+cL. Ee aa A hE BR +:
+41 Se = t= F
+
+Full:
+“4
+mM \
+f =
+{®
+17°
+ut
+IRD
+生命 及上限4
+FEN SY TFS Ka
+/7了一
+/人1了
+动
+
+Combined:
+~~ :
+cL. Ee aa A hE BR +:
+41 Se = t= F
+“4
+mM \
+f =
+{®
+17°
+ut
+IRD
+生命 及上限4
+FEN SY TFS Ka
+/7了一
+/人1了
+动
+
+=== images/seasonal/five-element/梦•五行天髓诀2.png ===
+Title:
+(none)
+
+Body:
+一
+1 Se = t= F
+
+Full:
+\
+"4
+|
+FL?
+=)
+ve
+aby: rs
+生命及上限+4
+受印或受阵后
+
+Combined:
+一
+1 Se = t= F
+\
+"4
+|
+FL?
+=)
+ve
+aby: rs
+生命及上限+4
+受印或受阵后
+
+=== images/seasonal/five-element/梦•五行天髓诀3.png ===
+Title:
+人0一
+~~ =
+
+Body:
+=>sor = TSF
+B22 Sp =e Se BS JE
+SS See SS Se
+
+Full:
+S74
+ee
+一|
+Fl?
+©)
+1T
+ut
+eS;
+Pye
+持续2次: 使用
+mr
+»
+) REN oY RE
+
+Combined:
+人0一
+~~ =
+=>sor = TSF
+B22 Sp =e Se BS JE
+SS See SS Se
+S74
+ee
+一|
+Fl?
+©)
+1T
+ut
+eS;
+Pye
+持续2次: 使用
+mr
+»
+) REN oY RE
+
+=== images/seasonal/five-element/梦•五行天髓诀4.png ===
+Title:
+一
+
+Body:
+Soar = 人下 户E3 三
+JE Se BSS 5S Ss =
+es = DS SS I
+二 ee OO ee TENN SS a _ See
+
+Full:
+—_
+AA
+7
+S
+|
+?
+五 )
+/
+2
+17 ¥
+zs
+ved
+Ea
+\
+印 ERE
+$522)
+战斗结束时 F
+减1修为获得1张五
+X
+RED
+D/5
+
+Combined:
+一
+Soar = 人下 户E3 三
+JE Se BSS 5S Ss =
+es = DS SS I
+二 ee OO ee TENN SS a _ See
+—_
+AA
+7
+S
+|
+?
+五 )
+/
+2
+17 ¥
+zs
+ved
+Ea
+\
+印 ERE
+$522)
+战斗结束时 F
+减1修为获得1张五
+X
+RED
+D/5
+
+=== images/seasonal/five-element/梦•五行天髓诀5.png ===
+Title:
+————S = :
+
+Body:
+= TS FB 2 £5:
+eS — Se SS | 8 -一 活一二
+ie as 二 eet = 255 SE I
+Wek 卫 tS Sa SS tS 1 St
+
+Full:
+木木月
+S
+|
+号 -
+何
+ut
+“Y
+ES;
+Fa Ls apa
+被动: 战斗结束时
+TLE FI IR 1 215k
+五行:
+‘ED
+多
+
+Combined:
+————S = :
+= TS FB 2 £5:
+eS — Se SS | 8 -一 活一二
+ie as 二 eet = 255 SE I
+Wek 卫 tS Sa SS tS 1 St
+木木月
+S
+|
+号 -
+何
+ut
+“Y
+ES;
+Fa Ls apa
+被动: 战斗结束时
+TLE FI IR 1 215k
+五行:
+‘ED
+多
+
+=== images/seasonal/five-element/梦•土灵断崖.png ===
+Title:
+— —— ll
+
+Body:
+(none)
+
+Full:
+N
+
+Combined:
+— —— ll
+N
+
+=== images/seasonal/five-element/梦•土灵断崖1.png ===
+Title:
+(none)
+
+Body:
+Ss
+Ss 4 Bs sek EE 一
+a ae Ee =
+
+Full:
+条
+E=
+防+8
+目身防减站 ，
+a
+
+Combined:
+Ss
+Ss 4 Bs sek EE 一
+a ae Ee =
+条
+E=
+防+8
+目身防减站 ，
+a
+
+=== images/seasonal/five-element/梦•土灵断崖2.png ===
+Title:
+(none)
+
+Body:
+IE 一 卫-_《D?
+SS = BS eS 二
+ee as BS ee 天
+
+Full:
+“3
+条
+“tf
+|E=
+o>
+防+10
+peor shee
+[_ — |
+
+Combined:
+IE 一 卫-_《D?
+SS = BS eS 二
+ee as BS ee 天
+“3
+条
+“tf
+|E=
+o>
+防+10
+peor shee
+[_ — |
+
+=== images/seasonal/five-element/梦•土灵断崖3.png ===
+Title:
+(none)
+
+Body:
+= Ss 一上
+SS 5S BS ye 三二二
+SS SK 1 SS 本会二 大
+
+Full:
+A
+tal
+os
+防+12
+BS Bain ，
+每减1点
+=I
+eo we @
+
+Combined:
+= Ss 一上
+SS 5S BS ye 三二二
+SS SK 1 SS 本会二 大
+A
+tal
+os
+防+12
+BS Bain ，
+每减1点
+=I
+eo we @
+
+=== images/seasonal/five-element/梦•土灵断崖4.png ===
+Title:
+(none)
+
+Body:
+ee
+si > 28 8 Ss SS Bk
+-有 SS ews ite eS -
+
+Full:
+AA
+j=
+eT
+防+10
+目身防减半 ，
+| 3 yay Fa
+12
+”1伤害并加1生
+.
+5p ap CPR
+ess & &
+
+Combined:
+ee
+si > 28 8 Ss SS Bk
+-有 SS ews ite eS -
+AA
+j=
+eT
+防+10
+目身防减半 ，
+| 3 yay Fa
+12
+”1伤害并加1生
+.
+5p ap CPR
+ess & &
+
+=== images/seasonal/five-element/梦•土灵断崖5.png ===
+Title:
+(none)
+
+Body:
+99 OEE
+< Sse Ss
+ess = OS ys EE _
+2 ES SS BS
+4 fo Ss SEO HE
+
+Full:
+a
+SS
+|
+5a
+4 ai
+fT
+|E=
+防+15
+目身防减站，
+#3 tl Fae AY
+.工伤害并加1生
+命及上限
+
+Combined:
+99 OEE
+< Sse Ss
+ess = OS ys EE _
+2 ES SS BS
+4 fo Ss SEO HE
+a
+SS
+|
+5a
+4 ai
+fT
+|E=
+防+15
+目身防减站，
+#3 tl Fae AY
+.工伤害并加1生
+命及上限
+
+=== images/seasonal/five-element/梦•土灵绝壁.png ===
+Title:
+= 2 ——..
+
+Body:
+es=
+
+Full:
+ae
+
+Combined:
+= 2 ——..
+es=
+ae
+
+=== images/seasonal/five-element/梦•土灵绝壁1.png ===
+Title:
+4 EE —_—
+
+Body:
+有
+一二四=
+-2 es
+
+Full:
+tA
+条
+yy
+7
+|
+和@
+Yaa
+a
+“= =
+—
+K
+= 1
+绝
+b+
+. sf,
+防+6
+下回合开
+Qo As
+时
+加4
+
+Combined:
+4 EE —_—
+有
+一二四=
+-2 es
+tA
+条
+yy
+7
+|
+和@
+Yaa
+a
+“= =
+—
+K
+= 1
+绝
+b+
+. sf,
+防+6
+下回合开
+Qo As
+时
+加4
+
+=== images/seasonal/five-element/梦•土灵绝壁2.png ===
+Title:
+OO
+ee SS
+
+Body:
+Ee +S
+SF &] SS 3+ 25S a;
+Hoi Gm Bs
+
+Full:
+一一
+条
+tA
+yy
+7
+f
+, @
+> A
+» 7”
+—
+KK
+绝，
+b+
+VW
+ve?
+防+8
+下回合开
+go As
+时
+加6
+. —— |
+
+Combined:
+OO
+ee SS
+Ee +S
+SF &] SS 3+ 25S a;
+Hoi Gm Bs
+一一
+条
+tA
+yy
+7
+f
+, @
+> A
+» 7”
+—
+KK
+绝，
+b+
+VW
+ve?
+防+8
+下回合开
+go As
+时
+加6
+. —— |
+
+=== images/seasonal/five-element/梦•土灵绝壁3.png ===
+Title:
+(none)
+
+Body:
+IE -了 D
+SF eS = ae
+ws ee
+
+Full:
+i es
+6A
+A
+yy
+>.
+Gus
+=. >=
+—
+KK
+绝
+b+
+a
+防+10
+下加
+Qo As
+时
+08
+eo we @
+
+Combined:
+IE -了 D
+SF eS = ae
+ws ee
+i es
+6A
+A
+yy
+>.
+Gus
+=. >=
+—
+KK
+绝
+b+
+a
+防+10
+下加
+Qo As
+时
+08
+eo we @
+
+=== images/seasonal/five-element/梦•土灵绝壁4.png ===
+Title:
+(none)
+
+Body:
+SS FS aS SS F- LI |
+有 ees — ee == 三三:=
+四 Ey Se 1 OEE CCS SC 一|
+
+Full:
+A
+一
+a
+‘al
+b+
+Ya.
+防+10
+直到目身下回
+FIERY 9 每实
+1防或1生
+ap
+FEI
+合融加1防
+fo nm
+J,
+
+Combined:
+SS FS aS SS F- LI |
+有 ees — ee == 三三:=
+四 Ey Se 1 OEE CCS SC 一|
+A
+一
+a
+‘al
+b+
+Ya.
+防+10
+直到目身下回
+FIERY 9 每实
+1防或1生
+ap
+FEI
+合融加1防
+fo nm
+J,
+
+=== images/seasonal/five-element/梦•土灵绝壁5.png ===
+Title:
+a > =
+
+Body:
+全
+——
+ESS aS SS FCI |
+—_FF2SsSna s. aS Se =
+四 Ey Se 1 OE 一一 |
+
+Full:
+ee ee
+AA
+St
+8
+es
+二
+a ”
+~~. A
+— =
+绝
+WE
+E+
+Ny
+防+16
+直到目身下
+开始前 ，每失
+1防或1生命下回
+AN
+合就加1屿
+
+Combined:
+a > =
+全
+——
+ESS aS SS FCI |
+—_FF2SsSna s. aS Se =
+四 Ey Se 1 OE 一一 |
+ee ee
+AA
+St
+8
+es
+二
+a ”
+~~. A
+— =
+绝
+WE
+E+
+Ny
+防+16
+直到目身下
+开始前 ，每失
+1防或1生命下回
+AN
+合就加1屿
+
+=== images/seasonal/five-element/梦•木灵柳纷飞.png ===
+Title:
+(none)
+
+Body:
+(none)
+
+Full:
+7
+VK
+
+Combined:
+7
+VK
+
+=== images/seasonal/five-element/梦•木灵柳纷飞1.png ===
+Title:
+(none)
+
+Body:
+= =n Gs
+2S Ss 1S kK Ss,
+= oe eat HS
+
+Full:
+a >
+2
+NY
+IE
+YZ
+qv
+a>
+”生命+6
+每有1层水势 ，
+下次 me
+
+Combined:
+= =n Gs
+2S Ss 1S kK Ss,
+= oe eat HS
+a >
+2
+NY
+IE
+YZ
+qv
+a>
+”生命+6
+每有1层水势 ，
+下次 me
+
+=== images/seasonal/five-element/梦•木灵柳纷飞2.png ===
+Title:
+(none)
+
+Body:
+a ee ee
+a= =555' 31 OFS ake SS Cs
+TF oS 8 SS SE =
+
+Full:
+a
+Nb
+> #\
+‘i
+By Z>
+a>
+‘ppt8
+每有1层水势 ，
+1a
+. —— |
+
+Combined:
+a ee ee
+a= =555' 31 OFS ake SS Cs
+TF oS 8 SS SE =
+a
+Nb
+> #\
+‘i
+By Z>
+a>
+‘ppt8
+每有1层水势 ，
+1a
+. —— |
+
+=== images/seasonal/five-element/梦•木灵柳纷飞3.png ===
+Title:
+(none)
+
+Body:
+车 三三 =55 1 SS ake SS Cs
+= oe ae ES
+
+Full:
+Lh
+A =
+iL
+FON
+纷
+Lea
+Zi
+oA
+4
+Ap
++10
+每有1层水势 ，
+Lh oe ieee
+
+Combined:
+车 三三 =55 1 SS ake SS Cs
+= oe ae ES
+Lh
+A =
+iL
+FON
+纷
+Lea
+Zi
+oA
+4
+Ap
++10
+每有1层水势 ，
+Lh oe ieee
+
+=== images/seasonal/five-element/梦•木灵柳纷飞4.png ===
+Title:
+(none)
+
+Body:
+= : 一 一半一于二
+3 全二FE Be SS EL SS
+453 3 FS Ss C == =
+aS — |, C—O oe se lull Oc lm ola
+
+Full:
+”林木
+a AS
+“|
+N
+SY.
+\)
+—
+K
+>
+FON
+LE-一
+ED
+NA
+Ap
++2
+每
+SEKA GAR |
+得1层加攻 (最多 :
+BAD
+加攻则再。
+X
+
+Combined:
+= : 一 一半一于二
+3 全二FE Be SS EL SS
+453 3 FS Ss C == =
+aS — |, C—O oe se lull Oc lm ola
+”林木
+a AS
+“|
+N
+SY.
+\)
+—
+K
+>
+FON
+LE-一
+ED
+NA
+Ap
++2
+每
+SEKA GAR |
+得1层加攻 (最多 :
+BAD
+加攻则再。
+X
+
+=== images/seasonal/five-element/梦•木灵柳纷飞5.png ===
+Title:
+(none)
+
+Body:
+» eo Sane
+— ea
+= 555 2 FS SK SSS HES:
+1S 1 ene CSS
+Se, Oe el woe sl lle ec lm os
+
+Full:
+木木
+NAN
+oe
+W
+|=,
+A
+FON
+ZT}
+CA-一
+8,
++ apt2
+| SA2RKARR
+Dose 2 (最多
+am SLMS
+e e ese se &
+
+Combined:
+» eo Sane
+— ea
+= 555 2 FS SK SSS HES:
+1S 1 ene CSS
+Se, Oe el woe sl lle ec lm os
+木木
+NAN
+oe
+W
+|=,
+A
+FON
+ZT}
+CA-一
+8,
++ apt2
+| SA2RKARR
+Dose 2 (最多
+am SLMS
+e e ese se &
+
+=== images/seasonal/five-element/梦•木灵芽.png ===
+Title:
+(none)
+
+Body:
+(none)
+
+Full:
+(none)
+
+Combined:
+(none)
+
+=== images/seasonal/five-element/梦•木灵芽1.png ===
+Title:
+(none)
+
+Body:
+7M st = 二二 =
+oe
+
+Full:
+AA
+ay
+=
+ty
+el
+3攻X 2
+ee
+
+Combined:
+7M st = 二二 =
+oe
+AA
+ay
+=
+ty
+el
+3攻X 2
+ee
+
+=== images/seasonal/five-element/梦•木灵芽2.png ===
+Title:
+(none)
+
+Body:
+AAA了2 >< D>
+| Wea ee Se Bis =
+- -站一
+
+Full:
+A
+aly
+MY
+=e
+i
+4攻X 2
+loa tee 多
+
+Combined:
+AAA了2 >< D>
+| Wea ee Se Bis =
+- -站一
+A
+aly
+MY
+=e
+i
+4攻X 2
+loa tee 多
+
+=== images/seasonal/five-element/梦•木灵芽3.png ===
+Title:
+(none)
+
+Body:
+全 Se = 全站一 三
+- _ 35 a”
+
+Full:
+[全
+AA
+ay
+Ly
+So
+el
+5IXN X 2
+oR
+
+Combined:
+全 Se = 全站一 三
+- _ 35 a”
+[全
+AA
+ay
+Ly
+So
+el
+5IXN X 2
+oR
+
+=== images/seasonal/five-element/梦•木灵芽4.png ===
+Title:
+(none)
+
+Body:
+Ss ee
+aS Fn aT 8S HELE Se =
+
+Full:
+ee
+NS
+a
+by
+气
+KK
+e-*
+|
+3攻X3
+A a aa |
+\a
+.
+
+Combined:
+Ss ee
+aS Fn aT 8S HELE Se =
+ee
+NS
+a
+by
+气
+KK
+e-*
+|
+3攻X3
+A a aa |
+\a
+.
+
+=== images/seasonal/five-element/梦•木灵芽5.png ===
+Title:
+—
+SSS
+/ oo 一者
+= ——
+
+Body:
+RE oa
+25 力 5 8 FE =
+So =~
+
+Full:
+EX
+vee
+‘G
+31 X 4
+每加过8生命多
+yyr#yperefspsryy y
+
+Combined:
+—
+SSS
+/ oo 一者
+= ——
+RE oa
+25 力 5 8 FE =
+So =~
+EX
+vee
+‘G
+31 X 4
+每加过8生命多
+yyr#yperefspsryy y
+
+=== images/seasonal/five-element/梦•木灵阵.png ===
+Title:
+人 一人一 一
+
+Body:
+44 eb
+
+Full:
+|
+He
+en
+hy
+由
+\
+-所
+Apa 用| ~二=
+»
+la
+
+Combined:
+人 一人一 一
+44 eb
+|
+He
+en
+hy
+由
+\
+-所
+Apa 用| ~二=
+»
+la
+
+=== images/seasonal/five-element/梦•木灵阵1.png ===
+Title:
+(none)
+
+Body:
+一 os
+= = = ee ee 汪 世
+二 mz 二
+ott ox By 二二人天 -有 -的
+
+Full:
+2
+(Ate
+Sai
+(9
+木 1
+\Y
+BSE pea,
+Ji +
+fn
+nm be) 4
+WEAR
+灵气+
+持续3次: 攻击
+ities “ad ae
+
+Combined:
+一 os
+= = = ee ee 汪 世
+二 mz 二
+ott ox By 二二人天 -有 -的
+2
+(Ate
+Sai
+(9
+木 1
+\Y
+BSE pea,
+Ji +
+fn
+nm be) 4
+WEAR
+灵气+
+持续3次: 攻击
+ities “ad ae
+
+=== images/seasonal/five-element/梦•木灵阵2.png ===
+Title:
+(none)
+
+Body:
+>
+> — ee ee
+4 = 3了AZ =
+ott ox Bv st SS -有 -o
+
+Full:
+pee
+A
+He
+Ny
+K
+BS
+eee
+&
+灵气+1
+AyR: IX
+ee
+ese
+
+Combined:
+>
+> — ee ee
+4 = 3了AZ =
+ott ox Bv st SS -有 -o
+pee
+A
+He
+Ny
+K
+BS
+eee
+&
+灵气+1
+AyR: IX
+ee
+ese
+
+=== images/seasonal/five-element/梦•木灵阵3.png ===
+Title:
+(none)
+
+Body:
+二
+2
+2 3 a =
+ott DR卫生二天-有 -的
+
+Full:
+一
+5 Ay
+~
+AA
+po
+KK
+()
+Bl a
+Net tl
+灵气+1
+5从: I
+dicsae “seas
+eo es @
+
+Combined:
+二
+2
+2 3 a =
+ott DR卫生二天-有 -的
+一
+5 Ay
+~
+AA
+po
+KK
+()
+Bl a
+Net tl
+灵气+1
+5从: I
+dicsae “seas
+eo es @
+
+=== images/seasonal/five-element/梦•木灵阵4.png ===
+Title:
+(none)
+
+Body:
+二
+; > — ee ee
+— —— | om &
+Tz — 5S “a = Ie =F I
+
+Full:
+‘Cy
+Gress
+oh
+AA
+ee
+1
+TN
+K4
+[本
+【~
+beet
+©
+I AND
+灵气+1
+木刺+1
+FFER5S LR
+攻击时
+oe ws sf &
+Ap
+
+Combined:
+二
+; > — ee ee
+— —— | om &
+Tz — 5S “a = Ie =F I
+‘Cy
+Gress
+oh
+AA
+ee
+1
+TN
+K4
+[本
+【~
+beet
+©
+I AND
+灵气+1
+木刺+1
+FFER5S LR
+攻击时
+oe ws sf &
+Ap
+
+=== images/seasonal/five-element/梦•木灵阵5.png ===
+Title:
+(none)
+
+Body:
+» <<>> es —"
+aS SSS SS
+> — ee < cs
+— —— — |i a
+三二 人一 了下一一卫
+一 — —— ee ee, 刁
+
+Full:
+/?
+S
+A
+‘le
+25
+¥\
+木
+IN
+SN
+K
+NU
+[和
+lw
+Ht)
+—
+ee;
+SEAR
+灵气+1
++]
+j
+生命上限+15
+续: 每次获得加攻 =
+BRS AAR
+
+Combined:
+» <<>> es —"
+aS SSS SS
+> — ee < cs
+— —— — |i a
+三二 人一 了下一一卫
+一 — —— ee ee, 刁
+/?
+S
+A
+‘le
+25
+¥\
+木
+IN
+SN
+K
+NU
+[和
+lw
+Ht)
+—
+ee;
+SEAR
+灵气+1
++]
+j
+生命上限+15
+续: 每次获得加攻 =
+BRS AAR
+
+=== images/seasonal/five-element/梦•水灵汹涌1.png ===
+Title:
+(none)
+
+Body:
+sae (455515
+ae Sets Se ss EEE =
+a eo
+
+Full:
+3
+aes,
+水
+Sa
+ya
+2
+=
+;用
+和Ge>
+(每有1灵
+气或水势此牌
+1
+
+Combined:
+sae (455515
+ae Sets Se ss EEE =
+a eo
+3
+aes,
+水
+Sa
+ya
+2
+=
+;用
+和Ge>
+(每有1灵
+气或水势此牌
+1
+
+=== images/seasonal/five-element/梦•水灵汹涌2.png ===
+Title:
+(none)
+
+Body:
+本 了kz C5 45 15
+ae Ss Se Ss SEL
+—— a
+
+Full:
+AA
+es
+7K
+-一 tt
+Sn
+ye
+5-7
+OS
+%e
+1 (每有1灵
+EVAR Ie he
+1
+
+Combined:
+本 了kz C5 45 15
+ae Ss Se Ss SEL
+—— a
+AA
+es
+7K
+-一 tt
+Sn
+ye
+5-7
+OS
+%e
+1 (每有1灵
+EVAR Ie he
+1
+
+=== images/seasonal/five-element/梦•水灵汹涌3.png ===
+Title:
+(none)
+
+Body:
+om (254515
+Se a
+: —=">3 =e)
+
+Full:
+A
+a,
+7K
+Lie
+=
+SU
+om
+OS
+ve’
+;用
+De
+9攻 (每有1灵
+EVAR I he
+ewe @
+
+Combined:
+om (254515
+Se a
+: —=">3 =e)
+A
+a,
+7K
+Lie
+=
+SU
+om
+OS
+ve’
+;用
+De
+9攻 (每有1灵
+EVAR I he
+ewe @
+
+=== images/seasonal/five-element/梦•水灵汹涌4.png ===
+Title:
+(none)
+
+Body:
+四
+= =~ C a> 55 1 Ze
+SS Ss oe 3 IE He
+= 4 =a 了
+人天
+
+Full:
+水
+=
+—
+2}
+和Ge>
+ie
+SEV IAKB Ith
+$3
+Hfa
+TA
+1
+Bide
+及上
+
+Combined:
+四
+= =~ C a> 55 1 Ze
+SS Ss oe 3 IE He
+= 4 =a 了
+人天
+水
+=
+—
+2}
+和Ge>
+ie
+SEV IAKB Ith
+$3
+Hfa
+TA
+1
+Bide
+及上
+
+=== images/seasonal/five-element/梦•水灵汹涌5.png ===
+Title:
+(none)
+
+Body:
+了IE CC aS _ 5 1 三
+SS Se a SS UAFE He
+: => 1 ESD
+一
+
+Full:
+NAN
+AA
+7K
+ay
+a
+Si
+OSS
+IX (BA1R
+气或水势此牌
+每击伤3生命
+PRA
+ese
+
+Combined:
+了IE CC aS _ 5 1 三
+SS Se a SS UAFE He
+: => 1 ESD
+一
+NAN
+AA
+7K
+ay
+a
+Si
+OSS
+IX (BA1R
+气或水势此牌
+每击伤3生命
+PRA
+ese
+
+=== images/seasonal/five-element/梦•水灵泉涌.png ===
+Title:
+(none)
+
+Body:
+Ni ~
+
+Full:
+|
+y
+
+Combined:
+Ni ~
+|
+y
+
+=== images/seasonal/five-element/梦•水灵泉涌1.png ===
+Title:
+-二 | —S>- la,
+=—>=—-—s«Xh—[——__ oo ___. —tt—“‘“‘OCOCCg@
+
+Body:
+= se -全=天 -二必
+. i ee Ss ee es - ee
+mA. SS tS 1A JS ake
+
+Full:
+i nt >
+|
+水
+Oy
+本场战斗每击
+过对方8生命
+驮获得1
+KB
++1
+
+Combined:
+-二 | —S>- la,
+=—>=—-—s«Xh—[——__ oo ___. —tt—“‘“‘OCOCCg@
+= se -全=天 -二必
+. i ee Ss ee es - ee
+mA. SS tS 1A JS ake
+i nt >
+|
+水
+Oy
+本场战斗每击
+过对方8生命
+驮获得1
+KB
++1
+
+=== images/seasonal/five-element/梦•水灵泉涌2.png ===
+Title:
+E —S>- la,
+= b—_ =. iisi—i‘(‘é “‘’
+
+Body:
+-二下
+Be 3 4S 1 = Ke
+
+Full:
+a
+AA
+7K
+aR
+Os
+本场战斗每击
+过对方7生命
+获得1层水
+局: 受
+十
+
+Combined:
+E —S>- la,
+= b—_ =. iisi—i‘(‘é “‘’
+-二下
+Be 3 4S 1 = Ke
+a
+AA
+7K
+aR
+Os
+本场战斗每击
+过对方7生命
+获得1层水
+局: 受
+十
+
+=== images/seasonal/five-element/梦•水灵泉涌3.png ===
+Title:
+=== —S>- la,
+-一 &>—_. =... ssti‘élfw{’2]
+
+Body:
+a Sa 上-对 SH CSS SST
+{35 a StI 2S : SG =F sf
+RAs AS A I Ke
+
+Full:
+人 3
+Lou)
+AA
+7K
+NU
+K
+aR
+2.
+f >
+=一一 >
+SC a 一<
+每
+过对方6生命
+也获得1层水势
+开局 :
+eo es @
+slay
+
+Combined:
+=== —S>- la,
+-一 &>—_. =... ssti‘élfw{’2]
+a Sa 上-对 SH CSS SST
+{35 a StI 2S : SG =F sf
+RAs AS A I Ke
+人 3
+Lou)
+AA
+7K
+NU
+K
+aR
+2.
+f >
+=一一 >
+SC a 一<
+每
+过对方6生命
+也获得1层水势
+开局 :
+eo es @
+slay
+
+=== images/seasonal/five-element/梦•水灵泉涌4.png ===
+Title:
+SSS —S>-
+=了 eee ee tts—‘“C—sSCs
+
+Body:
+35 a St oa SG Se
+
+Full:
+A
+S
+水
+aR
+;用
+本场战斗每击 量
+就获得1层水势;
+e
+开局
+有灵气+2
+
+Combined:
+SSS —S>-
+=了 eee ee tts—‘“C—sSCs
+35 a St oa SG Se
+A
+S
+水
+aR
+;用
+本场战斗每击 量
+就获得1层水势;
+e
+开局
+有灵气+2
+
+=== images/seasonal/five-element/梦•水灵泉涌5.png ===
+Title:
+== —S>- la,
+= 有一一 _ =| 13 &-«
+
+Body:
+之<二 一一一一一
+| 135353 33 os 5s 全在
+Zz SS SS. 2o—C_@eSS= To Be SG
+
+Full:
+AA
+aga oe EQ
+7K
+aR
+用
+灵气+2
+本场战斗每
+| 伤过对方5生命
+就获得1层水势
+Aha: 受气+2 L |
+YyY»yyry»prfsrefsp yy
+
+Combined:
+== —S>- la,
+= 有一一 _ =| 13 &-«
+之<二 一一一一一
+| 135353 33 os 5s 全在
+Zz SS SS. 2o—C_@eSS= To Be SG
+AA
+aga oe EQ
+7K
+aR
+用
+灵气+2
+本场战斗每
+| 伤过对方5生命
+就获得1层水势
+Aha: 受气+2 L |
+YyY»yyry»prfsrefsp yy
+
+=== images/seasonal/five-element/梦•水灵波澜.png ===
+Title:
+—— ——_..
+
+Body:
+————:
+Sa
+SS
+
+Full:
+RS三
+it
+
+Combined:
+—— ——_..
+————:
+Sa
+SS
+RS三
+it
+
+=== images/seasonal/five-element/梦•水灵波澜1.png ===
+Title:
+(none)
+
+Body:
+sa = +
+SS FS A FS aK SSS
+
+Full:
+aie
+|
+水
+K
+【6
+BZ
+HEN
+“ON
+灵气+
+获得1层水势
+
+Combined:
+sa = +
+SS FS A FS aK SSS
+aie
+|
+水
+K
+【6
+BZ
+HEN
+“ON
+灵气+
+获得1层水势
+
+=== images/seasonal/five-element/梦•水灵波澜2.png ===
+Title:
+Ee —
+
+Body:
+= es Be _ FBR -+-
+-三
+
+Full:
+Al — = a ax
+7K
+<:
+ia
+; oo oe,
+生命及上限+2
+— |
+
+Combined:
+Ee —
+= es Be _ FBR -+-
+-三
+Al — = a ax
+7K
+<:
+ia
+; oo oe,
+生命及上限+2
+— |
+
+=== images/seasonal/five-element/梦•水灵波澜3.png ===
+Title:
+一 - 一三
+
+Body:
+sae
+= as FB _ FBR +:
+Se oe SS DOE | Sahoo ZH
+
+Full:
+1 和
+<站 ~
+7K
+ktG、
+ee
+U
+BZ
+il
+灵气+1
+生命及上限+2
+ewe @
+
+Combined:
+一 - 一三
+sae
+= as FB _ FBR +:
+Se oe SS DOE | Sahoo ZH
+1 和
+<站 ~
+7K
+ktG、
+ee
+U
+BZ
+il
+灵气+1
+生命及上限+2
+ewe @
+
+=== images/seasonal/five-element/梦•水灵波澜4.png ===
+Title:
+一一
+一 —==
+
+Body:
+和 一一
+es ee
+SSE FS > ST SSS
+| et I ee oe eee
+Si Fo Ske SS iiss B= J
+二一 一
+
+Full:
+aes. |
+—_
+Be
+NFP
+il
+Y=
++]
+侍
+开始时，爱
+2技
+KB
+Bir hey
+，直到下回合结
+|
+
+Combined:
+一一
+一 —==
+和 一一
+es ee
+SSE FS > ST SSS
+| et I ee oe eee
+Si Fo Ske SS iiss B= J
+二一 一
+aes. |
+—_
+Be
+NFP
+il
+Y=
++]
+侍
+开始时，爱
+2技
+KB
+Bir hey
+，直到下回合结
+|
+
+=== images/seasonal/five-element/梦•水灵波澜5.png ===
+Title:
+(none)
+
+Body:
+人
+Beasts a
+3S = Ss 三JE 二和一 SS
+于 ee
+= FU SK SS cs Bt 0
+S—=—=~_ SE, =i 2 —_—_— «
+
+Full:
+AA
+S
+水
+2 |
+7g
+aed
+灵气+1
+获得3层水势
+下回合开始时
+, 灵
+-
+ae ie
+加
+到下回合结，
+下
+
+Combined:
+人
+Beasts a
+3S = Ss 三JE 二和一 SS
+于 ee
+= FU SK SS cs Bt 0
+S—=—=~_ SE, =i 2 —_—_— «
+AA
+S
+水
+2 |
+7g
+aed
+灵气+1
+获得3层水势
+下回合开始时
+, 灵
+-
+ae ie
+加
+到下回合结，
+下
+
+=== images/seasonal/five-element/梦•浑天印.png ===
+Title:
+SS wa a Oo eee T —
+
+Body:
+as
+if ~~
+K =z 所
+x ;
+
+Full:
+Ly
+6
+|
+| 人
+
+Combined:
+SS wa a Oo eee T —
+as
+if ~~
+K =z 所
+x ;
+Ly
+6
+|
+| 人
+
+=== images/seasonal/five-element/梦•浑天印1.png ===
+Title:
+—__ 一一
+
+Body:
+—_ eee. Ses
+6385 se 5 ASS SS
+5 = es Ee, es = Bd Fe
+tS> Es Eat SG See SS
+
+Full:
+a,
+Es
+大4
+Ell
+成5点伤害
+WED: 相邻牌
+使用时先激活
+
+Combined:
+—__ 一一
+—_ eee. Ses
+6385 se 5 ASS SS
+5 = es Ee, es = Bd Fe
+tS> Es Eat SG See SS
+a,
+Es
+大4
+Ell
+成5点伤害
+WED: 相邻牌
+使用时先激活
+
+=== images/seasonal/five-element/梦•浑天印2.png ===
+Title:
+(none)
+
+Body:
+< eee, as
+6355 Fase 了 天二 Ss SS
+= es ee, es = Bd Fe
+Sj ES et SE See So
+
+Full:
+人
+后
+大4
+Elly
+成7点伤害
+ED: 相邻牌
+使用时先激活
+其所属五行
+. —— |
+
+Combined:
+< eee, as
+6355 Fase 了 天二 Ss SS
+= es ee, es = Bd Fe
+Sj ES et SE See So
+人
+后
+大4
+Elly
+成7点伤害
+ED: 相邻牌
+使用时先激活
+其所属五行
+. —— |
+
+=== images/seasonal/five-element/梦•浑天印3.png ===
+Title:
+(none)
+
+Body:
+— ee, See
+33S ke 9 SS SS
+ps = ee 2 ee, gs = Bd Fe
+fS-> ss at S52 See SS
+
+Full:
+A
+六F
+Es
+i
+os
+灵气+
+造成9点伤害
+WED: 相邻和
+使用时先激活
+其所属五行
+oe @
+
+Combined:
+— ee, See
+33S ke 9 SS SS
+ps = ee 2 ee, gs = Bd Fe
+fS-> ss at S52 See SS
+A
+六F
+Es
+i
+os
+灵气+
+造成9点伤害
+WED: 相邻和
+使用时先激活
+其所属五行
+oe @
+
+=== images/seasonal/five-element/梦•浑天印4.png ===
+Title:
+(none)
+
+Body:
+{Sm
+a Ea ee
+$35 eS 卫 O SIs =
+3a - 2H SEH
+SSF st SS =e SS
+
+Full:
+A
+AON
+上
+ES
+EN
+Elly
+i>
+RT+3
+X10 hs
+被动
+使用时移激活
+其所属五行
+
+Combined:
+{Sm
+a Ea ee
+$35 eS 卫 O SIs =
+3a - 2H SEH
+SSF st SS =e SS
+A
+AON
+上
+ES
+EN
+Elly
+i>
+RT+3
+X10 hs
+被动
+使用时移激活
+其所属五行
+
+=== images/seasonal/five-element/梦•浑天印5.png ===
+Title:
+(none)
+
+Body:
+or
+SS 45K +S Ss —_ *
++e PS) Se oS es te
+FAA SS Se 有三到
+ws ee, cs — Be 59 oe j
+一
+
+Full:
+aS
+ee ee
+4 2a
+1
+I he
+ayy
+用1张与前一格
+牌相同五行的化神
+Saas
+“te
+
+Combined:
+or
+SS 45K +S Ss —_ *
++e PS) Se oS es te
+FAA SS Se 有三到
+ws ee, cs — Be 59 oe j
+一
+aS
+ee ee
+4 2a
+1
+I he
+ayy
+用1张与前一格
+牌相同五行的化神
+Saas
+“te
+
+=== images/seasonal/five-element/梦•混元无极阵.png ===
+Title:
+sn
+
+Body:
+=>
+
+Full:
+ie
+MG
+Ging:
+)
+
+Combined:
+sn
+=>
+ie
+MG
+Ging:
+)
+
+=== images/seasonal/five-element/梦•混元无极阵1.png ===
+Title:
+= —— S—— — ==
+== —" =
+
+Body:
+T= Fa Jae FSF
+SS S27 Bo 1 ee See
+ER — #£ |
+
+Full:
+木
+Te
+\
+se
+fa
+7Et 2%
+ZN
+AR
+hy
+i
+使用后一
+‘Ss
+对应的1级五行|
+
+Combined:
+= —— S—— — ==
+== —" =
+T= Fa Jae FSF
+SS S27 Bo 1 ee See
+ER — #£ |
+木
+Te
+\
+se
+fa
+7Et 2%
+ZN
+AR
+hy
+i
+使用后一
+‘Ss
+对应的1级五行|
+
+=== images/seasonal/five-element/梦•混元无极阵2.png ===
+Title:
+二 |一一 =_...= 一一
+基 三古人 7 ee
+
+Body:
+1 FS SS AE
+ST Jes es 2 == =a
+== =n
+
+Full:
+\
+C fe ay
+SSa。
+/EG 人
+AR
+hy
+i:
+使用后一格
+对应的2级五行
+Md
+
+Combined:
+二 |一一 =_...= 一一
+基 三古人 7 ee
+1 FS SS AE
+ST Jes es 2 == =a
+== =n
+\
+C fe ay
+SSa。
+/EG 人
+AR
+hy
+i:
+使用后一格
+对应的2级五行
+Md
+
+=== images/seasonal/five-element/梦•混元无极阵3.png ===
+Title:
+= 2
+
+Body:
+1 FS FS 直到 片s
+St Fes ese Ss == 二
+S= En
+
+Full:
+\
+/上L JK
+thd
+€
+ray
+使用后一格
+对应的3级五行
+AL
+
+Combined:
+= 2
+1 FS FS 直到 片s
+St Fes ese Ss == 二
+S= En
+\
+/上L JK
+thd
+€
+ray
+使用后一格
+对应的3级五行
+AL
+
+=== images/seasonal/five-element/梦•混元无极阵4.png ===
+Title:
+一 Ar 二=
+een —ee ee
+
+Body:
+入三 FSS HS 片<
+<太志= =
+和 AS 2 之 2 a 也
+
+Full:
+AS
+7Et Vey
+i Diy
+人
+ia
+激活后
+格
+的所属五行
+使用其2级五行
+X
+Jy
+
+Combined:
+一 Ar 二=
+een —ee ee
+入三 FSS HS 片<
+<太志= =
+和 AS 2 之 2 a 也
+AS
+7Et Vey
+i Diy
+人
+ia
+激活后
+格
+的所属五行
+使用其2级五行
+X
+Jy
+
+=== images/seasonal/five-element/梦•混元无极阵5.png ===
+Title:
+== ———_ oS i =_._= ——
+eS
+
+Body:
+下二一 之一-一一一
+So as — 帮一一一 be — a
+By A JS StS
+TS FAB 2 So =e See
+
+Full:
+Pye BY
+te
+站
+AS
+1)
+AR
+zp
+激活后
+=
+的所属五
+ys
+
+Combined:
+== ———_ oS i =_._= ——
+eS
+下二一 之一-一一一
+So as — 帮一一一 be — a
+By A JS StS
+TS FAB 2 So =e See
+Pye BY
+te
+站
+AS
+1)
+AR
+zp
+激活后
+=
+的所属五
+ys
+
+=== images/seasonal/five-element/梦•混元碎击1.png ===
+Title:
+— See ee —h
+ee SS ie
+
+Body:
+PR 一人mm一人- -卫-
+2 E4zZ
+一二三机二二用三三于 三= 国王三
+一ET了人
+
+Full:
+Sg ee
+本|
+SA
+加 @
+\
+“te
+JC e& @
+hy
+1 AP
+va?
+rhs
+灵气+
+2攻
+卡组中每有1种
+五行就退加1次
+IN 最多3次)
+
+Combined:
+— See ee —h
+ee SS ie
+PR 一人mm一人- -卫-
+2 E4zZ
+一二三机二二用三三于 三= 国王三
+一ET了人
+Sg ee
+本|
+SA
+加 @
+\
+“te
+JC e& @
+hy
+1 AP
+va?
+rhs
+灵气+
+2攻
+卡组中每有1种
+五行就退加1次
+IN 最多3次)
+
+=== images/seasonal/five-element/梦•混元碎击2.png ===
+Title:
+— ; SS
+人二- |二
+
+Body:
+ea. St
+P~ os =~
+a ee = oe eS Se 三E 2 本三
+— =f | 2 ei Seite 二2
+
+Full:
+木木人外、
+(1
+/人上上
+e Jd -~
+hy
+wen
+a 人
+灵气+1
+4攻
+卡组中每有1种
+ATRIEMIZ
+IN 最多3次)
+
+Combined:
+— ; SS
+人二- |二
+ea. St
+P~ os =~
+a ee = oe eS Se 三E 2 本三
+— =f | 2 ei Seite 二2
+木木人外、
+(1
+/人上上
+e Jd -~
+hy
+wen
+a 人
+灵气+1
+4攻
+卡组中每有1种
+ATRIEMIZ
+IN 最多3次)
+
+=== images/seasonal/five-element/梦•混元碎击3.png ===
+Title:
+rs — SS ie
+
+Body:
+= -一 oe ee
+SG =z
+a eo = oe eS Se 三 2 王 三
+— = | oo ei ES eZites
+
+Full:
+AAI
+i
+“te
+e Jd =
+hy
+wan *
+nay
+so
+m }
+灵气+1
+6攻
+卡组中每有1种 |
+HATMIEMIR F
+KM (ax B37R) )
+e oe @
+
+Combined:
+rs — SS ie
+= -一 oe ee
+SG =z
+a eo = oe eS Se 三 2 王 三
+— = | oo ei ES eZites
+AAI
+i
+“te
+e Jd =
+hy
+wan *
+nay
+so
+m }
+灵气+1
+6攻
+卡组中每有1种 |
+HATMIEMIR F
+KM (ax B37R) )
+e oe @
+
+=== images/seasonal/five-element/梦•混元碎击4.png ===
+Title:
+-三~- 人二
+
+Body:
+和
+se
+SB 工4
+一攻 =8 op = +5 卫 天
+SS SS SESS Ho 4S
+
+Full:
+1
+(Se \
+te
+e Jd =
+hy
+wa *
+SS
+和
+灵气+1
+IX
+卡组中每有1种
+五行就追加1次
+ex (最多4
+
+Combined:
+-三~- 人二
+和
+se
+SB 工4
+一攻 =8 op = +5 卫 天
+SS SS SESS Ho 4S
+1
+(Se \
+te
+e Jd =
+hy
+wa *
+SS
+灵气+1
+IX
+卡组中每有1种
+五行就追加1次
+ex (最多4
+
+=== images/seasonal/five-element/梦•混元碎击5.png ===
+Title:
+(none)
+
+Body:
+gm 一
+oe eee
+so =~ 2 C => AS aS 4 Sk 41
+ee i oe eS
+1 =>
+_-— ~— es sos SS | 2 Sec CO
+
+Full:
+一
+x
+a
+Jt e& @
+7EG :
+qd
+> |
+hy
+4
+ra
+vs Germuxte
+五行 ‘
+1L
+卡组中每有1种五
+\
+RIE INIRIX
+
+Combined:
+gm 一
+oe eee
+so =~ 2 C => AS aS 4 Sk 41
+ee i oe eS
+1 =>
+_-— ~— es sos SS | 2 Sec CO
+一
+x
+a
+Jt e& @
+7EG :
+qd
+> |
+hy
+4
+ra
+vs Germuxte
+五行 ‘
+1L
+卡组中每有1种五
+\
+RIE INIRIX
+
+=== images/seasonal/five-element/梦•火灵灼心.png ===
+Title:
+= -一 ea
+
+Body:
+二 -
+
+Full:
+一
+iL
+‘
+从
+Ay
+|
+“4
+TN
+} mel
+J
+
+Combined:
+= -一 ea
+二 -
+一
+iL
+‘
+从
+Ay
+|
+“4
+TN
+} mel
+J
+
+=== images/seasonal/five-element/梦•火灵灼心1.png ===
+Title:
+-一本 一-
+
+Body:
+人 Ez
+SS Oe oe = ae
+一一 $e == = _E BE
+
+Full:
+A
+i. %
+=
+> ©
+区
+As
+Ar
+K
+Fi
+KY
+EA
+6X
+对方 oe
+Sk
+
+Combined:
+-一本 一-
+人 Ez
+SS Oe oe = ae
+一一 $e == = _E BE
+A
+i. %
+=
+> ©
+区
+As
+Ar
+K
+Fi
+KY
+EA
+6X
+对方 oe
+Sk
+
+=== images/seasonal/five-element/梦•火灵灼心2.png ===
+Title:
+——
+
+Body:
+BS Ess
+es ed > 二二
+一一 3 == as _E EE
+
+Full:
+一一
+A
+—_<,
+——
+—
+7X
+@
+= it
+ee
+}
+KK
+Fi
+KY
+EA
+8攻
+对方 erg
+Skt
+
+Combined:
+——
+BS Ess
+es ed > 二二
+一一 3 == as _E EE
+一一
+A
+—_<,
+—
+7X
+@
+= it
+ee
+}
+KK
+Fi
+KY
+EA
+8攻
+对方 erg
+Skt
+
+=== images/seasonal/five-element/梦•火灵灼心3.png ===
+Title:
+(none)
+
+Body:
+pees 4 Oo Ee
+St ss - &_ DISSE I SS
+一一 S = =r _E BI
+
+Full:
+A
+=
+7X
+fs Ge
+4%
+Win
+YY
+\
+K
+KY
+EAS
+Os
+101%
+fe pra
+Ca
+oe @
+
+Combined:
+pees 4 Oo Ee
+St ss - &_ DISSE I SS
+一一 S = =r _E BI
+A
+=
+7X
+fs Ge
+4%
+Win
+YY
+\
+K
+KY
+EAS
+Os
+101%
+fe pra
+Ca
+oe @
+
+=== images/seasonal/five-element/梦•火灵灼心4.png ===
+Title:
+(none)
+
+Body:
+-¥§ =
+4 Oo =
+SS ss ae Oe
+——_ =. Se _FE- BE
+
+Full:
+igre BR,
+AA
+i
+十全
+— i
+.
+>
+ie
+本
+[5
+I
+对方每减少过
+— Rap EPR |
+就多2攻
+D/5
+
+Combined:
+-¥§ =
+4 Oo =
+SS ss ae Oe
+——_ =. Se _FE- BE
+igre BR,
+AA
+i
+十全
+— i
+.
+>
+ie
+本
+[5
+I
+对方每减少过
+— Rap EPR |
+就多2攻
+D/5
+
+=== images/seasonal/five-element/梦•火灵灼心5.png ===
+Title:
+(none)
+
+Body:
+人< >
+= 4 Oo Ez
+aS ee =e
+一一 Se == Ss _E FI
+
+Full:
+AN
+AA
+人
+—s
+®
+7X
+a
+f
+3
+101%
+对方每减少过
+一次生命
+BR
+TAS 31K
+ys
+
+Combined:
+人< >
+= 4 Oo Ez
+aS ee =e
+一一 Se == Ss _E FI
+AN
+AA
+人
+—s
+®
+7X
+a
+f
+3
+101%
+对方每减少过
+一次生命
+BR
+TAS 31K
+ys
+
+=== images/seasonal/five-element/梦•火灵瞬燃.png ===
+Title:
+(none)
+
+Body:
+(none)
+
+Full:
+(none)
+
+Combined:
+(none)
+
+=== images/seasonal/five-element/梦•火灵瞬燃1.png ===
+Title:
+- >; If 一
+
+Body:
+ot > SES =E =H?
+"Be C235 SB
+== >. = >
+
+Full:
+一
+林
+7X
+px
+ve
+(f- 减6生命
+有3防
+
+Combined:
+- >; If 一
+ot > SES =E =H?
+"Be C235 SB
+== >. = >
+一
+林
+7X
+px
+ve
+(f- 减6生命
+有3防
+
+=== images/seasonal/five-element/梦•火灵瞬燃2.png ===
+Title:
+as
+
+Body:
+24s EB Ee Ba
+"Be C= SB
+i.
+
+Full:
+A
+7X
+— Po
+i TAL!
+eal an
+上限〈每有3防
+4
+1
+[
+
+Combined:
+as
+24s EB Ee Ba
+"Be C= SB
+i.
+A
+7X
+— Po
+i TAL!
+eal an
+上限〈每有3防
+4
+1
+[
+
+=== images/seasonal/five-element/梦•火灵瞬燃3.png ===
+Title:
+as
+
+Body:
+24s RES EE BaD
+_ Ff BE CC ==> 5 2 B
+— SS ae a —
+
+Full:
+A
+全 证
+7X
+— Po
+mn
+FAL!
+对方减8生命及
+上限〈每有2防
+Bil
+oe @
+
+Combined:
+as
+24s RES EE BaD
+_ Ff BE CC ==> 5 2 B
+— SS ae a —
+A
+全 证
+7X
+— Po
+mn
+FAL!
+对方减8生命及
+上限〈每有2防
+Bil
+oe @
+
+=== images/seasonal/five-element/梦•火灵瞬燃4.png ===
+Title:
+(none)
+
+Body:
+四
+S es 过-9 SS Ses 大
+一和一 Be CC aS 55 4E
+=> Jake i ==>
+— ho = BS CULT Se
+
+Full:
+Rye BY
+AA
+K
+a
+方减4生命及
+| LPR 〈每有4防
+3% il
+已加过防则
+eo es ee &
+
+Combined:
+四
+S es 过-9 SS Ses 大
+一和一 Be CC aS 55 4E
+=> Jake i ==>
+— ho = BS CULT Se
+Rye BY
+AA
+K
+a
+方减4生命及
+| LPR 〈每有4防
+3% il
+已加过防则
+eo es ee &
+
+=== images/seasonal/five-element/梦•火灵瞬燃5.png ===
+Title:
+(none)
+
+Body:
+Pa ee a
+Se as 过-LE
+一和一 BR CC ]S> BS Sse
+三一 ZE过 oe —— -
+站
+
+Full:
+AA
+Rag er RO
+ANN
+7X
+we a
+WK
+Fa AE Be Ke
+FRR 〈每有3防
+多减1点
+已加过防则再
+本
+ys
+
+Combined:
+Pa ee a
+Se as 过-LE
+一和一 BR CC ]S> BS Sse
+三一 ZE过 oe —— -
+站
+AA
+Rag er RO
+ANN
+7X
+we a
+WK
+Fa AE Be Ke
+FRR 〈每有3防
+多减1点
+已加过防则再
+本
+ys
+
+=== images/seasonal/five-element/梦•火灵聚炎.png ===
+Title:
+一
+
+Body:
+(none)
+
+Full:
+(none)
+
+Combined:
+一
+
+=== images/seasonal/five-element/梦•火灵聚炎1.png ===
+Title:
+(none)
+
+Body:
+上 = 一二 一2一
+Eee二二 an a _
+
+Full:
+i nt >
+|
+7X
+Hox"
+ee
+4
+oy
+as Ast 及上
+先机: 双方使用下
+eer
+
+Combined:
+上 = 一二 一2一
+Eee二二 an a _
+i nt >
+|
+7X
+Hox"
+ee
+4
+oy
+as Ast 及上
+先机: 双方使用下
+eer
+
+=== images/seasonal/five-element/梦•火灵聚炎2.png ===
+Title:
+去 国 wil —_—SS
+
+Body:
+和 = saa. SEs :
+0S a SS as ae — oe Fe
+
+Full:
+a.
+Hx"
+oe
+oy
+Me
+先机
+双方使用下
+泳牌时将其消耗
+. —— |
+
+Combined:
+去 国 wil —_—SS
+和 = saa. SEs :
+0S a SS as ae — oe Fe
+a.
+Hx"
+oe
+oy
+Me
+先机
+双方使用下
+泳牌时将其消耗
+. —— |
+
+=== images/seasonal/five-element/梦•火灵聚炎3.png ===
+Title:
+= 人
+
+Body:
+Wek St SS 2. 二二Fr id
+PR SS
+Pe — oe a or
+
+Full:
+Ly
+A
+ee
+7X
+|
+重耳又
+(
+os
+灵气+
+减对方2生命及上
+BR
+ARRAS
+eo wo @
+é
+¥
+
+Combined:
+= 人
+Wek St SS 2. 二二Fr id
+PR SS
+Pe — oe a or
+Ly
+A
+ee
+7X
+|
+重耳又
+(
+os
+灵气+
+减对方2生命及上
+BR
+ARRAS
+eo wo @
+é
+¥
+
+=== images/seasonal/five-element/梦•火灵聚炎4.png ===
+Title:
+SSS 人
+
+Body:
+一 =
+| ES SS 一8一
+Wek St aS 辽二二Fr
+PE pee ge ee
+— 一 oe i —— ee
+
+Full:
+Alin
+A
+IN
+HR"
+= |
+e
+2 +3
+减对方2生命及上
+BR 〈每点:
+先机: 双方使用下
+时将其消
+|
+
+Combined:
+SSS 人
+一 =
+| ES SS 一8一
+Wek St aS 辽二二Fr
+PE pee ge ee
+— 一 oe i —— ee
+Alin
+A
+IN
+HR"
+= |
+e
+2 +3
+减对方2生命及上
+BR 〈每点:
+先机: 双方使用下
+时将其消
+|
+
+=== images/seasonal/five-element/梦•火灵聚炎5.png ===
+Title:
+(none)
+
+Body:
+人 —*
+三证-一
+国生办”二“二 3 as 2 ee Sar Fa _!I
+: BR Se ae
+Pe — 一 we a —— ee
+
+Full:
+SI
+a
+7X
+eS
+aK
+aif
+受气+
+减对 方 人 机及上
+BR
+先机:
+BARRE
+
+Combined:
+人 —*
+三证-一
+国生办”二“二 3 as 2 ee Sar Fa _!I
+: BR Se ae
+Pe — 一 we a —— ee
+SI
+a
+7X
+eS
+aK
+aif
+受气+
+减对 方 人 机及上
+BR
+先机:
+BARRE
+
+=== images/seasonal/five-element/梦•火灵阵.png ===
+Title:
+= —
+
+Body:
+Ss -ex qd一
+<二 . <
+
+Full:
+ra aN
+iF
+Wy Vg
+
+Combined:
+= —
+Ss -ex qd一
+<二 . <
+ra aN
+iF
+Wy Vg
+
+=== images/seasonal/five-element/梦•火灵阵1.png ===
+Title:
+一
+一 —— —
+
+Body:
+”Be =二一 ER
+一
+Fak St SS 6 SE Ss 7
+
+Full:
+a 6 Van
+AF
+RX
+BE Ne
+激活火灵
+咸对方6生
+Ap
+
+Combined:
+一
+一 —— —
+”Be =二一 ER
+Fak St SS 6 SE Ss 7
+a 6 Van
+AF
+RX
+BE Ne
+激活火灵
+咸对方6生
+Ap
+
+=== images/seasonal/five-element/梦•火灵阵2.png ===
+Title:
+一
+
+Body:
+a oo ER
+Es, =. —
+Wake St oS 一二 Se
+
+Full:
+*
+2
+/
+是
+iy,
+所
+激活火受
+威对方8生
+Af
+. —— |
+
+Combined:
+一
+a oo ER
+Es, =. —
+Wake St oS 一二 Se
+*
+2
+/
+是
+iy,
+所
+激活火受
+威对方8生
+Af
+. —— |
+
+=== images/seasonal/five-element/梦•火灵阵3.png ===
+Title:
+一 = -
+
+Body:
+BE
+ss
+wee RS SS Os =
+
+Full:
+A
+o—
+后一
+je
+Ph
+BS.
+{Re
+激活火:
+防+2
+减对方10主区 Ap
+ke
+Phe
+eo we @
+
+Combined:
+一 = -
+BE
+ss
+wee RS SS Os =
+A
+o—
+后一
+je
+Ph
+BS.
+{Re
+激活火:
+防+2
+减对方10主区 Ap
+ke
+Phe
+eo we @
+
+=== images/seasonal/five-element/梦•火灵阵4.png ===
+Title:
+(none)
+
+Body:
+eR SSS se SB
+: | = > = i
+(Wek St So 6 EE as ZR _F-
+= ae SS, OS OS
+一
+
+Full:
+a
+674i
+\ |
+人
+Ks
+[本
+Se
+ma XR
+减对方6生命 从
+= aa %
+3 op ap AZ
+eo ws 2s &
+R .
+) 7
+
+Combined:
+eR SSS se SB
+: | = > = i
+(Wek St So 6 EE as ZR _F-
+= ae SS, OS OS
+一
+a
+674i
+\ |
+人
+Ks
+[本
+Se
+ma XR
+减对方6生命 从
+= aa %
+3 op ap AZ
+eo ws 2s &
+R .
+) 7
+
+=== images/seasonal/five-element/梦•火灵阵5.png ===
+Title:
+人 > es! S=S —. &
+= 一 = 二
+SS =— :
+
+Body:
+» eee —
+See SSB FAs 三二2
+Ee +s
+Wek tI 2S 6 EL Oa ae Ze _F-
+= OS 3555, (5S Se Ss
+—— =~ ees i ew 1 if — — — —— oo
+
+Full:
+eo ee
+TG.
+6
+Ks
+[车| 刘
+SG
+ent pg
+ee Bet DR
+esa ee
+
+Combined:
+人 > es! S=S —. &
+= 一 = 二
+SS =— :
+» eee —
+See SSB FAs 三二2
+Ee +s
+Wek tI 2S 6 EL Oa ae Ze _F-
+= OS 3555, (5S Se Ss
+—— =~ ees i ew 1 if — — — —— oo
+eo ee
+TG.
+6
+Ks
+[车| 刘
+SG
+ent pg
+ee Bet DR
+esa ee
+
+=== images/seasonal/five-element/梦•金灵铁骨.png ===
+Title:
+二
+
+Body:
+工 =
+
+Full:
+内
+W
+1 V
+e/
+AM
+\ ‘
+|
+
+Combined:
+二
+工 =
+内
+W
+1 V
+e/
+AM
+\ ‘
+|
+
+=== images/seasonal/five-element/梦•金灵铁骨1.png ===
+Title:
+(none)
+
+Body:
+Ee +S C Ba Fo a
+> Sse SS HS V1 ok SS
+——Ssitn ess
+
+Full:
+A
+一 和，
+K
+a ™
++t
+:
+}
+Os
+防+8 (每加过
+2锋锐或1水势
+多加1防)
+
+Combined:
+Ee +S C Ba Fo a
+> Sse SS HS V1 ok SS
+——Ssitn ess
+A
+一 和，
+K
+a ™
++t
+:
+}
+Os
+防+8 (每加过
+2锋锐或1水势
+多加1防)
+
+=== images/seasonal/five-element/梦•金灵铁骨2.png ===
+Title:
+(none)
+
+Body:
+a 卫 re —— es] se
+> Se SS SI kK SS
+. SS Fwy 31 Bsa »)
+
+Full:
+N
+AA
+XN
+六
+二
+oN
+KK
+ys
+vay
+防+11 《每加过
+2锋锐或1水势
+emp)
+二 |
+
+Combined:
+a 卫 re —— es] se
+> Se SS SI kK SS
+. SS Fwy 31 Bsa »)
+N
+AA
+XN
+六
+二
+oN
+KK
+ys
+vay
+防+11 《每加过
+2锋锐或1水势
+emp)
+二 |
+
+=== images/seasonal/five-element/梦•金灵铁骨3.png ===
+Title:
+人
+
+Body:
+ER (= wos
+> $e $52 SE 1 KS
+Se a
+
+Full:
+me
+A
+X
+K
+oN
+KK
+Wy,
+vay
+ne (每加过
+2锋锐或1水势、
+多加1防)
+eo es @&
+
+Combined:
+人
+ER (= wos
+> $e $52 SE 1 KS
+Se a
+me
+A
+X
+K
+oN
+KK
+Wy,
+vay
+ne (每加过
+2锋锐或1水势、
+多加1防)
+eo es @&
+
+=== images/seasonal/five-element/梦•金灵铁骨4.png ===
+Title:
+(none)
+
+Body:
+—
+._ Bsc-e (2a ywoOSs
+> Sse SSSI OK SS
+== FWAPBPSsD> >
+
+Full:
+ET
+AA
+7. oS
+= 2
+ek al
+| 防+6 acs
+Pi ty babe
+多加1防) , F
+回合加等量防
+7 wir yar Y
+/4
+
+Combined:
+—
+._ Bsc-e (2a ywoOSs
+> Sse SSSI OK SS
+== FWAPBPSsD> >
+ET
+AA
+7. oS
+= 2
+ek al
+| 防+6 acs
+Pi ty babe
+多加1防) , F
+回合加等量防
+7 wir yar Y
+/4
+
+=== images/seasonal/five-element/梦•金灵铁骨5.png ===
+Title:
+(none)
+
+Body:
+2 O—™=h—————EEEEEE aa
+| = 一 C 24S Foi a
+4 Sse SS SY ok SS
+== FWAPSsD> >
+
+Full:
+AA
+Rag er i RO
+>
+oN
+ys
+Os
+防+6 《每加过
+1锋锐或1水势
+多加1防) ，下
+回合加等量防
+本
+
+Combined:
+2 O—™=h—————EEEEEE aa
+| = 一 C 24S Foi a
+4 Sse SS SY ok SS
+== FWAPSsD> >
+AA
+Rag er i RO
+>
+oN
+ys
+Os
+防+6 《每加过
+1锋锐或1水势
+多加1防) ，下
+回合加等量防
+本
+
+=== images/seasonal/five-element/梦•金灵锋芒.png ===
+Title:
+a. ee? fe
+
+Body:
+(none)
+
+Full:
+N
+Ah
+ye
+1
+
+Combined:
+a. ee? fe
+N
+Ah
+ye
+1
+
+=== images/seasonal/five-element/梦•金灵锋芒1.png ===
+Title:
+(none)
+
+Body:
+> 34
+see
+sess = SHASIAP
+
+Full:
+bd |
+N
+3)
+|
+Oy
+ar
+21
+受气+
+击伤:
+多得1层
+
+Combined:
+> 34
+see
+sess = SHASIAP
+bd |
+N
+3)
+|
+Oy
+ar
+21
+受气+
+击伤:
+多得1层
+
+=== images/seasonal/five-element/梦•金灵锋芒2.png ===
+Title:
+(none)
+
+Body:
+ase
+es
+Se1Ss5 = SHAS IAP
+
+Full:
+| oes
+ry
+一，
+;
+WS
+上
+4攻
+十
+起-一
+=
+
+Combined:
+ase
+es
+Se1Ss5 = SHAS IAP
+| oes
+ry
+一，
+;
+WS
+上
+4攻
+十
+起-一
+=
+
+=== images/seasonal/five-element/梦•金灵锋芒3.png ===
+Title:
+SOE ee ee
+
+Body:
+2 Ie
+ee ee
+BB TSS 二 BESTS AC
+
+Full:
+(ee
+木木
+A
+\
+2
+i
+由
+—y
+|
+饼
+=
+os
+4攻
+j
+| it . A 1层
+
+Combined:
+SOE ee ee
+2 Ie
+ee ee
+BB TSS 二 BESTS AC
+(ee
+木木
+A
+\
+2
+i
+由
+—y
+|
+饼
+=
+os
+4攻
+j
+| it . A 1层
+
+=== images/seasonal/five-element/梦•金灵锋芒4.png ===
+Title:
+Ee SS CO Ss
+
+Body:
+并
+
+Full:
+N
+i)
++ |
+| \
+|
+6攻
+灵气+
+eo tee Ap A
+eas es &
+
+Combined:
+Ee SS CO Ss
+并
+N
+i)
++ |
+| \
+|
+6攻
+灵气+
+eo tee Ap A
+eas es &
+
+=== images/seasonal/five-element/梦•金灵锋芒5.png ===
+Title:
+(none)
+
+Body:
+人
+G Zz
+ed
+
+Full:
+“a a
+Ee
+AA
+= |
+Yi]
+Wi
+X
+yy
+=
+人
+vey
+6 1X
+灵气+
+每击伤2生命就!
+
+Combined:
+人
+G Zz
+ed
+“a a
+Ee
+AA
+= |
+Yi]
+Wi
+X
+yy
+=
+vey
+6 1X
+灵气+
+每击伤2生命就!
+
+=== images/seasonal/five-element/梦•金灵阵.png ===
+Title:
+ee OS
+—<——S ee eg
+
+Body:
+”多AN
+
+Full:
+ARS
+Y
+|
+i\}
+oe
+— Lo,
+
+Combined:
+ee OS
+—<——S ee eg
+”多AN
+ARS
+Y
+|
+i\}
+oe
+— Lo,
+
+=== images/seasonal/five-element/梦•金灵阵1.png ===
+Title:
+(none)
+
+Body:
+上 > _. 7 三全二 三元2
+Sse SSE TF
+
+Full:
+aie
+AA
+ne)
+a Of
+1K
+a
+«
+maar
+锋锐+7
+
+Combined:
+上 > _. 7 三全二 三元2
+Sse SSE TF
+aie
+AA
+ne)
+a Of
+1K
+a
+«
+maar
+锋锐+7
+
+=== images/seasonal/five-element/梦•金灵阵2.png ===
+Title:
+(none)
+
+Body:
+>_> >_> ~5
+Se SST S
+
+Full:
+|
+—
+es
+人
+激活金受
+锐+8
+. —— |
+
+Combined:
+>_> >_> ~5
+Se SST S
+|
+—
+es
+人
+激活金受
+锐+8
+. —— |
+
+=== images/seasonal/five-element/梦•金灵阵3.png ===
+Title:
+(none)
+
+Body:
+二> 二本 =一二
+Se Sst 1 oO
+
+Full:
+-及
+Jr
+三森森
+KK
+I
+i
+激;
+活金受
+锋锐+10
+eo wo @
+
+Combined:
+二> 二本 =一二
+Se Sst 1 oO
+-及
+Jr
+三森森
+KK
+I
+i
+激;
+活金受
+锋锐+10
+eo wo @
+
+=== images/seasonal/five-element/梦•金灵阵4.png ===
+Title:
+(none)
+
+Body:
+Saas SSS Se SS
+Se Sse a
+二 Oe SSS SE
+= See = Os et a Se
+
+Full:
+oo |?
+二
+af
+si
+Ww S
+人
+i=
+|
+六|
+1
+es
+SSB
+=\i>
+激活金受
+笑说+4
+续: 每当再
+es as 6«S a
+
+Combined:
+Saas SSS Se SS
+Se Sse a
+二 Oe SSS SE
+= See = Os et a Se
+oo |?
+二
+af
+si
+Ww S
+人
+i=
+|
+六|
+1
+es
+SSB
+=\i>
+激活金受
+笑说+4
+续: 每当再
+es as 6«S a
+
+=== images/seasonal/five-element/梦•金灵阵5.png ===
+Title:
+(none)
+
+Body:
+CA
+=. Ss 三全二 三元2
+年 SE SG
+7 ee oe
+Sa = eT et Js GS Ss
+
+Full:
+i
+fl 2a
+”
+Ks
+ee
+&
+We 7a sie
+锋锐+6
+持续 :
+BY 70 6 $a
+每当
+A
+
+Combined:
+CA
+=. Ss 三全二 三元2
+年 SE SG
+7 ee oe
+Sa = eT et Js GS Ss
+i
+fl 2a
+”
+Ks
+ee
+&
+We 7a sie
+锋锐+6
+持续 :
+BY 70 6 $a
+每当
+A
+
+=== images/seasonal/heptastar/梦•两仪阵.png ===
+Title:
+ae SE eee
+= SS OE,
+
+Body:
+2 Bien
+
+Full:
+4:
+j Oy
+Ne
+a
+
+Combined:
+ae SE eee
+= SS OE,
+2 Bien
+4:
+j Oy
+Ne
+a
+
+=== images/seasonal/heptastar/梦•两仪阵1.png ===
+Title:
+ee =
+= SS Se __.__
+
+Body:
+ps4
+= 2s ywoO1A=2
+Ft Sk SS BF
+
+Full:
+一 >
+AA
+全
+hic
+(
+{\Lae
+ks
+i
+防+4
+持续 :
+每加1有
+Seis «ca
+
+Combined:
+ee =
+= SS Se __.__
+ps4
+= 2s ywoO1A=2
+Ft Sk SS BF
+一 >
+AA
+全
+hic
+(
+{\Lae
+ks
+i
+防+4
+持续 :
+每加1有
+Seis «ca
+
+=== images/seasonal/heptastar/梦•两仪阵2.png ===
+Title:
+a ee =
+SEE
+————— ————__— 一-
+
+Body:
+= =Sy0142
+和 SS SS BT 7
+>
+
+Full:
+以，
+>
+|
+SS
+2
+er .
+(
+人全) [
+两
+{M4
+OG,
+es
+持续: 每加1受
+加
+. —— |
+
+Combined:
+a ee =
+SEE
+————— ————__— 一-
+= =Sy0142
+和 SS SS BT 7
+>
+以，
+|
+SS
+2
+er .
+(
+人全) [
+两
+{M4
+OG,
+es
+持续: 每加1受
+加
+. —— |
+
+=== images/seasonal/heptastar/梦•两仪阵3.png ===
+Title:
+一 人 =
+= aS
+= SS
+
+Body:
+= =SynoO142
+和 局
+站本二
+
+Full:
+”
+3
+AA
+al
+GIO
+4X
+rot
+BS.
+区
+持续: 每加1受
+气或卦象时加
+a
+
+Combined:
+一 人 =
+= aS
+= SS
+= =SynoO142
+和 局
+站本二
+”
+3
+AA
+al
+GIO
+4X
+rot
+BS.
+区
+持续: 每加1受
+气或卦象时加
+a
+
+=== images/seasonal/heptastar/梦•两仪阵4.png ===
+Title:
+= 二 SS ==
+== a
+
+Body:
+SS FHA=
+5 Se Se SEP Se BT |
+
+Full:
+oD ae
+AA
+ee
+加
+@
+1X
+AD
+Se
+BS.
+持续: 每加1灵
+气或卦象时加 ©
+i —
+oe ws sf &
+
+Combined:
+= 二 SS ==
+== a
+SS FHA=
+5 Se Se SEP Se BT |
+oD ae
+AA
+ee
+加
+@
+1X
+AD
+Se
+BS.
+持续: 每加1灵
+气或卦象时加 ©
+i —
+oe ws sf &
+
+=== images/seasonal/heptastar/梦•两仪阵5.png ===
+Title:
+Se — ——
+.— Ss Ze.
+
+Body:
+人
+三让 二 一本一一也
+三 7 31 =
+<a Se SEF Se BT 7
+
+Full:
+a Ee a ee
+2a
+Sow
+I
+GO
+两
+2
+EX
+[二
+SA
+生命
+> EBR+10
+持续 :
+每加1受
+气或卦象时加
+\ 2防和3生命 了
+
+Combined:
+Se — ——
+.— Ss Ze.
+人
+三让 二 一本一一也
+三 7 31 =
+<a Se SEF Se BT 7
+a Ee a ee
+2a
+Sow
+I
+GO
+两
+2
+EX
+[二
+SA
+生命
+> EBR+10
+持续 :
+每加1受
+气或卦象时加
+\ 2防和3生命 了
+
+=== images/seasonal/heptastar/梦•乾卦.png ===
+Title:
+人
+
+Body:
+(none)
+
+Full:
+RN
+Ge
+(awe
+一-一一
+—!
+—
+a
+ES
+(4
+<
+C
+e
+y
+
+Combined:
+人
+RN
+Ge
+(awe
+一-一一
+—!
+—
+a
+ES
+(4
+<
+C
+e
+y
+
+=== images/seasonal/heptastar/梦•乾卦1.png ===
+Title:
+E 一 一 ”一
+
+Body:
+= oS a — 一一-2
+>= —- -~ =
+
+Full:
+\
+2
+A
+—
+<
+|
+RZ,
+Gs:
+mr
+SS
+os
+填象+2
+
+Combined:
+E 一 一 ”一
+= oS a — 一一-2
+>= —- -~ =
+\
+2
+A
+—
+<
+|
+RZ,
+Gs:
+mr
+SS
+os
+填象+2
+
+=== images/seasonal/heptastar/梦•乾卦2.png ===
+Title:
+二 一一一 — ——— ————__
+— 一 一 =____—
+
+Body:
+= 导 a — 2 ee
+5 : >= — 本=和
+
+Full:
+eo —
+加 =
+ae
+vy
+a2
+Oy
+te
+填象+3
+AF
+
+Combined:
+二 一一一 — ——— ————__
+— 一 一 =____—
+= 导 a — 2 ee
+5 : >= — 本=和
+eo —
+加 =
+ae
+vy
+a2
+Oy
+te
+填象+3
+AF
+
+=== images/seasonal/heptastar/梦•乾卦3.png ===
+Title:
+一一一 — a
+二 ==
+
+Body:
+— 3 a — ee 5
+
+Full:
+A
+oN
+— -_.=. —
+i 去
+ZL
+请
+Sir
+RES
+os
+象+4
+消耗
+
+Combined:
+一一一 — a
+二 ==
+— 3 a — ee 5
+A
+oN
+— -_.=. —
+i 去
+ZL
+请
+Sir
+RES
+os
+象+4
+消耗
+
+=== images/seasonal/heptastar/梦•乾卦4.png ===
+Title:
+一 =____—
+
+Body:
+站外ER 了卫
+SS Se SS SS
+a Eee =
+
+Full:
+AN
+AK
+2S KG.
+—
+{
+rs /
+RE
+RZ,
+<
+Vy
+填象+1
+再次行动
+4
+天
+
+Combined:
+一 =____—
+站外ER 了卫
+SS Se SS SS
+a Eee =
+AN
+AK
+2S KG.
+—
+{
+rs /
+RE
+RZ,
+<
+Vy
+填象+1
+再次行动
+4
+天
+
+=== images/seasonal/heptastar/梦•乾卦5.png ===
+Title:
+(none)
+
+Body:
+— = = —-
+
+Full:
+ae
+A
+|
+一
+SS
+Bz,
+E4
+三
+Hae) Y
+填象+2
+再次
+f=
+
+Combined:
+— = = —-
+ae
+A
+|
+一
+SS
+Bz,
+E4
+三
+Hae) Y
+填象+2
+再次
+f=
+
+=== images/seasonal/heptastar/梦•反震心法.png ===
+Title:
+——""__ EE
+
+Body:
+a —
+< ~ ve
+
+Full:
+sa)
+从
+Ad
+AY
+2
+MLN
+nRaS
+
+Combined:
+——""__ EE
+a —
+< ~ ve
+sa)
+从
+Ad
+AY
+2
+MLN
+nRaS
+
+=== images/seasonal/heptastar/梦•反震心法1.png ===
+Title:
+2 ol Se
+———_ —
+———_
+
+Body:
+a ee eee oe SS
+SS BEY Es Se FO Ts =
+Bt 让和二1 2S 2s Ss E 三= >
+= i —— ee os es Oe 卫二
+
+Full:
+*
+2
+条
+J
+eee
+a
+nde +2
+受到攻击和伤害
+BY 25%, Beau
+1点对方失去1生
+ip 》 持续1回合
+
+Combined:
+2 ol Se
+———_ —
+———_
+a ee eee oe SS
+SS BEY Es Se FO Ts =
+Bt 让和二1 2S 2s Ss E 三= >
+= i —— ee os es Oe 卫二
+*
+2
+条
+J
+eee
+a
+nde +2
+受到攻击和伤害
+BY 25%, Beau
+1点对方失去1生
+ip 》 持续1回合
+
+=== images/seasonal/heptastar/梦•反震心法2.png ===
+Title:
+Es eS
+—_ —
+———_
+
+Body:
+三外一 有二 一:一
+SS ES ae FO es =
+Bt ek — i - 2S 2s E 三= >
+= i —— se se Oe 卫二
+
+Full:
+人
+条
+wee
+ar
+net PR+4
+受到攻击和伤害
+时减少25%，每减
+1点对方 去1生
+命，持续1回合
+
+Combined:
+Es eS
+—_ —
+———_
+三外一 有二 一:一
+SS ES ae FO es =
+Bt ek — i - 2S 2s E 三= >
+= i —— se se Oe 卫二
+人
+条
+wee
+ar
+net PR+4
+受到攻击和伤害
+时减少25%，每减
+1点对方 去1生
+命，持续1回合
+
+=== images/seasonal/heptastar/梦•反震心法3.png ===
+Title:
+— 对一 -一一 i ——— rc el
+= F— | _ LT —_
+
+Body:
+三证天了有E一一全
+ES Se FO os =
+= 5S eo el BS 2 2G > E 三= >
+= i —— es Oe 卫二
+
+Full:
+人
+A
+a
+VAN
+ae ‘
+ae (x Mis |
+i)
+soe AAA
+ve
+4
+大
+Ode
++ ap Az_E BR+6
+受到攻击和伤害
+时减少25% ,每减
+1点对方失去1生
+eo es @
+
+Combined:
+— 对一 -一一 i ——— rc el
+= F— | _ LT —_
+三证天了有E一一全
+ES Se FO os =
+= 5S eo el BS 2 2G > E 三= >
+= i —— es Oe 卫二
+人
+A
+a
+VAN
+ae ‘
+ae (x Mis |
+i)
+soe AAA
+ve
+4
+大
+Ode
++ ap Az_E BR+6
+受到攻击和伤害
+时减少25% ,每减
+1点对方失去1生
+eo es @
+
+=== images/seasonal/heptastar/梦•反震心法4.png ===
+Title:
+= >" i ——— rc el
+
+Body:
+—
+é Ean aa _ FF BPR 一一-之
+SS BEY Es Se FO Ts =
+Et Fak - i > 2s Ss ==>
+Ss Se as SS SS 卫二
+
+Full:
+AA
+iy
+六
+AS
+maces
+ap Az_E PE+3
+受到攻击和伤害
+lA BS
+BY
+25%, tim
+Im
+aa
+持续?回合 元
+eo ss ws &
+
+Combined:
+= >" i ——— rc el
+—
+é Ean aa _ FF BPR 一一-之
+SS BEY Es Se FO Ts =
+Et Fak - i > 2s Ss ==>
+Ss Se as SS SS 卫二
+AA
+iy
+六
+AS
+maces
+ap Az_E PE+3
+受到攻击和伤害
+lA BS
+BY
+25%, tim
+Im
+aa
+持续?回合 元
+eo ss ws &
+
+=== images/seasonal/heptastar/梦•反震心法5.png ===
+Title:
+2
+—_
+— a
+———_
+
+Body:
+» a ees
+— ——7 -s 二=
+ET
+,二 法 i = $1 15> =
+ee =
+= st a ee ee
+
+Full:
+oe ty eae
+3
+四
+Tee
+BS ec:
+全为
+生
+及上限+8
+受到攻击和伤害
+bb read 每减
+Im
+he
+ey
+
+Combined:
+2
+—_
+— a
+———_
+» a ees
+— ——7 -s 二=
+ET
+,二 法 i = $1 15> =
+ee =
+= st a ee ee
+oe ty eae
+3
+四
+Tee
+BS ec:
+全为
+生
+及上限+8
+受到攻击和伤害
+bb read 每减
+Im
+he
+ey
+
+=== images/seasonal/heptastar/梦•御雷卦诀1.png ===
+Title:
+(none)
+
+Body:
+z 了 一一一 卫 oO ET
+We CaS a tse, EE
+S| SS AS SEF Se
+
+Full:
+i nt >
+AA
+fil) og
+=M
+A
+1~~10攻
+加回本场战斗
+ike
+
+Combined:
+z 了 一一一 卫 oO ET
+We CaS a tse, EE
+S| SS AS SEF Se
+i nt >
+AA
+fil) og
+=M
+A
+1~~10攻
+加回本场战斗
+ike
+
+=== images/seasonal/heptastar/梦•御雷卦诀2.png ===
+Title:
+(none)
+
+Body:
+一一卫P Eee
+We CaS a tse, EE
+£2] SS A SEP Se
+
+Full:
+A
+fil
+主N
+3
+3~12攻
+gy
+4
+. —— |
+
+Combined:
+一一卫P Eee
+We CaS a tse, EE
+£2] SS A SEP Se
+A
+fil
+主N
+3
+3~12攻
+gy
+4
+. —— |
+
+=== images/seasonal/heptastar/梦•御雷卦诀3.png ===
+Title:
+(none)
+
+Body:
+_ 5s —~— 1 IC
+WY CS] Sa tse, EE
+
+Full:
+A
+a
+=}
+f
+—5~14IX%
+加回本场战斗
+A Ft
+eo ae @
+
+Combined:
+_ 5s —~— 1 IC
+WY CS] Sa tse, EE
+A
+a
+=}
+f
+—5~14IX%
+加回本场战斗
+A Ft
+eo ae @
+
+=== images/seasonal/heptastar/梦•御雷卦诀4.png ===
+Title:
+一 | — aiff Fe a ne
+NS Oe _—F— >a
+
+Body:
+攻= 一-一卫贡工4
+| Fee C=] sa tS ，”卫-7
+] = Ss] a SF Se
+
+Full:
+枯
+aK
+&
+Fil gn,"
+由
+IR
+SP
+Ye
+9一18攻
+加回本场战斗
+Att y
+
+Combined:
+一 | — aiff Fe a ne
+NS Oe _—F— >a
+攻= 一-一卫贡工4
+| Fee C=] sa tS ，”卫-7
+] = Ss] a SF Se
+枯
+aK
+&
+Fil gn,"
+由
+IR
+SP
+Ye
+9一18攻
+加回本场战斗
+Att y
+
+=== images/seasonal/heptastar/梦•御雷卦诀5.png ===
+Title:
+二
+二二
+
+Body:
+RE
+1 一一 =
+= 三三 到 — 3 oe —
+SS See SS SBS SEF SS
+So Hy to) i Se
+
+Full:
+ee
+A 48
+fil
+| =h4
+EN
+Iz
+Ll
+1一8攻
+续: 每回合
+首次大去卦
+
+Combined:
+二
+二二
+RE
+1 一一 =
+= 三三 到 — 3 oe —
+SS See SS SBS SEF SS
+So Hy to) i Se
+ee
+A 48
+fil
+| =h4
+EN
+Iz
+Ll
+1一8攻
+续: 每回合
+首次大去卦
+
+=== images/seasonal/heptastar/梦•斗转星移.png ===
+Title:
+RE
+
+Body:
+”<
+
+Full:
+(none)
+
+Combined:
+RE
+”<
+
+=== images/seasonal/heptastar/梦•斗转星移1.png ===
+Title:
+——
+
+Body:
+一
+一一7 一:一2卫-
+上 2 二 FoI SB 4;
+
+Full:
+\
+a
+4%
+tz
+FeT+1
+星力+1
+a: 相邻格
+是星位
+
+Combined:
+——
+一
+一一7 一:一2卫-
+上 2 二 FoI SB 4;
+\
+a
+4%
+tz
+FeT+1
+星力+1
+a: 相邻格
+是星位
+
+=== images/seasonal/heptastar/梦•斗转星移2.png ===
+Title:
+_- a=,
+
+Body:
+和 三区一 ee
+一一7 一一2卫-
+二 FH SB 4;
+
+Full:
+aA
+\
+#2
+tz,
+灵气+
+星力+1
+WEN: 相邻格
+是星位
+
+Combined:
+_- a=,
+和 三区一 ee
+一一7 一一2卫-
+二 FH SB 4;
+aA
+\
+#2
+tz,
+灵气+
+星力+1
+WEN: 相邻格
+是星位
+
+=== images/seasonal/heptastar/梦•斗转星移3.png ===
+Title:
+ER 一
+
+Body:
+一一7 一:一2卫-
+二 FoI SB A;
+
+Full:
+\
+#2
+tz,
+”灵气+3
+星力+1
+Wa: 相邻格
+是星位
+
+Combined:
+ER 一
+一一7 一:一2卫-
+二 FoI SB A;
+\
+#2
+tz,
+”灵气+3
+星力+1
+Wa: 相邻格
+是星位
+
+=== images/seasonal/heptastar/梦•斗转星移4.png ===
+Title:
+| —, |e
+
+Body:
+ea Se tS
+[| TS ea- APSR AS
+2 — > — — > 8 v ees F-
+
+Full:
+AA
+yn + RO
+#2
+2
+受气+3
+ah 相邻格
+feeniasioni
+X
+_ J) gf
+
+Combined:
+| —, |e
+ea Se tS
+[| TS ea- APSR AS
+2 — > — — > 8 v ees F-
+AA
+yn + RO
+#2
+2
+受气+3
+ah 相邻格
+feeniasioni
+X
+_ J) gf
+
+=== images/seasonal/heptastar/梦•斗转星移5.png ===
+Title:
+人
+
+Body:
+ogee ee ee
+ES. SSeS
+了 一-7 一一卫
+wee STF = FB PSB ASS Se =
+fez > TS FS FI SB = E
+一 £1 SS |,
+
+Full:
+AA
+wl SS
+#2
+RT+3
+星力+1
+，使用相邻牌时
+m1 7) (BA
+ryyr»pery»fyps yy
+
+Combined:
+人
+ogee ee ee
+ES. SSeS
+了 一-7 一一卫
+wee STF = FB PSB ASS Se =
+fez > TS FS FI SB = E
+一 £1 SS |,
+AA
+wl SS
+#2
+RT+3
+星力+1
+，使用相邻牌时
+m1 7) (BA
+ryyr»pery»fyps yy
+
+=== images/seasonal/heptastar/梦•星弈挡.png ===
+Title:
+Be
+
+Body:
+pp
+
+Full:
+(none)
+
+Combined:
+Be
+pp
+
+=== images/seasonal/heptastar/梦•星弈挡1.png ===
+Title:
+一
+
+Body:
+S Ez
+Es, = —
+> — — By 二 — = Se ee :肆
+
+Full:
+Fe，
+AA
+YWA
+BY A
+=|
+6X
+St: 418
+
+Combined:
+一
+S Ez
+Es, = —
+> — — By 二 — = Se ee :肆
+Fe，
+AA
+YWA
+BY A
+=|
+6X
+St: 418
+
+=== images/seasonal/heptastar/梦•星弈挡2.png ===
+Title:
+(none)
+
+Body:
+ee = ee
+Es, =. —
+ew = 2751412
+
+Full:
+fo
+A
+YWA
+BG A
+=|
+8X
+| ee 1m |
+
+Combined:
+ee = ee
+Es, =. —
+ew = 2751412
+fo
+A
+YWA
+BG A
+=|
+8X
+| ee 1m |
+
+=== images/seasonal/heptastar/梦•星弈挡3.png ===
+Title:
+(none)
+
+Body:
+有
+三 企宇二 二 = ee :在
+
+Full:
+fe
+AA
+YWA
+=)
+Ea A
+f=
+10攻
++2
+星位:
+tH 12 |
+
+Combined:
+有
+三 企宇二 二 = ee :在
+fe
+AA
+YWA
+=)
+Ea A
+f=
+10攻
++2
+星位:
+tH 12 |
+
+=== images/seasonal/heptastar/梦•星弈挡4.png ===
+Title:
+(none)
+
+Body:
+SG Ez >< =>
+Bs+]?
+Sets - e542
+
+Full:
+AA
+2所
+@
+ha
+hy
+EG
+all
+i
+6IN X 2
+防+2
+星位
+每有1星
+力加3防
+Y ~y wr wr Y
+
+Combined:
+SG Ez >< =>
+Bs+]?
+Sets - e542
+AA
+2所
+@
+ha
+hy
+EG
+all
+i
+6IN X 2
+防+2
+星位
+每有1星
+力加3防
+Y ~y wr wr Y
+
+=== images/seasonal/heptastar/梦•星弈挡5.png ===
+Title:
+和
+
+Body:
+{COV
+i 4a > SS
+; EF, ==
+> — — By 二 = Se ee
+
+Full:
+NA
+A
+=
+4IXZ X 3
++2
+= {i
+每有1星
+4
+
+Combined:
+和
+{COV
+i 4a > SS
+; EF, ==
+> — — By 二 = Se ee
+NA
+A
+=
+4IXZ X 3
++2
+= {i
+每有1星
+4
+
+=== images/seasonal/heptastar/梦•星弈点1.png ===
+Title:
+(none)
+
+Body:
+: See
+和 St - Bewo.1
+SSS
+
+Full:
+a
+\
+AA
+hd
+Ewe
+at sen.
+5攻
+星位
+施加1层
+
+Combined:
+: See
+和 St - Bewo.1
+SSS
+a
+\
+AA
+hd
+Ewe
+at sen.
+5攻
+星位
+施加1层
+
+=== images/seasonal/heptastar/梦•星弈点2.png ===
+Title:
+(none)
+
+Body:
+aaa
+和 ETEZ - ews
+Sa
+
+Full:
+A
+ak? OF
+weaeL
+5攻
+星位: 施加2层
+
+Combined:
+aaa
+和 ETEZ - ews
+Sa
+A
+ak? OF
+weaeL
+5攻
+星位: 施加2层
+
+=== images/seasonal/heptastar/梦•星弈点3.png ===
+Title:
+— (i ee eee
+
+Body:
+二 工4z
+和 Sm- ewu0 Sse
+——
+
+Full:
+A
+Ph RiP Fr
+全
+UID Dk
+星位
+施加3层
+
+Combined:
+— (i ee eee
+二 工4z
+和 Sm- ewu0 Sse
+——
+A
+Ph RiP Fr
+全
+UID Dk
+星位
+施加3层
+
+=== images/seasonal/heptastar/梦•星弈点4.png ===
+Title:
+(none)
+
+Body:
+4 i
+5 Es
+JEE 一一7 一:一卫
+ess T= Ba Sz T= AS 3
+Ts 和一 Bs Bs JSS He ZI
+a 一 , aa ee — oe .
+
+Full:
++
+Figg oe BR
+AA
+uy
+kf I>
+a |
+AR
+we
+os
+ss
+5攻
+星力+1
+) 位上的牌后施加
+le
+As (Fae
+TEA了
+
+Combined:
+4 i
+5 Es
+JEE 一一7 一:一卫
+ess T= Ba Sz T= AS 3
+Ts 和一 Bs Bs JSS He ZI
+a 一 , aa ee — oe .
++
+Figg oe BR
+AA
+uy
+kf I>
+a |
+AR
+we
+os
+ss
+5攻
+星力+1
+) 位上的牌后施加
+le
+As (Fae
+TEA了
+
+=== images/seasonal/heptastar/梦•星弈点5.png ===
+Title:
+(none)
+
+Body:
+和<人> —*
+5S Eo
+了 一7 一一
+=. 2s 5 1S AG -
+fz _ F- Bs B22 JS te JIL
+a a es = | tC - , aa ee — oe
+
+Full:
+/>-
+S
+pray
+ewe ay,
+a eae
+5攻
+星7+2
+TE AERA
+内伤 《不可
+
+Combined:
+和<人> —*
+5S Eo
+了 一7 一一
+=. 2s 5 1S AG -
+fz _ F- Bs B22 JS te JIL
+a a es = | tC - , aa ee — oe
+/>-
+S
+pray
+ewe ay,
+a eae
+5攻
+星7+2
+TE AERA
+内伤 《不可
+
+=== images/seasonal/heptastar/梦•星罗棋布.png ===
+Title:
+—
+
+Body:
+ae 上
+
+Full:
+可
+7%
+4
+不
+
+Combined:
+—
+ae 上
+可
+7%
+4
+不
+
+=== images/seasonal/heptastar/梦•星罗棋布1.png ===
+Title:
+ER
+
+Body:
+: Ss <4. t= F
+S34 FE = tez Fes He
+i —esi te 卫 三元2 一一二 天吕
+
+Full:
+CAS
+ee) YS
+z a.
+et we
+非星位上的牌
+后加1受气和
+
+Combined:
+ER
+: Ss <4. t= F
+S34 FE = tez Fes He
+i —esi te 卫 三元2 一一二 天吕
+CAS
+ee) YS
+z a.
+et we
+非星位上的牌
+后加1受气和
+
+=== images/seasonal/heptastar/梦•星罗棋布2.png ===
+Title:
+>
+
+Body:
+Hs ER -全一人 一.卫
+-= ts F
+— | —2 - _— ay ae oe = 大， =
+= —ewsit 三 一全= &
+
+Full:
+A
+时
+yy)
+气+1
+AF S fi_F a9?
+续1次: 使用
+后卫全和
+
+Combined:
+>
+Hs ER -全一人 一.卫
+-= ts F
+— | —2 - _— ay ae oe = 大， =
+= —ewsit 三 一全= &
+A
+时
+yy)
+气+1
+AF S fi_F a9?
+续1次: 使用
+后卫全和
+
+=== images/seasonal/heptastar/梦•星罗棋布3.png ===
+Title:
+>
+
+Body:
+>see 二 tPF
+— | —2 — —% av eee oe = 8B
+Ss, 5S ees
+
+Full:
+(ee
+Se
+上
+4 OQ)
+Ny
+Ba: 信用|
+|
+ee a
+
+Combined:
+>
+>see 二 tPF
+— | —2 — —% av eee oe = 8B
+Ss, 5S ees
+(ee
+Se
+上
+4 OQ)
+Ny
+Ba: 信用|
+|
+ee a
+
+=== images/seasonal/heptastar/梦•星罗棋布4.png ===
+Title:
+(none)
+
+Body:
+ssa = TSF
+| = ae oe - 有
+eee — 2 1 tS 三元2 一二 天中
+
+Full:
+—_
+S
+项
+be
+: ® |
+fi
+其
+ah:
+a
+Ls
+非星位上的路
+后加1受气和 |
+X
+D/5
+
+Combined:
+ssa = TSF
+| = ae oe - 有
+eee — 2 1 tS 三元2 一二 天中
+—_
+S
+项
+be
+: ® |
+fi
+其
+ah:
+a
+Ls
+非星位上的路
+后加1受气和 |
+X
+D/5
+
+=== images/seasonal/heptastar/梦•星罗棋布5.png ===
+Title:
+=
+
+Body:
+ee
+=- SSeS =
+6S se f= Fs SE SS
+fz | 89 BS JSST
+
+Full:
+AA
+医
+a ©:
+HEI
+使用非星
+位上的牌后加
+dR)
+/4
+
+Combined:
+=
+ee
+=- SSeS =
+6S se f= Fs SE SS
+fz | 89 BS JSST
+AA
+医
+a ©:
+HEI
+使用非星
+位上的牌后加
+dR)
+/4
+
+=== images/seasonal/heptastar/梦•星轨推衍.png ===
+Title:
+一
+
+Body:
+ma . 9
+ER 一人一
+< =r KR 一 EE +:
+= Ss SO
+
+Full:
+一一一 -一~
+rt
+ren ay
+= @
+J
+“aN
+oN
+>)
+sf *+*=
+Y,
+”灵气+
+生命及上限+2
+耗尽卦象，每
+一
+Furr
+me
+
+Combined:
+一
+ma . 9
+ER 一人一
+< =r KR 一 EE +:
+= Ss SO
+一一一 -一~
+rt
+ren ay
+= @
+J
+“aN
+oN
+>)
+sf *+*=
+Y,
+”灵气+
+生命及上限+2
+耗尽卦象，每
+Furr
+me
+
+=== images/seasonal/heptastar/梦•星轨推衍1.png ===
+Title:
+一
+
+Body:
+ma . 9
+ER 一人一
+< =r KR 一 EE +:
+= Ss SO
+
+Full:
+一一一 -一~
+rt
+ren ay
+= @
+J
+“aN
+oN
+>)
+sf *+*=
+Y,
+”灵气+
+生命及上限+2
+耗尽卦象，每
+一
+Furr
+me
+
+Combined:
+一
+ma . 9
+ER 一人一
+< =r KR 一 EE +:
+= Ss SO
+一一一 -一~
+rt
+ren ay
+= @
+J
+“aN
+oN
+>)
+sf *+*=
+Y,
+”灵气+
+生命及上限+2
+耗尽卦象，每
+Furr
+me
+
+=== images/seasonal/heptastar/梦•星轨推衍2.png ===
+Title:
+了
+
+Body:
+- <<. BE-
+Eee -一人一-
+== ap BR 一 BE +.
+= OO
+
+Full:
+a
+>
+%
+NS |
+= =—
+‘i
+4)
+a, ™
+TEE
+sf *+=
+-
+177
+灵气+
+生命及上限+4
+AREA, &
+点加1星力
+
+Combined:
+了
+- <<. BE-
+Eee -一人一-
+== ap BR 一 BE +.
+= OO
+a
+>
+%
+NS |
+= =—
+‘i
+4)
+a, ™
+TEE
+sf *+=
+-
+177
+灵气+
+生命及上限+4
+AREA, &
+点加1星力
+
+=== images/seasonal/heptastar/梦•星轨推衍3.png ===
+Title:
+三
+
+Body:
+_ Pe a
+ES es
+ee Se Aa _ FE BPR +
+ae J SEP Se BS
+
+Full:
+oe
+eee
+a?
++ AAA
+\
+yy '
+= —_—
+-人
+IL
+TEE
+sf *=
+.e™
+/中
+me
++ ap kz_E BR +6
+FLRER,
+点加1星力
+eo es @
+
+Combined:
+三
+_ Pe a
+ES es
+ee Se Aa _ FE BPR +
+ae J SEP Se BS
+oe
+eee
+a?
++ AAA
+\
+yy '
+= —_—
+-人
+IL
+TEE
+sf *=
+.e™
+/中
+me
++ ap kz_E BR +6
+FLRER,
+点加1星力
+eo es @
+
+=== images/seasonal/heptastar/梦•星轨推衍4.png ===
+Title:
+—_ LS — 4h
+
+Body:
+En
+= SE J=- SEF Be ~ =
+= © -—— bv 2 — ses itck & =
+
+Full:
+AN
+se OX
+2!
+se
+Il
+a
+把
+>)
+Y,
+灵气+
+FERER,
+, 点使后面1格成
+为星位并加1星
+N
+. #2 eo fe &
+
+Combined:
+—_ LS — 4h
+En
+= SE J=- SEF Be ~ =
+= © -—— bv 2 — ses itck & =
+AN
+se OX
+2!
+se
+Il
+a
+把
+>)
+Y,
+灵气+
+FERER,
+, 点使后面1格成
+为星位并加1星
+N
+. #2 eo fe &
+
+=== images/seasonal/heptastar/梦•星轨推衍5.png ===
+Title:
+人
+
+Body:
+全 >
+ee, ee
+—- = — — 一一-卫
+SE J= SEP See -~ ——— .
+ts> F— pes 8 a OS ee
+
+Full:
+AA
+S
+SS
+(人
+a
+Il
+%)
+TEE | s
+17],
+Y,
+灵气+2
+填象+1
+FREER, HA
+使后面1格成
+v= fF 1S 77y |
+yy)
+ryrs»pefrysps*Yy
+
+Combined:
+人
+全 >
+ee, ee
+—- = — — 一一-卫
+SE J= SEP See -~ ——— .
+ts> F— pes 8 a OS ee
+AA
+S
+SS
+(人
+a
+Il
+%)
+TEE | s
+17],
+Y,
+灵气+2
+填象+1
+FREER, HA
+使后面1格成
+v= fF 1S 77y |
+yy)
+ryrs»pefrysps*Yy
+
+=== images/seasonal/heptastar/梦•杯弓蛇影.png ===
+Title:
+(none)
+
+Body:
+<
+
+Full:
+SS
+¥
+\J
+
+Combined:
+<
+SS
+¥
+\J
+
+=== images/seasonal/heptastar/梦•杯弓蛇影1.png ===
+Title:
+(none)
+
+Body:
+三对 ar 大> 一 BR +.
+ts 70 4 FSS] PS ts
+
+Full:
+AA
+怀
+RN
+nA,
+生命及上限+2
+施加1层内伤
+
+Combined:
+三对 ar 大> 一 BR +.
+ts 70 4 FSS] PS ts
+AA
+怀
+RN
+nA,
+生命及上限+2
+施加1层内伤
+
+=== images/seasonal/heptastar/梦•杯弓蛇影2.png ===
+Title:
+(none)
+
+Body:
+= as DR 有 BRE.
+ts 0 2 SS ss 1S
+
+Full:
+AA
+SS
+‘ia
+S '
+rey
+Ly
+=?
+nd,
+UI
+生命及上限+4
+施加1层内伤
+[_ — |
+
+Combined:
+= as DR 有 BRE.
+ts 0 2 SS ss 1S
+AA
+SS
+‘ia
+S '
+rey
+Ly
+=?
+nd,
+UI
+生命及上限+4
+施加1层内伤
+[_ — |
+
+=== images/seasonal/heptastar/梦•杯弓蛇影3.png ===
+Title:
+和 一】 一一一
+
+Body:
+4 as Je OBR +.
+0 1 SS Sosa
+国王 —. -2 7
+
+Full:
+一
+~
+A
+怀
+We
+pe
+们7
+hy
+os
+和
+生命及上限4
+施加1层内伤和
+eo es @&
+
+Combined:
+和 一】 一一一
+4 as Je OBR +.
+0 1 SS Sosa
+国王 —. -2 7
+一
+~
+A
+怀
+We
+pe
+们7
+hy
+os
+和
+生命及上限4
+施加1层内伤和
+eo es @&
+
+=== images/seasonal/heptastar/梦•杯弓蛇影4.png ===
+Title:
+本| 一
+
+Body:
+— 一
+= ap Aa _|F- BE +-
+SS Si 25> FO 1a SS fess
+ee a ww. OSS
+<< ma Ss] pil
+
+Full:
+AA
+grr BY
+怀
+nA,
+Fs
+命及上限+4
+对方加1层蛇影
+已用过名子含
+“he” 的牌则
+和
+ys
+
+Combined:
+本| 一
+— 一
+= ap Aa _|F- BE +-
+SS Si 25> FO 1a SS fess
+ee a ww. OSS
+<< ma Ss] pil
+AA
+grr BY
+怀
+nA,
+Fs
+命及上限+4
+对方加1层蛇影
+已用过名子含
+“he” 的牌则
+和
+ys
+
+=== images/seasonal/heptastar/梦•杯弓蛇影5.png ===
+Title:
+oe Ee
+
+Body:
+— > Be 3
+=p Aa _F BR+2e
+St sa Ww 63 SS Ce SS
+ae a ww SS. OS
+ee Sg ee ma Ss ipl
+
+Full:
+AA
+=
+怀
+os
+Ap
+KE PR+8
+ee
+用过
+Fa
+en 的牌则
+再次行动
+
+Combined:
+oe Ee
+— > Be 3
+=p Aa _F BR+2e
+St sa Ww 63 SS Ce SS
+ae a ww SS. OS
+ee Sg ee ma Ss ipl
+AA
+=
+怀
+os
+Ap
+KE PR+8
+ee
+用过
+Fa
+en 的牌则
+再次行动
+
+=== images/seasonal/heptastar/梦•枯木逢春.png ===
+Title:
+(none)
+
+Body:
+一
+
+Full:
+\
+aon
+'
+I,
+yl
+
+Combined:
+一
+\
+aon
+'
+I,
+yl
+
+=== images/seasonal/heptastar/梦•枯木逢春1.png ===
+Title:
+- i — 有
+
+Body:
+= SS 二一二= 一 者=
+二上
+Tz =
+
+Full:
+A
+AX} 是
+>
+NW a
+1=
+a
+masts
+MES, the
+5攻
+
+Combined:
+- i — 有
+= SS 二一二= 一 者=
+二上
+Tz =
+A
+AX} 是
+>
+NW a
+1=
+a
+masts
+MES, the
+5攻
+
+=== images/seasonal/heptastar/梦•枯木逢春2.png ===
+Title:
+办一
+
+Body:
+SS F953 aS SS SCPE
+ee ee
+7 SHS
+
+Full:
+-一
+AA
+XN
+1=
+之和NA
+上性
+MES, the
+6攻
+[_ — |
+
+Combined:
+办一
+SS F953 aS SS SCPE
+ee ee
+7 SHS
+-一
+AA
+XN
+1=
+之和NA
+上性
+MES, the
+6攻
+[_ — |
+
+=== images/seasonal/heptastar/梦•枯木逢春3.png ===
+Title:
+. — J. se
+
+Body:
+二上
+a ete
+
+Full:
+ae!
+A
+»*
+th
+WS.
+之NA
+Ly
+1= |
+fF > th
+MES, the
+eo es @&
+攻
+
+Combined:
+. — J. se
+二上
+a ete
+ae!
+A
+»*
+th
+WS.
+之NA
+Ly
+1= |
+fF > th
+MES, the
+eo es @&
+攻
+
+=== images/seasonal/heptastar/梦•枯木逢春4.png ===
+Title:
+一上
+
+Body:
+<>
+SSS Fs 5 SS SCOPE:
+Ss SSS C$ sIFE-L HS
+72 StS
+
+Full:
+pale
+ome
+A
+RN
+枯
+\ oO
+1=
+a
+Ya
+若用过梦。 th
+MES, the
+101%
+oes ws &
+
+Combined:
+一上
+<>
+SSS Fs 5 SS SCOPE:
+Ss SSS C$ sIFE-L HS
+72 StS
+pale
+ome
+A
+RN
+枯
+\ oO
+1=
+a
+Ya
+若用过梦。 th
+MES, the
+101%
+oes ws &
+
+=== images/seasonal/heptastar/梦•枯木逢春5.png ===
+Title:
+JE —S
+
+Body:
+> ee
+=> =
+= S=S- —— oe
+2 = =a Ba = =
+— an ~ a 一一
+
+Full:
+AA
+NE
+1=
+SS，
+每用过一次要
+攻就翻倍一次
+12
+
+Combined:
+JE —S
+> ee
+=> =
+= S=S- —— oe
+2 = =a Ba = =
+— an ~ a 一一
+AA
+NE
+1=
+SS，
+每用过一次要
+攻就翻倍一次
+12
+
+=== images/seasonal/heptastar/梦•气疗术.png ===
+Title:
+aa全全~
+
+Body:
+7
+
+Full:
+yy \
+
+Combined:
+aa全全~
+7
+yy \
+
+=== images/seasonal/heptastar/梦•气疗术1.png ===
+Title:
+=z) —hl — ST. SS
+
+Body:
+22S ~~ + a>
+— ———) — soe ome |) oe 8
+-一
+
+Full:
+SS
+上一
+IF 4
+AY
+“有灵气+2
++ apEPR+10 ©
+ppt2
+
+Combined:
+=z) —hl — ST. SS
+22S ~~ + a>
+— ———) — soe ome |) oe 8
+-一
+SS
+上一
+IF 4
+AY
+“有灵气+2
++ apEPR+10 ©
+ppt2
+
+=== images/seasonal/heptastar/梦•气疗术2.png ===
+Title:
+a= -—_— a |
+
+Body:
+Eee <
+— —e—, - ee oe |) ee
+人
+
+Full:
+Bus
+上一
+TF 4
+AS
+Oy
+“灵气+2
+生合上限+10
+生命+4
+— |
+
+Combined:
+a= -—_— a |
+Eee <
+— —e—, - ee oe |) ee
+人
+Bus
+上一
+TF 4
+AS
+Oy
+“灵气+2
+生合上限+10
+生命+4
+— |
+
+=== images/seasonal/heptastar/梦•气疗术3.png ===
+Title:
+2 ammmr ，- 一
+
+Body:
+Eee 一二一
+= Ss 一有一 BR+10
+-人
+
+Full:
+A
+8
+上广一
+tia
+AN
+| 灵气+2
+生命上限+10 ©
+生命+6
+ees @
+
+Combined:
+2 ammmr ，- 一
+Eee 一二一
+= Ss 一有一 BR+10
+-人
+A
+8
+上广一
+tia
+AN
+| 灵气+2
+生命上限+10 ©
+生命+6
+ees @
+
+=== images/seasonal/heptastar/梦•气疗术4.png ===
+Title:
+二一一 — =>
+zs -—_— ee. =|
+
+Body:
+—_——_
+—
+as
+二 三2
+ma -
+> “== =a, “FA
+三 三
+人
+—_
+
+Full:
+A Ne
+\
+上一
+TF
+AN
+Lio>
+o
+“灵气+2
+生命上限+15
+每点受气/星力
+x 加273
+ER
+
+Combined:
+二一一 — =>
+zs -—_— ee. =|
+—_——_
+—
+as
+二 三2
+ma -
+> “== =a, “FA
+三 三
+人
+—_
+A Ne
+\
+上一
+TF
+AN
+Lio>
+o
+“灵气+2
+生命上限+15
+每点受气/星力
+x 加273
+ER
+
+=== images/seasonal/heptastar/梦•气疗术5.png ===
+Title:
+ee ————— ，- —=
+C—O Fe
+
+Body:
+<
+一 Fe
+a os
+—
+
+Full:
+po
+/
+AA
+2
+SS
+=
+疗 |
+ZS bs
+‘2.
+受气+
+生命
+证上限+20
+每点受气 he
+Aq
+加273
+
+Combined:
+ee ————— ，- —=
+C—O Fe
+<
+一 Fe
+a os
+—
+po
+/
+AA
+2
+SS
+=
+疗 |
+ZS bs
+‘2.
+受气+
+生命
+证上限+20
+每点受气 he
+Aq
+加273
+
+=== images/seasonal/heptastar/梦•海底捞月.png ===
+Title:
+(none)
+
+Body:
+EE
+: — am
+_ la
+— era .
+ae
+
+Full:
+===,
+SS
+
+Combined:
+EE
+: — am
+_ la
+— era .
+ae
+===,
+SS
+
+=== images/seasonal/heptastar/梦•海底捞月1.png ===
+Title:
+2 一
+— Ce 一
+
+Body:
+和 FE FS = wT =z 二一 -
+
+Full:
+海
+»
+氏
+|
+=
+司
+地
+后招: 7攻X 2
+
+Combined:
+2 一
+— Ce 一
+和 FE FS = wT =z 二一 -
+海
+»
+氏
+|
+=
+司
+地
+后招: 7攻X 2
+
+=== images/seasonal/heptastar/梦•海底捞月2.png ===
+Title:
+一
+— Ce 一
+
+Body:
+和 Ja Fez 二 S Ea ><
+
+Full:
+ry
+IEE
+=一
+os
+后招: 9攻X 2
+
+Combined:
+一
+— Ce 一
+和 Ja Fez 二 S Ea ><
+ry
+IEE
+=一
+os
+后招: 9攻X 2
+
+=== images/seasonal/heptastar/梦•海底捞月3.png ===
+Title:
+= ——— oe
+a SSE SS
+
+Body:
+soe a =~ 二-一
+
+Full:
+一一-一一一
+IEE
+S=
+后招: 1112 X2
+
+Combined:
+= ——— oe
+a SSE SS
+soe a =~ 二-一
+一一-一一一
+IEE
+S=
+后招: 1112 X2
+
+=== images/seasonal/heptastar/梦•海底捞月4.png ===
+Title:
+二 一
+一
+
+Body:
+a" =
+"| 7S Sr 4S Sa
+) i 7 = ee >一:
+二一二有 8
+
+Full:
+A
+S
+7
+he
+IEE
+——
+Fa RITA
+后招: 112 X2 下
+右在卡组后5格;
+NS
+“ee
+.
+Sax oe
+
+Combined:
+二 一
+一
+a" =
+"| 7S Sr 4S Sa
+) i 7 = ee >一:
+二一二有 8
+A
+S
+7
+he
+IEE
+——
+Fa RITA
+后招: 112 X2 下
+右在卡组后5格;
+NS
+“ee
+.
+Sax oe
+
+=== images/seasonal/heptastar/梦•海底捞月5.png ===
+Title:
+一
+== — ——_S_
+
+Body:
+> ee
+-二 es ee
+) ff — ss - eee SS eee
+ae = 产研二:才
+
+Full:
+AA
+AN
+ne
+到
+EK
+月
+S=
+后招: 1攻X2?
+若在卡组后5格
+y»yrrs»pereyrffy»pyYy
+则多7攻
+
+Combined:
+一
+== — ——_S_
+> ee
+-二 es ee
+) ff — ss - eee SS eee
+ae = 产研二:才
+AA
+AN
+ne
+到
+EK
+月
+S=
+后招: 1攻X2?
+若在卡组后5格
+y»yrrs»pereyrffy»pyYy
+则多7攻
+
+=== images/seasonal/heptastar/梦•白蛇吐信.png ===
+Title:
+_™~_ eee 3 a
+
+Body:
+“中 ee 一
+
+Full:
+NAC
+
+Combined:
+_™~_ eee 3 a
+“中 ee 一
+NAC
+
+=== images/seasonal/heptastar/梦•白蛇吐信1.png ===
+Title:
+=_ = = —— ———SS==
+a = | 人
+
+Body:
+<> =~ 4
+= Sa 3a Sez => lL CUA PS
+tS ~ Bess. Si-155"*
+ES AIL 4 32] SSH SSS
+
+Full:
+AA
+SS
+吐
+|
+>
+3攻
+BER MB
+He 55.
+随机1层施加给对
+nip
+多重复1次
+
+Combined:
+=_ = = —— ———SS==
+a = | 人
+<> =~ 4
+= Sa 3a Sez => lL CUA PS
+tS ~ Bess. Si-155"*
+ES AIL 4 32] SSH SSS
+AA
+SS
+吐
+|
+>
+3攻
+BER MB
+He 55.
+随机1层施加给对
+nip
+多重复1次
+
+=== images/seasonal/heptastar/梦•白蛇吐信2.png ===
+Title:
+Oe
+
+Body:
+= S sz
+= Sa a Sez => lLCU KA PS
+ts ~ Bess. 6 i-155"*
+ES AIL 4 32] SSID SSS
+
+Full:
+ee
+AA
+SS
+吐
+Ye
+5攻
+重复1次 从内
+He 55.
+随机1层施加给对
+ate
+多重复1次
+[_ — |
+
+Combined:
+Oe
+= S sz
+= Sa a Sez => lLCU KA PS
+ts ~ Bess. 6 i-155"*
+ES AIL 4 32] SSID SSS
+ee
+AA
+SS
+吐
+Ye
+5攻
+重复1次 从内
+He 55.
+随机1层施加给对
+ate
+多重复1次
+[_ — |
+
+=== images/seasonal/heptastar/梦•白蛇吐信3.png ===
+Title:
+LSS
+
+Body:
+= S 了
+= Sa 3a Sez =U KA PS
+as .~ Bess. Si-155"*
+ES AIL 4 J2= SSH SSS
+
+Full:
+A
+oN
+SS
+n+%
+‘a?
+SIN
+BER: 从内
+随机1层施加给对
+5招: 多重复2
+eo es @&
+
+Combined:
+LSS
+= S 了
+= Sa 3a Sez =U KA PS
+as .~ Bess. Si-155"*
+ES AIL 4 J2= SSH SSS
+A
+oN
+SS
+n+%
+‘a?
+SIN
+BER: 从内
+随机1层施加给对
+5招: 多重复2
+eo es @&
+
+=== images/seasonal/heptastar/梦•白蛇吐信4.png ===
+Title:
+SSS
+
+Body:
+= a
+Ss Ez
+= SS 2 E> CUA PS
+as.~ 22 s55.~. F-15955 >
+Wet Sz = ES AL 1 = GS
+hw ec—_— Tz
+
+Full:
+Rye BY
+AA
+之和
+吐
+iE
+5X
+重复2次 从内
+虚弱、外伤
+减攻中随机1层
+织关
+
+Combined:
+SSS
+= a
+Ss Ez
+= SS 2 E> CUA PS
+as.~ 22 s55.~. F-15955 >
+Wet Sz = ES AL 1 = GS
+hw ec—_— Tz
+Rye BY
+AA
+之和
+吐
+iE
+5X
+重复2次 从内
+虚弱、外伤
+减攻中随机1层
+织关
+
+=== images/seasonal/heptastar/梦•白蛇吐信5.png ===
+Title:
+ER = Se 一
+OSS
+
+Body:
+和 —"
+S Es
+= SS B= IA_P§A
+ts ~ Bess ~~ 6-495 >
+Wee Sz ES AL 1 ES GS
+esl.
+
+Full:
+sie
+n
+x
+吐
+mA
+le,
+重复3次 从内
+5攻
+1. Be5s. IMAM
+1层
+ata: 7am) my
+
+Combined:
+ER = Se 一
+OSS
+和 —"
+S Es
+= SS B= IA_P§A
+ts ~ Bess ~~ 6-495 >
+Wee Sz ES AL 1 ES GS
+esl.
+sie
+n
+x
+吐
+mA
+le,
+重复3次 从内
+5攻
+1. Be5s. IMAM
+1层
+ata: 7am) my
+
+=== images/seasonal/heptastar/梦•离卦.png ===
+Title:
+= SESE EES
+
+Body:
+(none)
+
+Full:
+(none)
+
+Combined:
+= SESE EES
+
+=== images/seasonal/heptastar/梦•离卦1.png ===
+Title:
+= _ |— i
+
+Body:
+又村 > >让了所 HE =
+= = 硅和3 -会
+2
+
+Full:
+an YN
+SG,
+oy
+对方减6生命
+R
+卦象，每
+Furr
+多减3
+
+Combined:
+= _ |— i
+又村 > >让了所 HE =
+= = 硅和3 -会
+2
+an YN
+SG,
+oy
+对方减6生命
+R
+卦象，每
+Furr
+多减3
+
+=== images/seasonal/heptastar/梦•离卦2.png ===
+Title:
+= _ |— i
+
+Body:
+Rot os EB EE
+se = Ss Seti SS
+.—— | ae 4
+
+Full:
+Ear
+4
+s)
+a
+ra
+有
+str BE
+FLRER,
+多减3
+. —— |
+
+Combined:
+= _ |— i
+Rot os EB EE
+se = Ss Seti SS
+.—— | ae 4
+Ear
+4
+s)
+a
+ra
+有
+str BE
+FLRER,
+多减3
+. —— |
+
+=== images/seasonal/heptastar/梦•离卦3.png ===
+Title:
+本 了
+
+Body:
+ot > EI Ost =
+Ee J=- SEP See Cg =
+.— | ae 4
+
+Full:
+(一
+fo
+Po
+eS
+AK
+—
++
+ty
+对方减10生命
+FRE,
+总多减3
+eo eo 各
+
+Combined:
+本 了
+ot > EI Ost =
+Ee J=- SEP See Cg =
+.— | ae 4
+(一
+fo
+Po
+eS
+AK
+—
++
+ty
+对方减10生命
+FRE,
+总多减3
+eo eo 各
+
+=== images/seasonal/heptastar/梦•离卦4.png ===
+Title:
+eS — Se
+
+Body:
+st >
+Fe FLO SE 二
+=e = Se ee =
+—S SS +s
+
+Full:
+or,
+AAR
+_— ae
+te’
+对方减10生命
+耗尽卦象，每
+ras m4
+so a fs a&
+
+Combined:
+eS — Se
+st >
+Fe FLO SE 二
+=e = Se ee =
+—S SS +s
+or,
+AAR
+_— ae
+te’
+对方减10生命
+耗尽卦象，每
+ras m4
+so a fs a&
+
+=== images/seasonal/heptastar/梦•离卦5.png ===
+Title:
+|
+- -一一”
+
+Body:
+St aS 三 三
+Fake 1
+ae = =
+SS SS ES =
+
+Full:
+Ra
+局
+4
+us = =
+a /
+s+
+hi
+对方减10生命
+耗尽卦象，每
+Si
+
+Combined:
+|
+- -一一”
+St aS 三 三
+Fake 1
+ae = =
+SS SS ES =
+Ra
+局
+4
+us = =
+a /
+s+
+hi
+对方减10生命
+耗尽卦象，每
+Si
+
+=== images/seasonal/heptastar/梦•落花有意.png ===
+Title:
+Se
+
+Body:
+ES
+
+Full:
+ms
+“aN
+Oy,
+
+Combined:
+Se
+ES
+ms
+“aN
+Oy,
+
+=== images/seasonal/heptastar/梦•落花有意1.png ===
+Title:
+(none)
+
+Body:
+上 Fes 2 SS] Pos
+ZG = ae a+.
+
+Full:
+一 >
+A> m
+化
+心
+S
+ve?
+wa
+后招: ap+4
+
+Combined:
+上 Fes 2 SS] Pos
+ZG = ae a+.
+一 >
+A> m
+化
+心
+S
+ve?
+wa
+后招: ap+4
+
+=== images/seasonal/heptastar/梦•落花有意2.png ===
+Title:
+(none)
+
+Body:
+Fes 3 5S ests
+, —-.,- 二 三二 一一:
+
+Full:
+林
+Ya
+—- >
+>各 i
+化
+LA
+=x |
+os
+chien
+后招: 生命+8
+. —— |
+
+Combined:
+Fes 3 5S ests
+, —-.,- 二 三二 一一:
+林
+Ya
+—- >
+>各 i
+化
+LA
+=x |
+os
+chien
+后招: 生命+8
+. —— |
+
+=== images/seasonal/heptastar/梦•落花有意3.png ===
+Title:
+一
+
+Body:
+Wes 1 HS] Pos
+JE ; 二 — — st - 一 卫
+
+Full:
+gee
+2
+木林
+1 @
+>各 国
+1t
+‘A
+ff
+Fa
+Os
+WA
+后招: 生命+12
+ee @
+
+Combined:
+一
+Wes 1 HS] Pos
+JE ; 二 — — st - 一 卫
+gee
+2
+木林
+1 @
+>各 国
+1t
+‘A
+ff
+Fa
+Os
+WA
+后招: 生命+12
+ee @
+
+=== images/seasonal/heptastar/梦•落花有意4.png ===
+Title:
+一
+
+Body:
+—
+- Fw 3了FE Pos
+二和二下一到
+2 —- . -— 二 = F901 a=
+_——— +. —,- 2 > est tee sil
+
+Full:
+2
+本末 "Ss.
+®
+we?
+tt
+AN
+>各
+1t
+‘=
+A
+sea
+mole
+页
+MBA
+生
+后
+招: 每加过
+|
+,
+5生命就施加
+% ls
+eos wae fs &
+J
+
+Combined:
+一
+—
+- Fw 3了FE Pos
+二和二下一到
+2 —- . -— 二 = F901 a=
+_——— +. —,- 2 > est tee sil
+2
+本末 "Ss.
+®
+we?
+tt
+AN
+>各
+1t
+‘=
+A
+sea
+mole
+页
+MBA
+生
+后
+招: 每加过
+|
+,
+5生命就施加
+% ls
+eos wae fs &
+J
+
+=== images/seasonal/heptastar/梦•落花有意5.png ===
+Title:
+(none)
+
+Body:
+ES。 人>
+3 力口 4. JS] Pots
+— —e-7-e
+é FE 第 二 = Fn a>
+2 -天一 —, —_ s+ et ee)
+
+Full:
+TI
+aps
+a i
+化
+有
+“S
+=h
+加1层
+Af
+ap
++5
+后招: 每加过
++
+4
+PADG OL
+
+Combined:
+ES。 人>
+3 力口 4. JS] Pots
+— —e-7-e
+é FE 第 二 = Fn a>
+2 -天一 —, —_ s+ et ee)
+TI
+aps
+a i
+化
+有
+“S
+=h
+加1层
+Af
+ap
++5
+后招: 每加过
++
+4
+PADG OL
+
+=== images/seasonal/heptastar/梦•落雷术.png ===
+Title:
+下 =
+
+Body:
+三
+一一 35x 证 es =>
+— = —— 一 = =区 下二一一一人 |
+
+Full:
+SS
+个
+6攻〈卡组中每
+stem 13)
+
+Combined:
+下 =
+三
+一一 35x 证 es =>
+— = —— 一 = =区 下二一一一人 |
+SS
+个
+6攻〈卡组中每
+stem 13)
+
+=== images/seasonal/heptastar/梦•落雷术1.png ===
+Title:
+下 =
+
+Body:
+三
+一一 35x 证 es =>
+— = —— 一 = =区 下二一一一人 |
+
+Full:
+SS
+个
+6攻〈卡组中每
+stem 13)
+
+Combined:
+下 =
+三
+一一 35x 证 es =>
+— = —— 一 = =区 下二一一一人 |
+SS
+个
+6攻〈卡组中每
+stem 13)
+
+=== images/seasonal/heptastar/梦•落雷术2.png ===
+Title:
+一
+
+Body:
+Be (E245 es
+5 ——__ 5 SS =
+eg ee Se SS
+
+Full:
+O<
+a
+AH 一去
+aN
+8攻【〈卡组中每
+对牌就多1攻)
+. —— |
+
+Combined:
+一
+Be (E245 es
+5 ——__ 5 SS =
+eg ee Se SS
+O<
+a
+AH 一去
+aN
+8攻【〈卡组中每
+对牌就多1攻)
+. —— |
+
+=== images/seasonal/heptastar/梦•落雷术3.png ===
+Title:
+(none)
+
+Body:
+了加工sz -CC一和 全目 =
+二 有片二
+SS Sb ASS
+
+Full:
+a.
+AK
+各
+NA
+| yo \
+ty
+10攻 (卡组中
+有一张寺
+ELEM r >
+1攻
+ee @
+
+Combined:
+了加工sz -CC一和 全目 =
+二 有片二
+SS Sb ASS
+a.
+AK
+各
+NA
+| yo \
+ty
+10攻 (卡组中
+有一张寺
+ELEM r >
+1攻
+ee @
+
+=== images/seasonal/heptastar/梦•落雷术4.png ===
+Title:
+一
+
+Body:
+: 《一十 7 - oS
+55 —— 5 SS SS
+$F 6 Boe Sa eeeD
+4 Oc Be SS SES Ho
+
+Full:
+二
+AN
+== |
+Li
+Yay
+文〈卡组中每
+盾牌就多1攻)
+10%概率追加一
+次攻击
+
+Combined:
+一
+: 《一十 7 - oS
+55 —— 5 SS SS
+$F 6 Boe Sa eeeD
+4 Oc Be SS SES Ho
+二
+AN
+== |
+Li
+Yay
+文〈卡组中每
+盾牌就多1攻)
+10%概率追加一
+次攻击
+
+=== images/seasonal/heptastar/梦•落雷术5.png ===
+Title:
+一 一
+
+Body:
+—— |
+“SiC = 2 es
+5 — Se = BS SS
+| bbe wee So re
+本 Oc +B == SES Ho _
+
+Full:
+AK
+Saas RO
+A
+se St Na
+Neeson
+10%概率追加一
+ee ee es ®&
+RING
+ys
+
+Combined:
+一 一
+—— |
+“SiC = 2 es
+5 — Se = BS SS
+| bbe wee So re
+本 Oc +B == SES Ho _
+AK
+Saas RO
+A
+se St Na
+Neeson
+10%概率追加一
+ee ee es ®&
+RING
+ys
+
+=== images/seasonal/heptastar/梦•蜻蜓点水.png ===
+Title:
+mm aa
+
+Body:
+(none)
+
+Full:
+oN
+上
+Vv
+tll
+Hi)
+
+Combined:
+mm aa
+oN
+上
+Vv
+tll
+Hi)
+
+=== images/seasonal/heptastar/梦•蜻蜓点水1.png ===
+Title:
+——_ —_—~S~S
+= Er一
+
+Body:
+上 > Ez
+: Se 一上一
+
+Full:
+一 2
+SS
+三站
+THe
+oe
+1%
+bo
+21K
+填象+2
+
+Combined:
+——_ —_—~S~S
+= Er一
+上 > Ez
+: Se 一上一
+一 2
+SS
+三站
+THe
+oe
+1%
+bo
+21K
+填象+2
+
+=== images/seasonal/heptastar/梦•蜻蜓点水2.png ===
+Title:
+一 —
+Er一
+
+Body:
+(none)
+
+Full:
+an 本
+A
+ag
+8
+Oo ay
+75
+7K
+de
+卦象+2
+
+Combined:
+一 —
+Er一
+an 本
+A
+ag
+8
+Oo ay
+75
+7K
+de
+卦象+2
+
+=== images/seasonal/heptastar/梦•蜻蜓点水3.png ===
+Title:
+—_ — SEES ee
+ei
+
+Body:
+上 SG Es
+
+Full:
+Bye
+Ed
+wy
+Pd
+)
+7
+6X
+填象+2
+
+Combined:
+—_ — SEES ee
+ei
+上 SG Es
+Bye
+Ed
+wy
+Pd
+)
+7
+6X
+填象+2
+
+=== images/seasonal/heptastar/梦•蜻蜓点水4.png ===
+Title:
+一 —_
+
+Body:
+Be" =3
+— = a => 4 Bij SS =]
+= 到
+= =~ a
+— = ~*~
+= — 3 LLG |
+<_- w=
+~
+
+Full:
+AA
+ym RY
+eee he
+aye
+Wit
+7K
+1攻
+填象+1
+) 卦象>1贝 则再次 ;
+{Jz
+—- = © & & @& 1
+/4
+
+Combined:
+一 —_
+Be" =3
+— = a => 4 Bij SS =]
+= 到
+= =~ a
+— = ~*~
+= — 3 LLG |
+<_- w=
+~
+AA
+ym RY
+eee he
+aye
+Wit
+7K
+1攻
+填象+1
+) 卦象>1贝 则再次 ;
+{Jz
+—- = © & & @& 1
+/4
+
+=== images/seasonal/heptastar/梦•蜻蜓点水5.png ===
+Title:
+= ——— EO ——————————
+ee OS
+
+Body:
+人
+a = et mS
+=> 14 Wi SS =|
+=> =
+
+Full:
+所
+x
+8
+Thy
+=
+ay
+5攻
+卦象+1
+卦象>1则
+N
+区儿
+
+Combined:
+= ——— EO ——————————
+ee OS
+人
+a = et mS
+=> 14 Wi SS =|
+=> =
+所
+x
+8
+Thy
+=
+ay
+5攻
+卦象+1
+卦象>1则
+N
+区儿
+
+=== images/seasonal/heptastar/梦•轰雷掣电.png ===
+Title:
+— os
+
+Body:
+a 23 Z < p24
+
+Full:
+|
+i
+e
+
+Combined:
+— os
+a 23 Z < p24
+|
+i
+e
+
+=== images/seasonal/heptastar/梦•轰雷掣电1.png ===
+Title:
+(none)
+
+Body:
+了 =~<
+ee —— J 三
+4 xK<e"
+
+Full:
+rb!)
+\
+Fa
+BALA RS
+
+Combined:
+了 =~<
+ee —— J 三
+4 xK<e"
+rb!)
+\
+Fa
+BALA RS
+
+=== images/seasonal/heptastar/梦•轰雷掣电2.png ===
+Title:
+(none)
+
+Body:
+3S <a
+oS 55 1 SS SPS C=
+- -站了一
+
+Full:
+ES
+= i
+AA
+x
+== 名
+Se
+这-这
+re .
+= \
+Th
+\
+电，
+~\ |
+9攻
+每有 =
+二 |
+
+Combined:
+3S <a
+oS 55 1 SS SPS C=
+- -站了一
+ES
+= i
+AA
+x
+== 名
+Se
+这-这
+re .
+= \
+Th
+\
+电，
+~\ |
+9攻
+每有 =
+二 |
+
+=== images/seasonal/heptastar/梦•轰雷掣电3.png ===
+Title:
+(none)
+
+Body:
+> 工4z 二一 之
+下 三
+= 三
+
+Full:
+小
+又又 Ee
+二
+y
+ne
+ET
+rh!)
+Reet
+i
+2攻X 2
+edhe cai
+
+Combined:
+> 工4z 二一 之
+下 三
+= 三
+小
+又又 Ee
+二
+y
+ne
+ET
+rh!)
+Reet
+i
+2攻X 2
+edhe cai
+
+=== images/seasonal/heptastar/梦•轰雷掣电4.png ===
+Title:
+(none)
+
+Body:
+=
+a Es
+= =
+i —— J = St we =
+
+Full:
+AA
+ih S
+y
+又又 ee
+= \iers
+4)
+i
+1攻X3
+x
+/.
+ss = © & & ©
+/4
+
+Combined:
+=
+a Es
+= =
+i —— J = St we =
+AA
+ih S
+y
+又又 ee
+= \iers
+4)
+i
+1攻X3
+x
+/.
+ss = © & & ©
+/4
+
+=== images/seasonal/heptastar/梦•轰雷掣电5.png ===
+Title:
+= | ————— =
+= eS SS 一一一人
+
+Body:
+as a:
+卫 Sz
+a5 Ss 1 Ss
+41x =
+
+Full:
+oS
+ge BY
+= hut
+Se
+rb!)
+\
+8 A1LAERS
+
+Combined:
+= | ————— =
+= eS SS 一一一人
+as a:
+卫 Sz
+a5 Ss 1 Ss
+41x =
+oS
+ge BY
+= hut
+Se
+rb!)
+\
+8 A1LAERS
+
+=== images/seasonal/heptastar/梦•黄雀在后.png ===
+Title:
+ww一 一
+一
+eg — = - 了一 —
+
+Body:
+3
+ality = @&
+
+Full:
+‘¥
+i
+ie
+Mot
++4
+rs
+ry
+li
+44
+a.
+SU
+
+Combined:
+ww一 一
+一
+eg — = - 了一 —
+3
+ality = @&
+‘¥
+i
+ie
+Mot
++4
+rs
+ry
+li
+44
+a.
+SU
+
+=== images/seasonal/heptastar/梦•黄雀在后1.png ===
+Title:
+——S OOO ——
+
+Body:
+全 Ez
+三 用
+Mus Wo 2a es
+ee a1. — Fo 4 3H
+
+Full:
+i
+|
+-— ~~
+{+
+le
+6攻
+已用过后招牌
+则追加2攻
+先机: Nl
+
+Combined:
+——S OOO ——
+全 Ez
+三 用
+Mus Wo 2a es
+ee a1. — Fo 4 3H
+i
+|
+-— ~~
+{+
+le
+6攻
+已用过后招牌
+则追加2攻
+先机: Nl
+
+=== images/seasonal/heptastar/梦•黄雀在后2.png ===
+Title:
+=
+—_—_ ee _ — —
+
+Body:
+a Es
+三 eS 2 —
+Mis wo ses
+=—— —s> -; Fo 4 5H
+
+Full:
+A
+- ~~
+SS
+任
+后
+已用过各 牌
+则追加3攻
+a Nae
+
+Combined:
+=
+—_—_ ee _ — —
+a Es
+三 eS 2 —
+Mis wo ses
+=—— —s> -; Fo 4 5H
+A
+- ~~
+SS
+任
+后
+已用过各 牌
+则追加3攻
+a Nae
+
+=== images/seasonal/heptastar/梦•黄雀在后3.png ===
+Title:
+= $$ — ie —— i —
+c_- aa —
+
+Body:
+二和
+C—O 2 — 片宇
+Ms wo 4 ews
+- £— A. Fo 4 5H
+
+Full:
+A
+—- ~*~
+‘
+{£
+le
+Os
+SL
+已用过后招牌
+则追加4攻
+ix le
+oe @
+
+Combined:
+= $$ — ie —— i —
+c_- aa —
+二和
+C—O 2 — 片宇
+Ms wo 4 ews
+- £— A. Fo 4 5H
+A
+—- ~*~
+‘
+{£
+le
+Os
+SL
+已用过后招牌
+则追加4攻
+ix le
+oe @
+
+=== images/seasonal/heptastar/梦•黄雀在后4.png ===
+Title:
+———————— 一一 一
+
+Body:
+和 LA 也
+(ss Ss SS 拖
+2 aU 3 va 4
+a -F, -)] 二 Fa 42S Fk E
+
+Full:
+AA
+‘A
+人
+—- ~*~
+kK
+4攻
+每用 Xie 招
+Ae RAIEDI— RAL
+先机: —
+X
+3
+m/s
+
+Combined:
+———————— 一一 一
+和 LA 也
+(ss Ss SS 拖
+2 aU 3 va 4
+a -F, -)] 二 Fa 42S Fk E
+AA
+‘A
+人
+—- ~*~
+kK
+4攻
+每用 Xie 招
+Ae RAIEDI— RAL
+先机: —
+X
+3
+m/s
+
+=== images/seasonal/heptastar/梦•黄雀在后5.png ===
+Title:
+__—. a ——— eS
+
+Body:
+ee
+- 二 eee
+=> Fa a _— SS
+FS A222 Sv SS wu 一一一
+Sa 5S ET
+
+Full:
+TER
+ss
+- ~~
+1=3
+Ss
+£7]
+le
+5X
+每用过一次后
+招牌丈追加一
+次5攻
+转出牌方启
+
+Combined:
+__—. a ——— eS
+ee
+- 二 eee
+=> Fa a _— SS
+FS A222 Sv SS wu 一一一
+Sa 5S ET
+TER
+ss
+- ~~
+1=3
+Ss
+£7]
+le
+5X
+每用过一次后
+招牌丈追加一
+次5攻
+转出牌方启

@@ -1,0 +1,83 @@
+{
+  "sourceImage": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/images to detect/Screenshot 2026-04-22 at 1.09.50 PM.png",
+  "imageSize": {
+    "width": 2880,
+    "height": 1800
+  },
+  "baseGeometry": {
+    "xPositions": [
+      131,
+      686,
+      1241,
+      1796,
+      2351
+    ],
+    "y": 155,
+    "width": 395,
+    "height": 663
+  },
+  "appliedGeometry": {
+    "xPositions": [
+      131,
+      686,
+      1241,
+      1796,
+      2351
+    ],
+    "y": 155,
+    "width": 395,
+    "height": 663
+  },
+  "cards": [
+    {
+      "slot": 1,
+      "rect": {
+        "x": 131,
+        "y": 155,
+        "width": 395,
+        "height": 663
+      },
+      "cropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-22 at 1.09.50 PM/slot-1.png"
+    },
+    {
+      "slot": 2,
+      "rect": {
+        "x": 686,
+        "y": 155,
+        "width": 395,
+        "height": 663
+      },
+      "cropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-22 at 1.09.50 PM/slot-2.png"
+    },
+    {
+      "slot": 3,
+      "rect": {
+        "x": 1241,
+        "y": 155,
+        "width": 395,
+        "height": 663
+      },
+      "cropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-22 at 1.09.50 PM/slot-3.png"
+    },
+    {
+      "slot": 4,
+      "rect": {
+        "x": 1796,
+        "y": 155,
+        "width": 395,
+        "height": 663
+      },
+      "cropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-22 at 1.09.50 PM/slot-4.png"
+    },
+    {
+      "slot": 5,
+      "rect": {
+        "x": 2351,
+        "y": 155,
+        "width": 395,
+        "height": 663
+      },
+      "cropPath": "/Users/raymondwang/Desktop/yixian card counter/yixian-card-counter-overlay/yixian-card-counter-damage-calculator/debug/card detector/dectecting newcards/unsorted cards/Screenshot 2026-04-22 at 1.09.50 PM/slot-5.png"
+    }
+  ]
+}
