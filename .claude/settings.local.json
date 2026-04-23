@@ -29,7 +29,11 @@
       "Bash(powershell -command \"Stop-Process -Id 33476 -Force\")",
       "Bash(findstr \"5524\")",
       "Bash(node -e *)",
-      "Bash(node \"debug/talent card and dream detection/save_talent_overlay.js\")"
+      "Bash(node \"debug/talent card and dream detection/save_talent_overlay.js\")",
+      "Bash(node --check runtime_paths.js)",
+      "Bash(node .dream_audit_build_mapping.js)",
+      "Bash(node .dream_audit_extract_code.js)",
+      "Bash(node _tmp_inspect.js)"
     ]
   }
 }

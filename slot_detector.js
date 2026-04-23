@@ -2,6 +2,11 @@ const fs = require('fs');
 const path = require('path');
 const { nativeImage } = require('electron');
 const { getCodePath } = require('./runtime_paths');
+const {
+  loadBaselineMasks,
+  getMaskKeyForTemplate,
+  resizeMaskNN
+} = require('./detection_masks');
 
 // Dream cards occupy a slightly smaller region that is shifted right relative to
 // the normal slot anchor.  Values confirmed by grid-search debug across 8 slots:
@@ -216,14 +221,23 @@ function fastRgbMseDirect(srcRgbData, ox, oy, tw, th, tmplRgb) {
   return sum / (tw * th * 3);
 }
 
-// Cache template raw data (gray + rgb) at a given size. File-loaded images don't
-// have DPI scaling so imageToGray/imageToRgb are reliable on them.
-function getTemplateRawData(template, width, height) {
+// Cache template raw data (gray + rgb + optional mask) at a given size.
+// File-loaded images don't have DPI scaling so imageToGray/imageToRgb are
+// reliable on them. The mask is resized via nearest-neighbour from the baseline
+// to preserve the binary 0/1 shape exactly at the target dimensions.
+function getTemplateRawData(template, width, height, baselineMasks) {
   const key = `${width}x${height}`;
   if (!template.rawDataCache) template.rawDataCache = new Map();
   if (template.rawDataCache.has(key)) return template.rawDataCache.get(key);
   const img = template.originalImage.resize({ width, height, quality: 'best' });
-  const data = { gray: imageToGray(img), rgb: imageToRgb(img) };
+
+  let mask = null;
+  const baseline = template.maskKey ? (baselineMasks && baselineMasks[template.maskKey]) : null;
+  if (baseline) {
+    mask = resizeMaskNN(baseline.mask, baseline.width, baseline.height, width, height);
+  }
+
+  const data = { gray: imageToGray(img), rgb: imageToRgb(img), mask };
   template.rawDataCache.set(key, data);
   return data;
 }
@@ -236,22 +250,28 @@ function getRegionBounds(width, height, region) {
   return { x0, y0, x1, y1 };
 }
 
-function regionStats(grayDataA, grayDataB, region) {
+function regionStats(grayDataA, grayDataB, region, mask = null) {
   const { width } = grayDataA;
   const { x0, y0, x1, y1 } = getRegionBounds(grayDataA.width, grayDataA.height, region);
-  const count = Math.max(1, (x1 - x0) * (y1 - y0));
 
   let sumA = 0;
   let sumB = 0;
   let grayMse = 0;
+  let count = 0;
   for (let y = y0; y < y1; y += 1) {
     for (let x = x0; x < x1; x += 1) {
       const idx = (y * width) + x;
+      if (mask && mask[idx] === 0) continue;
+      count += 1;
       const diff = grayDataA.gray[idx] - grayDataB.gray[idx];
       sumA += grayDataA.gray[idx];
       sumB += grayDataB.gray[idx];
       grayMse += diff * diff;
     }
+  }
+
+  if (count === 0) {
+    return { ssim: 0, ncc: 0, grayMse: Number.POSITIVE_INFINITY };
   }
 
   const meanA = sumA / count;
@@ -266,6 +286,7 @@ function regionStats(grayDataA, grayDataB, region) {
   for (let y = y0; y < y1; y += 1) {
     for (let x = x0; x < x1; x += 1) {
       const idx = (y * width) + x;
+      if (mask && mask[idx] === 0) continue;
       const centeredA = grayDataA.gray[idx] - meanA;
       const centeredB = grayDataB.gray[idx] - meanB;
       varianceA += centeredA * centeredA;
@@ -297,15 +318,18 @@ function regionStats(grayDataA, grayDataB, region) {
   };
 }
 
-function regionRgbMse(rgbDataA, rgbDataB, region) {
+function regionRgbMse(rgbDataA, rgbDataB, region, mask = null) {
   const { width } = rgbDataA;
   const { x0, y0, x1, y1 } = getRegionBounds(rgbDataA.width, rgbDataA.height, region);
-  const count = Math.max(1, (x1 - x0) * (y1 - y0) * 3);
   let total = 0;
+  let count = 0;
 
   for (let y = y0; y < y1; y += 1) {
     for (let x = x0; x < x1; x += 1) {
-      const idx = ((y * width) + x) * 3;
+      const pixelIdx = (y * width) + x;
+      if (mask && mask[pixelIdx] === 0) continue;
+      count += 1;
+      const idx = pixelIdx * 3;
       const dr = rgbDataA.rgb[idx] - rgbDataB.rgb[idx];
       const dg = rgbDataA.rgb[idx + 1] - rgbDataB.rgb[idx + 1];
       const db = rgbDataA.rgb[idx + 2] - rgbDataB.rgb[idx + 2];
@@ -313,7 +337,8 @@ function regionRgbMse(rgbDataA, rgbDataB, region) {
     }
   }
 
-  return total / count;
+  if (count === 0) return Number.POSITIVE_INFINITY;
+  return total / (count * 3);
 }
 
 // Clip all stable regions to exclude a border of `inset` fraction on each side.
@@ -334,7 +359,7 @@ function insetRegions(regions, inset) {
 
 const PERSONAL_REGIONS = insetRegions(STABLE_REGIONS, PERSONAL_BORDER_INSET);
 
-function compareImages(grayA, rgbA, grayB, rgbB, regions = STABLE_REGIONS) {
+function compareImages(grayA, rgbA, grayB, rgbB, regions = STABLE_REGIONS, mask = null) {
   let weightedSSIM = 0;
   let weightedNCC = 0;
   let weightedGrayMse = 0;
@@ -342,8 +367,8 @@ function compareImages(grayA, rgbA, grayB, rgbB, regions = STABLE_REGIONS) {
   let totalWeight = 0;
 
   for (const region of regions) {
-    const { ssim, ncc, grayMse } = regionStats(grayA, grayB, region);
-    const rgbMse = regionRgbMse(rgbA, rgbB, region);
+    const { ssim, ncc, grayMse } = regionStats(grayA, grayB, region, mask);
+    const rgbMse = regionRgbMse(rgbA, rgbB, region, mask);
     weightedSSIM += ssim * region.weight;
     weightedNCC += ncc * region.weight;
     weightedGrayMse += grayMse * region.weight;
@@ -397,6 +422,7 @@ function buildTemplateIndex(imagesDir) {
       isDream: parsed.isDream,
       isSeasonal: parsed.isSeasonal,
       isPersonal: parsed.isPersonal,
+      maskKey: getMaskKeyForTemplate(filePath, parsed.level),
       filePath,
       fileName: path.basename(filePath),
       originalImage: image,
@@ -540,6 +566,7 @@ function detectSlots(sourceImage, handCardNames, imagesDir, options = {}) {
   const metric = getMetricDefinition(metricName);
   const normalGeometry = normalizeGeometry(options.geometry);
   const templateIndex = buildTemplateIndex(imagesDir);
+  const baselineMasks = loadBaselineMasks(imagesDir);
   const candidateTemplates = [];
   const seenTemplateFiles = new Set();
   // Dream card phases differ only in color grading — grayscale structure is identical
@@ -646,7 +673,7 @@ function detectSlots(sourceImage, handCardNames, imagesDir, options = {}) {
       const rect = (template.isDream ? dreamSlotRects : (template.isPersonal ? personalSlotRects : normalSlotRects))[slotIndex];
       const dstW = geom.slotWidth, dstH = geom.slotHeight;
 
-      const tmpl = getTemplateRawData(template, dstW, dstH);
+      const tmpl = getTemplateRawData(template, dstW, dstH, baselineMasks);
 
       const cropGray = extractSubGray(srcGrayData, rect.x, rect.y, rect.width, rect.height, dstW, dstH);
       const cropRgb  = extractSubRgb(srcRgbData,  rect.x, rect.y, rect.width, rect.height, dstW, dstH);
@@ -654,7 +681,7 @@ function detectSlots(sourceImage, handCardNames, imagesDir, options = {}) {
       const regions = template.isPersonal ? PERSONAL_REGIONS : STABLE_REGIONS;
       return {
         ...template,
-        metrics: compareImages(cropGray, cropRgb, tmpl.gray, tmpl.rgb, regions),
+        metrics: compareImages(cropGray, cropRgb, tmpl.gray, tmpl.rgb, regions, tmpl.mask),
         slotRect: { ...rect }
       };
     });

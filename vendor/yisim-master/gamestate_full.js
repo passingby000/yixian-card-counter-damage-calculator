@@ -819,7 +819,7 @@ export class Player {
         if (swogi[this.cards[n_cards - 1]].name === "Space Spiritual Field") {
             this.skip_one_play[n_cards - 1] = true;
         }
-        if (swogi[this.cards[n_cards - 2]].name === "Space Spiritual Field") {
+        if (n_cards >= 2 && swogi[this.cards[n_cards - 2]].name === "Space Spiritual Field") {
             this.skip_one_play[n_cards - 2] = true;
         }
         if (this.cards[n_cards - 1] === "601011" && this.heptastar_soulstat_stacks > 0) {

@@ -214,8 +214,10 @@ export class Player {
         this.star_power = 0;
         this.strike_twice_stacks = 0;
         this.hp_gained = 0;
+        this.turn_hp_gained = 0;
         this.stillness_citta_dharma_stacks = 0;
         this.triggered_hexagram_count = 0;
+        this.hexagram_lost = 0;
         this.hexagram_formacide_stacks = 0;
         this.repel_citta_dharma_stacks = 0;
         this.card_play_direction = 1;
@@ -743,6 +745,10 @@ export class Player {
         this.dream_cloud_sword_softheart_gain_def = 0;
         this.dream_cloud_sword_softheart_sword_formation_gives_cloud_sea = 0;
         this.next_attack_double_sword_intent_and_increase_atk = 0;
+        this.dream_spiritage_sword_on_sword_qi = 0;
+        this.later_dream_spiritage_sword_on_sword_qi = 0;
+        this.dream_unrestrained_sword_two_end_turn = 0;
+        this.later_dream_unrestrained_sword_two_end_turn = 0;
 
 
         // heptastar sect dream cards
@@ -758,6 +764,11 @@ export class Player {
         this.can_trigger_dream_dotted_around = true;
         this.dream_revitalized_played_count = 0;
         this.dream_revitalized_doublings = 0;
+        this.dream_star_point_internal_injury = 0;
+        this.later_dream_star_point_internal_injury = 0;
+        this.dream_thunder_hexagram_regain_on_first_loss = 0;
+        this.later_dream_thunder_hexagram_regain_on_first_loss = 0;
+        this.can_trigger_dream_thunder_hexagram_regain = true;
 
 
         // five elements sect dream cards
@@ -775,6 +786,7 @@ export class Player {
         this.dream_heavenly_marrow_limited_stacks = 0;
         this.dream_heavenly_marrow_unlimited_stacks = 0;
         this.dream_fire_formation_stacks = 0;
+        this.played_five_element_card_count = 0;
 
         // duan xuan sect dream cards
         this.dream_elusive_footwork_stacks = 0;
@@ -787,6 +799,15 @@ export class Player {
         this.dream_crash_footwork_fake_crash_fist = 0;
         this.dream_crash_fist_continue_bonus_atk = 0;
         this.dream_majestic_qi_permanent = 0;
+        this.dream_motionless_flat_damage = 0;
+        this.later_dream_motionless_flat_damage = 0;
+        this.dream_motionless_gain_damage_pct = 0;
+        this.later_dream_motionless_gain_damage_pct = 0;
+        this.dream_exercise_fist_next_flat_physique = 0;
+        this.later_dream_exercise_fist_next_flat_physique = 0;
+        this.dream_exercise_fist_next_pct_physique = 0;
+        this.later_dream_exercise_fist_next_pct_physique = 0;
+        this.this_card_dream_exercise_fist_pct_physique = 0;
 
     }
     reset_can_play() {
@@ -819,7 +840,7 @@ export class Player {
         if (swogi[this.cards[n_cards - 1]].name === "Space Spiritual Field") {
             this.skip_one_play[n_cards - 1] = true;
         }
-        if (swogi[this.cards[n_cards - 2]].name === "Space Spiritual Field") {
+        if (n_cards >= 2 && swogi[this.cards[n_cards - 2]].name === "Space Spiritual Field") {
             this.skip_one_play[n_cards - 2] = true;
         }
         if (this.cards[n_cards - 1] === "601011" && this.heptastar_soulstat_stacks > 0) {
@@ -1353,6 +1374,79 @@ export class GameState {
         }
         return this[action_name](...args);
     }
+    is_five_elements_card(card_id) {
+        return card_id.startsWith("13") || card_id.startsWith("D13");
+    }
+    do_dream_post_card_state_updates(card_id, idx) {
+        const me = this.players[0];
+        if (me.dream_spiritage_sword_on_sword_qi > 0 && this.is_sword(card_id)) {
+            this.increase_idx_x_by_c(0, "sword_qi", me.dream_spiritage_sword_on_sword_qi);
+        }
+        if (me.dream_star_point_internal_injury > 0 && me.is_star_point[idx]) {
+            this.increase_idx_debuff(1, "internal_injury", 1);
+        }
+        if (this.is_five_elements_card(card_id)) {
+            me.played_five_element_card_count += 1;
+        }
+        if (me.later_dream_spiritage_sword_on_sword_qi > 0) {
+            me.dream_spiritage_sword_on_sword_qi += me.later_dream_spiritage_sword_on_sword_qi;
+            me.later_dream_spiritage_sword_on_sword_qi = 0;
+        }
+        if (me.later_dream_unrestrained_sword_two_end_turn > 0) {
+            me.dream_unrestrained_sword_two_end_turn += me.later_dream_unrestrained_sword_two_end_turn;
+            me.later_dream_unrestrained_sword_two_end_turn = 0;
+        }
+        if (me.later_dream_star_point_internal_injury > 0) {
+            me.dream_star_point_internal_injury = 1;
+            me.later_dream_star_point_internal_injury = 0;
+        }
+        if (me.later_dream_thunder_hexagram_regain_on_first_loss > 0) {
+            me.dream_thunder_hexagram_regain_on_first_loss += me.later_dream_thunder_hexagram_regain_on_first_loss;
+            me.later_dream_thunder_hexagram_regain_on_first_loss = 0;
+        }
+        if (me.later_dream_motionless_flat_damage > 0) {
+            me.dream_motionless_flat_damage += me.later_dream_motionless_flat_damage;
+            me.later_dream_motionless_flat_damage = 0;
+        }
+        if (me.later_dream_motionless_gain_damage_pct > 0) {
+            me.dream_motionless_gain_damage_pct += me.later_dream_motionless_gain_damage_pct;
+            me.later_dream_motionless_gain_damage_pct = 0;
+        }
+        if (me.later_dream_exercise_fist_next_flat_physique > 0) {
+            me.dream_exercise_fist_next_flat_physique += me.later_dream_exercise_fist_next_flat_physique;
+            me.later_dream_exercise_fist_next_flat_physique = 0;
+        }
+        if (me.later_dream_exercise_fist_next_pct_physique > 0) {
+            me.dream_exercise_fist_next_pct_physique += me.later_dream_exercise_fist_next_pct_physique;
+            me.later_dream_exercise_fist_next_pct_physique = 0;
+        }
+    }
+    do_dream_unrestrained_sword_two_end_turn() {
+        const me = this.players[0];
+        if (me.dream_unrestrained_sword_two_end_turn <= 0 || me.turn_hp_gained < 3) {
+            return;
+        }
+        for (let i = 0; i < me.dream_unrestrained_sword_two_end_turn; i++) {
+            this.reduce_idx_hp(0, 3, false);
+            this.increase_idx_x_by_c(0, "unrestrained_sword_count", 1);
+        }
+    }
+    do_dream_motionless_damage_on_gain(idx, amt, includeFlat) {
+        if (idx !== 0 || amt <= 0) {
+            return;
+        }
+        const me = this.players[idx];
+        let damage = 0;
+        if (includeFlat && me.dream_motionless_flat_damage > 0) {
+            damage += me.dream_motionless_flat_damage;
+        }
+        if (me.dream_motionless_gain_damage_pct > 0) {
+            damage += Math.floor(amt * me.dream_motionless_gain_damage_pct / 100);
+        }
+        if (damage > 0) {
+            this.deal_damage_inner(damage, false, idx);
+        }
+    }
     do_cloud_sword_softheart_and_friends(card_id) {
         if (this.is_cloud_sword(card_id)) {
             const me = this.players[0];
@@ -1694,6 +1788,7 @@ export class GameState {
             return;
         }
         const me = this.players[0];
+        me.this_card_dream_exercise_fist_pct_physique = 0;
         if (me.crash_fist_stygian_night_stacks > 0) {
             const debuff_amt = this.get_debuff_count(0);
             const bonus_atk = Math.min(debuff_amt, me.crash_fist_stygian_night_stacks);
@@ -1713,6 +1808,14 @@ export class GameState {
         this.for_each_x_add_y("crash_fist_blink_stacks", "agility");
         this.for_each_x_add_y("crash_fist_shocked_stacks", "this_card_crash_fist_shocked_stacks");
         this.for_each_x_add_y("m_crash_fist_entangle_stacks", "this_card_m_crash_fist_entangle_stacks");
+        if (me.dream_exercise_fist_next_flat_physique > 0) {
+            this.physique(me.dream_exercise_fist_next_flat_physique);
+            me.dream_exercise_fist_next_flat_physique = 0;
+        }
+        if (me.dream_exercise_fist_next_pct_physique > 0) {
+            me.this_card_dream_exercise_fist_pct_physique = me.dream_exercise_fist_next_pct_physique;
+            me.dream_exercise_fist_next_pct_physique = 0;
+        }
         me.this_card_dream_crash_fist_continue_bonus_atk = me.dream_crash_fist_continue_bonus_atk;
         if (!swogi[card_id].is_crash_fist_continue)
         {
@@ -1752,6 +1855,13 @@ export class GameState {
             me.this_card_dream_crash_fist_continue_bonus_atk = 0;
             this.atk(bonus);
             this.atk(bonus);
+        }
+        if (me.this_card_dream_exercise_fist_pct_physique > 0) {
+            const gain = Math.floor(me.damage_dealt_to_hp_by_this_card_atk * me.this_card_dream_exercise_fist_pct_physique / 100);
+            me.this_card_dream_exercise_fist_pct_physique = 0;
+            if (gain > 0) {
+                this.physique(gain);
+            }
         }
     }
     do_crash_fist_shocked(card_id) {
@@ -2055,6 +2165,7 @@ export class GameState {
         }
         this.do_cloud_sword_chain_count(card_id);
         this.do_unrestrained_sword_count(card_id);
+        this.do_dream_post_card_state_updates(card_id, idx);
         if (swogi[card_id].is_snake) {
             p0.snake_card_used += 1;
         }
@@ -2830,6 +2941,8 @@ export class GameState {
         me.triggered_beast_spirit_sword_formation = false;
         me.can_trigger_resonance_cat_paw = true;
         me.can_trigger_dream_dotted_around = true;
+        me.can_trigger_dream_thunder_hexagram_regain = true;
+        me.turn_hp_gained = 0;
         this.do_resonance_rejuvenation();
         this.reduce_idx_x_by_c(0, "everything_goes_way_stacks", 1);
         this.reduce_idx_x_by_c(0, "god_opportunity_conform_stacks", 1);
@@ -3062,6 +3175,7 @@ export class GameState {
         this.do_anthomania_formation();
         this.do_toxin_immunity();
         this.do_force_of_water();
+        this.do_dream_unrestrained_sword_two_end_turn();
         this.do_m_earth_spirit_formation();
         this.reduce_idx_x_by_c(0, "force_of_water", dream_billows_extra_fow);
         this.reduce_idx_x_by_c(0, "qi", dream_billows_extra_qi);
@@ -3270,6 +3384,11 @@ export class GameState {
                 me.hp = me.max_hp;
             }
         }
+        const actualGain = me.hp - prev_hp;
+        if (actualGain > 0) {
+            me.turn_hp_gained += actualGain;
+            this.do_dream_motionless_damage_on_gain(idx, actualGain, false);
+        }
         if (prev_hp !== me.hp) {
             for (let i=0; i<me.birdie_wind_stacks; i++) {
                 this.increase_idx_def(idx, 1);
@@ -3304,6 +3423,7 @@ export class GameState {
         }
         me.def += amt;
         me.total_def_gained += amt;
+        this.do_dream_motionless_damage_on_gain(idx, amt, true);
     }
     increase_idx_penetrate(idx, amt) {
         if (amt === 0) {
@@ -3681,6 +3801,17 @@ export class GameState {
         me[x] -= c;
         if (me[x] < 0) {
             me[x] = 0;
+        }
+        const actualLoss = prev_x - me[x];
+        if (x === "hexagram" && actualLoss > 0) {
+            me.hexagram_lost += actualLoss;
+            if (idx === 0
+                && me.dream_thunder_hexagram_regain_on_first_loss > 0
+                && me.can_trigger_dream_thunder_hexagram_regain
+            ) {
+                me.can_trigger_dream_thunder_hexagram_regain = false;
+                this.increase_idx_hexagram(idx, actualLoss * me.dream_thunder_hexagram_regain_on_first_loss);
+            }
         }
         if (idx === 0 && is_debuff(x)) {
             me.total_debuff_lost += prev_x - me[x];

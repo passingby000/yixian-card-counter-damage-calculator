@@ -49,7 +49,7 @@ if (typeof electronModule === 'string') {
       templatePath: path.join(
         ROOT_DIR,
         'vendor',
-        'yisim',
+        'yisim-master',
         'lanke',
         'talent_templates',
         'position_1',
@@ -74,7 +74,7 @@ if (typeof electronModule === 'string') {
       templatePath: path.join(
         ROOT_DIR,
         'vendor',
-        'yisim',
+        'yisim-master',
         'lanke',
         'talent_templates',
         'position_2',
@@ -99,7 +99,7 @@ if (typeof electronModule === 'string') {
       templatePath: path.join(
         ROOT_DIR,
         'vendor',
-        'yisim',
+        'yisim-master',
         'lanke',
         'talent_templates',
         'position_3',
@@ -132,7 +132,7 @@ if (typeof electronModule === 'string') {
       templatePath: path.join(
         ROOT_DIR,
         'vendor',
-        'yisim',
+        'yisim-master',
         'lanke',
         'talent_templates',
         'position_4',
@@ -165,7 +165,7 @@ if (typeof electronModule === 'string') {
       templatePath: path.join(
         ROOT_DIR,
         'vendor',
-        'yisim',
+        'yisim-master',
         'lanke',
         'talent_templates',
         'position_5',

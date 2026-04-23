@@ -28,7 +28,6 @@
     "files": [
       "**/*",
       "!card detector{,/**}",
-      "!yisim{,/**}",
       "!vendor/yisim-master{,/**}",
       "!images{,/**}",
       "!data{,/**}",
@@ -54,8 +53,8 @@
         ]
       },
       {
-        "from": "yisim",
-        "to": "vendor/yisim",
+        "from": "vendor/yisim-master",
+        "to": "vendor/yisim-master",
         "filter": [
           "**/*"
         ]

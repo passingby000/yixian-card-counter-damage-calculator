@@ -3196,6 +3196,16 @@
         "namecn": "梦·凝意诀"
     },
     {
+        "id": "D11191",
+        "name": "Dream - Spiritage Sword",
+        "namecn": "梦·引气剑"
+    },
+    {
+        "id": "D11201",
+        "name": "Dream - Unrestrained Sword Two",
+        "namecn": "梦·狂剑二式"
+    },
+    {
         "id": "D11181",
         "name": "Dream - Cloud Sword - Spirit Coercion",
         "namecn": "梦·云剑汇灵"
@@ -3284,6 +3294,16 @@
         "id": "D12171",
         "name": "Dream - Heaven Hexagram",
         "namecn": "梦·乾卦"
+    },
+    {
+        "id": "D12191",
+        "name": "Dream - Star Chess Point",
+        "namecn": "梦·星弈点"
+    },
+    {
+        "id": "D12201",
+        "name": "Dream - Thunder Hexagram Rhythm",
+        "namecn": "梦·御雷卦诀"
     },
     {
         "id": "D12181",
@@ -3381,6 +3401,16 @@
         "namecn": "梦·土灵断崖"
     },
     {
+        "id": "D13191",
+        "name": "Dream - Water Spirit Turbulent",
+        "namecn": "梦·水灵汹涌"
+    },
+    {
+        "id": "D13201",
+        "name": "Dream - Mixed Origin Smash",
+        "namecn": "梦·混元碎击"
+    },
+    {
         "id": "D14011",
         "name": "Dream - Elusive Footwork",
         "namecn": "梦·灵玄迷踪步"
@@ -3469,5 +3499,15 @@
         "id": "D14181",
         "name": "Dream - Overwhelming Force",
         "namecn": "梦·磅礴之势"
+    },
+    {
+        "id": "D14191",
+        "name": "Dream - Crash Fist Exercise",
+        "namecn": "梦·锻拳"
+    },
+    {
+        "id": "D14201",
+        "name": "Dream - Stand Firm",
+        "namecn": "梦·岿然不动"
     }
 ]

@@ -56,22 +56,10 @@ function getLegacyRepoPath(...segments) {
 
 function getYisimRoot() {
   const assetRoot = getAssetRoot();
-  const candidates = isPackagedApp()
-    ? [
-        path.join(assetRoot, 'vendor', 'yisim')
-      ]
-    : [
-        path.join(REPO_ROOT, 'vendor', 'yisim'),
-        path.join(REPO_ROOT, 'vendor', 'yisim-master')
-      ];
-
-  for (const candidate of candidates) {
-    if (fs.existsSync(candidate)) {
-      return candidate;
-    }
+  if (isPackagedApp()) {
+    return path.join(assetRoot, 'vendor', 'yisim-master');
   }
-
-  return candidates[0];
+  return path.join(REPO_ROOT, 'vendor', 'yisim-master');
 }
 
 function getYisimPath(...segments) {

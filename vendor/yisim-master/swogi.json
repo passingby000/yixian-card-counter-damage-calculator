@@ -13920,6 +13920,38 @@
 	"D11175": {
 		"actions": [["sword_intent", 1], ["increase_idx_x_by_c", 0, "next_attack_double_sword_intent_and_increase_atk", 1]]
 	},
+	"D11191": {
+		"name": "Dream - Spiritage Sword",
+		"actions": [["qi", 2], ["add_c_of_x", 1, "sword_qi"], ["consumption"]]
+	},
+	"D11192": {
+		"actions": [["qi", 2], ["add_c_of_x", 2, "sword_qi"], ["consumption"]]
+	},
+	"D11193": {
+		"actions": [["qi", 2], ["add_c_of_x", 3, "sword_qi"], ["consumption"]]
+	},
+	"D11194": {
+		"actions": [["qi", 1], ["continuous"]]
+	},
+	"D11195": {
+		"actions": [["qi", 3], ["continuous"]]
+	},
+	"D11201": {
+		"name": "Dream - Unrestrained Sword Two",
+		"actions": [["atk", 4], ["add_c_of_x", 2, "max_hp"], ["add_c_of_x", 2, "hp"]]
+	},
+	"D11202": {
+		"actions": [["atk", 4], ["add_c_of_x", 4, "max_hp"], ["add_c_of_x", 4, "hp"]]
+	},
+	"D11203": {
+		"actions": [["atk", 4], ["add_c_of_x", 6, "max_hp"], ["add_c_of_x", 6, "hp"]]
+	},
+	"D11204": {
+		"actions": [["atk", 2], ["continuous"]]
+	},
+	"D11205": {
+		"actions": [["atk", 7], ["continuous"]]
+	},
 	"D11181": {
 		"name": "Dream - Cloud Sword - Spirit Coercion",
 		"actions": [["atk", 4]]
@@ -14209,6 +14241,38 @@
 	},
 	"D12175": {
 		"actions": [["hexagram", 2], ["chase"], ["consumption"]]
+	},
+	"D12191": {
+		"name": "Dream - Star Chess Point",
+		"actions": [["atk", 5], ["star_point", ["add_enemy_c_of_x", 1, "internal_injury"]]]
+	},
+	"D12192": {
+		"actions": [["atk", 5], ["star_point", ["add_enemy_c_of_x", 2, "internal_injury"]]]
+	},
+	"D12193": {
+		"actions": [["atk", 5], ["star_point", ["add_enemy_c_of_x", 3, "internal_injury"]]]
+	},
+	"D12194": {
+		"actions": [["atk", 5], ["star_power", 1], ["continuous"]]
+	},
+	"D12195": {
+		"actions": [["atk", 5], ["star_power", 2], ["continuous"]]
+	},
+	"D12201": {
+		"name": "Dream - Thunder Hexagram Rhythm",
+		"actions": [["atk_rand_range", 1, 10], ["consumption"]]
+	},
+	"D12202": {
+		"actions": [["atk_rand_range", 3, 12], ["consumption"]]
+	},
+	"D12203": {
+		"actions": [["atk_rand_range", 5, 14], ["consumption"]]
+	},
+	"D12204": {
+		"actions": [["atk_rand_range", 9, 18], ["consumption"]]
+	},
+	"D12205": {
+		"actions": [["atk_rand_range", 1, 8], ["continuous"]]
 	},
 	"D12181": {
 		"name": "Dream - Revitalized",
@@ -14538,6 +14602,38 @@
 	"D13185": {
 		"actions": [["add_c_of_x", 15, "def"]]
 	},
+	"D13191": {
+		"name": "Dream - Water Spirit Turbulent",
+		"actions": [["atk", 5]]
+	},
+	"D13192": {
+		"actions": [["atk", 7]]
+	},
+	"D13193": {
+		"actions": [["atk", 9]]
+	},
+	"D13194": {
+		"actions": [["atk", 5]]
+	},
+	"D13195": {
+		"actions": [["atk", 10]]
+	},
+	"D13201": {
+		"name": "Dream - Mixed Origin Smash",
+		"actions": [["qi", 1]]
+	},
+	"D13202": {
+		"actions": [["qi", 1]]
+	},
+	"D13203": {
+		"actions": [["qi", 1]]
+	},
+	"D13204": {
+		"actions": [["qi", 1]]
+	},
+	"D13205": {
+		"actions": [["qi", 1]]
+	},
 	"D14011": {
 		"name": "Dream - Elusive Footwork",
 		"actions": [["qi", 1], ["continuous"], ["add_c_of_x", 1, "dream_elusive_footwork_stacks"]]
@@ -14855,5 +14951,39 @@
 	},
 	"D14185": {
 		"actions": [["add_c_of_x", 5, "agility"]]
+	},
+	"D14191": {
+		"name": "Dream - Crash Fist Exercise",
+		"actions": [["atk", 6], ["physique", 2]]
+	},
+	"D14192": {
+		"actions": [["atk", 8], ["physique", 2]]
+	},
+	"D14193": {
+		"actions": [["atk", 10], ["physique", 2]]
+	},
+	"D14194": {
+		"is_add_physique": true,
+		"actions": [["atk", 10]]
+	},
+	"D14195": {
+		"is_add_physique": true,
+		"actions": [["atk", 15]]
+	},
+	"D14201": {
+		"name": "Dream - Stand Firm",
+		"actions": [["def", 3], ["continuous"]]
+	},
+	"D14202": {
+		"actions": [["def", 6], ["continuous"]]
+	},
+	"D14203": {
+		"actions": [["def", 9], ["continuous"]]
+	},
+	"D14204": {
+		"actions": [["def", 9], ["continuous"]]
+	},
+	"D14205": {
+		"actions": [["def", 9], ["continuous"]]
 	}
 }

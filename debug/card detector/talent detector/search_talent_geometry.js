@@ -40,7 +40,7 @@ if (typeof electronModule === 'string') {
   } = require('../../../talent_detector');
 
   const ROOT_DIR = path.resolve(__dirname, '..', '..');
-  const TEMPLATES_ROOT = path.join(ROOT_DIR, 'vendor', 'yisim', 'lanke', 'talent_templates');
+  const TEMPLATES_ROOT = path.join(ROOT_DIR, 'vendor', 'yisim-master', 'lanke', 'talent_templates');
   const SCRIPT_DIR = __dirname;
   const DEFAULT_REPORT_PATH = path.join(SCRIPT_DIR, 'talent_geometry_report.json');
   const DEFAULT_ANNOTATED_PATH = path.join(SCRIPT_DIR, 'talent_geometry_annotated.png');
