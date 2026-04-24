@@ -3,11 +3,12 @@ const path = require('path');
 const zlib = require('zlib');
 const { getYisimPath, getAssetPath } = require('./runtime_paths');
 
-// Slot geometry ratios (used to estimate expected sizes)
-const SLOT_BASE_W        = 1920;
-const SLOT_BASE_H        = 1080;
-const SLOT_CONFIG_W      = 212;
-const SLOT_CONFIG_H      = 343;
+// Reference geometry used to anchor the multi-scale card search. At 1920×1080
+// fullscreen, in-game cards are ~343 px tall, so the "base" template scale is
+// chosen to match that. The multi-scale sweep then covers ±30% to absorb
+// differences in in-game UI scale, Windows DPI, aspect ratio, and windowed mode.
+const SLOT_BASE_H   = 1080;
+const SLOT_CONFIG_H = 343;
 // Dream cards are slightly narrower/shorter and shifted right vs normal cards.
 // Values from grid-search debug over 8 confirmed dream slots (dream_geometry_report.json):
 //   xOffset +8 px, widthDelta -16 px → ratio 196/212 ≈ 0.925
@@ -242,7 +243,31 @@ function znccAt(ssGray, ssW, sx, sy, tmplGray, tw, th) {
   return denom < 1 ? 0 : num / denom;
 }
 
-// Two-pass card search: DS=4 coarse scan → full-res fine pass around best hit
+// Multi-scale card search: tries scales around a base derived from screenshot
+// dimensions. Preserves the template's native aspect ratio at every scale —
+// tw/th are always `tmplW × s` and `tmplH × s` for the same scalar s — so we
+// never distort the card shape. Returns { x, y, w, h, ncc } with the actual
+// tw/th at the best-scoring scale (so callers can save the detected size).
+function findBestCardPositionMultiScale(ssGray, ssW, ssH, tmplGray, tmplW, tmplH, yMin, yMax) {
+  // Base scale assumes the template, once drawn, occupies the same fraction of
+  // screen height as a 343-px-tall card at 1920×1080. Sweeping ±30% from this
+  // base covers in-game UI scale, DPI, aspect-ratio, and windowed-mode variation.
+  const baseScale = (ssH / SLOT_BASE_H) * (SLOT_CONFIG_H / tmplH);
+  let best = null;
+  for (let mult = 0.70; mult <= 1.30 + 1e-9; mult += 0.05) {
+    const s = baseScale * mult;
+    const tw = Math.max(1, Math.round(tmplW * s));
+    const th = Math.max(1, Math.round(tmplH * s));
+    if (tw >= ssW || th >= ssH) continue;
+    const scaled = resizeGray(tmplGray, tmplW, tmplH, tw, th);
+    const r = findBestCardPosition(ssGray, ssW, ssH, scaled, tw, th, yMin, yMax);
+    if (!best || r.ncc > best.ncc) best = { x: r.x, y: r.y, ncc: r.ncc, w: tw, h: th };
+  }
+  return best;
+}
+
+// Two-pass card search at a single fixed size: DS=4 coarse scan → full-res fine
+// pass around best hit. Called internally by findBestCardPositionMultiScale.
 function findBestCardPosition(ssGray, ssW, ssH, tmplGray, tw, th, yMin, yMax) {
   const DS = 4;
   const ss4 = downsample(ssGray, ssW, ssH, DS);
@@ -369,14 +394,18 @@ function findCardImagePath(cardName, idx) {
   return null;
 }
 
+// NCC below this counts as "didn't find the card" — prevents garbage positions
+// from being treated as valid detections when the template doesn't match well
+// (wrong scale, wrong card on screen, UI obscured).
+const CARD_NCC_THRESHOLD = 0.45;
+
 async function findCardSlots(ssGray, ssW, ssH) {
-  const tw = Math.round(ssW * SLOT_CONFIG_W / SLOT_BASE_W);
-  const th = Math.round(ssH * SLOT_CONFIG_H / SLOT_BASE_H);
   const yMin = Math.floor(ssH * 0.10);
   const yMax = Math.floor(ssH * 0.88);
 
   const imageIndex = buildImageIndex(IMAGES_DIR);
   const found = [];
+  const allScores = [];
 
   for (let slot = 1; slot <= 8; slot++) {
     await yieldToEventLoop();
@@ -386,20 +415,29 @@ async function findCardSlots(ssGray, ssW, ssH) {
     if (!imgPath) continue;
     const tmpl = loadTemplateGray(imgPath);
     if (!tmpl) continue;
-    const scaled = resizeGray(tmpl.gray, tmpl.width, tmpl.height, tw, th);
-    const r = findBestCardPosition(ssGray, ssW, ssH, scaled, tw, th, yMin, yMax);
-    found.push({ slot, x: r.x, y: r.y });
+    const r = findBestCardPositionMultiScale(
+      ssGray, ssW, ssH, tmpl.gray, tmpl.width, tmpl.height, yMin, yMax
+    );
+    allScores.push({ slot, card: cardName, ncc: +r.ncc.toFixed(3), w: r.w, h: r.h });
+    if (r.ncc >= CARD_NCC_THRESHOLD) {
+      found.push({ slot, x: r.x, y: r.y, w: r.w, h: r.h });
+    }
   }
 
   if (found.length < 4) {
     throw new Error(
-      `Card slot detection found only ${found.length}/8 slots via template matching. ` +
-      `Make sure the calibration reference deck is loaded in-game before calibrating.`
+      `Card slot detection found only ${found.length}/8 slots above NCC ${CARD_NCC_THRESHOLD}. ` +
+      `Make sure the calibration reference deck is loaded in-game. ` +
+      `Per-slot scores: ${JSON.stringify(allScores)}`
     );
   }
 
-  // Average Y across all found cards for a stable slotY
-  const slotY = Math.round(found.reduce((s, r) => s + r.y, 0) / found.length);
+  // Average Y and detected size across well-matched slots — these reflect the
+  // game's actual card dimensions on the user's screen, not the assumed
+  // 212/1920 × 343/1080 ratio.
+  const slotY      = Math.round(found.reduce((s, r) => s + r.y, 0) / found.length);
+  const slotWidth  = Math.round(found.reduce((s, r) => s + r.w, 0) / found.length);
+  const slotHeight = Math.round(found.reduce((s, r) => s + r.h, 0) / found.length);
 
   // Build X position array; fill missing slots by interpolating from the average spacing
   const slotXPositions = new Array(8).fill(null);
@@ -418,7 +456,7 @@ async function findCardSlots(ssGray, ssW, ssH) {
     }
   }
 
-  return { slotY, slotHeight: th, slotWidth: tw, slotXPositions };
+  return { slotY, slotHeight, slotWidth, slotXPositions };
 }
 
 // ── Talent detection ─────────────────────────────────────────────────────────
