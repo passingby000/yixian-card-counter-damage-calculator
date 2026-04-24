@@ -1,7 +1,8 @@
 const fs   = require('fs');
 const path = require('path');
 const zlib = require('zlib');
-const { getYisimPath, getAssetPath } = require('./runtime_paths');
+const { getYisimPath, getAssetPath, getWritablePath } = require('./runtime_paths');
+const { encodePng, annotateSlotDetection } = require('./calibration_debug_draw');
 
 // Reference geometry used to anchor the multi-scale card search. At 1920×1080
 // fullscreen, in-game cards are ~343 px tall, so the "base" template scale is
@@ -243,62 +244,109 @@ function znccAt(ssGray, ssW, sx, sy, tmplGray, tw, th) {
   return denom < 1 ? 0 : num / denom;
 }
 
-// Multi-scale card search: tries scales around a base derived from screenshot
-// dimensions. Preserves the template's native aspect ratio at every scale —
-// tw/th are always `tmplW × s` and `tmplH × s` for the same scalar s — so we
-// never distort the card shape. Returns { x, y, w, h, ncc } with the actual
-// tw/th at the best-scoring scale (so callers can save the detected size).
-function findBestCardPositionMultiScale(ssGray, ssW, ssH, tmplGray, tmplW, tmplH, yMin, yMax) {
-  // Base scale assumes the template, once drawn, occupies the same fraction of
-  // screen height as a 343-px-tall card at 1920×1080. Sweeping ±30% from this
-  // base covers in-game UI scale, DPI, aspect-ratio, and windowed-mode variation.
+// Card-search primitives.
+//
+// Detection is split into three building blocks so that findCardSlots can share
+// the expensive work (downsampling, scale discovery) across all 8 slots:
+//
+//   coarseMultiScale(ss4, ...)   — sweep ±30% around baseScale on the already-
+//                                  downsampled image; returns winning scale +
+//                                  coarse position. Template aspect preserved
+//                                  (tw = tmplW*s, th = tmplH*s, same scalar).
+//   coarseAtScale(ss4, ...)      — single-scale coarse scan at a known scale,
+//                                  used once the scale has been locked by the
+//                                  multi-scale pass on the first slot.
+//   fineRefine(ssGray, ..., cx, cy) — full-res ZNCC in a small window around
+//                                     the coarse winner.
+//
+// All three operate on a pre-computed `ss4 = downsample(ssGray, ssW, ssH, 4)`
+// so the 480×270 downsampled buffer is reused for every slot and every scale.
+
+const DS = 4;
+
+function coarseMultiScale(ss4, ssW, ssH, tmplGray, tmplW, tmplH, yMin, yMax) {
+  // Base scale anchors the template at the same screen-height fraction as a
+  // 343 px card at 1080p. Sweeping ±30% covers in-game UI scale, Windows DPI,
+  // aspect-ratio, and windowed-mode variation.
   const baseScale = (ssH / SLOT_BASE_H) * (SLOT_CONFIG_H / tmplH);
-  let best = null;
+  const cy0 = Math.max(0, Math.floor(yMin / DS));
+  const cyCap = Math.floor(yMax / DS);
+
+  let best = { ncc: -Infinity, x: 0, y: 0, scale: baseScale, tw: 0, th: 0 };
   for (let mult = 0.70; mult <= 1.30 + 1e-9; mult += 0.05) {
     const s = baseScale * mult;
     const tw = Math.max(1, Math.round(tmplW * s));
     const th = Math.max(1, Math.round(tmplH * s));
     if (tw >= ssW || th >= ssH) continue;
-    const scaled = resizeGray(tmplGray, tmplW, tmplH, tw, th);
-    const r = findBestCardPosition(ssGray, ssW, ssH, scaled, tw, th, yMin, yMax);
-    if (!best || r.ncc > best.ncc) best = { x: r.x, y: r.y, ncc: r.ncc, w: tw, h: th };
+
+    const tw4 = Math.max(1, Math.floor(tw / DS));
+    const th4 = Math.max(1, Math.floor(th / DS));
+    const tm4 = resizeGray(tmplGray, tmplW, tmplH, tw4, th4);
+
+    const cx1 = ss4.w - tw4;
+    const cy1 = Math.min(ss4.h - th4, cyCap);
+    for (let y = cy0; y <= cy1; y++) {
+      for (let x = 0; x <= cx1; x++) {
+        const score = znccAt(ss4.gray, ss4.w, x, y, tm4, tw4, th4);
+        if (score > best.ncc) {
+          best = { ncc: score, x: x * DS, y: y * DS, scale: s, tw, th };
+        }
+      }
+    }
   }
   return best;
 }
 
-// Two-pass card search at a single fixed size: DS=4 coarse scan → full-res fine
-// pass around best hit. Called internally by findBestCardPositionMultiScale.
-function findBestCardPosition(ssGray, ssW, ssH, tmplGray, tw, th, yMin, yMax) {
-  const DS = 4;
-  const ss4 = downsample(ssGray, ssW, ssH, DS);
+function coarseAtScale(ss4, ssW, ssH, tmplGray, tmplW, tmplH, scale, yMin, yMax) {
+  const tw = Math.max(1, Math.round(tmplW * scale));
+  const th = Math.max(1, Math.round(tmplH * scale));
+  if (tw >= ssW || th >= ssH) return null;
+
   const tw4 = Math.max(1, Math.floor(tw / DS));
   const th4 = Math.max(1, Math.floor(th / DS));
-  const tm4 = resizeGray(tmplGray, tw, th, tw4, th4);
+  const tm4 = resizeGray(tmplGray, tmplW, tmplH, tw4, th4);
 
   const cx1 = ss4.w - tw4;
   const cy0 = Math.max(0, Math.floor(yMin / DS));
   const cy1 = Math.min(ss4.h - th4, Math.floor(yMax / DS));
 
-  let coarseBest = -Infinity, coarseX = 0, coarseY = cy0;
-  for (let y = cy0; y <= cy1; y++)
+  let best = { ncc: -Infinity, x: 0, y: 0, tw, th };
+  for (let y = cy0; y <= cy1; y++) {
     for (let x = 0; x <= cx1; x++) {
       const score = znccAt(ss4.gray, ss4.w, x, y, tm4, tw4, th4);
-      if (score > coarseBest) { coarseBest = score; coarseX = x; coarseY = y; }
+      if (score > best.ncc) { best = { ncc: score, x: x * DS, y: y * DS, tw, th }; }
     }
+  }
+  return best;
+}
 
+function fineRefine(ssGray, ssW, ssH, tmplGray, tmplW, tmplH, tw, th, cx, cy) {
+  const scaled = resizeGray(tmplGray, tmplW, tmplH, tw, th);
   const margin = DS * 3;
-  const fy0 = Math.max(yMin, coarseY * DS - margin);
-  const fy1 = Math.min(Math.min(yMax, ssH - th), coarseY * DS + margin);
-  const fx0 = Math.max(0, coarseX * DS - margin);
-  const fx1 = Math.min(ssW - tw, coarseX * DS + margin);
+  const fx0 = Math.max(0, cx - margin);
+  const fy0 = Math.max(0, cy - margin);
+  const fx1 = Math.min(ssW - tw, cx + margin);
+  const fy1 = Math.min(ssH - th, cy + margin);
 
-  let fineBest = -Infinity, bestX = coarseX * DS, bestY = coarseY * DS;
-  for (let y = fy0; y <= fy1; y++)
+  let best = -Infinity, bestX = cx, bestY = cy;
+  for (let y = fy0; y <= fy1; y++) {
     for (let x = fx0; x <= fx1; x++) {
-      const score = znccAt(ssGray, ssW, x, y, tmplGray, tw, th);
-      if (score > fineBest) { fineBest = score; bestX = x; bestY = y; }
+      const score = znccAt(ssGray, ssW, x, y, scaled, tw, th);
+      if (score > best) { best = score; bestX = x; bestY = y; }
     }
-  return { x: bestX, y: bestY, ncc: fineBest };
+  }
+  return { x: bestX, y: bestY, ncc: best, w: tw, h: th };
+}
+
+// Back-compat wrapper: two-step multi-scale detection for a single slot.
+// Kept so external callers (e.g. debug scripts that want an isolated API)
+// still work; findCardSlots now uses the primitives directly to share ss4.
+function findBestCardPositionMultiScale(ssGray, ssW, ssH, tmplGray, tmplW, tmplH, yMin, yMax) {
+  const ss4 = downsample(ssGray, ssW, ssH, DS);
+  const coarse = coarseMultiScale(ss4, ssW, ssH, tmplGray, tmplW, tmplH, yMin, yMax);
+  if (coarse.ncc === -Infinity) return { x: 0, y: 0, w: 0, h: 0, ncc: 0 };
+  return fineRefine(ssGray, ssW, ssH, tmplGray, tmplW, tmplH,
+                    coarse.tw, coarse.th, coarse.x, coarse.y);
 }
 
 // Two-pass talent search: DS=4 coarse scan → full-res fine pass around best hit
@@ -404,25 +452,69 @@ async function findCardSlots(ssGray, ssW, ssH) {
   const yMax = Math.floor(ssH * 0.88);
 
   const imageIndex = buildImageIndex(IMAGES_DIR);
-  const found = [];
-  const allScores = [];
 
+  // Load every available template up front; skipped slots simply have no entry.
+  const slotTemplates = {};
   for (let slot = 1; slot <= 8; slot++) {
-    await yieldToEventLoop();
     const cardName = CALIBRATION_SLOT_CARDS[slot];
     if (!cardName) continue;
     const imgPath = findCardImagePath(cardName, imageIndex);
     if (!imgPath) continue;
     const tmpl = loadTemplateGray(imgPath);
     if (!tmpl) continue;
-    const r = findBestCardPositionMultiScale(
-      ssGray, ssW, ssH, tmpl.gray, tmpl.width, tmpl.height, yMin, yMax
-    );
-    allScores.push({ slot, card: cardName, ncc: +r.ncc.toFixed(3), w: r.w, h: r.h });
-    if (r.ncc >= CARD_NCC_THRESHOLD) {
-      found.push({ slot, x: r.x, y: r.y, w: r.w, h: r.h });
+    slotTemplates[slot] = { cardName, ...tmpl };
+  }
+
+  const slotIndices = Object.keys(slotTemplates).map(Number).sort((a, b) => a - b);
+  if (slotIndices.length === 0) {
+    throw new Error('No calibration card templates could be loaded from images/.');
+  }
+
+  // Share the downsampled screenshot across all slots and all scales.
+  const ss4 = downsample(ssGray, ssW, ssH, DS);
+
+  // Phase 1 — lock the scale from the first available slot via the full
+  // multi-scale sweep. All 8 cards in the hand render at the same scale, so we
+  // only need to discover it once.
+  const seedSlot = slotIndices[0];
+  const seedT    = slotTemplates[seedSlot];
+  await yieldToEventLoop();
+  const seedCoarse = coarseMultiScale(ss4, ssW, ssH, seedT.gray, seedT.width, seedT.height, yMin, yMax);
+  const seedFine   = fineRefine(ssGray, ssW, ssH, seedT.gray, seedT.width, seedT.height,
+                                seedCoarse.tw, seedCoarse.th, seedCoarse.x, seedCoarse.y);
+
+  const allScores = [{
+    slot: seedSlot, card: seedT.cardName,
+    ncc: +seedFine.ncc.toFixed(3), w: seedFine.w, h: seedFine.h
+  }];
+  const found = [];
+  if (seedFine.ncc >= CARD_NCC_THRESHOLD) {
+    found.push({ slot: seedSlot, x: seedFine.x, y: seedFine.y, w: seedFine.w, h: seedFine.h });
+  }
+
+  // Phase 2 — single-scale coarse scan for every remaining slot at the locked
+  // scale, with a tight y-band around the seed slot's row (cards are in a
+  // single horizontal row, so y shouldn't vary more than a few pixels).
+  const lockedScale = seedCoarse.scale;
+  const rowY        = seedFine.y;
+  const yBand       = Math.max(20, Math.floor(ssH * 0.03));
+  const yMinFast    = Math.max(yMin, rowY - yBand);
+  const yMaxFast    = Math.min(yMax, rowY + seedFine.h + yBand);
+
+  for (const slot of slotIndices) {
+    if (slot === seedSlot) continue;
+    await yieldToEventLoop();
+    const t = slotTemplates[slot];
+    const coarse = coarseAtScale(ss4, ssW, ssH, t.gray, t.width, t.height, lockedScale, yMinFast, yMaxFast);
+    if (!coarse) continue;
+    const fine = fineRefine(ssGray, ssW, ssH, t.gray, t.width, t.height,
+                            coarse.tw, coarse.th, coarse.x, coarse.y);
+    allScores.push({ slot, card: t.cardName, ncc: +fine.ncc.toFixed(3), w: fine.w, h: fine.h });
+    if (fine.ncc >= CARD_NCC_THRESHOLD) {
+      found.push({ slot, x: fine.x, y: fine.y, w: fine.w, h: fine.h });
     }
   }
+  allScores.sort((a, b) => a.slot - b.slot);
 
   if (found.length < 4) {
     throw new Error(
@@ -456,7 +548,10 @@ async function findCardSlots(ssGray, ssW, ssH) {
     }
   }
 
-  return { slotY, slotHeight, slotWidth, slotXPositions };
+  return { slotY, slotHeight, slotWidth, slotXPositions, perSlot: allScores.map((s) => {
+    const f = found.find((r) => r.slot === s.slot);
+    return { ...s, x: f?.x ?? null, y: f?.y ?? null };
+  }) };
 }
 
 // ── Talent detection ─────────────────────────────────────────────────────────
@@ -518,18 +613,18 @@ async function performCalibration(screenshot, onProgress = null) {
   // Decode screenshot from raw PNG bytes (same path as templates — no color profile transforms)
   // Use ssW/ssH from the decoded PNG (physical pixels), NOT screenshot.getSize() which returns logical pixels
   const ssImg = decodePng(screenshot.toPNG());
-  const { width: ssW, height: ssH } = ssImg;
+  const { data: ssRgba, width: ssW, height: ssH } = ssImg;
   const ssGray = (() => {
-    const { data, width, height } = ssImg;
-    const gray = new Float32Array(width * height);
-    for (let i = 0; i < width * height; i++)
-      gray[i] = 0.299 * data[i*4] + 0.587 * data[i*4+1] + 0.114 * data[i*4+2];
+    const gray = new Float32Array(ssW * ssH);
+    for (let i = 0; i < ssW * ssH; i++)
+      gray[i] = 0.299 * ssRgba[i*4] + 0.587 * ssRgba[i*4+1] + 0.114 * ssRgba[i*4+2];
     return gray;
   })();
 
-  // Find card slot geometry via template matching (znccAt top-60%)
+  // Find card slot geometry via two-step multi-scale template matching.
   onProgress?.(0, 7, 'Finding card slots');
-  const { slotY, slotHeight, slotWidth, slotXPositions } = await findCardSlots(ssGray, ssW, ssH);
+  const slotGeom = await findCardSlots(ssGray, ssW, ssH);
+  const { slotY, slotHeight, slotWidth, slotXPositions } = slotGeom;
   onProgress?.(1, 7, 'Card slots found');
 
   await yieldToEventLoop();
@@ -537,6 +632,17 @@ async function performCalibration(screenshot, onProgress = null) {
   // Find talent positions via multi-scale circular ZNCC
   const talentRects = await findTalentPositions(ssGray, ssW, ssH, onProgress);
   onProgress?.(7, 7, 'Done');
+
+  // Write an annotated debug PNG to userData so the user can inspect whether
+  // the detector actually found each card. Non-fatal if it fails (e.g. when
+  // running outside Electron).
+  try {
+    const annotated = annotateSlotDetection(ssRgba, ssW, ssH, slotGeom);
+    const debugPath = getWritablePath('calibration_debug.png');
+    fs.writeFileSync(debugPath, encodePng(annotated, ssW, ssH));
+  } catch (_err) {
+    // ignore — debug artifact, not part of the calibration contract
+  }
 
   return {
     version: 1,
@@ -557,4 +663,17 @@ async function performCalibration(screenshot, onProgress = null) {
   };
 }
 
-module.exports = { performCalibration };
+module.exports = {
+  performCalibration,
+  // Exposed for offline debug scripts (e.g. debug/calibration/debug_card_detection.js)
+  // that want to run card detection against a saved screenshot without going
+  // through the Electron runtime.
+  decodePng,
+  findCardSlots,
+  findBestCardPositionMultiScale,
+  loadTemplateGray,
+  buildImageIndex,
+  findCardImagePath,
+  CALIBRATION_SLOT_CARDS,
+  IMAGES_DIR
+};

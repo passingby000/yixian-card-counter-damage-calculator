@@ -1,0 +1,23 @@
+Loaded 2453 card templates from C:\Users\raymo\OneDrive\Documents\testing-godot\yixian-card-counter-damage-calculator\images
+
+=== calibration_capture.png ===
+  Size: 1920 × 1080
+  slot1: 云剑•闪风1         → x=  45 y= 273 213×343px  ncc=0.912  (26005ms)
+  slot2: 云剑•飞刺3         → x= 276 y= 273 213×343px  ncc=0.886  (29583ms)
+  slot3: 运笔如飞1          → x= 507 y= 273 213×343px  ncc=0.900  (33138ms)
+  slot4: 云剑•汇灵2         → x= 738 y= 273 213×343px  ncc=0.868  (33698ms)
+  slot5: 破气剑1           → x= 969 y= 273 213×343px  ncc=0.879  (33756ms)
+  slot6: 巨鹏灵剑2          → x=1200 y= 273 213×343px  ncc=0.880  (33301ms)
+  slot7: 水月剑阵2          → x=1431 y= 273 213×343px  ncc=0.882  (33614ms)
+  slot8: 镜花剑阵2          → x=1662 y= 273 213×343px  ncc=0.889  (33803ms)
+  → averaged: slotY=273  213×343px  xs=[45, 276, 507, 738, 969, 1200, 1431, 1662]
+  → wrote debug\calibration\calibration_capture_detected.png
+
+=== calibration_capture2.png ===
+  Size: 1240 × 775
+  slot1: 云剑•闪风1         → x=  29 y= 215 137×222px  ncc=0.903  (7880ms)
+  slot2: 云剑•飞刺3         → x= 178 y= 215 137×222px  ncc=0.860  (7907ms)
+  slot3: 运笔如飞1          → x= 327 y= 215 137×222px  ncc=0.869  (8186ms)
+  slot4: 云剑•汇灵2         → x= 477 y= 215 137×222px  ncc=0.824  (8011ms)
+  slot5: 破气剑1           → x= 626 y= 215 137×222px  ncc=0.860  (7861ms)
+  slot6: 巨鹏灵剑2          → x= 775 y= 215 137×222px  ncc=0.864  (7966ms)

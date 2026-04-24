@@ -34,7 +34,8 @@
       "Bash(node .dream_audit_build_mapping.js)",
       "Bash(node .dream_audit_extract_code.js)",
       "Bash(node _tmp_inspect.js)",
-      "Bash(node -c \"c:/Users/raymo/OneDrive/Documents/testing-godot/yixian-card-counter-damage-calculator/calibrator.js\")"
+      "Bash(node -c \"c:/Users/raymo/OneDrive/Documents/testing-godot/yixian-card-counter-damage-calculator/calibrator.js\")",
+      "PowerShell(Add-Type -AssemblyName System.Drawing; $src = 'c:\\\\Users\\\\raymo\\\\OneDrive\\\\Documents\\\\testing-godot\\\\yixian-card-counter-damage-calculator\\\\debug\\\\calibration\\\\calibration_capture2.webp'; $dst = 'c:\\\\Users\\\\raymo\\\\OneDrive\\\\Documents\\\\testing-godot\\\\yixian-card-counter-damage-calculator\\\\debug\\\\calibration\\\\calibration_capture2.png'; $img = [System.Drawing.Image]::FromFile\\($src\\); $img.Save\\($dst, [System.Drawing.Imaging.ImageFormat]::Png\\); $img.Dispose\\(\\); \"Saved: $dst \\($\\($img.Width\\)x$\\($img.Height\\)\\)\")"
     ]
   }
 }
