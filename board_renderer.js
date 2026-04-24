@@ -49,19 +49,14 @@ function getTalentKindLabel(simulationKind) {
   }
 }
 
-function getDisplaySlot(slot, slotResult, debugMode) {
+function getDisplaySlot(slot, slotResult) {
   if (slot) {
     return {
       ...slot,
       accepted: true
     };
   }
-  if (!debugMode || !slotResult?.bestCandidate) return null;
-  return {
-    ...slotResult.bestCandidate,
-    confidence: slotResult.displayConfidence ?? 0,
-    accepted: false
-  };
+  return null;
 }
 
 function renderBoardPanel() {
@@ -71,7 +66,6 @@ function renderBoardPanel() {
   const currentRound = boardState.capture?.currentRound;
   const openSlots = boardState.capture?.boardOpenSlots ?? boardState.capture?.openSlots ?? boardState.slots.length;
   const battlePlayer = boardState.capture?.battle?.player;
-  const debugMode = !!boardState.capture?.debugMode;
   const talents = Array.isArray(boardState.capture?.talents) ? boardState.capture.talents : [];
   const talentIntegration = preview.talentIntegration || null;
   const parts = [];
@@ -83,9 +77,6 @@ function renderBoardPanel() {
   }
   if (openSlots) {
     parts.push(`${openSlots} open`);
-  }
-  if (debugMode) {
-    parts.push('Debug');
   }
   if (talentIntegration) {
     const unsupported = Array.isArray(talentIntegration.unsupportedDirectTalents) ? talentIntegration.unsupportedDirectTalents : [];
@@ -137,7 +128,7 @@ function renderBoardPanel() {
   boardSlotsRoot.innerHTML = '';
   boardState.slots.forEach((slot, index) => {
     const slotResult = boardState.capture?.slotResults?.[index] || null;
-    const displaySlot = getDisplaySlot(slot, slotResult, debugMode);
+    const displaySlot = getDisplaySlot(slot, slotResult);
     const isClosed = index >= openSlots;
     const el = document.createElement('div');
     el.className = `board-slot${displaySlot ? '' : isClosed ? ' closed' : ' empty'}${displaySlot && displaySlot.accepted === false ? ' debug-rejected' : ''}`;

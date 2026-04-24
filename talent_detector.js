@@ -2,6 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const { nativeImage } = require('electron');
 const { getCodePath, getYisimPath } = require('./runtime_paths');
+const { getNativeImagePixelSize } = require('./native_image_pixels');
+const { computeLayoutTransform } = require('./rect_scale');
 const { normalizeTalentName, getTalentMetadata } = require('./talent_catalog');
 
 const CONFIG_PATH = getCodePath('talent_detector_config.json');
@@ -27,13 +29,15 @@ function computeTalentRects(sourceSize) {
   if (!activeCalibration?.talents || !activeCalibration.screenshotSize) return null;
   const calW = activeCalibration.screenshotSize.width;
   const calH = activeCalibration.screenshotSize.height;
-  const scaleX = sourceSize.width / calW;
-  const scaleY = sourceSize.height / calH;
+  const transform = computeLayoutTransform(
+    { width: calW, height: calH },
+    sourceSize
+  );
   return activeCalibration.talents.map((rect) => rect ? ({
-    x: Math.round(rect.x * scaleX),
-    y: Math.round(rect.y * scaleY),
-    width: Math.max(1, Math.round(rect.width * scaleX)),
-    height: Math.max(1, Math.round(rect.height * scaleY))
+    x: Math.round(rect.x * transform.scaleX),
+    y: Math.round(rect.y * transform.scaleY),
+    width: Math.max(1, Math.round(rect.width * transform.sizeScale)),
+    height: Math.max(1, Math.round(rect.height * transform.sizeScale))
   }) : null);
 }
 
@@ -89,7 +93,7 @@ function loadTalentTemplates(templatesDir = TALENT_TEMPLATE_DIR) {
 }
 
 function getScaledTalentRects(sourceImage) {
-  return computeTalentRects(sourceImage.getSize());
+  return computeTalentRects(getNativeImagePixelSize(sourceImage));
 }
 
 // Convert a nativeImage to a gray Float32Array using its physical pixel dimensions.
@@ -98,7 +102,7 @@ function getScaledTalentRects(sourceImage) {
 //  is physical, causing stride mismatch at DPI > 1.)
 function imageToGrayscaleArray(image) {
   const bitmap = image.toBitmap();
-  const { width, height } = image.getSize();
+  const { width, height } = getNativeImagePixelSize(image);
   const gray = new Float32Array(width * height);
   for (let i = 0, pixelIndex = 0; i < bitmap.length; i += 4, pixelIndex += 1) {
     const blue = bitmap[i];
@@ -230,7 +234,8 @@ function detectTalents(sourceImage, options = {}) {
   const positionTemplates = loadTalentTemplates(templatesDir);
   const rects = getScaledTalentRects(sourceImage);
 
-  if (!rects) return buildFallbackTalentResults(sourceImage.getSize(), 'not-calibrated');
+  const sourceSize = getNativeImagePixelSize(sourceImage);
+  if (!rects) return buildFallbackTalentResults(sourceSize, 'not-calibrated');
 
   // Convert the full source image to gray ONCE using its actual dimensions.
   // This avoids the nativeImage.crop() stride mismatch bug on Windows with DPI scaling,
@@ -277,7 +282,7 @@ function detectTalents(sourceImage, options = {}) {
     debug: {
       status: 'ok',
       threshold,
-      screenshotSize: sourceImage.getSize(),
+      screenshotSize: sourceSize,
       geometry: { rects },
       unmatchedPositions,
       templatesDir,

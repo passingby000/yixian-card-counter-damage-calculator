@@ -63,7 +63,7 @@ function renderControls() {
   listButton.title = uiState.showCardList ? 'Hide card list' : 'Show card list';
   boardButton.title = uiState.showBoardPanel ? 'Hide detected cards table' : 'Show detected cards table';
   if (debugModeButton) {
-    debugModeButton.title = uiState.debugMode ? 'Show rejected best candidates and open all 8 board slots' : 'Show only accepted detections';
+    debugModeButton.title = uiState.debugMode ? 'Hide detection overlay' : 'Show detection overlay';
   }
   settingsButton.title = `Damage: ${damageRollMode} · Cards: ${uiState.cardLanguage} · Board: ${uiState.debugMode ? 'debug' : 'normal'}`;
 }

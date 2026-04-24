@@ -361,10 +361,68 @@ body {
 }
 
 .damage-overlay {
-  position: relative;
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
+}
+
+.debug-overlay-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.debug-box {
+  position: absolute;
+  box-sizing: border-box;
+  border: 2px solid rgba(255, 170, 0, 0.95);
+  background: rgba(255, 170, 0, 0.08);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.18);
+}
+
+.debug-box.slot.accepted {
+  border-color: rgba(0, 220, 100, 0.95);
+  background: rgba(0, 220, 100, 0.08);
+}
+
+.debug-box.slot.rejected {
+  border-color: rgba(255, 170, 0, 0.95);
+  background: rgba(255, 170, 0, 0.08);
+}
+
+.debug-box.talent {
+  border-color: rgba(0, 190, 255, 0.95);
+  background: rgba(0, 190, 255, 0.08);
+}
+
+.debug-box-label {
+  position: absolute;
+  left: 0;
+  top: -22px;
+  max-width: 220px;
+  padding: 2px 6px;
+  border-radius: 6px;
+  background: rgba(10, 10, 10, 0.88);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.debug-box-label.secondary {
+  top: -2px;
+  left: 2px;
+  max-width: calc(100% - 4px);
+  background: rgba(10, 10, 10, 0.74);
+  font-size: 10px;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .damage-badge {

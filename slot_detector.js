@@ -2,6 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const { nativeImage } = require('electron');
 const { getCodePath } = require('./runtime_paths');
+const { getNativeImagePixelSize } = require('./native_image_pixels');
+const { computeLayoutTransform } = require('./rect_scale');
 const {
   loadBaselineMasks,
   getMaskKeyForTemplate,
@@ -127,7 +129,7 @@ function parseTemplateFilename(filePath) {
 
 function imageToGray(image) {
   const bitmap = image.toBitmap();
-  const { width, height } = image.getSize();
+  const { width, height } = getNativeImagePixelSize(image);
   const gray = new Float32Array(width * height);
   for (let i = 0, px = 0; i < bitmap.length; i += 4, px += 1) {
     const b = bitmap[i];
@@ -140,7 +142,7 @@ function imageToGray(image) {
 
 function imageToRgb(image) {
   const bitmap = image.toBitmap();
-  const { width, height } = image.getSize();
+  const { width, height } = getNativeImagePixelSize(image);
   const rgb = new Float32Array(width * height * 3);
   for (let i = 0, px = 0; i < bitmap.length; i += 4, px += 3) {
     rgb[px] = bitmap[i + 2];
@@ -496,14 +498,18 @@ function normalizeGeometry(geometry) {
 }
 
 function getScaledSlotRectForGeometry(slotIndex, sourceImage, geometry) {
-  const size = sourceImage.getSize();
-  const scaleX = size.width  / geometry.baseScreenWidth;
-  const scaleY = size.height / geometry.baseScreenHeight;
+  const sourceSize = getNativeImagePixelSize(sourceImage);
+  const baseScreenWidth = Number(geometry.baseScreenWidth) || sourceSize.width || 1;
+  const baseScreenHeight = Number(geometry.baseScreenHeight) || sourceSize.height || 1;
+  const transform = computeLayoutTransform(
+    { width: baseScreenWidth, height: baseScreenHeight },
+    sourceSize
+  );
   return {
-    x: Math.round(geometry.slotXPositions[slotIndex] * scaleX),
-    y: Math.round(geometry.slotY * scaleY),
-    width: Math.max(1, Math.round(geometry.slotWidth * scaleX)),
-    height: Math.max(1, Math.round(geometry.slotHeight * scaleY))
+    x: Math.round(geometry.slotXPositions[slotIndex] * transform.scaleX),
+    y: Math.round(geometry.slotY * transform.scaleY),
+    width: Math.max(1, Math.round(geometry.slotWidth * transform.sizeScale)),
+    height: Math.max(1, Math.round(geometry.slotHeight * transform.sizeScale))
   };
 }
 

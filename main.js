@@ -19,6 +19,8 @@ const {
   getLegacyRepoPath,
   getWritablePath
 } = require('./runtime_paths');
+const { getNativeImagePixelSize, getNativeImageOpaqueBounds } = require('./native_image_pixels');
+const { computeLayoutTransform } = require('./rect_scale');
 
 const BOARD_CAPTURE_INTERVAL_MS = 1000;
 const GAME_SOURCE_PATTERNS = ['弈仙牌', 'yixianpai', 'yi xian pai', 'yi xian: cultivation card game'];
@@ -260,14 +262,113 @@ function updateControlsWindowBounds() {
   ensureControlsOnTop();
 }
 
-function getFallbackSlotRects() {
+function getFallbackSlotRectsForSize(size) {
   const geo = getActiveSlotGeometry();
   if (!geo) return [];
+  const targetSize = {
+    width: Number(size?.width) || Number(geo.baseScreenWidth) || 1,
+    height: Number(size?.height) || Number(geo.baseScreenHeight) || 1
+  };
+  const transform = computeLayoutTransform(
+    {
+      width: Number(geo.baseScreenWidth) || targetSize.width,
+      height: Number(geo.baseScreenHeight) || targetSize.height
+    },
+    targetSize
+  );
   return geo.slotXPositions.map((x) => ({
-    x: Math.round(x),
-    y: Math.round(geo.slotY),
-    width: Math.max(1, Math.round(geo.slotWidth)),
-    height: Math.max(1, Math.round(geo.slotHeight))
+    x: Math.round(x * transform.scaleX),
+    y: Math.round(geo.slotY * transform.scaleY),
+    width: Math.max(1, Math.round(geo.slotWidth * transform.sizeScale)),
+    height: Math.max(1, Math.round(geo.slotHeight * transform.sizeScale))
+  }));
+}
+
+function getCaptureOverlayMetrics(screenshotSize = null) {
+  const primary = screen.getPrimaryDisplay();
+  const displayScaleFactor = primary.scaleFactor || 1;
+  const fallbackScreenshotSize = {
+    width: Math.round(primary.size.width * displayScaleFactor),
+    height: Math.round(primary.size.height * displayScaleFactor)
+  };
+  const effectiveScreenshotSize = screenshotSize
+    ? { width: Number(screenshotSize.width) || fallbackScreenshotSize.width, height: Number(screenshotSize.height) || fallbackScreenshotSize.height }
+    : fallbackScreenshotSize;
+  const overlaySize = damageWindow && !damageWindow.isDestroyed()
+    ? (() => {
+        const [width, height] = damageWindow.getContentSize();
+        return { width, height };
+      })()
+    : {
+        width: Math.max(1, Math.round(effectiveScreenshotSize.width / displayScaleFactor)),
+        height: Math.max(1, Math.round(effectiveScreenshotSize.height / displayScaleFactor))
+      };
+  return {
+    screenshotSize: effectiveScreenshotSize,
+    overlaySize,
+    displayScaleFactor
+  };
+}
+
+function projectCaptureRectToOverlayRect(rect, captureMetrics, contentRect = null) {
+  if (!rect) return null;
+
+  const overlaySize = captureMetrics?.overlaySize || { width: 1, height: 1 };
+  const screenshotSize = captureMetrics?.screenshotSize || { width: 1, height: 1 };
+  const screenshotWidth = Number(screenshotSize.width) || 1;
+  const screenshotHeight = Number(screenshotSize.height) || 1;
+  const contentWidth = Number(contentRect?.width) || 0;
+  const contentHeight = Number(contentRect?.height) || 0;
+  const shouldUseContentRect =
+    contentWidth > 0 &&
+    contentHeight > 0 &&
+    contentWidth <= screenshotWidth &&
+    contentHeight <= screenshotHeight &&
+    (contentWidth < screenshotWidth || contentHeight < screenshotHeight);
+  const sourceRect = shouldUseContentRect
+    ? {
+        x: Number(contentRect.x) || 0,
+        y: Number(contentRect.y) || 0,
+        width: contentWidth,
+        height: contentHeight
+      }
+    : {
+        x: 0,
+        y: 0,
+        width: screenshotWidth,
+        height: screenshotHeight
+      };
+
+  const transform = computeLayoutTransform(
+    { width: sourceRect.width, height: sourceRect.height },
+    overlaySize
+  );
+
+  return {
+    x: Math.round((Number(rect.x) - sourceRect.x) * transform.scaleX),
+    y: Math.round((Number(rect.y) - sourceRect.y) * transform.scaleY),
+    width: Math.max(1, Math.round(Number(rect.width) * transform.sizeScale)),
+    height: Math.max(1, Math.round(Number(rect.height) * transform.sizeScale))
+  };
+}
+
+function projectSlotResultsToOverlaySpace(slotResults, captureMetrics, contentRect = null) {
+  return (slotResults || []).map((slotResult) => ({
+    ...slotResult,
+    captureRect: slotResult?.rect || null,
+    rect: projectCaptureRectToOverlayRect(slotResult?.rect, captureMetrics, contentRect)
+  }));
+}
+
+function projectFallbackSlotRectsToOverlaySpace(fallbackSlotRects, captureMetrics, contentRect = null) {
+  return (fallbackSlotRects || []).map((rect) => projectCaptureRectToOverlayRect(rect, captureMetrics, contentRect));
+}
+
+function projectTalentsToOverlaySpace(talents, captureMetrics, contentRect = null) {
+  return (talents || []).map((talent) => ({
+    ...talent,
+    captureRect: talent?.rect || null,
+    rect: projectCaptureRectToOverlayRect(talent?.rect, captureMetrics, contentRect)
   }));
 }
 
@@ -854,9 +955,7 @@ async function performBoardCapture() {
   const settings = loadSettings();
   const battleState = loadBattleState(settings);
   const realOpenSlots = battleState.openSlots || NUM_SLOTS;
-  const boardOpenSlots = debugMode ? NUM_SLOTS : realOpenSlots;
-  const fallbackSlotRects = getFallbackSlotRects();
-  const fallbackTalentCapture = buildFallbackTalentResults(screen.getPrimaryDisplay().size, 'idle');
+  const boardOpenSlots = realOpenSlots;
   const emptyDamagePreview = (error = null) => ({
     first8Turns: null,
     perTurnDamage: [],
@@ -871,18 +970,36 @@ async function performBoardCapture() {
   try {
     const source = await findGameWindowSource();
     if (!source || !source.thumbnail || source.thumbnail.isEmpty()) {
+      const captureMetrics = getCaptureOverlayMetrics();
+      const missingFallbackSlotRects = getFallbackSlotRectsForSize(captureMetrics.screenshotSize);
+      const missingTalentCapture = buildFallbackTalentResults(captureMetrics.screenshotSize, 'missing-source');
+      const projectedFallbackSlotRects = projectFallbackSlotRectsToOverlaySpace(missingFallbackSlotRects, captureMetrics);
+      const projectedMissingSlotResults = projectSlotResultsToOverlaySpace(
+        buildFallbackSlotResults(missingFallbackSlotRects, boardOpenSlots, 'missing-source'),
+        captureMetrics
+      );
+      const projectedMissingTalents = projectTalentsToOverlaySpace(missingTalentCapture.talents, captureMetrics);
       emitBoardDetectionUpdated({
         slots: Array(8).fill(null),
         damagePreview: emptyDamagePreview('Game window not found'),
         updatedAt: Date.now(),
         capture: {
           status: 'missing-source',
-          screenshotSize: screen.getPrimaryDisplay().size,
-          fallbackSlotRects,
-          slotResults: buildFallbackSlotResults(fallbackSlotRects, boardOpenSlots, 'missing-source'),
-          talents: fallbackTalentCapture.talents,
+          coordinateSpace: 'overlay',
+          screenshotSize: captureMetrics.screenshotSize,
+          overlaySize: captureMetrics.overlaySize,
+          captureContentRect: {
+            x: 0,
+            y: 0,
+            width: captureMetrics.screenshotSize.width,
+            height: captureMetrics.screenshotSize.height
+          },
+          displayScaleFactor: captureMetrics.displayScaleFactor,
+          fallbackSlotRects: projectedFallbackSlotRects,
+          slotResults: projectedMissingSlotResults,
+          talents: projectedMissingTalents,
           talentDetection: {
-            ...fallbackTalentCapture.debug,
+            ...missingTalentCapture.debug,
             status: 'missing-source'
           },
           battle: battleState,
@@ -915,7 +1032,19 @@ async function performBoardCapture() {
           slotResults: [],
           debug: { reason: 'no-hand-candidates' }
         };
-    const slotResults = applyOpenSlotStateToResults(detection.slotResults, fallbackSlotRects, boardOpenSlots);
+    const screenshotSize = getNativeImagePixelSize(source.thumbnail);
+    const contentRect = getNativeImageOpaqueBounds(source.thumbnail);
+    // Keep the damage/debug overlay window at full-display logical size.
+    // The captured thumbnail is often downscaled (for example by the
+    // MAX_CAPTURE_* cap), so resizing the overlay window to thumbnail size
+    // collapses all mapped rects into the top-left of the screen after the
+    // first capture.
+    const captureMetrics = getCaptureOverlayMetrics(screenshotSize);
+    const scaledFallbackSlotRects = getFallbackSlotRectsForSize(captureMetrics.screenshotSize);
+    const slotResults = applyOpenSlotStateToResults(detection.slotResults, scaledFallbackSlotRects, boardOpenSlots);
+    const projectedFallbackSlotRects = projectFallbackSlotRectsToOverlaySpace(scaledFallbackSlotRects, captureMetrics, contentRect);
+    const projectedSlotResults = projectSlotResultsToOverlaySpace(slotResults, captureMetrics, contentRect);
+    const projectedTalents = projectTalentsToOverlaySpace(talentCapture.talents, captureMetrics, contentRect);
     const slots = slotResults.map((result) => result.card);
     const activeSlots = slots.slice(0, realOpenSlots);
     const damagePreview = await simulateFirstEightTurns(activeSlots, {
@@ -925,30 +1054,22 @@ async function performBoardCapture() {
       talents: talentCapture.talents
     });
 
-    // Resize damage window to match actual game height (game may be taller than primary.bounds reports)
-    if (damageWindow && !damageWindow.isDestroyed()) {
-      const ssSize = source.thumbnail.getSize();
-      const scaleFactor = screen.getPrimaryDisplay().scaleFactor || 1;
-      const logicalH = Math.round(ssSize.height / scaleFactor);
-      const logicalW = Math.round(ssSize.width  / scaleFactor);
-      const [curW, curH] = damageWindow.getContentSize();
-      if (curH !== logicalH || curW !== logicalW) {
-        damageWindow.setContentSize(logicalW, logicalH);
-      }
-    }
-
     emitBoardDetectionUpdated({
       slots,
       damagePreview,
       updatedAt: Date.now(),
       capture: {
         status: 'ok',
-        screenshotSize: source.thumbnail.getSize(),
+        coordinateSpace: 'overlay',
+        screenshotSize: captureMetrics.screenshotSize,
+        overlaySize: captureMetrics.overlaySize,
+        captureContentRect: contentRect,
+        displayScaleFactor: captureMetrics.displayScaleFactor,
         sourceName: source.name,
         detector: detection.debug,
-        slotResults,
-        fallbackSlotRects,
-        talents: talentCapture.talents,
+        slotResults: projectedSlotResults,
+        fallbackSlotRects: projectedFallbackSlotRects,
+        talents: projectedTalents,
         talentDetection: talentCapture.debug,
         battle: battleState,
         currentRound: battleState.currentRound,
@@ -959,19 +1080,37 @@ async function performBoardCapture() {
       }
     });
   } catch (error) {
+    const errorCaptureMetrics = getCaptureOverlayMetrics();
+    const errorFallbackSlotRects = getFallbackSlotRectsForSize(errorCaptureMetrics.screenshotSize);
+    const errorTalentCapture = buildFallbackTalentResults(errorCaptureMetrics.screenshotSize, 'error');
+    const projectedErrorFallbackRects = projectFallbackSlotRectsToOverlaySpace(errorFallbackSlotRects, errorCaptureMetrics);
+    const projectedErrorSlotResults = projectSlotResultsToOverlaySpace(
+      buildFallbackSlotResults(errorFallbackSlotRects, boardOpenSlots, 'error'),
+      errorCaptureMetrics
+    );
+    const projectedErrorTalents = projectTalentsToOverlaySpace(errorTalentCapture.talents, errorCaptureMetrics);
     emitBoardDetectionUpdated({
       slots: Array(8).fill(null),
       damagePreview: emptyDamagePreview(error.message),
       updatedAt: Date.now(),
       capture: {
         status: 'error',
-        screenshotSize: screen.getPrimaryDisplay().size,
+        coordinateSpace: 'overlay',
+        screenshotSize: errorCaptureMetrics.screenshotSize,
+        overlaySize: errorCaptureMetrics.overlaySize,
+        captureContentRect: {
+          x: 0,
+          y: 0,
+            width: errorCaptureMetrics.screenshotSize.width,
+            height: errorCaptureMetrics.screenshotSize.height
+          },
+        displayScaleFactor: errorCaptureMetrics.displayScaleFactor,
         message: error.message,
-        fallbackSlotRects,
-        slotResults: buildFallbackSlotResults(fallbackSlotRects, boardOpenSlots, 'error'),
-        talents: fallbackTalentCapture.talents,
+        fallbackSlotRects: projectedErrorFallbackRects,
+        slotResults: projectedErrorSlotResults,
+        talents: projectedErrorTalents,
         talentDetection: {
-          ...fallbackTalentCapture.debug,
+          ...errorTalentCapture.debug,
           status: 'error'
         },
         battle: battleState,
