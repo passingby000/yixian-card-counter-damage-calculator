@@ -391,4 +391,11 @@ body {
 .damage-badge-value {
   color: #f9f9f9;
   font-weight: 700;
+  padding: 0 5px;
+  border-radius: 6px;
+}
+
+.damage-badge-value.detected {
+  background: rgba(0, 200, 80, 0.85);
+  color: #fff;
 }

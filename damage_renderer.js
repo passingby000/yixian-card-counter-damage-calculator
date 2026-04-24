@@ -58,6 +58,8 @@ function renderDamageOverlay() {
     const rect = getSlotRect(index);
     if (!rect) continue;
 
+    const detected = !!boardState.capture?.slotResults?.[index]?.accepted;
+
     const badge = document.createElement('div');
     badge.className = 'damage-badge';
     const turnLabel = document.createElement('span');
@@ -65,7 +67,7 @@ function renderDamageOverlay() {
     turnLabel.textContent = `T${index + 1}`;
 
     const damageValue = document.createElement('span');
-    damageValue.className = 'damage-badge-value';
+    damageValue.className = `damage-badge-value${detected ? ' detected' : ''}`;
     damageValue.textContent = cumulativeDamage[index] == null ? '--' : `${cumulativeDamage[index]}`;
 
     badge.appendChild(turnLabel);
