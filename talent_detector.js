@@ -36,8 +36,8 @@ function computeTalentRects(sourceSize) {
   return activeCalibration.talents.map((rect) => rect ? ({
     x: Math.round(rect.x * transform.scaleX),
     y: Math.round(rect.y * transform.scaleY),
-    width: Math.max(1, Math.round(rect.width * transform.sizeScale)),
-    height: Math.max(1, Math.round(rect.height * transform.sizeScale))
+    width: Math.max(1, Math.round(rect.width * transform.sizeScaleX)),
+    height: Math.max(1, Math.round(rect.height * transform.sizeScaleY))
   }) : null);
 }
 

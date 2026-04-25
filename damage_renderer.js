@@ -83,12 +83,25 @@ function renderDebugOverlay() {
     const rect = slotResult?.rect || getSlotRect(index);
     if (!rect) return;
 
+    // Dashed outlines for every candidate geometry (normal / dream / personal),
+    // drawn first so the solid winner box sits on top.
+    const candidateRects = slotResult?.candidateRects;
+    if (candidateRects) {
+      for (const kind of ['normal', 'dream', 'personal']) {
+        const cr = candidateRects[kind];
+        if (!cr) continue;
+        debugOverlayRoot.appendChild(createDebugBox(cr, `slot-candidate ${kind}`, '', ''));
+      }
+    }
+
     const accepted = !!slotResult?.accepted;
     const confidence = Math.round((slotResult?.displayConfidence ?? 0) * 100);
     const className = accepted ? 'slot accepted' : 'slot rejected';
     const label = `Slot ${index + 1}`;
-    const meta = slotResult?.bestCandidate
-      ? `${slotResult.bestCandidate.name} · ${confidence}%`
+    const winner = slotResult?.winningTemplate;
+    const kindTag = winner?.isPersonal ? 'P' : winner?.isDream ? 'D' : winner ? 'N' : '';
+    const meta = winner
+      ? `${winner.name} (${kindTag}) · ${confidence}%`
       : `${accepted ? 'accepted' : 'undetected'} · ${confidence}%`;
 
     debugOverlayRoot.appendChild(createDebugBox(rect, className, label, meta));

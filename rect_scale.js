@@ -24,10 +24,14 @@
     const target = normalizeSize(toSize);
     const scaleX = target.width / source.width;
     const scaleY = target.height / source.height;
+    // Size scales must match the dimension they apply to. Aliasing them to a
+    // single value causes rect heights to be wrong whenever source and target
+    // aspect ratios differ (e.g. windowed mode, DWM-trimmed contentRect).
     return {
       scaleX,
       scaleY,
-      sizeScale: scaleX
+      sizeScaleX: scaleX,
+      sizeScaleY: scaleY
     };
   }
 
@@ -37,8 +41,8 @@
     return {
       x: rect.x * transform.scaleX,
       y: rect.y * transform.scaleY,
-      width: rect.width * transform.sizeScale,
-      height: rect.height * transform.sizeScale
+      width: rect.width * transform.sizeScaleX,
+      height: rect.height * transform.sizeScaleY
     };
   }
 

@@ -19,16 +19,26 @@ const {
 const DEFAULT_DREAM_RATIO = { width: 0.925, height: 0.977 };
 const DEFAULT_DREAM_X_OFFSET = 8;  // pixels in calibration coordinate space
 
-// Personal (talent-granted) cards appear larger than normal cards and shifted
-// relative to the normal slot anchor.  Values confirmed by grid-search on
-// fengxuround2.png (阴符玉简 in slot 1):
-//   xOffset  ~ -10 px  (left of normal anchor)
-//   yOffset  ~ -16 px  (above normal anchor)
-//   width  ratio ~ 1.104  (234 / 212)
-//   height ratio ~ 1.102  (378 / 343)
-const DEFAULT_PERSONAL_RATIO    = { width: 1.104, height: 1.102 };
-const DEFAULT_PERSONAL_X_OFFSET = -10;  // pixels in calibration coordinate space
-const DEFAULT_PERSONAL_Y_OFFSET = -16;  // pixels in calibration coordinate space
+// Personal (talent-granted) card geometry is character-specific. FengXu's
+// personal cards (击虚, 阴符玉简, 孤虚金书, 背孤) render larger and shifted
+// vs. normal hand cards — values confirmed by grid-search on fengxuround2.png:
+//   xOffset  ~ -10 px,  yOffset  ~ -16 px
+//   width  ratio ~ 1.104  (234 / 212),  height ratio ~ 1.102  (378 / 343)
+// Other characters' personal cards render at the same size and position as
+// normal hand cards, so they default to no offset / no scale change. Add new
+// entries here as more characters' personal cards are measured.
+const PERSONAL_GEO_OVERRIDES = {
+  FengXu: {
+    ratio:   { width: 1.104, height: 1.102 },
+    xOffset: -10,
+    yOffset: -16
+  }
+};
+const PERSONAL_GEO_DEFAULT = {
+  ratio:   { width: 1, height: 1 },
+  xOffset: 0,
+  yOffset: 0
+};
 
 const CONFIG_PATH = getCodePath('slot_detector_config.json');
 const config = JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf8'));
@@ -117,13 +127,18 @@ function parseTemplateFilename(filePath) {
   const baseName = normalizeCardName(match[1]);
   const suffixNumber = Number.parseInt(match[2], 10);
   const isDream = isDreamCardName(baseName);
+  // Personal templates live in `images/personal/<CharName>/...`. Capture the
+  // character name so detectSlots can pick the right per-character geometry.
+  const personalMatch = filePath.match(/[\\/]personal[\\/]([^\\/]+)[\\/]/);
+  const personalCharacter = personalMatch ? personalMatch[1] : null;
   return {
     baseName,
     level: isDream ? 1 : suffixNumber,
     phase: isDream ? suffixNumber : null,
     isDream,
     isSeasonal: isSeasonalTemplatePath(filePath),
-    isPersonal: isPersonalTemplatePath(filePath)
+    isPersonal: isPersonalTemplatePath(filePath),
+    personalCharacter
   };
 }
 
@@ -424,6 +439,7 @@ function buildTemplateIndex(imagesDir) {
       isDream: parsed.isDream,
       isSeasonal: parsed.isSeasonal,
       isPersonal: parsed.isPersonal,
+      personalCharacter: parsed.personalCharacter,
       maskKey: getMaskKeyForTemplate(filePath, parsed.level),
       filePath,
       fileName: path.basename(filePath),
@@ -508,8 +524,8 @@ function getScaledSlotRectForGeometry(slotIndex, sourceImage, geometry) {
   return {
     x: Math.round(geometry.slotXPositions[slotIndex] * transform.scaleX),
     y: Math.round(geometry.slotY * transform.scaleY),
-    width: Math.max(1, Math.round(geometry.slotWidth * transform.sizeScale)),
-    height: Math.max(1, Math.round(geometry.slotHeight * transform.sizeScale))
+    width: Math.max(1, Math.round(geometry.slotWidth * transform.sizeScaleX)),
+    height: Math.max(1, Math.round(geometry.slotHeight * transform.sizeScaleY))
   };
 }
 
@@ -607,6 +623,23 @@ function detectSlots(sourceImage, handCardNames, imagesDir, options = {}) {
     }
   }
 
+  // Safety rail: if a personal template exists for a baseName, drop any
+  // non-personal templates that share the name. Personal cards have unique
+  // nameCn (e.g. 阴符玉简), so this is a no-op in normal play — it guards the
+  // rare case where a duplicate-named non-personal template would compete
+  // across a different geometry and win on an incomparable score.
+  const personalBaseNames = new Set(
+    candidateTemplates.filter((t) => t.isPersonal).map((t) => t.baseName)
+  );
+  if (personalBaseNames.size > 0) {
+    for (let i = candidateTemplates.length - 1; i >= 0; i -= 1) {
+      const t = candidateTemplates[i];
+      if (!t.isPersonal && personalBaseNames.has(t.baseName)) {
+        candidateTemplates.splice(i, 1);
+      }
+    }
+  }
+
   // Compute dream geometry: dream cards are slightly narrower/shorter and their
   // top-left anchor is shifted right relative to the normal slot x position.
   // Treat stored ratio of {1,1} as the old placeholder (pre-dream-geometry calibration)
@@ -631,19 +664,29 @@ function detectSlots(sourceImage, handCardNames, imagesDir, options = {}) {
     };
   }
 
-  // Personal (talent-granted) cards appear larger than normal cards and are shifted
-  // relative to the normal slot anchor (xOffset=-10, yOffset=-16, ratio ~1.10×).
-  let personalGeometry = normalGeometry;
-  if (normalGeometry) {
-    const pw = Math.max(1, Math.round(normalGeometry.slotWidth  * DEFAULT_PERSONAL_RATIO.width));
-    const ph = Math.max(1, Math.round(normalGeometry.slotHeight * DEFAULT_PERSONAL_RATIO.height));
-    personalGeometry = {
+  // Personal (talent-granted) card geometry is character-specific. Each
+  // character that has a personal template in the candidate pool gets its own
+  // geometry derived from PERSONAL_GEO_OVERRIDES (or the default no-op shift
+  // for unknown characters, which equals normalGeometry).
+  const personalGeometryByChar = new Map();
+  function buildPersonalGeometry(charName) {
+    if (!normalGeometry) return null;
+    const cfg = PERSONAL_GEO_OVERRIDES[charName] || PERSONAL_GEO_DEFAULT;
+    if (cfg === PERSONAL_GEO_DEFAULT) return normalGeometry;
+    return {
       ...normalGeometry,
-      slotXPositions: normalGeometry.slotXPositions.map((x) => x + DEFAULT_PERSONAL_X_OFFSET),
-      slotY:      normalGeometry.slotY + DEFAULT_PERSONAL_Y_OFFSET,
-      slotWidth:  pw,
-      slotHeight: ph
+      slotXPositions: normalGeometry.slotXPositions.map((x) => x + cfg.xOffset),
+      slotY:      normalGeometry.slotY + cfg.yOffset,
+      slotWidth:  Math.max(1, Math.round(normalGeometry.slotWidth  * cfg.ratio.width)),
+      slotHeight: Math.max(1, Math.round(normalGeometry.slotHeight * cfg.ratio.height))
     };
+  }
+  function getPersonalGeometry(charName) {
+    const key = charName || '';
+    if (!personalGeometryByChar.has(key)) {
+      personalGeometryByChar.set(key, buildPersonalGeometry(key));
+    }
+    return personalGeometryByChar.get(key);
   }
 
   if (candidateTemplates.length === 0) {
@@ -667,16 +710,29 @@ function detectSlots(sourceImage, handCardNames, imagesDir, options = {}) {
         getScaledSlotRectForGeometry(i, sourceImage, dreamGeometry)
       )
     : normalSlotRects;
-  const personalSlotRects = personalGeometry !== normalGeometry
-    ? Array.from({ length: NUM_SLOTS }, (_, i) =>
-        getScaledSlotRectForGeometry(i, sourceImage, personalGeometry)
-      )
-    : normalSlotRects;
+
+  // Per-character personal slot rects, computed lazily for any character that
+  // appears in the candidate pool.
+  const personalSlotRectsByChar = new Map();
+  function getPersonalSlotRects(charName) {
+    const key = charName || '';
+    if (!personalSlotRectsByChar.has(key)) {
+      const geom = getPersonalGeometry(key);
+      personalSlotRectsByChar.set(key,
+        geom === normalGeometry
+          ? normalSlotRects
+          : Array.from({ length: NUM_SLOTS }, (_, i) => getScaledSlotRectForGeometry(i, sourceImage, geom))
+      );
+    }
+    return personalSlotRectsByChar.get(key);
+  }
 
   const slotResults = Array.from({ length: NUM_SLOTS }, (_, slotIndex) => {
     const scored = candidateTemplates.map((template) => {
-      const geom = template.isDream ? dreamGeometry : (template.isPersonal ? personalGeometry : normalGeometry);
-      const rect = (template.isDream ? dreamSlotRects : (template.isPersonal ? personalSlotRects : normalSlotRects))[slotIndex];
+      const personalGeom = template.isPersonal ? getPersonalGeometry(template.personalCharacter) : null;
+      const personalRect = template.isPersonal ? getPersonalSlotRects(template.personalCharacter)[slotIndex] : null;
+      const geom = template.isDream ? dreamGeometry : (template.isPersonal ? personalGeom : normalGeometry);
+      const rect = template.isDream ? dreamSlotRects[slotIndex] : (template.isPersonal ? personalRect : normalSlotRects[slotIndex]);
       const dstW = geom.slotWidth, dstH = geom.slotHeight;
 
       const tmpl = getTemplateRawData(template, dstW, dstH, baselineMasks);
@@ -684,7 +740,14 @@ function detectSlots(sourceImage, handCardNames, imagesDir, options = {}) {
       const cropGray = extractSubGray(srcGrayData, rect.x, rect.y, rect.width, rect.height, dstW, dstH);
       const cropRgb  = extractSubRgb(srcRgbData,  rect.x, rect.y, rect.width, rect.height, dstW, dstH);
 
-      const regions = template.isPersonal ? PERSONAL_REGIONS : STABLE_REGIONS;
+      // PERSONAL_REGIONS insets 10% of the border to skip a decorative frame —
+      // only applicable when the personal geometry is actually different from
+      // normal (i.e. FengXu's bigger / shifted personal cards). For characters
+      // whose personal cards render at normal geometry, the inset just throws
+      // away high-signal regions (level badge, description box).
+      const regions = (template.isPersonal && personalGeom && personalGeom !== normalGeometry)
+        ? PERSONAL_REGIONS
+        : STABLE_REGIONS;
       return {
         ...template,
         metrics: compareImages(cropGray, cropRgb, tmpl.gray, tmpl.rgb, regions, tmpl.mask),
@@ -723,9 +786,42 @@ function detectSlots(sourceImage, handCardNames, imagesDir, options = {}) {
         (!metric.higherIsBetter && bestScore <= metric.threshold)) &&
       margin >= metric.margin;
 
+    // For the debug overlay's "personal" candidate rect, prefer the winning
+    // template's character if it's personal; otherwise fall back to any
+    // personal candidate in the pool. Returns null when no personal templates
+    // are in play, or when the resolved geometry is identical to normal.
+    let personalRectForDebug = null;
+    {
+      const winnerChar = best?.isPersonal ? best.personalCharacter : null;
+      const fallbackChar = winnerChar
+        ? null
+        : (candidateTemplates.find((t) => t.isPersonal)?.personalCharacter || null);
+      const debugChar = winnerChar || fallbackChar;
+      if (debugChar) {
+        const geom = getPersonalGeometry(debugChar);
+        if (geom !== normalGeometry) {
+          personalRectForDebug = { ...getPersonalSlotRects(debugChar)[slotIndex] };
+        }
+      }
+    }
+
     const slotResult = {
       slotIndex,
       rect: best?.slotRect || normalSlotRects[slotIndex],
+      // All three candidate rects so the debug overlay can draw where the
+      // detector *would* compare each geometry. Dream/personal are null when
+      // they coincide with normal (no-calibration fallback path).
+      candidateRects: {
+        normal:   { ...normalSlotRects[slotIndex] },
+        dream:    dreamGeometry !== normalGeometry ? { ...dreamSlotRects[slotIndex] } : null,
+        personal: personalRectForDebug
+      },
+      winningTemplate: best ? {
+        name: best.baseName,
+        isDream: !!best.isDream,
+        isPersonal: !!best.isPersonal,
+        score: roundMetric(bestScore)
+      } : null,
       metric: metricName,
       accepted,
       bestScore: roundMetric(bestScore),
@@ -739,6 +835,7 @@ function detectSlots(sourceImage, handCardNames, imagesDir, options = {}) {
         level: best.level,
         phase: best.phase ?? null,
         isDream: !!best.isDream,
+        isPersonal: !!best.isPersonal,
         templateFile: best.fileName,
         confidence: buildDisplayConfidence(bestScore, margin, metric)
       } : null
@@ -758,7 +855,10 @@ function detectSlots(sourceImage, handCardNames, imagesDir, options = {}) {
       candidateCount: candidateTemplates.length,
       normalGeometry,
       dreamGeometry: dreamGeometry !== normalGeometry ? dreamGeometry : null,
-      personalGeometry: personalGeometry !== normalGeometry ? personalGeometry : null
+      personalGeometryByCharacter: Object.fromEntries(
+        Array.from(personalGeometryByChar.entries())
+          .filter(([_, geom]) => geom && geom !== normalGeometry)
+      )
     }
   };
 }

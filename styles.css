@@ -399,6 +399,17 @@ body {
   background: rgba(0, 190, 255, 0.08);
 }
 
+.debug-box.slot-candidate {
+  border-style: dashed;
+  border-width: 1px;
+  background: transparent;
+  box-shadow: none;
+}
+
+.debug-box.slot-candidate.normal   { border-color: rgba(255, 170, 0,   0.6); }
+.debug-box.slot-candidate.dream    { border-color: rgba(180, 120, 255, 0.6); }
+.debug-box.slot-candidate.personal { border-color: rgba(0,   220, 100, 0.6); }
+
 .debug-box-label {
   position: absolute;
   left: 0;

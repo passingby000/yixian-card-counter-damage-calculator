@@ -279,8 +279,8 @@ function getFallbackSlotRectsForSize(size) {
   return geo.slotXPositions.map((x) => ({
     x: Math.round(x * transform.scaleX),
     y: Math.round(geo.slotY * transform.scaleY),
-    width: Math.max(1, Math.round(geo.slotWidth * transform.sizeScale)),
-    height: Math.max(1, Math.round(geo.slotHeight * transform.sizeScale))
+    width: Math.max(1, Math.round(geo.slotWidth * transform.sizeScaleX)),
+    height: Math.max(1, Math.round(geo.slotHeight * transform.sizeScaleY))
   }));
 }
 
@@ -347,17 +347,25 @@ function projectCaptureRectToOverlayRect(rect, captureMetrics, contentRect = nul
   return {
     x: Math.round((Number(rect.x) - sourceRect.x) * transform.scaleX),
     y: Math.round((Number(rect.y) - sourceRect.y) * transform.scaleY),
-    width: Math.max(1, Math.round(Number(rect.width) * transform.sizeScale)),
-    height: Math.max(1, Math.round(Number(rect.height) * transform.sizeScale))
+    width: Math.max(1, Math.round(Number(rect.width) * transform.sizeScaleX)),
+    height: Math.max(1, Math.round(Number(rect.height) * transform.sizeScaleY))
   };
 }
 
 function projectSlotResultsToOverlaySpace(slotResults, captureMetrics, contentRect = null) {
-  return (slotResults || []).map((slotResult) => ({
-    ...slotResult,
-    captureRect: slotResult?.rect || null,
-    rect: projectCaptureRectToOverlayRect(slotResult?.rect, captureMetrics, contentRect)
-  }));
+  return (slotResults || []).map((slotResult) => {
+    const cr = slotResult?.candidateRects;
+    return {
+      ...slotResult,
+      captureRect: slotResult?.rect || null,
+      rect: projectCaptureRectToOverlayRect(slotResult?.rect, captureMetrics, contentRect),
+      candidateRects: cr ? {
+        normal:   projectCaptureRectToOverlayRect(cr.normal,   captureMetrics, contentRect),
+        dream:    projectCaptureRectToOverlayRect(cr.dream,    captureMetrics, contentRect),
+        personal: projectCaptureRectToOverlayRect(cr.personal, captureMetrics, contentRect)
+      } : null
+    };
+  });
 }
 
 function projectFallbackSlotRectsToOverlaySpace(fallbackSlotRects, captureMetrics, contentRect = null) {
