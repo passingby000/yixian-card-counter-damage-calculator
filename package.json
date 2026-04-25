@@ -31,9 +31,13 @@
       "!vendor/yisim-master{,/**}",
       "!images{,/**}",
       "!data{,/**}",
+      "!debug{,/**}",
       "!overlay_settings.json",
       "!ConvertedHandCard.json",
       "!ConvertedCardOperationLog.json",
+      "!game_screenshot.png",
+      "!startup.log",
+      "!todo",
       "!dist{,/**}",
       "!.github{,/**}"
     ],

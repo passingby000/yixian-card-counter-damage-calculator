@@ -376,6 +376,257 @@ function insetRegions(regions, inset) {
 
 const PERSONAL_REGIONS = insetRegions(STABLE_REGIONS, PERSONAL_BORDER_INSET);
 
+// Phase variants of the same dream card often share art/name/color, so full-card
+// matching is a weak phase resolver.  Build a per-family mask from pixels that
+// differ across phase templates, constrained to the text/stat area where phase
+// changes are normally printed.
+const DREAM_PHASE_MASK_REGIONS = [
+  { x: 0.06, y: 0.45, width: 0.88, height: 0.48, weight: 1 }
+];
+const DREAM_PHASE_FALLBACK_REGIONS = [
+  { x: 0.08, y: 0.48, width: 0.84, height: 0.18, weight: 0.30 },
+  { x: 0.08, y: 0.64, width: 0.84, height: 0.24, weight: 0.60 },
+  { x: 0.18, y: 0.86, width: 0.64, height: 0.08, weight: 0.10 }
+];
+const DREAM_PHASE_MIN_MASK_PIXELS = 200;
+const DREAM_PHASE_MASK_TOP_FRACTION = 0.16;
+const DREAM_PHASE_MASK_MIN_GRAY_DIFF = 3;
+const DREAM_PHASE_GRAY_WEIGHT = 0.65;
+const DREAM_PHASE_RGB_WEIGHT = 0.35;
+const DREAM_PHASE_AMBIGUOUS_ABSOLUTE_MARGIN = 40;
+const DREAM_PHASE_AMBIGUOUS_RELATIVE_MARGIN = 0.035;
+
+const dreamPhaseMaskCache = new Map();
+
+function buildRegionMask(width, height, regions) {
+  const mask = new Uint8Array(width * height);
+  for (const region of regions) {
+    const { x0, y0, x1, y1 } = getRegionBounds(width, height, region);
+    for (let y = y0; y < y1; y += 1) {
+      for (let x = x0; x < x1; x += 1) {
+        mask[(y * width) + x] = 1;
+      }
+    }
+  }
+  return mask;
+}
+
+function buildDreamPhaseMaskKey(phaseTemplates, width, height) {
+  const signature = phaseTemplates
+    .map((template) => `${template.phase ?? ''}:${template.filePath}`)
+    .join('|');
+  return `${width}x${height}:${signature}`;
+}
+
+function buildDreamPhaseDiscriminantMask(phaseTemplates, width, height, baselineMasks) {
+  const usableTemplates = phaseTemplates
+    .filter((template) => template && template.isDream && Number.isFinite(Number(template.phase)))
+    .sort((a, b) => Number(a.phase) - Number(b.phase));
+
+  if (usableTemplates.length < 2) {
+    return {
+      mask: null,
+      pixelCount: 0,
+      mode: 'fallback-regions',
+      reason: 'not-enough-phases'
+    };
+  }
+
+  const cacheKey = buildDreamPhaseMaskKey(usableTemplates, width, height);
+  if (dreamPhaseMaskCache.has(cacheKey)) return dreamPhaseMaskCache.get(cacheKey);
+
+  const regionMask = buildRegionMask(width, height, DREAM_PHASE_MASK_REGIONS);
+  const phaseData = usableTemplates.map((template) => getTemplateRawData(template, width, height, baselineMasks));
+  const diffs = [];
+
+  for (let idx = 0; idx < width * height; idx += 1) {
+    if (regionMask[idx] === 0) continue;
+
+    let valid = true;
+    let minGray = Number.POSITIVE_INFINITY;
+    let maxGray = Number.NEGATIVE_INFINITY;
+    for (const data of phaseData) {
+      if (data.mask && data.mask[idx] === 0) {
+        valid = false;
+        break;
+      }
+      const gray = data.gray.gray[idx];
+      if (gray < minGray) minGray = gray;
+      if (gray > maxGray) maxGray = gray;
+    }
+    if (!valid) continue;
+
+    const grayDiff = maxGray - minGray;
+    if (grayDiff > 0) {
+      diffs.push({ idx, grayDiff });
+    }
+  }
+
+  diffs.sort((a, b) => b.grayDiff - a.grayDiff);
+
+  const targetCount = Math.min(
+    diffs.length,
+    Math.max(DREAM_PHASE_MIN_MASK_PIXELS, Math.floor(diffs.length * DREAM_PHASE_MASK_TOP_FRACTION))
+  );
+  let selected = diffs
+    .slice(0, targetCount)
+    .filter((entry) => entry.grayDiff >= DREAM_PHASE_MASK_MIN_GRAY_DIFF);
+
+  // If the phase art/text only differs subtly, keep the strongest pixels rather
+  // than falling back too early.  A tiny mask is worse than fixed text regions.
+  if (selected.length < DREAM_PHASE_MIN_MASK_PIXELS) {
+    selected = diffs.slice(0, Math.min(diffs.length, DREAM_PHASE_MIN_MASK_PIXELS));
+  }
+
+  if (selected.length < DREAM_PHASE_MIN_MASK_PIXELS) {
+    const result = {
+      mask: null,
+      pixelCount: selected.length,
+      mode: 'fallback-regions',
+      reason: 'too-few-discriminating-pixels'
+    };
+    dreamPhaseMaskCache.set(cacheKey, result);
+    return result;
+  }
+
+  const mask = new Uint8Array(width * height);
+  for (const entry of selected) {
+    mask[entry.idx] = 1;
+  }
+
+  const result = {
+    mask,
+    pixelCount: selected.length,
+    mode: 'phase-discriminant-mask',
+    reason: null
+  };
+  dreamPhaseMaskCache.set(cacheKey, result);
+  return result;
+}
+
+function combinePhaseScore(grayMse, rgbMse) {
+  if (!Number.isFinite(grayMse) || !Number.isFinite(rgbMse)) return Number.POSITIVE_INFINITY;
+  return (grayMse * DREAM_PHASE_GRAY_WEIGHT) + (rgbMse * DREAM_PHASE_RGB_WEIGHT);
+}
+
+function scoreMaskedDreamPhase(cropGray, cropRgb, templateData, mask) {
+  let grayTotal = 0;
+  let rgbTotal = 0;
+  let count = 0;
+
+  for (let idx = 0; idx < mask.length; idx += 1) {
+    if (mask[idx] === 0) continue;
+    count += 1;
+
+    const grayDiff = cropGray.gray[idx] - templateData.gray.gray[idx];
+    grayTotal += grayDiff * grayDiff;
+
+    const rgbIdx = idx * 3;
+    const dr = cropRgb.rgb[rgbIdx] - templateData.rgb.rgb[rgbIdx];
+    const dg = cropRgb.rgb[rgbIdx + 1] - templateData.rgb.rgb[rgbIdx + 1];
+    const db = cropRgb.rgb[rgbIdx + 2] - templateData.rgb.rgb[rgbIdx + 2];
+    rgbTotal += (dr * dr) + (dg * dg) + (db * db);
+  }
+
+  if (count === 0) {
+    return {
+      grayMse: Number.POSITIVE_INFINITY,
+      rgbMse: Number.POSITIVE_INFINITY,
+      phaseScore: Number.POSITIVE_INFINITY
+    };
+  }
+
+  const grayMse = grayTotal / count;
+  const rgbMse = rgbTotal / (count * 3);
+  return {
+    grayMse,
+    rgbMse,
+    phaseScore: combinePhaseScore(grayMse, rgbMse)
+  };
+}
+
+function scoreRegionalDreamPhase(cropGray, cropRgb, templateData) {
+  const metrics = compareImages(
+    cropGray,
+    cropRgb,
+    templateData.gray,
+    templateData.rgb,
+    DREAM_PHASE_FALLBACK_REGIONS,
+    templateData.mask
+  );
+  return {
+    grayMse: metrics.grayMse,
+    rgbMse: metrics.rgbMse,
+    phaseScore: combinePhaseScore(metrics.grayMse, metrics.rgbMse)
+  };
+}
+
+function resolveDreamPhase(best, scored, srcGrayData, srcRgbData, baselineMasks, metricName) {
+  if (!best?.isDream) return null;
+
+  const phaseTemplates = scored.filter((candidate) => (
+    candidate.isDream &&
+    candidate.baseName === best.baseName &&
+    Number.isFinite(Number(candidate.phase))
+  ));
+  if (phaseTemplates.length === 0) return null;
+
+  const width = best.compareWidth || best.slotRect.width;
+  const height = best.compareHeight || best.slotRect.height;
+  const cropGray = extractSubGray(srcGrayData, best.slotRect.x, best.slotRect.y, best.slotRect.width, best.slotRect.height, width, height);
+  const cropRgb = extractSubRgb(srcRgbData, best.slotRect.x, best.slotRect.y, best.slotRect.width, best.slotRect.height, width, height);
+  const maskInfo = buildDreamPhaseDiscriminantMask(phaseTemplates, width, height, baselineMasks);
+
+  const phaseScored = phaseTemplates.map((candidate) => {
+    const templateData = getTemplateRawData(candidate, width, height, baselineMasks);
+    const phaseMetrics = maskInfo.mask
+      ? scoreMaskedDreamPhase(cropGray, cropRgb, templateData, maskInfo.mask)
+      : scoreRegionalDreamPhase(cropGray, cropRgb, templateData);
+    return {
+      ...candidate,
+      phaseMetrics
+    };
+  }).sort((a, b) => {
+    if (a.phaseMetrics.phaseScore !== b.phaseMetrics.phaseScore) {
+      return a.phaseMetrics.phaseScore - b.phaseMetrics.phaseScore;
+    }
+    return Number(a.phase ?? 0) - Number(b.phase ?? 0);
+  });
+
+  const bestPhase = phaseScored[0] || null;
+  if (!bestPhase || !Number.isFinite(bestPhase.phaseMetrics.phaseScore)) return null;
+
+  const secondPhase = phaseScored[1] || null;
+  const phaseMargin = secondPhase
+    ? secondPhase.phaseMetrics.phaseScore - bestPhase.phaseMetrics.phaseScore
+    : Number.POSITIVE_INFINITY;
+  const ambiguousThreshold = Math.max(
+    DREAM_PHASE_AMBIGUOUS_ABSOLUTE_MARGIN,
+    bestPhase.phaseMetrics.phaseScore * DREAM_PHASE_AMBIGUOUS_RELATIVE_MARGIN
+  );
+  const phaseAmbiguous = Number.isFinite(phaseMargin) && phaseMargin < ambiguousThreshold;
+
+  return {
+    template: bestPhase,
+    phase: bestPhase.phase ?? null,
+    phaseScore: bestPhase.phaseMetrics.phaseScore,
+    phaseMargin,
+    phaseAmbiguous,
+    phaseMaskPixelCount: maskInfo.pixelCount,
+    phaseScoringMode: maskInfo.mode,
+    phaseMaskReason: maskInfo.reason,
+    candidates: phaseScored.map((candidate) => ({
+      phase: candidate.phase ?? null,
+      templateFile: candidate.fileName,
+      primaryScore: roundMetric(candidate.phaseMetrics.phaseScore),
+      phaseScore: roundMetric(candidate.phaseMetrics.phaseScore),
+      grayMse: roundMetric(candidate.phaseMetrics.grayMse),
+      rgbMse: roundMetric(candidate.phaseMetrics.rgbMse),
+      familyScore: roundMetric(candidate.metrics[metricName])
+    }))
+  };
+}
+
 function compareImages(grayA, rgbA, grayB, rgbB, regions = STABLE_REGIONS, mask = null) {
   let weightedSSIM = 0;
   let weightedNCC = 0;
@@ -591,10 +842,6 @@ function detectSlots(sourceImage, handCardNames, imagesDir, options = {}) {
   const baselineMasks = loadBaselineMasks(imagesDir);
   const candidateTemplates = [];
   const seenTemplateFiles = new Set();
-  // Dream card phases differ only in color grading — grayscale structure is identical
-  // across phases. Including all phases causes tiny inter-phase margins that prevent
-  // acceptance. Use only the first (highest-preference) template per dream card name.
-  const seenDreamCardNames = new Set();
 
   for (const cardName of handCardNames || []) {
     const normalizedCardName = normalizeCardName(cardName);
@@ -609,15 +856,9 @@ function detectSlots(sourceImage, handCardNames, imagesDir, options = {}) {
       .filter((template) => {
         if (isDream) return template.isDream && template.isSeasonal;
         return !template.isDream;
-      });
+    });
     for (const template of variants) {
       if (seenTemplateFiles.has(template.filePath)) continue;
-      // For dream cards, only keep one template per card name — phases are colour
-      // variants of the same art, so extra phases only steal margin from competitors.
-      if (template.isDream) {
-        if (seenDreamCardNames.has(template.baseName)) continue;
-        seenDreamCardNames.add(template.baseName);
-      }
       seenTemplateFiles.add(template.filePath);
       candidateTemplates.push(template);
     }
@@ -751,7 +992,9 @@ function detectSlots(sourceImage, handCardNames, imagesDir, options = {}) {
       return {
         ...template,
         metrics: compareImages(cropGray, cropRgb, tmpl.gray, tmpl.rgb, regions, tmpl.mask),
-        slotRect: { ...rect }
+        slotRect: { ...rect },
+        compareWidth: dstW,
+        compareHeight: dstH
       };
     });
 
@@ -785,6 +1028,12 @@ function detectSlots(sourceImage, handCardNames, imagesDir, options = {}) {
       ((metric.higherIsBetter && bestScore >= metric.threshold) ||
         (!metric.higherIsBetter && bestScore <= metric.threshold)) &&
       margin >= metric.margin;
+    const dreamPhaseResult = accepted && best?.isDream
+      ? resolveDreamPhase(best, scored, srcGrayData, srcRgbData, baselineMasks, metricName)
+      : null;
+    const phaseResolvedTemplate = dreamPhaseResult?.template || best;
+    const resolvedPhase = dreamPhaseResult?.phase ?? best?.phase ?? null;
+    const dreamPhaseCandidates = dreamPhaseResult?.candidates || null;
 
     // For the debug overlay's "personal" candidate rect, prefer the winning
     // template's character if it's personal; otherwise fall back to any
@@ -818,9 +1067,16 @@ function detectSlots(sourceImage, handCardNames, imagesDir, options = {}) {
       },
       winningTemplate: best ? {
         name: best.baseName,
+        phase: resolvedPhase,
         isDream: !!best.isDream,
         isPersonal: !!best.isPersonal,
-        score: roundMetric(bestScore)
+        score: roundMetric(bestScore),
+        templateFile: phaseResolvedTemplate?.fileName || best.fileName,
+        phaseScore: dreamPhaseResult ? roundMetric(dreamPhaseResult.phaseScore) : null,
+        phaseMargin: dreamPhaseResult ? roundMetric(dreamPhaseResult.phaseMargin) : null,
+        phaseAmbiguous: dreamPhaseResult ? dreamPhaseResult.phaseAmbiguous : false,
+        phaseScoringMode: dreamPhaseResult?.phaseScoringMode || null,
+        phaseMaskPixelCount: dreamPhaseResult?.phaseMaskPixelCount ?? null
       } : null,
       metric: metricName,
       accepted,
@@ -829,14 +1085,21 @@ function detectSlots(sourceImage, handCardNames, imagesDir, options = {}) {
       displayConfidence: best ? buildDisplayConfidence(bestScore, margin, metric) : 0,
       bestCandidate: buildDebugCandidate(best, metricName),
       secondCandidate: buildDebugCandidate(second, metricName),
+      dreamPhaseCandidates,
+      dreamPhaseScore: dreamPhaseResult ? roundMetric(dreamPhaseResult.phaseScore) : null,
+      dreamPhaseMargin: dreamPhaseResult ? roundMetric(dreamPhaseResult.phaseMargin) : null,
+      dreamPhaseAmbiguous: dreamPhaseResult ? dreamPhaseResult.phaseAmbiguous : false,
+      dreamPhaseScoringMode: dreamPhaseResult?.phaseScoringMode || null,
+      dreamPhaseMaskPixelCount: dreamPhaseResult?.phaseMaskPixelCount ?? null,
+      dreamPhaseMaskReason: dreamPhaseResult?.phaseMaskReason || null,
       allCandidates: options.verboseDebug ? scored.map((c) => buildDebugCandidate(c, metricName)) : undefined,
       card: accepted ? {
         name: best.baseName,
-        level: best.level,
-        phase: best.phase ?? null,
+        level: phaseResolvedTemplate?.level ?? best.level,
+        phase: resolvedPhase,
         isDream: !!best.isDream,
         isPersonal: !!best.isPersonal,
-        templateFile: best.fileName,
+        templateFile: phaseResolvedTemplate?.fileName || best.fileName,
         confidence: buildDisplayConfidence(bestScore, margin, metric)
       } : null
     };
