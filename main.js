@@ -32,7 +32,11 @@ const CARD_LIST_WINDOW_WIDTH = 260;
 const BOARD_WINDOW_WIDTH = 280;
 const CONTROLS_WINDOW_WIDTH = 198;
 const CONTROLS_WINDOW_HEIGHT = 34;
-const CONTROLS_WINDOW_EXPANDED_HEIGHT = 300;
+// Tall enough for the full settings panel: 6 labels (Damage / Cards /
+// Card list / Debug / Calibration / App) + 10 buttons + calibration progress
+// bar + status line. ~469 px of content; 490 leaves a small headroom so any
+// text-wrap from translations doesn't clip the bottom (Quit button).
+const CONTROLS_WINDOW_EXPANDED_HEIGHT = 490;
 
 let cardListWindow = null;
 let boardWindow = null;
@@ -216,12 +220,12 @@ function createOverlayWindow(bounds, htmlFile, focusable) {
   });
 
   win.setVisibleOnAllWorkspaces(true, { visibleOnFullScreen: true });
-  // Exclude our overlay windows from screen capture. On Windows 10 2004+ this
-  // calls SetWindowDisplayAffinity(WDA_EXCLUDEFROMCAPTURE) so the window
-  // remains visible to the user but doesn't appear in captures — including
-  // our own desktopCapturer screen-source captures. This avoids the visible
-  // hide/show flicker that an opacity:0 trick caused on every capture cycle.
-  try { win.setContentProtection(true); } catch (e) {}
+  // Note: we deliberately do NOT call setContentProtection(true) here.
+  // setContentProtection sets WDA_EXCLUDEFROMCAPTURE on Windows, which would
+  // exclude the overlay from ALL screen captures — including the user's
+  // own screen recording software (OBS, Game Bar, etc.). The user wants the
+  // overlay visible in recordings, so we instead hide overlays only for the
+  // brief moment of our own desktopCapturer call (see captureWithOverlaysHidden).
   win.webContents.on('did-fail-load', (_event, errorCode, errorDescription, validatedURL, isMainFrame) => {
     if (!isMainFrame) return;
     appendStartupLog(`did-fail-load for ${htmlFile}`, {
@@ -935,14 +939,34 @@ function getCurrentHandCandidates() {
 const MAX_CAPTURE_WIDTH  = 1920;
 const MAX_CAPTURE_HEIGHT = 1080;
 
-// Each overlay window has setContentProtection(true) applied at creation
-// (createOverlayWindow), so on Windows 10 2004+ desktopCapturer simply does
-// not see them — no opacity-flicker dance needed. We pass the captureFn
-// through unchanged; the helper exists so we can re-introduce a fallback
-// (e.g. for older Windows builds without WDA_EXCLUDEFROMCAPTURE) without
-// touching every call site.
+// Hide every overlay window we own (board / damage / cardList / controls)
+// from screen capture for the duration of `captureFn`, then restore.
+//
+// We toggle setContentProtection(true) around the capture rather than
+// flipping CSS opacity. Why:
+//   - Permanent setContentProtection(true) would also exclude the overlay
+//     from the user's own screen recorder — breaking their recording.
+//   - CSS opacity:0 + rAF actually stops painting the window for ~33 ms,
+//     which the user sees as a flicker every capture cycle.
+//   - Toggling setContentProtection only affects OS capture surfaces. The
+//     window keeps painting normally the entire time, so the user sees
+//     zero flicker. The user's recorder loses the overlay for the same
+//     ~50–100 ms the capture is running (so a brief gap shows up in
+//     recordings, ~2–3 dropped overlay frames per second), which is the
+//     unavoidable cost of running a screen-source capture in-app.
 async function captureWithOverlaysHidden(captureFn) {
-  return captureFn();
+  const windows = [boardWindow, damageWindow, cardListWindow, controlsWindow]
+    .filter((w) => w && !w.isDestroyed() && w.isVisible());
+  for (const w of windows) {
+    try { w.setContentProtection(true); } catch (e) {}
+  }
+  try {
+    return await captureFn();
+  } finally {
+    for (const w of windows) {
+      try { w.setContentProtection(false); } catch (e) {}
+    }
+  }
 }
 
 async function findGameWindowSource() {
@@ -957,15 +981,51 @@ async function findGameWindowSource() {
   };
 
   if (process.platform === 'win32') {
-    // Always use screen-source on Windows. A window-source thumbnail contains
-    // only the game-window pixels in window-relative coordinates, but the
-    // damage overlay covers the full primary display — the projection scales
-    // window-coords up to fill the screen, which draws debug boxes "where the
-    // card would be if the game were fullscreen at the screen origin." This
-    // shows up as a large positional offset in windowed mode and as a small
-    // y-drift in fullscreen mode (DWM trims a few transparent pixels off the
-    // window's edge). Capturing the screen directly puts the thumbnail in the
-    // same coordinate space as the overlay, so no offset can creep in.
+    // Fast path — fullscreen game with window-source capture.
+    //
+    // When the game window is the same size as the screen (fullscreen or
+    // borderless windowed), a window-source thumbnail covers the same region
+    // as our overlay. Our overlay is a separate top-level window, so it's
+    // NOT included in the thumbnail — no overlay-hiding needed. Zero flicker
+    // for both the user's eyes and any screen recording.
+    //
+    // When the game is in a smaller window, the window-source thumbnail's
+    // coordinates don't match our screen-covering overlay (we'd draw boxes
+    // at the wrong screen position). Fall back to screen-source with the
+    // setContentProtection toggle in that case — eyes still see no flicker
+    // (we toggle WDA_EXCLUDEFROMCAPTURE around the capture instead of CSS
+    // opacity), recording loses the overlay for ~50–100 ms per capture.
+    const expectedFullscreen = {
+      width:  Math.round(primaryDisplay.size.width  * scale),
+      height: Math.round(primaryDisplay.size.height * scale)
+    };
+    const FULLSCREEN_TOLERANCE_PX = 8; // tolerate a few px of DWM border
+    try {
+      const windowSources = await desktopCapturer.getSources({
+        types: ['window'],
+        thumbnailSize,
+        fetchWindowIcons: false
+      });
+      const windowSource = windowSources.find((source) => {
+        const sourceName = (source.name || '').toLowerCase();
+        return GAME_SOURCE_PATTERNS.some((pattern) => sourceName.includes(pattern.toLowerCase()));
+      });
+      if (windowSource && !windowSource.thumbnail.isEmpty()) {
+        const thumbSize = getNativeImagePixelSize(windowSource.thumbnail);
+        const isFullscreenSized =
+          Math.abs(thumbSize.width  - expectedFullscreen.width)  <= FULLSCREEN_TOLERANCE_PX &&
+          Math.abs(thumbSize.height - expectedFullscreen.height) <= FULLSCREEN_TOLERANCE_PX;
+        if (isFullscreenSized) {
+          return windowSource;
+        }
+      }
+    } catch (e) {
+      // fall through to screen-source
+    }
+
+    // Slow path — windowed game (or no detectable game window). Capture the
+    // screen with overlays excluded from capture only for the brief moment
+    // we're calling desktopCapturer.
     return await captureWithOverlaysHidden(async () => {
       const screenSources = await desktopCapturer.getSources({
         types: ['screen'],

@@ -2152,6 +2152,11 @@
         "namecn": "飞鸿踏雪"
     },
     {
+        "id": 622021,
+        "name": "Jade Scroll of Yin Symbol",
+        "namecn": "阴符玉简"
+    },
+    {
         "id": 623011,
         "name": "Ultimate Hexagram Base",
         "namecn": "无极卦盘"
@@ -2190,6 +2195,21 @@
         "id": 625021,
         "name": "Fury Thunder",
         "namecn": "狂雷电闪"
+    },
+    {
+        "id": 625031,
+        "name": "Solitary Void Golden Scroll",
+        "namecn": "孤虚金书"
+    },
+    {
+        "id": 625041,
+        "name": "Face Isolation",
+        "namecn": "背孤"
+    },
+    {
+        "id": 625051,
+        "name": "Strike Vacuity",
+        "namecn": "击虚"
     },
     {
         "id": 632011,
