@@ -396,6 +396,25 @@ const DREAM_PHASE_RGB_WEIGHT = 0.35;
 const DREAM_PHASE_AMBIGUOUS_ABSOLUTE_MARGIN = 40;
 const DREAM_PHASE_AMBIGUOUS_RELATIVE_MARGIN = 0.035;
 
+// Chromatic phase signal: each dream-card phase has a distinct colour cast
+// along the card border. Sweeping every strip on 梦•蜻蜓点水's 5 phases
+// (debug/dream_card_phase_differentiation/) showed the LEFT EDGE of the card
+// is the strongest discriminator — phase tint colours the background behind
+// the vertical name text, with adjacent-phase RGB distances of ~12 there
+// (vs ~6 for the top, ~9 for the description). The bottom border adds extra
+// spread (54+ for the family) so we sum the two as the chromatic score.
+// Average RGB is alignment-invariant — robust to 1–3 px slot-rect drift.
+//
+// Rank-combined with the existing pixel-mask phaseScore (chromatic 0.8 +
+// mask 0.2) so the chromatic decision dominates but the mask still breaks
+// ties when colour casts are close.
+const DREAM_PHASE_CHROMATIC_REGIONS = [
+  { x: 0.00, y: 0.00, width: 0.10, height: 1.00 }, // left edge (vertical name strip)
+  { x: 0.00, y: 0.90, width: 1.00, height: 0.10 }  // bottom border
+];
+const DREAM_PHASE_CHROMATIC_RANK_WEIGHT = 0.8;
+const DREAM_PHASE_MASK_RANK_WEIGHT      = 0.2;
+
 const dreamPhaseMaskCache = new Map();
 
 function buildRegionMask(width, height, regions) {
@@ -418,6 +437,57 @@ function buildDreamPhaseMaskKey(phaseTemplates, width, height) {
   return `${width}x${height}:${signature}`;
 }
 
+// Average RGB over a rectangular region (x/y/width/height as fractions of the
+// containing image), honouring an optional alpha mask. Returns null when the
+// region has no usable pixels (e.g. fully transparent).
+function computeRegionAverageRgb(rgbData, mask, width, height, region) {
+  const { x0, y0, x1, y1 } = getRegionBounds(width, height, region);
+  let r = 0, g = 0, b = 0, n = 0;
+  for (let y = y0; y < y1; y += 1) {
+    for (let x = x0; x < x1; x += 1) {
+      const idx = (y * width) + x;
+      if (mask && mask[idx] === 0) continue;
+      const rgbIdx = idx * 3;
+      r += rgbData.rgb[rgbIdx];
+      g += rgbData.rgb[rgbIdx + 1];
+      b += rgbData.rgb[rgbIdx + 2];
+      n += 1;
+    }
+  }
+  if (n === 0) return null;
+  return { r: r / n, g: g / n, b: b / n };
+}
+
+// Sum of CHROMATICITY distances between corresponding region averages.
+// Chromaticity = (r/(r+g+b), g/(r+g+b), b/(r+g+b)) normalises out overall
+// brightness, so a crop that's the same colour cast as a template but a few
+// shades brighter (common: live-render gamma vs saved-template gamma) still
+// matches. Without this, a brighter render of P1 lands closer to P2's RGB
+// purely by absolute-magnitude — see board.png's slot 1 where raw-RGB picked
+// P2 even though channel ratios identified P1 cleanly.
+//
+// Returns +Infinity if any region is missing, so a partially-transparent
+// template doesn't accidentally tie with a clean one.
+function rgbToChromaticity(avg) {
+  if (!avg) return null;
+  const sum = avg.r + avg.g + avg.b;
+  if (sum < 1) return null;
+  return { r: avg.r / sum, g: avg.g / sum, b: avg.b / sum };
+}
+
+function chromaticRegionsDistance(cropAvgs, templateAvgs) {
+  if (!cropAvgs || !templateAvgs) return Number.POSITIVE_INFINITY;
+  let total = 0;
+  for (let i = 0; i < cropAvgs.length; i += 1) {
+    const a = rgbToChromaticity(cropAvgs[i]);
+    const b = rgbToChromaticity(templateAvgs[i]);
+    if (!a || !b) return Number.POSITIVE_INFINITY;
+    const dr = a.r - b.r, dg = a.g - b.g, db = a.b - b.b;
+    total += Math.sqrt((dr * dr) + (dg * dg) + (db * db));
+  }
+  return total;
+}
+
 function buildDreamPhaseDiscriminantMask(phaseTemplates, width, height, baselineMasks) {
   const usableTemplates = phaseTemplates
     .filter((template) => template && template.isDream && Number.isFinite(Number(template.phase)))
@@ -428,7 +498,8 @@ function buildDreamPhaseDiscriminantMask(phaseTemplates, width, height, baseline
       mask: null,
       pixelCount: 0,
       mode: 'fallback-regions',
-      reason: 'not-enough-phases'
+      reason: 'not-enough-phases',
+      chromaticByPhase: new Map()
     };
   }
 
@@ -437,6 +508,23 @@ function buildDreamPhaseDiscriminantMask(phaseTemplates, width, height, baseline
 
   const regionMask = buildRegionMask(width, height, DREAM_PHASE_MASK_REGIONS);
   const phaseData = usableTemplates.map((template) => getTemplateRawData(template, width, height, baselineMasks));
+
+  // Pre-compute each phase template's average RGB over the chromatic regions
+  // (left edge + bottom border by default — see DREAM_PHASE_CHROMATIC_REGIONS).
+  // This is alignment-invariant and the dominant signal for distinguishing
+  // adjacent phases whose only pixel-level difference is a single stat digit.
+  const chromaticByPhase = new Map();
+  for (let i = 0; i < usableTemplates.length; i += 1) {
+    const template = usableTemplates[i];
+    const data = phaseData[i];
+    chromaticByPhase.set(
+      template.phase,
+      DREAM_PHASE_CHROMATIC_REGIONS.map((region) =>
+        computeRegionAverageRgb(data.rgb, data.mask, width, height, region)
+      )
+    );
+  }
+
   const diffs = [];
 
   for (let idx = 0; idx < width * height; idx += 1) {
@@ -483,7 +571,8 @@ function buildDreamPhaseDiscriminantMask(phaseTemplates, width, height, baseline
       mask: null,
       pixelCount: selected.length,
       mode: 'fallback-regions',
-      reason: 'too-few-discriminating-pixels'
+      reason: 'too-few-discriminating-pixels',
+      chromaticByPhase
     };
     dreamPhaseMaskCache.set(cacheKey, result);
     return result;
@@ -498,7 +587,8 @@ function buildDreamPhaseDiscriminantMask(phaseTemplates, width, height, baseline
     mask,
     pixelCount: selected.length,
     mode: 'phase-discriminant-mask',
-    reason: null
+    reason: null,
+    chromaticByPhase
   };
   dreamPhaseMaskCache.set(cacheKey, result);
   return result;
@@ -577,52 +667,93 @@ function resolveDreamPhase(best, scored, srcGrayData, srcRgbData, baselineMasks,
   const cropRgb = extractSubRgb(srcRgbData, best.slotRect.x, best.slotRect.y, best.slotRect.width, best.slotRect.height, width, height);
   const maskInfo = buildDreamPhaseDiscriminantMask(phaseTemplates, width, height, baselineMasks);
 
+  // Crop's chromatic profile — average RGB over the same regions we
+  // pre-computed for each phase template. Alignment-invariant.
+  const cropChromatic = DREAM_PHASE_CHROMATIC_REGIONS.map((region) =>
+    computeRegionAverageRgb(cropRgb, null, width, height, region)
+  );
+
   const phaseScored = phaseTemplates.map((candidate) => {
     const templateData = getTemplateRawData(candidate, width, height, baselineMasks);
     const phaseMetrics = maskInfo.mask
       ? scoreMaskedDreamPhase(cropGray, cropRgb, templateData, maskInfo.mask)
       : scoreRegionalDreamPhase(cropGray, cropRgb, templateData);
+    const tmplChromatic = maskInfo.chromaticByPhase?.get(candidate.phase) || null;
+    const chromaticScore = chromaticRegionsDistance(cropChromatic, tmplChromatic);
     return {
       ...candidate,
-      phaseMetrics
+      phaseMetrics,
+      chromaticScore
     };
-  }).sort((a, b) => {
+  });
+
+  // Rank-weighted combination: chromatic 0.8 + mask 0.2. Using ranks keeps
+  // the two signals on the same scale (both 1..N) and prevents the mask's
+  // larger raw numbers from drowning the cleaner chromatic signal — see
+  // diagnostic data in debug/dream_card_phase_differentiation/.
+  const byChromatic = [...phaseScored].sort((a, b) => {
+    if (a.chromaticScore !== b.chromaticScore) return a.chromaticScore - b.chromaticScore;
+    return Number(a.phase ?? 0) - Number(b.phase ?? 0);
+  });
+  const byMask = [...phaseScored].sort((a, b) => {
     if (a.phaseMetrics.phaseScore !== b.phaseMetrics.phaseScore) {
       return a.phaseMetrics.phaseScore - b.phaseMetrics.phaseScore;
     }
     return Number(a.phase ?? 0) - Number(b.phase ?? 0);
   });
+  const chromaticRank = new Map();
+  const maskRank      = new Map();
+  byChromatic.forEach((c, i) => chromaticRank.set(c, i + 1));
+  byMask.forEach     ((c, i) => maskRank.set     (c, i + 1));
+
+  // Decorate each candidate with its ranks + combined rank, then sort.
+  for (const c of phaseScored) {
+    c.chromaticRank = chromaticRank.get(c);
+    c.maskRank      = maskRank.get(c);
+    c.combinedRank  = (DREAM_PHASE_CHROMATIC_RANK_WEIGHT * c.chromaticRank)
+                    + (DREAM_PHASE_MASK_RANK_WEIGHT      * c.maskRank);
+  }
+  phaseScored.sort((a, b) => {
+    if (a.combinedRank !== b.combinedRank) return a.combinedRank - b.combinedRank;
+    if (a.chromaticScore !== b.chromaticScore) return a.chromaticScore - b.chromaticScore;
+    return Number(a.phase ?? 0) - Number(b.phase ?? 0);
+  });
 
   const bestPhase = phaseScored[0] || null;
-  if (!bestPhase || !Number.isFinite(bestPhase.phaseMetrics.phaseScore)) return null;
+  if (!bestPhase || !Number.isFinite(bestPhase.chromaticScore)) return null;
 
   const secondPhase = phaseScored[1] || null;
+  // Surface the chromatic-distance margin since that's the dominant signal.
+  // Treat the result as ambiguous when (a) chromatic margin is small AND
+  // (b) the two ranking systems disagreed on the winner — that's the case
+  // where a mis-call is most likely.
   const phaseMargin = secondPhase
-    ? secondPhase.phaseMetrics.phaseScore - bestPhase.phaseMetrics.phaseScore
+    ? secondPhase.chromaticScore - bestPhase.chromaticScore
     : Number.POSITIVE_INFINITY;
-  const ambiguousThreshold = Math.max(
-    DREAM_PHASE_AMBIGUOUS_ABSOLUTE_MARGIN,
-    bestPhase.phaseMetrics.phaseScore * DREAM_PHASE_AMBIGUOUS_RELATIVE_MARGIN
-  );
-  const phaseAmbiguous = Number.isFinite(phaseMargin) && phaseMargin < ambiguousThreshold;
+  const rankingsAgree = byChromatic[0] === byMask[0];
+  const phaseAmbiguous = !rankingsAgree && Number.isFinite(phaseMargin) && phaseMargin < 8;
 
   return {
     template: bestPhase,
     phase: bestPhase.phase ?? null,
-    phaseScore: bestPhase.phaseMetrics.phaseScore,
+    phaseScore: bestPhase.chromaticScore,
     phaseMargin,
     phaseAmbiguous,
+    rankingsAgree,
     phaseMaskPixelCount: maskInfo.pixelCount,
     phaseScoringMode: maskInfo.mode,
     phaseMaskReason: maskInfo.reason,
     candidates: phaseScored.map((candidate) => ({
       phase: candidate.phase ?? null,
       templateFile: candidate.fileName,
-      primaryScore: roundMetric(candidate.phaseMetrics.phaseScore),
-      phaseScore: roundMetric(candidate.phaseMetrics.phaseScore),
-      grayMse: roundMetric(candidate.phaseMetrics.grayMse),
-      rgbMse: roundMetric(candidate.phaseMetrics.rgbMse),
-      familyScore: roundMetric(candidate.metrics[metricName])
+      combinedRank:    +candidate.combinedRank.toFixed(2),
+      chromaticRank:   candidate.chromaticRank,
+      maskRank:        candidate.maskRank,
+      chromaticScore:  roundMetric(candidate.chromaticScore),
+      maskPhaseScore:  roundMetric(candidate.phaseMetrics.phaseScore),
+      grayMse:         roundMetric(candidate.phaseMetrics.grayMse),
+      rgbMse:          roundMetric(candidate.phaseMetrics.rgbMse),
+      familyScore:     roundMetric(candidate.metrics[metricName])
     }))
   };
 }

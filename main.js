@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain, screen, desktopCapturer } = require('electron');
+const { app, BrowserWindow, ipcMain, screen, desktopCapturer, globalShortcut } = require('electron');
 const path = require('path');
 const fs = require('fs');
 const chokidar = require('chokidar');
@@ -123,10 +123,17 @@ function normalizeSettings(rawSettings = {}) {
     gamePath: rawSettings.gamePath || null,
     showCardList: rawSettings.showCardList !== false,
     showBoardPanel: rawSettings.showBoardPanel !== false,
+    showDamageOverlay: rawSettings.showDamageOverlay !== false,
     cardLanguage: rawSettings.cardLanguage === 'en' ? 'en' : 'zh',
     damageRollMode: ['average', 'high', 'low'].includes(rawSettings.damageRollMode)
       ? rawSettings.damageRollMode
-      : 'average'
+      : 'average',
+    // Card-list filter:
+    //   'all'       — every sect card the hand log says is currently held
+    //   'low-stock' — only cards whose remaining-in-deck count is < 2
+    cardListMode: ['all', 'low-stock'].includes(rawSettings.cardListMode)
+      ? rawSettings.cardListMode
+      : 'all'
   };
 }
 
@@ -209,6 +216,12 @@ function createOverlayWindow(bounds, htmlFile, focusable) {
   });
 
   win.setVisibleOnAllWorkspaces(true, { visibleOnFullScreen: true });
+  // Exclude our overlay windows from screen capture. On Windows 10 2004+ this
+  // calls SetWindowDisplayAffinity(WDA_EXCLUDEFROMCAPTURE) so the window
+  // remains visible to the user but doesn't appear in captures — including
+  // our own desktopCapturer screen-source captures. This avoids the visible
+  // hide/show flicker that an opacity:0 trick caused on every capture cycle.
+  try { win.setContentProtection(true); } catch (e) {}
   win.webContents.on('did-fail-load', (_event, errorCode, errorDescription, validatedURL, isMainFrame) => {
     if (!isMainFrame) return;
     appendStartupLog(`did-fail-load for ${htmlFile}`, {
@@ -294,15 +307,21 @@ function getCaptureOverlayMetrics(screenshotSize = null) {
   const effectiveScreenshotSize = screenshotSize
     ? { width: Number(screenshotSize.width) || fallbackScreenshotSize.width, height: Number(screenshotSize.height) || fallbackScreenshotSize.height }
     : fallbackScreenshotSize;
-  const overlaySize = damageWindow && !damageWindow.isDestroyed()
-    ? (() => {
-        const [width, height] = damageWindow.getContentSize();
-        return { width, height };
-      })()
-    : {
-        width: Math.max(1, Math.round(effectiveScreenshotSize.width / displayScaleFactor)),
-        height: Math.max(1, Math.round(effectiveScreenshotSize.height / displayScaleFactor))
-      };
+  // Derive overlay size purely from screenshotSize and displayScaleFactor.
+  //
+  // We deliberately do NOT use damageWindow.getContentSize() here, even
+  // though that's the actual rendering surface, because Windows clips a
+  // normal top-level BrowserWindow to the work area (excluding the taskbar).
+  // At 1.25 DPI on a 1920×1080 screen with a 48 px logical taskbar that
+  // yields an overlay reported as 1536×816 — height-scaleY = 816/1080 =
+  // 0.756, but width-scaleX = 1536/1920 = 0.800. The asymmetric scale was
+  // dropping every projected y by ~12 px (debug boxes drew above the
+  // cards). Using displayScaleFactor as the single inverse keeps
+  // scaleX === scaleY = 1/displayScaleFactor.
+  const overlaySize = {
+    width:  Math.max(1, Math.round(effectiveScreenshotSize.width  / displayScaleFactor)),
+    height: Math.max(1, Math.round(effectiveScreenshotSize.height / displayScaleFactor))
+  };
   return {
     screenshotSize: effectiveScreenshotSize,
     overlaySize,
@@ -310,46 +329,59 @@ function getCaptureOverlayMetrics(screenshotSize = null) {
   };
 }
 
-function projectCaptureRectToOverlayRect(rect, captureMetrics, contentRect = null) {
+function projectCaptureRectToOverlayRect(rect, captureMetrics, _contentRect = null) {
   if (!rect) return null;
 
+  // The thumbnail and the damage overlay both cover the entire primary
+  // display now (findGameWindowSource always uses screen-source on Windows),
+  // so the only difference between screenshot space and overlay space is the
+  // display scale factor. Pure proportional scaling — no contentRect trim,
+  // no game-window-position offset.
   const overlaySize = captureMetrics?.overlaySize || { width: 1, height: 1 };
   const screenshotSize = captureMetrics?.screenshotSize || { width: 1, height: 1 };
-  const screenshotWidth = Number(screenshotSize.width) || 1;
-  const screenshotHeight = Number(screenshotSize.height) || 1;
-  const contentWidth = Number(contentRect?.width) || 0;
-  const contentHeight = Number(contentRect?.height) || 0;
-  const shouldUseContentRect =
-    contentWidth > 0 &&
-    contentHeight > 0 &&
-    contentWidth <= screenshotWidth &&
-    contentHeight <= screenshotHeight &&
-    (contentWidth < screenshotWidth || contentHeight < screenshotHeight);
-  const sourceRect = shouldUseContentRect
-    ? {
-        x: Number(contentRect.x) || 0,
-        y: Number(contentRect.y) || 0,
-        width: contentWidth,
-        height: contentHeight
-      }
-    : {
-        x: 0,
-        y: 0,
-        width: screenshotWidth,
-        height: screenshotHeight
-      };
+  const sourceSize = {
+    width:  Number(screenshotSize.width)  || 1,
+    height: Number(screenshotSize.height) || 1
+  };
 
-  const transform = computeLayoutTransform(
-    { width: sourceRect.width, height: sourceRect.height },
-    overlaySize
-  );
+  const transform = computeLayoutTransform(sourceSize, overlaySize);
 
   return {
-    x: Math.round((Number(rect.x) - sourceRect.x) * transform.scaleX),
-    y: Math.round((Number(rect.y) - sourceRect.y) * transform.scaleY),
-    width: Math.max(1, Math.round(Number(rect.width) * transform.sizeScaleX)),
+    x: Math.round(Number(rect.x) * transform.scaleX),
+    y: Math.round(Number(rect.y) * transform.scaleY),
+    width:  Math.max(1, Math.round(Number(rect.width)  * transform.sizeScaleX)),
     height: Math.max(1, Math.round(Number(rect.height) * transform.sizeScaleY))
   };
+}
+
+// Diagnostic snapshot for y-offset debugging. Writes one JSON to userData on
+// each capture (overwrites the previous). Includes the screenshot/overlay
+// dimensions, contentRect from getNativeImageOpaqueBounds, the primary display
+// scale factor, the unprojected rects from the detector, and the projected
+// rects that end up on the overlay. Send this file from each machine and
+// compare to pinpoint which value is drifting.
+let alignmentDiagWriteFailed = false;
+function writeAlignmentDiagnostic(snapshot) {
+  if (alignmentDiagWriteFailed) return;
+  try {
+    const primary = screen.getPrimaryDisplay();
+    const payload = {
+      writtenAt: new Date().toISOString(),
+      primaryDisplay: {
+        scaleFactor:    primary.scaleFactor,
+        bounds:         primary.bounds,
+        size:           primary.size,
+        workArea:       primary.workArea,
+        rotation:       primary.rotation
+      },
+      ...snapshot
+    };
+    const filePath = getWritablePath('overlay_alignment.json');
+    fs.writeFileSync(filePath, JSON.stringify(payload, null, 2));
+  } catch (error) {
+    alignmentDiagWriteFailed = true;
+    console.error('Failed to write overlay_alignment.json', error);
+  }
 }
 
 function projectSlotResultsToOverlaySpace(slotResults, captureMetrics, contentRect = null) {
@@ -395,8 +427,10 @@ function getUiState() {
     debugMode,
     showCardList: settings.showCardList,
     showBoardPanel: settings.showBoardPanel,
+    showDamageOverlay: settings.showDamageOverlay,
     cardLanguage: settings.cardLanguage,
     damageRollMode: settings.damageRollMode,
+    cardListMode: settings.cardListMode,
     calibrated: !!calibrationData,
     calibratedAt: calibrationData?.calibratedAt || null
   };
@@ -428,6 +462,13 @@ function applyPanelVisibilityFromSettings() {
       showWindow(boardWindow);
     } else {
       boardWindow.hide();
+    }
+  }
+  if (damageWindow && !damageWindow.isDestroyed()) {
+    if (settings.showDamageOverlay) {
+      showWindow(damageWindow);
+    } else {
+      damageWindow.hide();
     }
   }
   updateCardListWindowMouseMode();
@@ -894,6 +935,16 @@ function getCurrentHandCandidates() {
 const MAX_CAPTURE_WIDTH  = 1920;
 const MAX_CAPTURE_HEIGHT = 1080;
 
+// Each overlay window has setContentProtection(true) applied at creation
+// (createOverlayWindow), so on Windows 10 2004+ desktopCapturer simply does
+// not see them — no opacity-flicker dance needed. We pass the captureFn
+// through unchanged; the helper exists so we can re-introduce a fallback
+// (e.g. for older Windows builds without WDA_EXCLUDEFROMCAPTURE) without
+// touching every call site.
+async function captureWithOverlaysHidden(captureFn) {
+  return captureFn();
+}
+
 async function findGameWindowSource() {
   const primaryDisplay = screen.getPrimaryDisplay();
   const scale = primaryDisplay.scaleFactor || 1;
@@ -906,48 +957,30 @@ async function findGameWindowSource() {
   };
 
   if (process.platform === 'win32') {
-    const windowSources = await desktopCapturer.getSources({
-      types: ['window'],
-      thumbnailSize,
-      fetchWindowIcons: false
+    // Always use screen-source on Windows. A window-source thumbnail contains
+    // only the game-window pixels in window-relative coordinates, but the
+    // damage overlay covers the full primary display — the projection scales
+    // window-coords up to fill the screen, which draws debug boxes "where the
+    // card would be if the game were fullscreen at the screen origin." This
+    // shows up as a large positional offset in windowed mode and as a small
+    // y-drift in fullscreen mode (DWM trims a few transparent pixels off the
+    // window's edge). Capturing the screen directly puts the thumbnail in the
+    // same coordinate space as the overlay, so no offset can creep in.
+    return await captureWithOverlaysHidden(async () => {
+      const screenSources = await desktopCapturer.getSources({
+        types: ['screen'],
+        thumbnailSize,
+        fetchWindowIcons: false
+      });
+      return screenSources.find((source) =>
+        source.display_id === String(primaryDisplay.id)
+      ) || screenSources[0] || null;
     });
-    const windowSource = windowSources.find((source) => {
-      const sourceName = (source.name || '').toLowerCase();
-      return GAME_SOURCE_PATTERNS.some((pattern) => sourceName.includes(pattern.toLowerCase()));
-    });
-    // Window-source capture uses DWM per-window pixels — our overlay windows
-    // are separate top-level windows and should not bleed into the game window
-    // thumbnail, so no hiding is needed here.
-    if (windowSource && !windowSource.thumbnail.isEmpty()) {
-      return windowSource;
-    }
-
-    // Screen-source fallback (fullscreen game): the whole composited desktop is
-    // captured, so the board overlay would appear on top of the card slots.
-    // Rather than hide() (which causes a visible OS-level flash), make the
-    // board window's rendered content transparent via CSS — the window stays in
-    // the compositor stack so no hide/show animation fires, but its pixels
-    // become transparent so the game shows through in the capture.
-    const hasBoardOverlay = boardWindow && !boardWindow.isDestroyed() && boardWindow.isVisible();
-    if (hasBoardOverlay) {
-      // Set opacity:0 and wait for the renderer to paint + DWM to composite.
-      await boardWindow.webContents.executeJavaScript(
-        'new Promise(r=>{document.documentElement.style.opacity="0";requestAnimationFrame(()=>requestAnimationFrame(r))})'
-      );
-    }
-    const screenSources = await desktopCapturer.getSources({
-      types: ['screen'],
-      thumbnailSize,
-      fetchWindowIcons: false
-    });
-    if (hasBoardOverlay) {
-      boardWindow.webContents.executeJavaScript('document.documentElement.style.opacity=""');
-    }
-    return screenSources.find((source) =>
-      source.display_id === String(primaryDisplay.id)
-    ) || screenSources[0] || null;
   }
 
+  // Non-Windows fallback (Linux/macOS) — keep window-source for now; we don't
+  // have a reproducer there, and desktopCapturer semantics differ enough that
+  // changing this without testing is risky.
   const sources = await desktopCapturer.getSources({
     types: ['window'],
     thumbnailSize,
@@ -1087,6 +1120,19 @@ async function performBoardCapture() {
         debugMode
       }
     });
+
+    // Diagnostic snapshot for the y-offset investigation. Write the latest
+    // capture geometry to userData so the user can send the file from each
+    // machine to compare. Non-fatal.
+    writeAlignmentDiagnostic({
+      sourceName: source.name,
+      screenshotSize: captureMetrics.screenshotSize,
+      contentRect,
+      overlaySize: captureMetrics.overlaySize,
+      displayScaleFactor: captureMetrics.displayScaleFactor,
+      detectorRects: slotResults.map((r) => r?.rect || null),
+      projectedRects: projectedSlotResults.map((r) => r?.rect || null)
+    });
   } catch (error) {
     const errorCaptureMetrics = getCaptureOverlayMetrics();
     const errorFallbackSlotRects = getFallbackSlotRectsForSize(errorCaptureMetrics.screenshotSize);
@@ -1194,6 +1240,7 @@ app.whenReady().then(() => {
     startBoardCapture();
     applyPanelVisibilityFromSettings();
     broadcastUiState();
+    registerGlobalShortcuts();
     appendStartupLog('startup complete');
   } catch (error) {
     appendStartupLog('startup failed', error);
@@ -1208,7 +1255,42 @@ app.on('will-quit', () => {
     try { watcher.close(); } catch (e) {}
   });
   watchedPaths.clear();
+  try { globalShortcut.unregisterAll(); } catch (e) {}
 });
+
+// Global shortcuts:
+//   CmdOrCtrl+Shift+D — toggle the damage-per-turn overlay on/off
+//   CmdOrCtrl+Shift+R — force a fresh board detection (re-capture and re-score)
+function registerGlobalShortcuts() {
+  const bindings = [
+    {
+      accelerator: 'CommandOrControl+Shift+D',
+      handler: () => {
+        const settings = loadSettings();
+        settings.showDamageOverlay = !settings.showDamageOverlay;
+        saveSettings(settings);
+        applyPanelVisibilityFromSettings();
+        broadcastUiState();
+      }
+    },
+    {
+      accelerator: 'CommandOrControl+Shift+R',
+      handler: () => {
+        captureBoardState().catch((error) => {
+          console.error('Failed to force board capture', error);
+        });
+      }
+    }
+  ];
+  for (const { accelerator, handler } of bindings) {
+    try {
+      const ok = globalShortcut.register(accelerator, handler);
+      if (!ok) console.error(`Failed to register shortcut ${accelerator}`);
+    } catch (error) {
+      console.error(`Error registering shortcut ${accelerator}`, error);
+    }
+  }
+}
 
 ipcMain.handle('read-settings', () => {
   return loadSettings();
@@ -1256,6 +1338,35 @@ ipcMain.handle('toggle-board-visibility', () => {
   applyPanelVisibilityFromSettings();
   broadcastUiState();
   return getUiState();
+});
+
+ipcMain.handle('quit-app', () => {
+  app.quit();
+  return { ok: true };
+});
+
+ipcMain.handle('set-card-list-mode', (_, nextMode) => {
+  const settings = loadSettings();
+  settings.cardListMode = ['all', 'low-stock'].includes(nextMode) ? nextMode : 'all';
+  saveSettings(settings);
+  broadcastUiState();
+  return getUiState();
+});
+
+ipcMain.handle('toggle-damage-overlay-visibility', () => {
+  const settings = loadSettings();
+  settings.showDamageOverlay = !settings.showDamageOverlay;
+  saveSettings(settings);
+  applyPanelVisibilityFromSettings();
+  broadcastUiState();
+  return getUiState();
+});
+
+ipcMain.handle('force-board-capture', () => {
+  captureBoardState().catch((error) => {
+    console.error('Failed to force board capture', error);
+  });
+  return { ok: true };
 });
 
 ipcMain.handle('set-card-language', (_, nextLanguage) => {

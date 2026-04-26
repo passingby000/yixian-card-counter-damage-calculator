@@ -1,10 +1,25 @@
 const root = document.getElementById('overlay');
 
-let settings = { hiddenCards: {}, gamePath: null, showCardList: true, showBoardPanel: true, cardLanguage: 'zh' };
+let settings = { hiddenCards: {}, gamePath: null, showCardList: true, showBoardPanel: true, cardLanguage: 'zh', cardListMode: 'all' };
 let deleteMode = false;
 let cardLibrary = {};
 let cardTranslations = {};
 let cardLanguage = 'zh';
+let cardListMode = 'all';
+
+// Threshold for the 'low-stock' card-list filter: only show cards whose
+// remaining-in-deck count is strictly less than this. The user's spec is
+// "less than 2", i.e. 0 or 1 copies left.
+const LOW_STOCK_THRESHOLD = 2;
+
+const I18N = {
+  en: { 'error.loadFailed': 'Failed to load data' },
+  zh: { 'error.loadFailed': '数据加载失败' }
+};
+function t(key) {
+  const lang = cardLanguage === 'zh' ? 'zh' : 'en';
+  return (I18N[lang] && I18N[lang][key]) || (I18N.en[key]) || key;
+}
 const CARD_METADATA_ALIASES = {
   '查体': '察体'
 };
@@ -62,14 +77,18 @@ function translateCardName(name) {
 
 function applyUiState(uiState) {
   const nextCardLanguage = uiState?.cardLanguage === 'en' ? 'en' : 'zh';
+  const nextCardListMode = uiState?.cardListMode === 'low-stock' ? 'low-stock' : 'all';
   const languageChanged = nextCardLanguage !== cardLanguage;
+  const modeChanged     = nextCardListMode !== cardListMode;
   deleteMode = !!uiState?.deleteMode;
   cardLanguage = nextCardLanguage;
+  cardListMode = nextCardListMode;
   settings.cardLanguage = cardLanguage;
+  settings.cardListMode = cardListMode;
   if (root) {
     root.classList.toggle('delete-mode', deleteMode);
   }
-  if (languageChanged) {
+  if (languageChanged || modeChanged) {
     loadAndRender();
   }
 }
@@ -178,11 +197,15 @@ async function loadAndRender() {
     root.innerHTML = '';
     entries
       .filter((entry) => !settings.hiddenCards[entry.name])
+      // 'low-stock' mode: hide cards with plenty of copies left in the deck.
+      // Only "remaining < LOW_STOCK_THRESHOLD" passes — cards on the verge of
+      // running out, which is when the user actually needs to plan around them.
+      .filter((entry) => cardListMode !== 'low-stock' || entry.remaining < LOW_STOCK_THRESHOLD)
       .forEach((entry) => {
         root.appendChild(createRow(entry.name, entry.displayName, entry.remaining, entry.phase, entry.count));
     });
   } catch (error) {
-    root.innerHTML = '<div class="overlay-error">Failed to load data</div>';
+    root.innerHTML = `<div class="overlay-error">${t('error.loadFailed')}</div>`;
   }
 }
 

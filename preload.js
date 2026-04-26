@@ -14,6 +14,8 @@ contextBridge.exposeInMainWorld('api', {
   setDebugMode: (enabled) => ipcRenderer.invoke('set-debug-mode', enabled),
   setControlsExpanded: (expanded) => ipcRenderer.invoke('set-controls-expanded', expanded),
   performCalibration: () => ipcRenderer.invoke('perform-calibration'),
+  quitApp: () => ipcRenderer.invoke('quit-app'),
+  setCardListMode: (mode) => ipcRenderer.invoke('set-card-list-mode', mode),
   readDerivedFile: (fileName) => ipcRenderer.invoke('read-derived-file', fileName),
   onCalibrationProgress: (cb) => {
     const wrapped = (_, payload) => cb(payload);

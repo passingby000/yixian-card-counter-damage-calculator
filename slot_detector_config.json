@@ -30,8 +30,8 @@
     "rgbMse": {
       "label": "RGB MSE",
       "higherIsBetter": false,
-      "threshold": 4000,
-      "margin": 100
+      "threshold": 3300,
+      "margin": 150
     }
   }
 }

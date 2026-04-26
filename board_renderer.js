@@ -21,31 +21,77 @@ function normalizeTranslationKey(name = '') {
   return String(name).replace(/[•·]/g, '·').trim();
 }
 
+const I18N = {
+  en: {
+    'slot.closed': 'Closed',
+    'slot.undetected': 'Undetected',
+    'slot.opensLater': 'Opens later',
+    'slot.dash': '--',
+    'slot.rejected': 'Rejected',
+    'slot.lv': 'Lv',
+    'slot.phase': 'P',
+    'summary.waiting': 'Waiting for board detection',
+    'summary.idle': 'idle',
+    'summary.open': 'open',
+    'summary.talentsApplied': 'Talents applied',
+    'summary.talentsPartiallyApplied': 'Talents partially applied · ignored: {names}',
+    'summary.round': 'R{round}',
+    'talentKind.direct': 'Direct',
+    'talentKind.cards': 'Cards',
+    'talentKind.transform': 'Transform',
+    'talentKind.indirect': 'Indirect',
+    'talentKind.none': '--',
+    'talent.unknown': 'Unknown'
+  },
+  zh: {
+    'slot.closed': '未开启',
+    'slot.undetected': '未识别',
+    'slot.opensLater': '稍后开启',
+    'slot.dash': '--',
+    'slot.rejected': '已拒绝',
+    'slot.lv': '等级',
+    'slot.phase': '阶',
+    'summary.waiting': '等待面板识别',
+    'summary.idle': '空闲',
+    'summary.open': '开启',
+    'summary.talentsApplied': '已应用天赋',
+    'summary.talentsPartiallyApplied': '天赋部分应用 · 忽略: {names}',
+    'summary.round': 'R{round}',
+    'talentKind.direct': '直接',
+    'talentKind.cards': '卡牌',
+    'talentKind.transform': '变换',
+    'talentKind.indirect': '间接',
+    'talentKind.none': '--',
+    'talent.unknown': '未知'
+  }
+};
+
+function t(key, vars = {}) {
+  const lang = cardLanguage === 'zh' ? 'zh' : 'en';
+  const tmpl = (I18N[lang] && I18N[lang][key]) || (I18N.en[key]) || key;
+  return tmpl.replace(/\{(\w+)\}/g, (_, k) => (k in vars ? String(vars[k]) : `{${k}}`));
+}
+
 function translateCardName(name) {
   if (cardLanguage !== 'en') return name;
   return cardTranslations[normalizeTranslationKey(name)] || name;
 }
 
 function getTalentDisplayName(talent) {
-  if (!talent?.detected) return 'Undetected';
+  if (!talent?.detected) return t('slot.undetected');
   if (cardLanguage === 'en') {
-    return talent.name || talent.nameCn || 'Unknown';
+    return talent.name || talent.nameCn || t('talent.unknown');
   }
-  return talent.nameCn || talent.name || 'Unknown';
+  return talent.nameCn || talent.name || t('talent.unknown');
 }
 
 function getTalentKindLabel(simulationKind) {
   switch (simulationKind) {
-    case 'runtime-stack':
-      return 'Direct';
-    case 'card-grant':
-      return 'Cards';
-    case 'transform':
-      return 'Transform';
-    case 'non-combat-or-unsupported':
-      return 'Indirect';
-    default:
-      return '--';
+    case 'runtime-stack':              return t('talentKind.direct');
+    case 'card-grant':                 return t('talentKind.cards');
+    case 'transform':                  return t('talentKind.transform');
+    case 'non-combat-or-unsupported':  return t('talentKind.indirect');
+    default:                           return t('talentKind.none');
   }
 }
 
@@ -73,27 +119,27 @@ function renderBoardPanel() {
     parts.push(battlePlayer?.character || preview.playerCharacter);
   }
   if (currentRound) {
-    parts.push(`R${currentRound}`);
+    parts.push(t('summary.round', { round: currentRound }));
   }
   if (openSlots) {
-    parts.push(`${openSlots} open`);
+    parts.push(`${openSlots} ${t('summary.open')}`);
   }
   if (talentIntegration) {
     const unsupported = Array.isArray(talentIntegration.unsupportedDirectTalents) ? talentIntegration.unsupportedDirectTalents : [];
     const applied = Array.isArray(talentIntegration.appliedRuntimeTalents) ? talentIntegration.appliedRuntimeTalents : [];
     if (unsupported.length > 0) {
-      parts.push(`Talents partially applied · ignored: ${unsupported.join(', ')}`);
+      parts.push(t('summary.talentsPartiallyApplied', { names: unsupported.join(', ') }));
     } else if (applied.length > 0) {
-      parts.push('Talents applied');
+      parts.push(t('summary.talentsApplied'));
     }
   }
   if (boardState.capture?.status !== 'ok') {
-    parts.push(boardState.capture?.message || boardState.capture?.status || 'idle');
+    parts.push(boardState.capture?.message || boardState.capture?.status || t('summary.idle'));
   }
   if (preview.error) {
     parts.push(preview.error);
   }
-  damageSummaryRoot.textContent = parts.length > 0 ? parts.join(' · ') : 'Waiting for board detection';
+  damageSummaryRoot.textContent = parts.length > 0 ? parts.join(' · ') : t('summary.waiting');
 
   boardTalentsRoot.innerHTML = '';
   for (let index = 0; index < 5; index += 1) {
@@ -117,7 +163,7 @@ function renderBoardPanel() {
     metaEl.className = 'talent-chip-meta';
     metaEl.textContent = talent.detected
       ? `${getTalentKindLabel(talent.simulationKind)} · ${(Number(talent.confidence || 0) * 100).toFixed(0)}%`
-      : '--';
+      : t('slot.dash');
 
     el.appendChild(positionEl);
     el.appendChild(nameEl);
@@ -139,13 +185,15 @@ function renderBoardPanel() {
 
     const slotName = document.createElement('div');
     slotName.className = 'board-slot-name';
-    slotName.textContent = displaySlot ? translateCardName(displaySlot.name) : (isClosed ? 'Closed' : 'Undetected');
+    slotName.textContent = displaySlot
+      ? translateCardName(displaySlot.name)
+      : (isClosed ? t('slot.closed') : t('slot.undetected'));
 
     const slotMeta = document.createElement('div');
     slotMeta.className = 'board-slot-meta';
     slotMeta.textContent = displaySlot
-      ? `${displaySlot.accepted === false ? 'Rejected · ' : ''}${displaySlot.isDream ? `P${displaySlot.phase ?? '?'}` : `Lv ${displaySlot.level}`} · ${(displaySlot.confidence * 100).toFixed(0)}%`
-      : (isClosed ? 'Opens later' : '--');
+      ? `${displaySlot.accepted === false ? `${t('slot.rejected')} · ` : ''}${displaySlot.isDream ? `${t('slot.phase')}${displaySlot.phase ?? '?'}` : `${t('slot.lv')} ${displaySlot.level}`} · ${(displaySlot.confidence * 100).toFixed(0)}%`
+      : (isClosed ? t('slot.opensLater') : t('slot.dash'));
 
     el.appendChild(slotIndex);
     el.appendChild(slotName);

@@ -325,6 +325,15 @@ body {
   color: #111;
 }
 
+.toggle-option.danger {
+  background: rgba(160, 50, 50, 0.78);
+}
+
+.toggle-option.danger:hover {
+  background: rgba(220, 70, 70, 0.95);
+  color: #fff;
+}
+
 .calibration-status {
   font-size: 9px;
   color: rgba(200, 200, 200, 0.7);

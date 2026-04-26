@@ -10,27 +10,32 @@
 <body class="window-controls">
   <div class="controls-root">
     <div class="controls-bar">
-      <button id="delete-button" class="control-button" type="button">Del</button>
-      <button id="list-button" class="control-button" type="button">List</button>
-      <button id="board-button" class="control-button" type="button">Board</button>
-      <button id="settings-button" class="control-button" type="button">Set</button>
+      <button id="delete-button"   class="control-button" type="button" data-i18n="btn.delete">Del</button>
+      <button id="list-button"     class="control-button" type="button" data-i18n="btn.list">List</button>
+      <button id="board-button"    class="control-button" type="button" data-i18n="btn.board">Board</button>
+      <button id="settings-button" class="control-button" type="button" data-i18n="btn.set">Set</button>
     </div>
     <div id="settings-panel" class="settings-panel hidden">
-      <div class="settings-label">Damage</div>
-      <button id="roll-average" class="roll-option" type="button" data-roll-mode="average">Average</button>
-      <button id="roll-high" class="roll-option" type="button" data-roll-mode="high">High Roll</button>
-      <button id="roll-low" class="roll-option" type="button" data-roll-mode="low">Low Roll</button>
-      <div class="settings-label">Cards</div>
-      <button id="language-zh" class="language-option" type="button" data-card-language="zh">Chinese</button>
-      <button id="language-en" class="language-option" type="button" data-card-language="en">English</button>
-      <div class="settings-label">Debug</div>
-      <button id="debug-mode-button" class="toggle-option" type="button">Debug</button>
-      <div class="settings-label">Calibration</div>
-      <button id="calibrate-button" class="toggle-option" type="button">Calibrate</button>
+      <div class="settings-label" data-i18n="label.damage">Damage</div>
+      <button id="roll-average" class="roll-option" type="button" data-roll-mode="average" data-i18n="roll.average">Average</button>
+      <button id="roll-high"    class="roll-option" type="button" data-roll-mode="high"    data-i18n="roll.high">High Roll</button>
+      <button id="roll-low"     class="roll-option" type="button" data-roll-mode="low"     data-i18n="roll.low">Low Roll</button>
+      <div class="settings-label" data-i18n="label.cards">Cards</div>
+      <button id="language-zh" class="language-option" type="button" data-card-language="zh" data-i18n="lang.zh">Chinese</button>
+      <button id="language-en" class="language-option" type="button" data-card-language="en" data-i18n="lang.en">English</button>
+      <div class="settings-label" data-i18n="label.cardListMode">Card list</div>
+      <button id="card-list-mode-all"      class="toggle-option" type="button" data-card-list-mode="all"      data-i18n="cardListMode.all">All in hand</button>
+      <button id="card-list-mode-low"      class="toggle-option" type="button" data-card-list-mode="low-stock" data-i18n="cardListMode.lowStock">Remaining &lt; 2</button>
+      <div class="settings-label" data-i18n="label.debug">Debug</div>
+      <button id="debug-mode-button" class="toggle-option" type="button" data-i18n="btn.debug">Debug</button>
+      <div class="settings-label" data-i18n="label.calibration">Calibration</div>
+      <button id="calibrate-button" class="toggle-option" type="button" data-i18n="btn.calibrate">Calibrate</button>
       <div id="calibration-progress" class="calibration-progress">
         <div id="calibration-progress-fill" class="calibration-progress-fill"></div>
       </div>
       <div id="calibration-status" class="calibration-status"></div>
+      <div class="settings-label" data-i18n="label.app">App</div>
+      <button id="quit-button" class="toggle-option danger" type="button" data-i18n="btn.quit">Quit</button>
     </div>
   </div>
   <script src="controls_renderer.js"></script>
