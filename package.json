@@ -4,7 +4,7 @@
   "description": "Minimal overlay card counter for YiXianPai (separate project)",
   "main": "main.js",
   "scripts": {
-    "start": "env -u ELECTRON_RUN_AS_NODE electron .",
+    "start": "electron .",
     "dist": "electron-builder --publish never",
     "dist:mac": "electron-builder --mac zip --publish never",
     "dist:win": "electron-builder --win nsis zip --publish never"
