@@ -12,14 +12,6 @@ Quick start
    npm install
    npm start
 
-   for unix:
-   package.json
-   "start": "cross-env ELECTRON_RUN_AS_NODE= electron ."
-
-   for windows:
-   package.json
-   "start": "electron ."
-
 Build distributables
 - macOS unsigned:
 
